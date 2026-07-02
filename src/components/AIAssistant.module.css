@@ -77,7 +77,7 @@
   right: 30px;
   background: #111827;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f3f4f6;
+  color: #f3f4f6 !important;
   padding: 12px 20px 12px 16px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -212,14 +212,14 @@
 .headerTitle {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff !important;
   margin: 0 0 2px 0;
   letter-spacing: 0.5px;
 }
 
 .headerSubtitle {
   font-size: 11px;
-  color: #9ca3af;
+  color: #9ca3af !important;
   margin: 0;
   display: flex;
   align-items: center;
@@ -290,48 +290,69 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* User Message Bubble - High Contrast Dark Text on Gold */
+.bubbleUser,
+.bubbleUser p,
+.bubbleUser li,
+.bubbleUser ul {
+  background: var(--primary) !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
 .bubbleUser {
-  background: var(--primary);
-  color: #000000;
   border-bottom-right-radius: 4px;
-  font-weight: 700;
+}
+
+.bubbleUser strong,
+.bubbleUser .boldText {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Bot Message Bubble - High Contrast White Text on Dark Blue/Slate */
+.bubbleBot,
+.bubbleBot p,
+.bubbleBot li,
+.bubbleBot ul {
+  background: #1e293b !important;
+  color: #ffffff !important;
 }
 
 .bubbleBot {
-  background: #1e293b;
-  color: #f3f4f6;
   border-bottom-left-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Rich Text Formatting Styles */
-.boldText {
-  color: var(--primary);
-  font-weight: 800;
+.bubbleBot strong,
+.bubbleBot .boldText {
+  color: var(--primary) !important;
+  font-weight: 800 !important;
 }
 
+/* Rich Text Formatting Styles */
 .paragraph {
-  margin: 0 0 10px 0;
-  line-height: 1.6;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.6 !important;
 }
 
 .paragraph:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .list {
-  margin: 0 0 12px 0;
-  padding-left: 20px;
+  margin: 0 0 12px 0 !important;
+  padding-left: 20px !important;
 }
 
 .listItem {
-  margin-bottom: 6px;
-  line-height: 1.5;
-  list-style-type: disc;
+  margin-bottom: 6px !important;
+  line-height: 1.5 !important;
+  list-style-type: disc !important;
 }
 
 .listItem::marker {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 /* Inline CTAs inside Bubbles */
@@ -357,7 +378,7 @@
 
 .ctaBtn_book {
   background: var(--primary);
-  color: #111827;
+  color: #111827 !important;
 }
 
 .ctaBtn_book:hover {
@@ -367,7 +388,7 @@
 
 .ctaBtn_whatsapp {
   background: #25d366;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .ctaBtn_whatsapp:hover {
@@ -377,7 +398,7 @@
 
 .ctaBtn_phone {
   background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -396,7 +417,7 @@
 .suggestLabel {
   font-size: 11px;
   font-weight: 700;
-  color: #9ca3af;
+  color: #9ca3af !important;
   text-transform: uppercase;
   margin: 0 0 8px 0;
   letter-spacing: 0.5px;
@@ -421,7 +442,7 @@
 .chip {
   background: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #d1d5db;
+  color: #d1d5db !important;
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 12px;
@@ -433,7 +454,7 @@
 .chip:hover {
   background: #273549;
   border-color: var(--primary);
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 /* Input Area Wrapper */
@@ -454,7 +475,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   padding: 12px 16px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 14px;
   outline: none;
   transition: border-color 0.2s;
@@ -465,12 +486,12 @@
 }
 
 .input::placeholder {
-  color: #9ca3af;
+  color: #9ca3af !important;
 }
 
 .sendBtn {
   background: var(--primary);
-  color: #111827;
+  color: #111827 !important;
   border: none;
   width: 44px;
   height: 44px;
@@ -495,20 +516,20 @@
 
 .disclaimerText {
   font-size: 10px;
-  color: #9ca3af;
+  color: #9ca3af !important;
   margin: 0 0 6px 0;
   line-height: 1.4;
 }
 
 .poweredByText {
   font-size: 10px;
-  color: #9ca3af;
+  color: #9ca3af !important;
   margin: 0;
   font-weight: 500;
 }
 
 .brandAccent {
-  color: var(--primary);
+  color: var(--primary) !important;
   font-weight: 700;
   letter-spacing: 0.3px;
   text-shadow: 0 0 10px rgba(212, 163, 89, 0.2);
