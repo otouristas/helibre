@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
-import MusicPlayer from '@/components/MusicPlayer';
 
 export default function AboutUsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
   const pathname = usePathname();
@@ -134,9 +133,6 @@ export default function AboutUsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       {/* Dynamic SEO Head side-effects */}
       
       
-
-      {/* Floating Music Player */}
-      <MusicPlayer />
 
       <div className="container" style={{ maxWidth: '900px' }}>
         {/* H1 header */}

@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import HeaderLayout from '@/components/HeaderLayout';
 import Footer from '@/components/Footer';
-import MusicPlayer from '@/components/MusicPlayer';
+import AIAssistant from '@/components/AIAssistant';
 
 const inter = Inter({
   subsets: ['latin', 'greek'],
@@ -72,8 +72,8 @@ export default function RootLayout({
           {children}
         </main>
         
-        {/* Ambient music controller */}
-        <MusicPlayer />
+        {/* Floating AI Assistant Chat Bot */}
+        <AIAssistant />
         
         {/* Footer */}
         <Footer />
