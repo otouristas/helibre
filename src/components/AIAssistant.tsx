@@ -40,9 +40,9 @@ export default function AIAssistant() {
       suggestLang: '🌍 What languages do you speak?',
       suggestDriver: '👨 Who is the driver?',
       botGreeting: 'Hello! I am Touristas AI, the virtual assistant for Helicro. Ask me anything about our private transfers, Mercedes minivans, fixed rates, child seats, or day trips in Belgium!',
-      whatsappCta: 'Message Gerasimos on WhatsApp',
-      bookCta: 'Book Transfer Online',
-      phoneCta: 'Call Chauffeur Direct',
+      whatsappCta: '💬 Message on WhatsApp',
+      bookCta: '📅 Book Transfer Online',
+      phoneCta: '📞 Call Chauffeur Direct',
       disclaimer: 'Disclaimer: This is an AI assistant. Please double check final rates and routes with our dispatch.',
       poweredBy: 'Powered by Touristas Technologies'
     },
@@ -58,9 +58,9 @@ export default function AIAssistant() {
       suggestLang: '🌍 Welke talen spreekt u?',
       suggestDriver: '👨 Wie is de chauffeur?',
       botGreeting: 'Hallo! Ik ben Touristas AI, de virtuele assistent voor Helicro. Vraag me alles over onze privé-transfers, Mercedes minivans, vaste tarieven, kinderzitjes of dagtochten in België!',
-      whatsappCta: 'Stuur Gerasimos een WhatsApp',
-      bookCta: 'Online Rit Boeken',
-      phoneCta: 'Direct Chauffeur Bellen',
+      whatsappCta: '💬 Stuur een WhatsApp',
+      bookCta: '📅 Online Rit Boeken',
+      phoneCta: '📞 Direct Chauffeur Bellen',
       disclaimer: 'Disclaimer: Dit is een AI-assistent. Controleer definitieve tarieven en ritten met onze planning.',
       poweredBy: 'Aangedreven door Touristas Technologies'
     },
@@ -94,9 +94,9 @@ export default function AIAssistant() {
       suggestLang: '🌍 Ποιες γλώσσες μιλάτε;',
       suggestDriver: '👨 Ποιος είναι ο οδηγός;',
       botGreeting: 'Γεια σας! Είμαι ο Touristas AI, ο εικονικός βοηθός της Helicro. Ρωτήστε με ό,τι θέλετε για τις ιδιωτικές μεταφορές, τα Mercedes minivans, τις σταθερές τιμές, τα παιδικά καθίσματα ή τις εκδρομές μας στο Βέλγιο!',
-      whatsappCta: 'Μήνυμα στον Γεράσιμο στο WhatsApp',
-      bookCta: 'Online Κράτηση Μεταφοράς',
-      phoneCta: 'Καλέστε τον Οδηγό Απευθείας',
+      whatsappCta: '💬 Μήνυμα στο WhatsApp',
+      bookCta: '📅 Online Κράτηση Μεταφοράς',
+      phoneCta: '📞 Καλέστε τον Οδηγό Απευθείας',
       disclaimer: 'Αποποίηση ευθύνης: Αυτός είναι ένας AI βοηθός. Παρακαλούμε επιβεβαιώστε τις τελικές τιμές και διαδρομές με το κέντρο κρατήσεων.',
       poweredBy: 'Powered by Touristas Technologies'
     }
@@ -143,6 +143,77 @@ export default function AIAssistant() {
       const reply = generateAIResponse(text.toLowerCase());
       setMessages((prev) => [...prev, reply]);
     }, 600);
+  };
+
+  // Custom rich text / basic markdown parser
+  const renderMessageContent = (text: string, isBot: boolean) => {
+    const lines = text.split('\n');
+    let inList = false;
+    const listItems: React.ReactNode[] = [];
+    const elements: React.ReactNode[] = [];
+
+    lines.forEach((line, index) => {
+      const trimmedLine = line.trim();
+      const isBullet = trimmedLine.startsWith('•') || trimmedLine.startsWith('-');
+      
+      // If it is a bullet point, extract the content
+      let content = isBullet ? trimmedLine.substring(1).trim() : line;
+
+      // Parse bold elements **bold text**
+      const parts = content.split('**');
+      const parsedLine = parts.map((part, i) => {
+        if (i % 2 === 1) {
+          return (
+            <strong 
+              key={i} 
+              className={styles.boldText}
+              style={!isBot ? { color: '#000000', fontWeight: 800 } : undefined}
+            >
+              {part}
+            </strong>
+          );
+        }
+        return part;
+      });
+
+      if (isBullet) {
+        if (!inList) {
+          inList = true;
+        }
+        listItems.push(
+          <li key={`li-${index}`} className={styles.listItem}>
+            {parsedLine}
+          </li>
+        );
+      } else {
+        if (inList) {
+          elements.push(
+            <ul key={`ul-${index}`} className={styles.list}>
+              {[...listItems]}
+            </ul>
+          );
+          listItems.length = 0;
+          inList = false;
+        }
+        if (trimmedLine) {
+          elements.push(
+            <p key={`p-${index}`} className={styles.paragraph}>
+              {parsedLine}
+            </p>
+          );
+        }
+      }
+    });
+
+    if (inList) {
+      elements.push(
+        <ul key="ul-final" className={styles.list}>
+          {[...listItems]}
+        </ul>
+      );
+    }
+
+    return elements;
   };
 
   const generateAIResponse = (query: string): Message => {
@@ -350,7 +421,7 @@ export default function AIAssistant() {
           {messages.map((msg) => (
             <div key={msg.id} className={`${styles.bubbleWrapper} ${msg.sender === 'user' ? styles.bubbleUserWrapper : styles.bubbleBotWrapper}`}>
               <div className={`${styles.bubble} ${msg.sender === 'user' ? styles.bubbleUser : styles.bubbleBot}`}>
-                <div style={{ whiteSpace: 'pre-line' }}>{msg.text}</div>
+                {renderMessageContent(msg.text, msg.sender === 'bot')}
                 
                 {/* Embedded CTAs */}
                 {msg.cta && msg.cta.length > 0 && (
