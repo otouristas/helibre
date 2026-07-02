@@ -1,0 +1,256 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { getLangFromPath } from '@/config/translations';
+import styles from './FareCalculator.module.css';
+
+type TransferType = 'private' | 'shared';
+type RouteType = 'bru' | 'crl' | 'other';
+type TimeType = 'day' | 'night';
+
+export default function FareCalculator() {
+  const pathname = usePathname();
+  const lang = getLangFromPath(pathname);
+
+  const [type, setType] = useState<TransferType>('private');
+  const [route, setRoute] = useState<RouteType>('crl');
+  const [passengers, setPassengers] = useState<number>(2);
+  const [time, setTime] = useState<TimeType>('day');
+  const [price, setPrice] = useState<number | string>(0);
+  const [note, setNote] = useState<string>('');
+
+  // Dictionary for inline calculator labels
+  const ui = {
+    en: {
+      title: 'Estimate Your Fare',
+      private: 'Private Transfer',
+      shared: 'Shared Shuttle',
+      route: 'Route',
+      timeOfDay: 'Time of Day',
+      day: 'Day (07:00 - 21:30)',
+      night: 'Night (21:30 - 07:00)',
+      passengers: 'Number of Passengers',
+      pax: 'Pax',
+      paxMax: 'Pax max',
+      estimatedPrice: 'Estimated Price',
+      btn: 'Request Ride Online',
+      quoteRequired: 'Quote Required',
+      otherNote: 'Prices for intercity and other custom routes are tailormade. Click below to request a direct quote.',
+      crlNote: '*Estimated price. Fares can vary +/- 10€ depending on pickup location, luggage count, and pickup time.',
+      bruSharedNote: 'Shared shuttles are only operated for Brussels <-> Charleroi Airport route. Please select Private transfer.',
+      sharedNote: 'Shared shuttles entail picking up other passengers. Waiting times are minimized.'
+    },
+    nl: {
+      title: 'Bereken Uw Ritprijs',
+      private: 'Privé Transfer',
+      shared: 'Gedeelde Shuttle',
+      route: 'Route',
+      timeOfDay: 'Tijdstip',
+      day: 'Overdag (07:00 - 21:30)',
+      night: 'Nacht (21:30 - 07:00)',
+      passengers: 'Aantal Passagiers',
+      pax: 'Pers.',
+      paxMax: 'Pers. max',
+      estimatedPrice: 'Geschatte Prijs',
+      btn: 'Vraag Rit Online Aan',
+      quoteRequired: 'Offerte Vereist',
+      otherNote: 'Tarieven voor intercity en andere aangepaste routes zijn op maat gemaakt. Klik hieronder om een offerte aan te vragen.',
+      crlNote: '*Geschatte prijs. Tarieven kunnen +/- 10€ variëren afhankelijk van ophaallocatie, hoeveelheid bagage en ophaaltijd.',
+      bruSharedNote: 'Gedeelde shuttles rijden alleen op de route Brussel <-> Charleroi. Selecteer een Privé transfer.',
+      sharedNote: 'Gedeelde shuttles houden in dat u de wagen deelt met andere passagiers. Wachttijden worden geminimaliseerd.'
+    },
+    fr: {
+      title: 'Estimez Votre Tarif',
+      private: 'Transfert Privé',
+      shared: 'Navette Partagée',
+      route: 'Trajet',
+      timeOfDay: 'Période de la Journée',
+      day: 'Jour (07:00 - 21:30)',
+      night: 'Nuit (21:30 - 07:00)',
+      passengers: 'Nombre de Passagers',
+      pax: 'Pax',
+      paxMax: 'Pax max',
+      estimatedPrice: 'Tarif Estimé',
+      btn: 'Demander le Trajet en Ligne',
+      quoteRequired: 'Devis Requis',
+      otherNote: 'Les tarifs pour les trajets interurbains et personnalisés sont sur mesure. Cliquez ci-dessous pour demander un devis.',
+      crlNote: '*Tarif estimé. Les prix peuvent varier de +/- 10€ selon le lieu de prise en charge, les bagages et l\'heure.',
+      bruSharedNote: 'Les navettes partagées fonctionnent uniquement pour la ligne Bruxelles <-> Charleroi. Veuillez choisir un transfert Privé.',
+      sharedNote: 'Les navettes partagées impliquent la prise en charge d\'autres passagers. Les temps d\'attente sont minimisés.'
+    },
+    el: {
+      title: 'Υπολογισμός Κόστους',
+      private: 'Ιδιωτική Μεταφορά',
+      shared: 'Κοινόχρηστο Shuttle',
+      route: 'Διαδρομή',
+      timeOfDay: 'Ωρα της Ημέρας',
+      day: 'Ημέρα (07:00 - 21:30)',
+      night: 'Νύχτα (21:30 - 07:00)',
+      passengers: 'Αριθμός Επιβατών',
+      pax: 'Ατομα',
+      paxMax: 'Ατομα μέγιστο',
+      estimatedPrice: 'Εκτιμώμενη Τιμή',
+      btn: 'Αίτηση Κράτησης Online',
+      quoteRequired: 'Απαιτείται Προσφορά',
+      otherNote: 'Οι τιμές για διαδρομές εκτός πόλης ή εξατομικευμένες είναι προσαρμοσμένες. Κάντε κλικ παρακάτω για προσφορά.',
+      crlNote: '*Εκτιμώμενη τιμή. Οι τιμές ενδέχεται να διαφέρουν κατά +/- 10€ ανάλογα με την τοποθεσία παραλαβής, τις αποσκευές και την ώρα.',
+      bruSharedNote: 'Τα κοινόχρηστα shuttles εκτελούνται μόνο για τη διαδρομή Βρυξέλλες <-> Αεροδρόμιο Charleroi. Επιλέξτε Ιδιωτική Μεταφορά.',
+      sharedNote: 'Οι κοινόχρηστες μεταφορές περιλαμβάνουν την παραλαβή και άλλων επιβατών. Οι χρόνοι αναμονής ελαχιστοποιούνται.'
+    }
+  }[lang];
+
+  useEffect(() => {
+    if (type === 'shared' && passengers > 6) {
+      setPassengers(6);
+    }
+  }, [type, passengers]);
+
+  useEffect(() => {
+    if (route === 'other') {
+      setPrice(ui.quoteRequired);
+      setNote(ui.otherNote);
+      return;
+    }
+
+    if (type === 'private') {
+      if (route === 'crl') {
+        if (passengers <= 2) setPrice(70);
+        else if (passengers === 3) setPrice(90);
+        else if (passengers === 4) setPrice(110);
+        else if (passengers === 5) setPrice(120);
+        else if (passengers === 6) setPrice(135);
+        else if (passengers === 7) setPrice(150);
+        else setPrice(160);
+        setNote(ui.crlNote);
+      } else {
+        if (passengers <= 2) setPrice(40);
+        else if (passengers <= 4) setPrice(50);
+        else if (passengers === 5) setPrice(55);
+        else setPrice(60);
+        setNote(ui.crlNote);
+      }
+    } else {
+      if (route === 'bru') {
+        setPrice('N/A');
+        setNote(ui.bruSharedNote);
+        return;
+      }
+
+      if (time === 'day') {
+        const dayPrices: Record<number, number> = { 1: 25, 2: 50, 3: 75, 4: 90, 5: 110, 6: 120 };
+        setPrice(dayPrices[passengers] || 120);
+      } else {
+        const nightPrices: Record<number, number> = { 1: 30, 2: 60, 3: 80, 4: 100, 5: 115, 6: 125 };
+        setPrice(nightPrices[passengers] || 125);
+      }
+      setNote(ui.sharedNote);
+    }
+  }, [type, route, passengers, time, ui.quoteRequired, ui.otherNote, ui.crlNote, ui.bruSharedNote, ui.sharedNote]);
+
+  const getFormUrl = () => {
+    if (type === 'private' && route === 'crl') {
+      return 'https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM';
+    }
+    if (type === 'private' && route === 'bru') {
+      return 'https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM';
+    }
+    return 'https://forms.clickup.com/9015129384/f/8cnfx98-215/HYNDJD9OSRESGIPWVM';
+  };
+
+  return (
+    <div className={styles.calculator}>
+      <h3 className={styles.title}>{ui.title}</h3>
+      
+      {/* Transfer Type Select */}
+      <div className={styles.typeContainer}>
+        <button 
+          className={`${styles.typeBtn} ${type === 'private' ? styles.typeBtnActive : ''}`}
+          onClick={() => setType('private')}
+        >
+          {ui.private}
+        </button>
+        <button 
+          className={`${styles.typeBtn} ${type === 'shared' ? styles.typeBtnActive : ''}`}
+          onClick={() => setType('shared')}
+        >
+          {ui.shared}
+        </button>
+      </div>
+
+      {/* Route Select */}
+      <div className={styles.formGroup}>
+        <label className={styles.label}>{ui.route}</label>
+        <select 
+          className={styles.select}
+          value={route}
+          onChange={(e) => setRoute(e.target.value as RouteType)}
+        >
+          <option value="crl">{lang === 'fr' ? 'Bruxelles ↔ Aéroport Charleroi (CRL)' : (lang === 'nl' ? 'Brussel ↔ Luchthaven Charleroi (CRL)' : 'Brussels ↔ Charleroi Airport (CRL)')}</option>
+          {type === 'private' && (
+            <option value="bru">{lang === 'fr' ? 'Bruxelles ↔ Aéroport Bruxelles (BRU)' : (lang === 'nl' ? 'Brussel ↔ Luchthaven Brussel (BRU)' : 'Brussels ↔ Brussels Airport (BRU)')}</option>
+          )}
+          <option value="other">{lang === 'fr' ? 'Autres Villes (Sur Mesure)' : (lang === 'nl' ? 'Andere Steden (Aangepaste Route)' : 'Other Cities (Custom Route)')}</option>
+        </select>
+      </div>
+
+      {/* Time of Day (Shared Shuttle Only) */}
+      {type === 'shared' && route === 'crl' && (
+        <div className={styles.formGroup}>
+          <label className={styles.label}>{ui.timeOfDay}</label>
+          <select 
+            className={styles.select}
+            value={time}
+            onChange={(e) => setTime(e.target.value as TimeType)}
+          >
+            <option value="day">{ui.day}</option>
+            <option value="night">{ui.night}</option>
+          </select>
+        </div>
+      )}
+
+      {/* Passenger Count */}
+      {route !== 'other' && !(type === 'shared' && route === 'bru') && (
+        <div className={styles.formGroup}>
+          <label className={styles.label}>
+            {ui.passengers}: <span style={{ color: 'var(--primary-light)', fontWeight: 'bold' }}>{passengers}</span>
+          </label>
+          <input 
+            type="range" 
+            min="1" 
+            max={type === 'shared' ? "6" : "8"} 
+            className="w-full"
+            style={{ accentColor: 'var(--primary)' }}
+            value={passengers}
+            onChange={(e) => setPassengers(parseInt(e.target.value))}
+          />
+          <div className="flex justify-between text-xs text-slate-400 mt-1">
+            <span>1 {ui.pax}</span>
+            <span>{type === 'shared' ? `6 ${ui.paxMax}` : `8 ${ui.paxMax}`}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Result Display */}
+      <div className={styles.resultCard}>
+        <div className={styles.priceLabel}>{ui.estimatedPrice}</div>
+        <div className={styles.price}>
+          {typeof price === 'number' ? `${price}€` : price}
+        </div>
+        <div className={styles.priceDetails}>{note}</div>
+        
+        <a 
+          href={getFormUrl()} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.actionBtn}
+        >
+          {ui.btn}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  );
+}

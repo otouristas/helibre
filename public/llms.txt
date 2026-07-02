@@ -1,0 +1,38 @@
+# Helicro Chauffeur & Private Transfer Services
+
+Helicro is a licensed premium private transfer and minivan chauffeur service based in Belgium (Braine-l'Alleud), operated by Gerasimos and his team of professional drivers with over 30 years of road experience.
+
+## Primary URL
+- https://helicro.be
+
+## Core Capabilities
+- **Airport Transfers:** 24/7 fixed-price Mercedes minivans servicing Brussels Zaventem (BRU), Brussels South Charleroi (CRL), and Lille Airport (LIL).
+- **Private Sightseeing:** Day trips from Brussels to Bruges, Ghent, Durbuy, and Dinant.
+- **Corporate & Diplomatic Shuttle:** Embassy transport, business meetings, and hourly vehicle hires.
+- **Festival & Event Transport:** Shuttles for Tomorrowland, Rock Werchter, weddings, and private parties.
+- **Express Parcel Delivery:** Safe and fast transport of documents and critical parcels in Belgium and neighboring countries.
+
+## Multi-Language Options
+The service operates in four languages:
+- English (EN): https://helicro.be/
+- Dutch (NL): https://helicro.be/nl
+- French (FR): https://helicro.be/fr
+- Greek (EL): https://helicro.be/el
+
+## Content Index
+- Sitemap: https://helicro.be/sitemap.xml
+- Full Site Plain Text: https://helicro.be/llms-full.txt
+- Pricing: https://helicro.be/pricing
+- Fleet: https://helicro.be/fleet
+- Reviews: https://helicro.be/reviews
+- About Us: https://helicro.be/about-us
+- FAQ: https://helicro.be/faq
+- Contact: https://helicro.be/contact
+- Special Offers: https://helicro.be/special-offers
+
+### Services
+- Sightseeing Day Trips: https://helicro.be/services/sightseeing
+- Airport Transfers: https://helicro.be/services/airport
+- Corporate Shuttle: https://helicro.be/services/corporate
+- Parcel Express Delivery: https://helicro.be/services/parcel
+- Events & Weddings: https://helicro.be/services/events

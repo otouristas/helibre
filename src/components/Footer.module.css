@@ -1,0 +1,144 @@
+.footer {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  padding: 64px 24px 24px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  transition: var(--transition-fast);
+  display: inline-block;
+}
+
+.link:hover {
+  color: var(--accent);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.contactItem svg {
+  color: var(--accent);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contactLink {
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.footerLogo {
+  height: 54px;
+  width: auto;
+  align-self: flex-start;
+  margin-bottom: 18px;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bottomLink {
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+.bottomLink:hover {
+  color: var(--accent);
+  text-decoration: none;
+}

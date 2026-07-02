@@ -1,0 +1,89 @@
+.container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  border: 2px solid var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  position: relative;
+}
+
+.button:hover {
+  transform: scale(1.08);
+  background: var(--primary-light);
+}
+
+.playing {
+  background: var(--primary-light);
+}
+
+.tooltip {
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Audio wave bars */
+.waves {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+}
+
+.bar {
+  width: 3px;
+  background: var(--accent);
+  border-radius: 1px;
+  height: 4px;
+  transition: height 0.15s ease;
+}
+
+.animating .bar {
+  animation: bounce 0.8s ease infinite alternate;
+}
+
+.animating .bar:nth-child(1) { animation-delay: 0.1s; }
+.animating .bar:nth-child(2) { animation-delay: 0.3s; }
+.animating .bar:nth-child(3) { animation-delay: 0.5s; }
+.animating .bar:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes bounce {
+  from {
+    height: 4px;
+  }
+  to {
+    height: 18px;
+  }
+}

@@ -1,0 +1,271 @@
+/* Refined Header Navigation Styles */
+
+.headerWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Slim Topbar styling */
+.topbar {
+  background-color: #001a33;
+  color: #ffffff;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 24px;
+}
+
+.topbarInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topbarContacts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbarLink {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.topbarLink:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.topbarLink svg {
+  color: var(--accent);
+}
+
+.topbarLanguages {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.langLink {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+}
+
+.langLink:hover, .langActive {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Sticky Main Navbar */
+.navbar {
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  padding: 0 24px;
+  background: rgba(0, 38, 77, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scrolled {
+  position: fixed;
+  top: 0; /* Sticks to top viewport */
+  height: 75px;
+  background: rgba(0, 38, 77, 0.92);
+  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.logoImg {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.scrolled .logoImg {
+  height: 44px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 992px) {
+  .navLinks {
+    display: none;
+  }
+}
+
+.navItem {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.navItem:hover, .active {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 22, 44, 0.96);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 8px 0;
+  width: 240px;
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.dropdownContainer:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background: var(--accent);
+  color: #111827;
+  text-decoration: none;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Yellow Gold Booking CTA */
+.ctaBtn {
+  background-color: var(--accent);
+  color: #111827;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(254, 232, 61, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ctaBtn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px rgba(254, 232, 61, 0.4);
+  text-decoration: none;
+  color: #111827;
+}
+
+.ctaBtn svg {
+  transition: var(--transition-fast);
+}
+
+.ctaBtn:hover svg {
+  transform: translateX(2px);
+}
+
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex;
+  }
+  .rightSection {
+    display: none;
+  }
+}
+
+/* Mobile topbar adjustments */
+@media (max-width: 576px) {
+  .topbar {
+    display: none; /* Hide topbar on small screens to save space */
+  }
+  .navbar {
+    top: 0;
+  }
+}
