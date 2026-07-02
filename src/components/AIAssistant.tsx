@@ -29,9 +29,9 @@ export default function AIAssistant() {
   // UI labels based on active language
   const ui = {
     en: {
-      launcherTooltip: 'Chat with Jerry AI',
-      headerTitle: 'Jerry AI Assistant',
-      headerSubtitle: 'Online • Vetted Driver Agent',
+      launcherTooltip: 'Chat with Touristas AI',
+      headerTitle: 'Touristas AI',
+      headerSubtitle: 'Online • Helicro Smart Agent',
       inputPlaceholder: 'Ask about rates, fleet, child seats...',
       suggestTitle: 'Suggested Questions:',
       suggestRates: '✈️ Airport transfer rates?',
@@ -39,15 +39,17 @@ export default function AIAssistant() {
       suggestSeats: '👶 Are child seats free?',
       suggestLang: '🌍 What languages do you speak?',
       suggestDriver: '👨 Who is the driver?',
-      botGreeting: 'Hello! I am Gerasimos\'s AI Assistant. Ask me anything about our private transfers, Mercedes minivans, fixed rates, child seats, or day trips in Belgium!',
+      botGreeting: 'Hello! I am Touristas AI, the virtual assistant for Helicro. Ask me anything about our private transfers, Mercedes minivans, fixed rates, child seats, or day trips in Belgium!',
       whatsappCta: 'Message Gerasimos on WhatsApp',
       bookCta: 'Book Transfer Online',
-      phoneCta: 'Call Chauffeur Direct'
+      phoneCta: 'Call Chauffeur Direct',
+      disclaimer: 'Disclaimer: This is an AI assistant. Please double check final rates and routes with our dispatch.',
+      poweredBy: 'Powered by Touristas Technologies'
     },
     nl: {
-      launcherTooltip: 'Chat met Jerry AI',
-      headerTitle: 'Jerry AI Assistent',
-      headerSubtitle: 'Online • Ervaren Chauffeur Agent',
+      launcherTooltip: 'Chat met Touristas AI',
+      headerTitle: 'Touristas AI',
+      headerSubtitle: 'Online • Helicro Smart Agent',
       inputPlaceholder: 'Vraag naar tarieven, wagens, kinderzitjes...',
       suggestTitle: 'Voorgestelde Vragen:',
       suggestRates: '✈️ Luchthaven tarieven?',
@@ -55,15 +57,17 @@ export default function AIAssistant() {
       suggestSeats: '👶 Zijn kinderzitjes gratis?',
       suggestLang: '🌍 Welke talen spreekt u?',
       suggestDriver: '👨 Wie is de chauffeur?',
-      botGreeting: 'Hallo! Ik ben de AI-assistent van Gerasimos. Vraag me alles over onze privé-transfers, Mercedes minivans, vaste tarieven, kinderzitjes of dagtochten in België!',
+      botGreeting: 'Hallo! Ik ben Touristas AI, de virtuele assistent voor Helicro. Vraag me alles over onze privé-transfers, Mercedes minivans, vaste tarieven, kinderzitjes of dagtochten in België!',
       whatsappCta: 'Stuur Gerasimos een WhatsApp',
       bookCta: 'Online Rit Boeken',
-      phoneCta: 'Direct Chauffeur Bellen'
+      phoneCta: 'Direct Chauffeur Bellen',
+      disclaimer: 'Disclaimer: Dit is een AI-assistent. Controleer definitieve tarieven en ritten met onze planning.',
+      poweredBy: 'Aangedreven door Touristas Technologies'
     },
     fr: {
-      launcherTooltip: 'Discutez avec Jerry AI',
-      headerTitle: 'Assistant Jerry AI',
-      headerSubtitle: 'En ligne • Agent Chauffeur Agréé',
+      launcherTooltip: 'Discutez avec Touristas AI',
+      headerTitle: 'Touristas AI',
+      headerSubtitle: 'En ligne • Agent Intelligent Helicro',
       inputPlaceholder: 'Tarifs, flotte, sièges enfants...',
       suggestTitle: 'Suggestions :',
       suggestRates: '✈️ Tarifs navette aéroport ?',
@@ -71,15 +75,17 @@ export default function AIAssistant() {
       suggestSeats: '👶 Sièges enfants gratuits ?',
       suggestLang: '🌍 Quelles langues parlez-vous ?',
       suggestDriver: '👨 Qui est le chauffeur ?',
-      botGreeting: 'Bonjour ! Je suis l\'assistant IA de Gerasimos. Posez-moi vos questions sur nos transferts privés, nos minivans Mercedes, nos prix fixes, nos sièges enfants ou nos excursions en Belgique !',
+      botGreeting: 'Bonjour ! Je suis Touristas AI, l\'assistant virtuel de Helicro. Posez-moi vos questions sur nos transferts privés, nos minivans Mercedes, nos prix fixes, nos sièges enfants ou nos excursions en Belgique !',
       whatsappCta: 'Contacter Gerasimos sur WhatsApp',
       bookCta: 'Réserver en ligne',
-      phoneCta: 'Appeler le Chauffeur Direct'
+      phoneCta: 'Appeler le Chauffeur Direct',
+      disclaimer: 'Avertissement : Ceci est un assistant IA. Veuillez valider les tarifs et trajets définitifs auprès de notre répartition.',
+      poweredBy: 'Propulsé par Touristas Technologies'
     },
     el: {
-      launcherTooltip: 'Συνομιλία με Jerry AI',
-      headerTitle: 'Jerry AI Βοηθός',
-      headerSubtitle: 'Συνδεδεμένος • Εκπρόσωπος Οδηγού',
+      launcherTooltip: 'Συνομιλία με Touristas AI',
+      headerTitle: 'Touristas AI',
+      headerSubtitle: 'Συνδεδεμένος • Εκπρόσωπος Helicro',
       inputPlaceholder: 'Ρωτήστε για τιμές, στόλο, παιδικά καθίσματα...',
       suggestTitle: 'Προτεινόμενες Ερωτήσεις:',
       suggestRates: '✈️ Τιμές για αεροδρόμια;',
@@ -87,10 +93,12 @@ export default function AIAssistant() {
       suggestSeats: '👶 Είναι δωρεάν τα παιδικά καθίσματα;',
       suggestLang: '🌍 Ποιες γλώσσες μιλάτε;',
       suggestDriver: '👨 Ποιος είναι ο οδηγός;',
-      botGreeting: 'Γεια σας! Είμαι ο AI βοηθός του Γεράσιμου. Ρωτήστε με ό,τι θέλετε για τις ιδιωτικές μεταφορές, τα Mercedes minivans, τις σταθερές τιμές, τα παιδικά καθίσματα ή τις εκδρομές μας στο Βέλγιο!',
+      botGreeting: 'Γεια σας! Είμαι ο Touristas AI, ο εικονικός βοηθός της Helicro. Ρωτήστε με ό,τι θέλετε για τις ιδιωτικές μεταφορές, τα Mercedes minivans, τις σταθερές τιμές, τα παιδικά καθίσματα ή τις εκδρομές μας στο Βέλγιο!',
       whatsappCta: 'Μήνυμα στον Γεράσιμο στο WhatsApp',
       bookCta: 'Online Κράτηση Μεταφοράς',
-      phoneCta: 'Καλέστε τον Οδηγό Απευθείας'
+      phoneCta: 'Καλέστε τον Οδηγό Απευθείας',
+      disclaimer: 'Αποποίηση ευθύνης: Αυτός είναι ένας AI βοηθός. Παρακαλούμε επιβεβαιώστε τις τελικές τιμές και διαδρομές με το κέντρο κρατήσεων.',
+      poweredBy: 'Powered by Touristas Technologies'
     }
   }[lang];
 
@@ -102,7 +110,6 @@ export default function AIAssistant() {
   };
 
   useEffect(() => {
-    // Set initial greeting
     setMessages([
       {
         id: 'welcome',
@@ -111,7 +118,6 @@ export default function AIAssistant() {
       }
     ]);
 
-    // Show tooltip reminder shortly after mount
     const timer = setTimeout(() => {
       setShowTooltip(true);
     }, 4000);
@@ -119,14 +125,12 @@ export default function AIAssistant() {
   }, [lang]);
 
   useEffect(() => {
-    // Auto scroll chat to bottom
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   const handleSend = (text: string) => {
     if (!text.trim()) return;
 
-    // Add user message
     const userMsg: Message = {
       id: Date.now().toString(),
       sender: 'user',
@@ -135,14 +139,12 @@ export default function AIAssistant() {
     setMessages((prev) => [...prev, userMsg]);
     setInputValue('');
 
-    // Process reply
     setTimeout(() => {
       const reply = generateAIResponse(text.toLowerCase());
       setMessages((prev) => [...prev, reply]);
-    }, 6000 * 0.1); // Quick 600ms typing delay
+    }, 600);
   };
 
-  // Simple client-side NLP matcher to answer questions using site database
   const generateAIResponse = (query: string): Message => {
     const id = Date.now().toString();
     const defaultCtas: Message['cta'] = [
@@ -150,7 +152,6 @@ export default function AIAssistant() {
       { label: ui.whatsappCta, url: links.whatsapp, type: 'whatsapp' }
     ];
 
-    // 1. Check for rates keywords
     if (
       query.includes('rate') || query.includes('price') || query.includes('fare') || query.includes('cost') ||
       query.includes('tarief') || query.includes('tarif') || query.includes('harga') ||
@@ -167,7 +168,6 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 2. Check for child safety seats
     if (
       query.includes('child') || query.includes('baby') || query.includes('booster') || query.includes('seat') ||
       query.includes('infant') || query.includes('maxi') || query.includes('kinderzitje') ||
@@ -183,7 +183,6 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 3. Check for fleet / vehicles
     if (
       query.includes('fleet') || query.includes('car') || query.includes('vehicle') || query.includes('mercedes') ||
       query.includes('vito') || query.includes('v-class') || query.includes('pax') || query.includes('passenger') ||
@@ -200,7 +199,6 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 4. Check for languages
     if (
       query.includes('lang') || query.includes('speak') || query.includes('greek') || query.includes('french') ||
       query.includes('dutch') || query.includes('english') || query.includes('taal') || query.includes('talen') ||
@@ -216,14 +214,13 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 5. Check for driver / Gerasimos info
     if (
       query.includes('driver') || query.includes('gerasimos') || query.includes('jerry') || query.includes('who') ||
       query.includes('experience') || query.includes('military') || query.includes('background') ||
       query.includes('chauffeur') || query.includes('οδηγος') || query.includes('γερασιμος') || query.includes('ποιος')
     ) {
       const texts = {
-        en: "Your driver is **Gerasimos (Jerry)**, a licensed private transfer operator based in Braine-l'Alleud. Gerasimos has a disciplined military background, specializing in logistics and defensive driving safety. With **over 30 years of accident-free driving** on Belgian and European roads, you are in exceptionally safe hands.",
+        en: "Your driver is **Gerasimos (Jerry)**, a licensed private transfer operator based in Braine-l'Alleud. Gerasimos has a disciplined military background, specializing in logistics and driving safety. With **over 30 years of accident-free driving** on Belgian and European roads, you are in exceptionally safe hands.",
         nl: "Uw chauffeur is **Gerasimos (Jerry)**, een erkende privévervoerder gevestigd in Braine-l'Alleud. Gerasimos heeft een gedisciplineerde militaire achtergrond en is gespecialiseerd in defensief rijden. Met **meer dan 30 jaar ongevalvrije wegerijervaring** in België reist u in alle veiligheid.",
         fr: "Votre chauffeur est **Gerasimos (Jerry)**, exploitant de transport privé agréé basé à Braine-l'Alleud. Gerasimos a une solide formation militaire, spécialisé dans la logistique de sécurité et la conduite préventive. Fort de **plus de 30 ans de conduite sans accident**, il vous garantit un trajet serein.",
         el: "Ο οδηγός σας είναι ο **Γεράσιμος (Jerry)**, αδειοδοτημένος οδηγός ιδιωτικών μεταφορών με έδρα το Braine-l'Alleud. Ο Γεράσιμος έχει στρατιωτικό υπόβαθρο, με ειδίκευση στην ασφαλή επιμελητεία και την αμυντική οδήγηση. Με **πάνω από 30 χρόνια εμπειρίας χωρίς ατυχήματα** στους ευρωπαϊκούς δρόμους, είστε σε απόλυτα ασφαλή χέρια."
@@ -232,7 +229,6 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 6. Check for sightseeing / day trips
     if (
       query.includes('sight') || query.includes('tour') || query.includes('trip') || query.includes('bruges') ||
       query.includes('ghent') || query.includes('dinant') || query.includes('durbuy') || query.includes('daytrip') ||
@@ -248,7 +244,6 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // 7. Check for payment method / cancellation policy
     if (
       query.includes('cancel') || query.includes('refund') || query.includes('change') || query.includes('policy') ||
       query.includes('pay') || query.includes('card') || query.includes('cash') || query.includes('invoice') ||
@@ -264,10 +259,9 @@ export default function AIAssistant() {
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
     }
 
-    // Default Fallback response
     const fallbackTexts = {
-      en: "I'm not sure about that particular detail, but Gerasimos or our dispatch team can answer you directly! Please message us on WhatsApp or call us right now.",
-      nl: "Ik ben niet helemaal zeker over dit specifieke detail, maar Gerasimos of onze dispatch kan u direct antwoorden! Stuur ons een WhatsApp of bel ons nu.",
+      en: "I'm not sure about that detail, but Gerasimos or our dispatch team can answer you directly! Please message us on WhatsApp or call us right now.",
+      nl: "Ik ben niet helemaal zeker over dit specifieke detail, maar Gerasimos of onze planning kan u direct antwoorden! Stuur ons een WhatsApp of bel ons nu.",
       fr: "Je ne suis pas certain de ce détail, mais Gerasimos ou notre équipe de répartition peuvent vous répondre directement ! Écrivez-nous sur WhatsApp ou appelez-nous.",
       el: "Δεν είμαι απόλυτα σίγουρος για αυτή τη λεπτομέρεια, αλλά ο Γεράσιμος ή η ομάδα μας μπορεί να σας απαντήσει αμέσως! Στείλτε μας μήνυμα στο WhatsApp ή καλέστε μας τώρα."
     }[lang];
@@ -329,7 +323,13 @@ export default function AIAssistant() {
         <div className={styles.header}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div className={styles.avatarContainer}>
-              <img src="/images/gerasimos-portrait.jpg" alt="Driver Gerasimos" className={styles.avatar} />
+              <div className={styles.aiAvatar}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.aiAvatarSvg}>
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
               <span className={styles.onlineBadge}></span>
             </div>
             <div>
@@ -386,29 +386,39 @@ export default function AIAssistant() {
           </div>
         </div>
 
-        {/* Input Form */}
-        <form 
-          className={styles.inputArea} 
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSend(inputValue);
-          }}
-        >
-          <input 
-            type="text" 
-            className={styles.input} 
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder={ui.inputPlaceholder}
-            aria-label="Message to AI assistant"
-          />
-          <button type="submit" className={styles.sendBtn} aria-label="Send message">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
-        </form>
+        {/* Input Form & Footer branding */}
+        <div className={styles.inputContainer}>
+          <form 
+            className={styles.inputArea} 
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSend(inputValue);
+            }}
+          >
+            <input 
+              type="text" 
+              className={styles.input} 
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder={ui.inputPlaceholder}
+              aria-label="Message to AI assistant"
+            />
+            <button type="submit" className={styles.sendBtn} aria-label="Send message">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+          
+          {/* Disclaimer & Powered By Footer */}
+          <div className={styles.disclaimerBlock}>
+            <p className={styles.disclaimerText}>{ui.disclaimer}</p>
+            <p className={styles.poweredByText}>
+              {ui.poweredBy} <span className={styles.brandAccent}>Touristas Technologies</span>
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
