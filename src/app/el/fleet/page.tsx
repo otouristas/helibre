@@ -1,2 +1,22 @@
-import Page from '@/app/fleet/page';
-export default Page;
+import React from 'react';
+import FleetClient from '@/app/fleet/FleetClient';
+import type { Metadata } from 'next';
+import { metaTranslations } from '@/config/metaTranslations';
+
+export const metadata: Metadata = {
+  title: metaTranslations['fleet']['el'].title,
+  description: metaTranslations['fleet']['el'].description,
+  alternates: {
+    canonical: 'https://helicro.be/el/fleet',
+    languages: {
+      'en': 'https://helicro.be/fleet',
+      'nl': 'https://helicro.be/nl/fleet',
+      'fr': 'https://helicro.be/fr/fleet',
+      'el': 'https://helicro.be/el/fleet',
+    }
+  }
+};
+
+export default function Page() {
+  return <FleetClient lang="el" />;
+}
