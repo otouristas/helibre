@@ -13,24 +13,25 @@ interface Vehicle {
   useCase: string;
 }
 
-export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
   // Localization Dictionary for Fleet
   const ui = {
     en: {
-      metaTitle: 'Helicro Fleet | Premium Mercedes Minivans and Chauffeur Rides',
-      metaDesc: 'Comfortable air-conditioned Mercedes minivans up to 8 passengers, with large luggage space. Vetted drivers, child seats on request.',
+      metaTitle: 'Helicro Fleet | Premium Ford Minivans and Chauffeur Rides',
+      metaDesc: 'Comfortable air-conditioned Ford minivans up to 8 passengers, with large luggage space. Vetted drivers, child seats on request.',
       title: 'Our Fleet',
-      subtitle: 'Experience premium travel in Belgium with our executive Mercedes-Benz minivans, clean, comfortable and ready for any destination.',
+      subtitle: 'Experience premium travel in Belgium with our executive Ford minivans, clean, comfortable and ready for any destination.',
       capacity: 'Capacity:',
       luggage: 'Luggage:',
       bestFor: 'Best For:',
       seatsTitle: 'Child & Safety Seats',
       seatsDesc: 'Your family\'s safety is our topmost priority. We provide secure infant seats, toddler car seats, and booster cushions completely free of charge. Please mention the quantities and ages of your children during the online request so we can prepare the vehicle.',
+      seatsGalleryTitle: 'Our Free Child Seats & Booster Cushions',
       sanTitle: 'Sanitization & Quality Standards',
-      sanDesc: 'Every Mercedes vehicle undergoes a rigorous cleaning and interior sanitization process before and after each transfer. Our drivers are non-smokers, vetted professionals, and follow strict Belgian transport regulations.',
+      sanDesc: 'Every Ford vehicle undergoes a rigorous cleaning and interior sanitization process before and after each transfer. Our drivers are non-smokers, vetted professionals, and follow strict Belgian transport regulations.',
       
       // Vito specs
       vitoCap: 'Up to 8 Passengers',
@@ -45,17 +46,18 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vClassAm: ['Leather Conference Seating', 'Individual Climate Controls', 'Premium Sound System', 'Panoramic Roof']
     },
     nl: {
-      metaTitle: 'Wagenpark van Helicro | Luxe Mercedes Minivans & Chauffeurs',
-      metaDesc: 'Comfortabele Mercedes minivans met airco voor maximaal 8 personen. Ruime kofferbak, ervaren chauffeurs en gratis kinderzitjes.',
+      metaTitle: 'Wagenpark van Helicro | Luxe Ford Minivans & Chauffeurs',
+      metaDesc: 'Comfortabele Ford minivans met airco voor maximaal 8 personen. Ruime kofferbak, ervaren chauffeurs en gratis kinderzitjes.',
       title: 'Ons Wagenpark',
-      subtitle: 'Ervaar luxe reizen in België met onze executive Mercedes-Benz minivans. Altijd schoon, ruim en comfortabel.',
+      subtitle: 'Ervaar luxe reizen in België met onze executive Ford minivans. Altijd schoon, ruim en comfortabel.',
       capacity: 'Capaciteit:',
       luggage: 'Bagage:',
       bestFor: 'Ideaal Voor:',
       seatsTitle: 'Kinderzitjes & Veiligheid',
       seatsDesc: 'De veiligheid van uw gezin is onze hoogste prioriteit. Wij leveren gratis babystoeltjes en verhogers. Geef de leeftijd en het aantal kinderen op bij uw boeking zodat wij het voertuig kunnen inrichten.',
-      sanTitle: 'Hygiëne & Kwaliteitseisen',
-      sanDesc: 'Elk voertuig ondergaat een grondige reiniging en desinfectie voor en na elke rit. Onze chauffeurs zijn niet-rokers, gecertificeerd en rijden strikt volgens de Belgische wetgeving.',
+      seatsGalleryTitle: 'Onze Gratis Kinderzitjes & Veiligheidsstoeltjes',
+      sanTitle: 'Schoonmaak- & Kwaliteitsnormen',
+      sanDesc: 'Elke Ford wordt voor en na elke rit grondig gereinigd en ontsmet. Onze chauffeurs zijn professioneel, niet-rokend en rijden volgens de Belgische transportregels.',
       
       vitoCap: 'Tot 8 Passagiers',
       vitoLug: '8 Grote Koffers + Handbagage',
@@ -68,17 +70,18 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vClassAm: ['Lederen Conferentiestoelen', 'Individuele Klimaatregeling', 'Premium Geluidssysteem', 'Panoramadak']
     },
     fr: {
-      metaTitle: 'Flotte Helicro | Monospaces Mercedes Premium avec Chauffeur',
-      metaDesc: 'Monospaces Mercedes climatisés confortables jusqu\'à 8 passagers, grand coffre. Chauffeurs agréés, sièges enfants sur demande.',
+      metaTitle: 'Flotte Helicro | Monospaces Ford Premium avec Chauffeur',
+      metaDesc: 'Monospaces Ford climatisés confortables jusqu\'à 8 passagers, grand coffre. Chauffeurs agréés, sièges enfants sur demande.',
       title: 'Notre Flotte',
-      subtitle: 'Voyagez de façon premium en Belgique à bord de nos minivans Mercedes-Benz haut de gamme, propres et spacieux.',
+      subtitle: 'Voyagez de façon premium en Belgique à bord de nos minivans Ford-Benz haut de gamme, propres et spacieux.',
       capacity: 'Capacité :',
       luggage: 'Bagages :',
       bestFor: 'Idéal Pour :',
       seatsTitle: 'Sièges Enfants & Sécurité',
       seatsDesc: 'La sécurité de votre famille est notre priorité absolue. Nous fournissons des sièges auto et rehausseurs adaptés gratuitement. Veuillez préciser l\'âge des enfants lors de votre demande.',
-      sanTitle: 'Désinfection & Charte Qualité',
-      sanDesc: 'Chaque monospace Mercedes fait l\'objet d\'un nettoyage et d\'une désinfection rigoureuse de l\'habitacle avant et après chaque trajet. Chauffeurs non-fumeurs et discrets.',
+      seatsGalleryTitle: 'Nos Sièges Bébé & Rehausseurs Gratuits',
+      sanTitle: 'Normes de Propreté & Qualité',
+      sanDesc: 'Chaque véhicule Ford fait l\'objet d\'un nettoyage et d\'une désinfection minutieuse de l\'habitacle avant et après chaque trajet. Nos chauffeurs sont professionnels et non-fumeurs.',
       
       vitoCap: 'Jusqu\'à 8 Passagers',
       vitoLug: '8 Grandes Valises + Bagages à Main',
@@ -90,18 +93,41 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vClassUse: 'L\'option premium idéale pour les navettes d\'affaires, les délégations diplomatiques, mariages et excursions touristiques de standing.',
       vClassAm: ['Salon en Cuir Face-à-Face', 'Climatisation Individuelle', 'Système Audio Premium', 'Toit Panoramique']
     },
+    hr: {
+      metaTitle: 'Naš vozni park | Ford Transit i Tourneo Custom kombiji',
+      metaDesc: 'Istražite našu flotu Ford minivana. Potpuno dezinficirana i klimatizirana vozila za do 8 putnika s velikim prostorom za prtljagu.',
+      title: 'Naš vozni park',
+      subtitle: 'Doživite vrhunsko putovanje u Belgiji s našim Ford minivanima, čistim, udobnim i spremnima za svako odredište.',
+      capacity: 'Kapacitet:',
+      luggage: 'Prtljaga:',
+      bestFor: 'Najbolje za:',
+      seatsTitle: 'Dječje i sigurnosne sjedalice',
+      seatsDesc: 'Sigurnost vaše obitelji naš je najveći prioritet. Pružamo sigurne dječje sjedalice, autosjedalice za malu djecu i booster jastuke potpuno besplatno. Molimo navedite količinu i dob djece prilikom rezervacije.',
+      seatsGalleryTitle: 'Naše besplatne dječje sjedalice i boosteri',
+      sanTitle: 'Standardi higijene i čišćenja',
+      sanDesc: 'Svako Ford vozilo prolazi kroz rigorozan postupak čišćenja i dezinfekcije unutrašnjosti prije i nakon svakog transfera. Naši vozači su profesionalci, nepušači i poštuju belgijske propise.',
+      vitoCap: 'Do 8 putnika',
+      vitoLug: '8 velikih kovčega + ručna prtljaga',
+      vitoUse: 'Savršeno za transfere do zračne luke, povoljne grupne festivalske prijevoze, prijevoz paketa i sportske opreme.',
+      vitoAm: ['Dvo-zonska klimatizacija', 'Zatamnjena stakla', 'USB priključci', 'Podesiva sjedala'],
+      vClassCap: 'Do 7 putnika',
+      vClassLug: '7 velikih kovčega + ručna prtljaga',
+      vClassUse: 'Idealan premium izbor za korporativne prijevoze, diplomatska veleposlanstva, vjenčanja i luksuzne izlete.',
+      vClassAm: ['Kožna sjedala u obliku konferencije', 'Pojedinačne kontrole klime', 'Vrhunski audio sustav', 'Panoramski krov']
+    },
     el: {
-      metaTitle: 'Ο Στόλος της Helicro | Mercedes Minivans & Υπηρεσίες Σοφέρ',
-      metaDesc: 'Ανετα κλιματιζόμενα Mercedes minivans έως 8 επιβατών, με μεγάλους χώρους αποσκευών. Εμπειροι οδηγοί, παιδικά καθίσματα δωρεάν.',
+      metaTitle: 'Ο Στόλος της Helicro | Ford Minivans & Υπηρεσίες Σοφέρ',
+      metaDesc: 'Ανετα κλιματιζόμενα Ford minivans έως 8 επιβατών, με μεγάλους χώρους αποσκευών. Εμπειροι οδηγοί, παιδικά καθίσματα δωρεάν.',
       title: 'Ο Στόλος μας',
-      subtitle: 'Απολαύστε premium μετακινήσεις στο Βέλγιο με τα πολυτελή minivans Mercedes-Benz, καθαρά και έτοιμα για κάθε προορισμό.',
+      subtitle: 'Απολαύστε premium μετακινήσεις στο Βέλγιο με τα πολυτελή Ford minivans, καθαρά και έτοιμα για κάθε προορισμό.',
       capacity: 'Χωρητικότητα:',
       luggage: 'Αποσκευές:',
       bestFor: 'Ιδανικό για:',
       seatsTitle: 'Παιδικά Καθίσματα Ασφαλείας',
       seatsDesc: 'Η ασφάλεια της οικογένειάς σας είναι η προτεραιότητά μας. Παρέχουμε βρεφικά και παιδικά καθίσματα εντελώς δωρεάν. Παρακαλούμε αναφέρετε την ηλικία των παιδιών κατά την κράτηση.',
-      sanTitle: 'Υγιεινή & Πρότυπα Ποιότητας',
-      sanDesc: 'Κάθε όχημα Mercedes απολυμαίνεται σχολαστικά πριν και μετά από κάθε μεταφορά. Οι οδηγοί μας είναι μη καπνιστές, πιστοποιημένοι επαγγελματίες.',
+      seatsGalleryTitle: 'Τα Δωρεάν Παιδικά Καθίσματα & Booster',
+      sanTitle: 'Πρότυπα Υγιεινής & Καθαριότητας',
+      sanDesc: 'Κάθε όχημα Ford υποβάλλεται σε σχολαστικό καθαρισμό και απολύμανση πριν και μετά από κάθε μεταφορά. Οι οδηγοί μας είναι μη καπνιστές, επαγγελματίες.',
       
       vitoCap: 'Εως 8 Επιβάτες',
       vitoLug: '8 Μεγάλες Αποσκευές + Χειραποσκευές',
@@ -117,7 +143,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
 
   const vehicles: Vehicle[] = [
     {
-      name: 'Mercedes-Benz Vito Tourer',
+      name: 'Ford Transit Custom',
       img: '/images/car-1.jpg',
       capacity: ui.vitoCap,
       luggage: ui.vitoLug,
@@ -125,7 +151,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       useCase: ui.vitoUse
     },
     {
-      name: 'Mercedes-Benz V-Class',
+      name: 'Ford Tourneo Custom',
       img: '/images/car-3.jpg',
       capacity: ui.vClassCap,
       luggage: ui.vClassLug,
@@ -272,6 +298,30 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
                 {ui.sanDesc}
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Child Seat Photo Gallery */}
+        <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--primary-dark)', marginBottom: '20px', textAlign: 'center' }}>
+            {ui.seatsGalleryTitle}
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+            {[
+              { src: '/images/child-seat-1.jpg', title: lang === 'el' ? 'Παιδικό Κάθισμα (Kinderkraft)' : (lang === 'fr' ? 'Siège Enfant (Kinderkraft)' : (lang === 'nl' ? 'Kinderzitje (Kinderkraft)' : (lang === 'hr' ? 'Dječja sjedalica (Kinderkraft)' : 'Child Seat (Kinderkraft)'))) },
+              { src: '/images/child-seat-2.jpg', title: lang === 'el' ? 'Βρεφικό Κάθισμα (Joie)' : (lang === 'fr' ? 'Siège Bébé (Joie)' : (lang === 'nl' ? 'Babystoeltje (Joie)' : (lang === 'hr' ? 'Sjedalica za bebe (Joie)' : 'Infant Seat (Joie)'))) },
+              { src: '/images/child-seat-3.jpg', title: lang === 'el' ? 'Booster Κάθισμα' : (lang === 'fr' ? 'Rehausseur Simple' : (lang === 'nl' ? 'Verhogingskussen' : (lang === 'hr' ? 'Booster sjedalica' : 'Booster Seat'))) },
+              { src: '/images/child-seat-4.jpg', title: lang === 'el' ? 'Παιδικό Κάθισμα (Mickey Mouse)' : (lang === 'fr' ? 'Siège Enfant (Mickey)' : (lang === 'nl' ? 'Kinderzitje (Mickey)' : (lang === 'hr' ? 'Dječja sjedalica (Mickey Mouse)' : 'Child Seat (Mickey Mouse)'))) }
+            ].map((img, i) => (
+              <div key={i} style={{ background: '#ffffff', borderRadius: 'var(--radius)', overflow: 'hidden', border: '1px solid var(--card-border)', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ height: '240px', width: '100%', overflow: 'hidden' }}>
+                  <img src={img.src} alt={img.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+                <div style={{ padding: '12px', textAlign: 'center', fontSize: '13.5px', fontWeight: 600, color: 'var(--primary-dark)' }}>
+                  {img.title}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

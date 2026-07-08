@@ -40,7 +40,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
       routeTitle: 'Route & Travel Information',
       areaTitle: 'Premium Chauffeur Services in',
       communeTitle: 'Local Chauffeur Advantages',
-      sightTitle: 'Bruges, Ghent & Dinant Sights & Itinerary',
+      sightTitle: 'Bruges & Ghent Sights & Itinerary',
       festTitle: 'Hassle-Free Festival Transfer',
       serviceTitle: 'Service Details'
     },
@@ -54,7 +54,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
       routeTitle: 'Route- & Reisinformatie',
       areaTitle: 'Premium Chauffeursdiensten in',
       communeTitle: 'Voordelen van een Lokale Chauffeur',
-      sightTitle: 'Brugge, Gent & Dinant Bezienswaardigheden',
+      sightTitle: 'Brugge & Gent Bezienswaardigheden',
       festTitle: 'Zorgeloos Festival Vervoer',
       serviceTitle: 'Details van de Dienst'
     },
@@ -68,9 +68,23 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
       routeTitle: 'Informations de Trajet & Route',
       areaTitle: 'Service de Chauffeur de Standing à',
       communeTitle: 'Avantages d\'un Chauffeur Local',
-      sightTitle: 'Visites & Itinéraire Bruges, Gand & Dinant',
+      sightTitle: 'Visites & Itinéraire Bruges & Gand',
       festTitle: 'Transfert Festival Sans Stress',
       serviceTitle: 'Détails du Service'
+    },
+        hr: {
+      home: 'Početna',
+      related: 'Povezane usluge i rute:',
+      targeted: 'Ciljana ključna riječ:',
+      priority: 'Prioritet:',
+      meetingTitle: 'Mjesto sastanka i upute za preuzimanje',
+      whyTitle: 'Zašto odabrati Helicro?',
+      routeTitle: 'Informacije o ruti i putovanju',
+      areaTitle: 'Premium usluge vozača u',
+      communeTitle: 'Prednosti lokalnog vozača',
+      sightTitle: 'Znamenitosti i plan puta za Bruges i Ghent',
+      festTitle: 'Bezbrige transfer na festival',
+      serviceTitle: 'Pojedinosti o usluzi'
     },
     el: {
       home: 'ΑΡΧΙΚΗ',
@@ -82,7 +96,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
       routeTitle: 'ΠΛΗΡΟΦΟΡΙΕΣ ΔΙΑΔΡΟΜΗΣ & ΤΑΞΙΔΙΟΥ',
       areaTitle: 'PREMIUM ΥΠΗΡΕΣΙΕΣ ΣΟΦΕΡ ΣΕ',
       communeTitle: 'ΠΛΕΟΝΕΚΤΗΜΑΤΑ ΤΟΠΙΚΟΥ ΟΔΗΓΟΥ',
-      sightTitle: 'ΑΞΙΟΘΕΑΤΑ & ΔΙΑΔΡΟΜΕΣ ΣΕ ΜΠΡΥΖ, ΓΑΝΔΗ & ΝΤΙΝΑΝΤ',
+      sightTitle: 'ΑΞΙΟΘΕΑΤΑ & ΔΙΑΔΡΟΜΕΣ ΣΕ ΜΠΡΥΖ & ΓΑΝΔΗ',
       festTitle: 'ΜΕΤΑΦΟΡΑ ΣΕ ΦΕΣΤΙΒΑΛ ΧΩΡΙΣ ΑΓΧΟΣ',
       serviceTitle: 'ΛΕΠΤΟΜΕΡΕΙΕΣ ΥΠΗΡΕΣΙΑΣ'
     }
@@ -105,7 +119,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
           const airportName = isCharleroi ? 'Brussels South Charleroi Airport (CRL)' : 'Brussels Zaventem Airport (BRU)';
           const pickupInstructions = isCharleroi
             ? 'Uw chauffeur ontmoet u bij de officiële kiss & ride ophaalzone of in de terminal met een Helicro naambordje. Wij controleren uw vluchttijden live.'
-            : 'Uw chauffeur ontmoet u in de aankomsthal ter hoogte van het café met een naambordje. Een snelle en comfortabele overstap naar uw Mercedes minivan.';
+            : 'Uw chauffeur ontmoet u in de aankomsthal ter hoogte van het café met een naambordje. Een snelle en comfortabele overstap naar uw Ford minivan.';
           return (
             <>
               <p className="mb-6">
@@ -116,10 +130,10 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               <p className="mb-4">{pickupInstructions}</p>
               <h2 className={styles.sectionHeading}>{ui.whyTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Mercedes wagenpark:</strong> Nette, geklimatiseerde minivans (tot 8 passagiers) met ruime bagagekoffers.</li>
+                <li><strong>Ford wagenpark:</strong> Nette, geklimatiseerde minivans (tot 8 passagiers) met ruime bagagekoffers.</li>
                 <li><strong>Vaste flat rates:</strong> Geen surge pricing, geen toeslagen voor bagage of nachttarief.</li>
                 <li><strong>Vluchtmonitoring:</strong> We passen de ophaaltijd kosteloos aan op basis van uw werkelijke aankomsttijd.</li>
-                <li><strong>Meertalige chauffeurs:</strong> Vloeiend in het Engels, Nederlands, Frans en Grieks.</li>
+                <li><strong>Meertalige chauffeurs:</strong> Vloeiend in het Engels, Frans en Grieks.</li>
               </ul>
             </>
           );
@@ -127,7 +141,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
           const airportName = isCharleroi ? 'Aéroport de Bruxelles-Sud Charleroi (CRL)' : 'Aéroport de Bruxelles-Zaventem (BRU)';
           const pickupInstructions = isCharleroi
             ? 'Votre chauffeur vous accueillera à la zone de dépose-minute officielle ou dans le terminal, muni d\'un panneau Helicro. Nous suivons l\'état des vols low-cost.'
-            : 'Votre chauffeur vous attendra directement dans le Hall des Arrivées devant le café, muni d\'un panneau à votre nom. Sortie rapide vers votre minivan Mercedes.';
+            : 'Votre chauffeur vous attendra directement dans le Hall des Arrivées devant le café, muni d\'un panneau à votre nom. Sortie rapide vers votre minivan Ford.';
           return (
             <>
               <p className="mb-6">
@@ -138,10 +152,32 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               <p className="mb-4">{pickupInstructions}</p>
               <h2 className={styles.sectionHeading}>{ui.whyTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Flotte Mercedes :</strong> Minivans modernes climatisés accueillant jusqu&apos;à 8 passagers et de nombreuses valises.</li>
+                <li><strong>Flotte Ford :</strong> Minivans modernes climatisés accueillant jusqu&apos;à 8 passagers et de nombreuses valises.</li>
                 <li><strong>Tarifs fixes :</strong> Aucun supplément surprise pour les bagages, le trafic ou les trajets nocturnes.</li>
                 <li><strong>Suivi des vols gratuit :</strong> Nous réajustons automatiquement l&apos;heure de rendez-vous en cas de retard.</li>
-                <li><strong>Chauffeur bilingue :</strong> Assistance cordiale en français, anglais, néerlandais et grec.</li>
+                <li><strong>Chauffeur multilingue :</strong> Assistance cordiale en français, anglais et grec.</li>
+              </ul>
+            </>
+          );
+                } else if (lang === 'hr') {
+          const airportName = isCharleroi ? 'Zračna luka Brussels South Charleroi (CRL)' : 'Zračna luka Brussels Zaventem (BRU)';
+          const pickupInstructions = isCharleroi
+            ? 'Vaš vozač će vas dočekati na službenoj zoni za iskrcaj ili unutar terminala s natpisom Helicro. Pratimo sve letove.'
+            : 'Vaš vozač će vas čekati izravno u dvorani za dolaske ispred kafića, držeći natpis s vašim imenom. Brzi ukrcaj u Ford kombi.';
+          return (
+            <>
+              <p className="mb-6">
+                Dobrodošli u Helicro. Pružamo privatne i udobne minivan transfere s fiksnim cijenama do i od zračne luke <strong>{airportName}</strong>. 
+                Bez obzira na vrijeme vašeg leta, naš vozač osigurava vaš prijevoz 24/7.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.meetingTitle}</h2>
+              <p className="mb-4">{pickupInstructions}</p>
+              <h2 className={styles.sectionHeading}>{ui.whyTitle}</h2>
+              <ul className={styles.ul}>
+                <li><strong>Flota Ford :</strong> Moderni klimatizirani minivani za do 8 putnika s mnogo prostora za prtljagu.</li>
+                <li><strong>Fiksne cijene :</strong> Bez skrivenih naknada za prtljagu, prometne gužve ili noćne vožnje.</li>
+                <li><strong>Praćenje leta :</strong> Besplatno prilagođavamo vrijeme preuzimanja u slučaju kašnjenja leta.</li>
+                <li><strong>Vozač govori jezike :</strong> Korisna usluga na engleskom, grčkom i francuskom jeziku.</li>
               </ul>
             </>
           );
@@ -149,7 +185,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
           const airportName = isCharleroi ? 'Αεροδρόμιο Brussels South Charleroi (CRL)' : 'Αεροδρόμιο Brussels Zaventem (BRU)';
           const pickupInstructions = isCharleroi
             ? 'Ο οδηγός σας θα σας συναντήσει στην επίσημη ζώνη Kiss & Ride ή εντός του τερματικού σταθμού, κρατώντας μια πινακίδα Helicro. Παρακολουθούμε ζωντανά την πτήση σας για τυχόν καθυστερήσεις.'
-            : 'Ο οδηγός σας θα σας συναντήσει απευθείας στην έξοδο της αίθουσας αφίξεων, μπροστά από το καφέ, κρατώντας μια πινακίδα με το όνομά σας. Γρήγορη και άνετη επιβίβαση στο Mercedes minivan.';
+            : 'Ο οδηγός σας θα σας συναντήσει απευθείας στην έξοδο της αίθουσας αφίξεων, μπροστά από το καφέ, κρατώντας μια πινακίδα με το όνομά σας. Γρήγορη και άνετη επιβίβαση στο Ford minivan.';
           return (
             <>
               <p className="mb-6">
@@ -160,10 +196,10 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               <p className="mb-4">{pickupInstructions}</p>
               <h2 className={styles.sectionHeading}>{ui.whyTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Στόλος Mercedes:</strong> Καθαρά, άνετα, κλιματιζόμενα minivans (έως 8 επιβάτες) με μεγάλους χώρους αποσκευών.</li>
+                <li><strong>Στόλος Ford:</strong> Καθαρά, άνετα, κλιματιζόμενα minivans (έως 8 επιβάτες) με μεγάλους χώρους αποσκευών.</li>
                 <li><strong>Σταθερές τιμές:</strong> Χωρίς αυξήσεις τιμών, χωρίς επιπλέον χρεώσεις αποσκευών ή νυχτερινά τιμολόγια.</li>
                 <li><strong>Δωρεάν παρακολούθηση πτήσης:</strong> Ο οδηγός προσαρμόζει αυτόματα την ώρα παραλαβής βάσει της πραγματικής ώρας άφιξης.</li>
-                <li><strong>Γλωσσική υποστήριξη:</strong> Οι οδηγοί μας μιλούν άπταιστα Ελληνικά, Αγγλικά, Γαλλικά και Ολλανδικά.</li>
+                <li><strong>Γλωσσική υποστήριξη:</strong> Οι οδηγοί μας μιλούν άπταιστα Ελληνικά, Αγγλικά και Γαλλικά.</li>
               </ul>
             </>
           );
@@ -172,7 +208,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
           const airportName = isCharleroi ? 'Brussels South Charleroi Airport (CRL)' : 'Brussels Zaventem Airport (BRU)';
           const pickupInstructions = isCharleroi
             ? 'Your chauffeur will meet you at the official passenger pick-up zone or inside the terminal, holding a Helicro sign. We monitor your flight live for budget airline delays.'
-            : 'Your chauffeur will meet you directly at the Arrivals Hall exit, right in front of the café, holding a name card. Smooth, fast exit to your Mercedes minivan.';
+            : 'Your chauffeur will meet you directly at the Arrivals Hall exit, right in front of the café, holding a name card. Smooth, fast exit to your Ford minivan.';
           return (
             <>
               <p className="mb-6">
@@ -183,10 +219,10 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               <p className="mb-4">{pickupInstructions}</p>
               <h2 className={styles.sectionHeading}>{ui.whyTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Mercedes fleet:</strong> Clean, comfortable air-conditioned minivans fitting up to 8 passengers with generous luggage capacity.</li>
+                <li><strong>Ford fleet:</strong> Clean, comfortable air-conditioned minivans fitting up to 8 passengers with generous luggage capacity.</li>
                 <li><strong>Fixed Prices:</strong> No surge pricing, no luggage surcharges, and no surprise toll fees.</li>
                 <li><strong>Free Flight Tracking:</strong> Your driver adjusts the pickup time automatically based on real-time flight data.</li>
-                <li><strong>Language Support:</strong> Drivers speak fluent English, Greek, French, and Dutch.</li>
+                <li><strong>Language Support:</strong> Drivers speak fluent English, Greek, and French.</li>
               </ul>
             </>
           );
@@ -210,7 +246,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 Uw chauffeur helpt u met uw bagage en haalt u direct voor de deur op.
               </p>
               <ul className={styles.ul}>
-                <li><strong>Mercedes minivans:</strong> Stille en comfortabele ritten voor gezinnen en zakelijke groepen.</li>
+                <li><strong>Ford minivans:</strong> Stille en comfortabele ritten voor gezinnen en zakelijke groepen.</li>
                 <li><strong>Kinderzitjes:</strong> Altijd gratis beschikbaar op aanvraag bij uw boeking.</li>
                 <li><strong>Vluchttijden controle:</strong> Wij controleren uw vluchttijden live.</li>
               </ul>
@@ -230,9 +266,29 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 Votre chauffeur vous accueille à l&apos;adresse de votre choix et s&apos;occupe du chargement de vos bagages.
               </p>
               <ul className={styles.ul}>
-                <li><strong>Minivans Mercedes :</strong> Idéal pour les déplacements de familles, vacances ou voyages d&apos;affaires.</li>
+                <li><strong>Minivans Ford :</strong> Idéal pour les déplacements de familles, vacances ou voyages d&apos;affaires.</li>
                 <li><strong>Sièges enfants :</strong> Rehausseurs et sièges bébés fournis gratuitement sur simple demande.</li>
                 <li><strong>Suivi de vol :</strong> Prise en charge adaptée à l&apos;horaire réel de votre avion.</li>
+              </ul>
+            </>
+          );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Trebate pouzdan transfer između <strong>{origin}</strong> i <strong>{destination}</strong>? 
+                Helicro nudi udobne privatne transfere minivanom s fiksnim cijenama od vrata do vrata. 
+                Izbjegnite stres vlakova ili nepredvidivih taksimetara.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.routeTitle}</h2>
+              <p className="mb-4">
+                Naši transferi od {origin} do {destination} optimizirani su za brzinu, sigurnost i udobnost. 
+                Vaš vozač će vas pokupiti izravno ispred vaših vrata i pomoći vam s prtljagom.
+              </p>
+              <ul className={styles.ul}>
+                <li><strong>Ford kombiji:</strong> Tihe i udobne vožnje za obitelji i poslovne grupe.</li>
+                <li><strong>Dječje sjedalice:</strong> Uvijek besplatno dostupne na zahtjev pri rezervaciji.</li>
+                <li><strong>Praćenje leta:</strong> Pratimo vaše letove u stvarnom vremenu.</li>
               </ul>
             </>
           );
@@ -250,7 +306,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 Ο οδηγός σας θα σας παραλάβει απευθείας από την πόρτα σας (ξενοδοχείο, γραφείο ή κατοικία) και θα σας βοηθήσει με τις αποσκευές σας.
               </p>
               <ul className={styles.ul}>
-                <li><strong>Mercedes minivans:</strong> Ήσυχες διαδρομές με άφθονο χώρο για οικογένειες ή επαγγελματίες.</li>
+                <li><strong>Ford minivans:</strong> Ήσυχες διαδρομές με άφθονο χώρο για οικογένειες ή επαγγελματίες.</li>
                 <li><strong>Παιδικά καθίσματα:</strong> Διαθέσιμα δωρεάν κατόπιν αιτήματος κατά την κράτηση.</li>
                 <li><strong>Παρακολούθηση πτήσης:</strong> Αυτόματη προσαρμογή βάσει των δρομολογίων των αεροπορικών εταιρειών.</li>
               </ul>
@@ -271,7 +327,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 Your driver will pick you up directly from your doorstep (hotel, office, or residence) and assist with loading your luggage.
               </p>
               <ul className={styles.ul}>
-                <li><strong>Mercedes minivans:</strong> Quiet rides with plenty of room for family groups or business associates.</li>
+                <li><strong>Ford minivans:</strong> Quiet rides with plenty of room for family groups or business associates.</li>
                 <li><strong>Child seats:</strong> Available upon request during booking.</li>
                 <li><strong>Flight tracking:</strong> Auto-adjustment to airline schedules.</li>
               </ul>
@@ -317,6 +373,25 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 <li>Prise en charge de porte-à-porte partout à {cityName}.</li>
                 <li>Fares compétitifs fixes vers les aéroports de Belgique.</li>
                 <li>Chauffeurs professionnels discrets avec protocole militaire.</li>
+              </ul>
+            </>
+          );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Helicro nudi profesionalnu uslugu privatnog vozača i zračnog transfera u regiji <strong>{cityName}</strong>. 
+                Povezujemo {cityName} izravno s Brussels Airport (BRU), Charleroi (CRL) i Lille (LIL).
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.areaTitle} {cityName}</h2>
+              <p className="mb-4">
+                Naši udobni kombiji stoje na raspolaganju poslovnim putnicima, obiteljima i turističkim grupama. 
+                Nudimo direktne transfere, satnu najam i jednodnevne izlete iz {cityName}.
+              </p>
+              <ul className={styles.ul}>
+                <li>Usluga od vrata do vrata u cijelom {cityName} i okolici.</li>
+                <li>Povoljne fiksne cijene do svih velikih zračnih luka.</li>
+                <li>Iskusni vozači s pouzdanom vojnom pozadinom.</li>
               </ul>
             </>
           );
@@ -372,8 +447,8 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               </p>
               <h2 className={styles.sectionHeading}>{ui.communeTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Plein confort :</strong> Mercedes Minivans climatisés, parfaits pour les groupes jusqu&apos;à 8 personnes.</li>
-                <li><strong>Chauffeur bilingue :</strong> Service courtois en Anglais, Français, Grec et Néerlandais.</li>
+                <li><strong>Plein confort :</strong> Ford Minivans climatisés, parfaits pour les groupes jusqu&apos;à 8 personnes.</li>
+                <li><strong>Chauffeur multilingue :</strong> Service courtois en Anglais, Français et Grec.</li>
                 <li><strong>Tarifs fixes :</strong> Aucun frais de bagages ou supplément surprise.</li>
               </ul>
             </>
@@ -386,9 +461,23 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               </p>
               <h2 className={styles.sectionHeading}>{ui.communeTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Optimaal Comfort:</strong> Mercedes minivans met airco, geschikt voor groepen tot 8 personen.</li>
-                <li><strong>Bilinguale Chauffeur:</strong> Vriendelijke service in het Nederlands, Engels, Frans en Grieks.</li>
+                <li><strong>Optimaal Comfort:</strong> Ford minivans met airco, geschikt voor groepen tot 8 personen.</li>
+                <li><strong>Meertalige Chauffeur:</strong> Vriendelijke service in het Engels, Frans en Grieks.</li>
                 <li><strong>Vaste Tarieven:</strong> Geen bagagetoeslagen of verrassingen achteraf.</li>
+              </ul>
+            </>
+          );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Helicro se nalazi u blizini <strong>{communeName}</strong>. Nudimo premium taksi i shuttle uslugu do zračne luke 24/7 za sve stanovnike {communeName} i okolnih općina.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.communeTitle}</h2>
+              <ul className={styles.ul}>
+                <li><strong>Maksimalna udobnost:</strong> Ford kombiji s klimom, pogodni za grupe do 8 osoba.</li>
+                <li><strong>Višejezični vozač:</strong> Ljubazna usluga na engleskom, francuskom i grčkom.</li>
+                <li><strong>Fiksne cijene:</strong> Bez doplataka za prtljagu ili iznenađenja.</li>
               </ul>
             </>
           );
@@ -400,8 +489,8 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               </p>
               <h2 className={styles.sectionHeading}>{ui.communeTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Απόλυτη άνεση:</strong> Κλιματιζόμενα Mercedes Minivans, ιδανικά για ομάδες έως 8 ατόμων.</li>
-                <li><strong>Πολύγλωσσος οδηγός:</strong> Φιλική εξυπηρέτηση στα Ελληνικά, Αγγλικά, Γαλλικά και Ολλανδικά.</li>
+                <li><strong>Απόλυτη άνεση:</strong> Κλιματιζόμενα Ford Minivans, ιδανικά για ομάδες έως 8 ατόμων.</li>
+                <li><strong>Πολύγλωσσος οδηγός:</strong> Φιλική εξυπηρέτηση στα Ελληνικά, Αγγλικά και Γαλλικά.</li>
                 <li><strong>Σταθερές τιμές:</strong> Χωρίς κρυφές χρεώσεις ή επιπλέον έξοδα αποσκευών.</li>
               </ul>
             </>
@@ -415,8 +504,8 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               </p>
               <h2 className={styles.sectionHeading}>{ui.communeTitle}</h2>
               <ul className={styles.ul}>
-                <li><strong>Premium Comfort:</strong> Mercedes Minivans, perfect for groups up to 8 passengers.</li>
-                <li><strong>Multilingual Driver:</strong> Courteous service in English, French, Greek and Dutch.</li>
+                <li><strong>Premium Comfort:</strong> Ford Minivans, perfect for groups up to 8 passengers.</li>
+                <li><strong>Multilingual Driver:</strong> Courteous service in English, French, and Greek.</li>
                 <li><strong>Fixed Fares:</strong> No luggage fees or surprise surcharges.</li>
               </ul>
             </>
@@ -453,6 +542,21 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
                 <li>Beffrois, places médiévales, balades sur les canaux et quartiers pittoresques.</li>
                 <li>Conseils personnalisés de votre chauffeur local pour les restaurants et visites.</li>
                 <li>Horaires flexibles et escales selon vos souhaits.</li>
+              </ul>
+            </>
+          );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Otkrijte povijesne gradove, kanale i kulturu <strong>{tourDestination}</strong> na udobnom privatnom jednodnevnom izletu s vozačem iz Bruxellesa. 
+                S osobnim vozačem možete odrediti vlastiti tempo i zaustavljati se gdje god želite.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.sightTitle}</h2>
+              <ul className={styles.ul}>
+                <li>Posjetite povijesne tržnice, beginaže i srednjovjekovne zvonike.</li>
+                <li>Preporuke za lokalne restorane i skrivene dragulje od vašeg vozača.</li>
+                <li>Fleksibilno vrijeme polaska i zaustavljanja prema dogovoru.</li>
               </ul>
             </>
           );
@@ -522,6 +626,21 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
               </ul>
             </>
           );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Idete na <strong>{festivalName}</strong>? Rezervirajte grupni prijevoz bez stresa s Helicrom. 
+                Nudimo izravne privatne transfere minivanom od zračnih luka ili vašeg smještaja u Bruxellesu izravno do ulaza na festival.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.festTitle}</h2>
+              <ul className={styles.ul}>
+                <li>Prostrani prtljažnik za svu vašu opremu za kampiranje.</li>
+                <li>Noćne vožnje usklađene s vremenom završetka festivala.</li>
+                <li>Fiksne cijene koje je jednostavno podijeliti među prijateljima.</li>
+              </ul>
+            </>
+          );
         } else if (lang === 'el') {
           return (
             <>
@@ -563,7 +682,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
             <>
               <p className="mb-6">
                 Helicro Transport biedt professioneel privévervoer aan in heel België. 
-                Onze chauffeurs zijn meertalig, discreet en beschikken over comfortabele Mercedes minivans.
+                Onze chauffeurs zijn meertalig, discreet en beschikken over comfortabele Ford minivans.
               </p>
               <h2 className={styles.sectionHeading}>{ui.serviceTitle}</h2>
               <p className="mb-4">
@@ -576,11 +695,24 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
             <>
               <p className="mb-6">
                 Helicro Transport propose un service de transfert privé professionnel partout en Belgique. 
-                Nos chauffeurs certifiés et multilingues pilotent des monospaces Mercedes de standing.
+                Nos chauffeurs certifiés et multilingues pilotent des monospaces Ford de standing.
               </p>
               <h2 className={styles.sectionHeading}>{ui.serviceTitle}</h2>
               <p className="mb-4">
                 Nous prenons en charge les cérémonies de mariage, les déplacements diplomatiques, les ports de croisière et les navettes en langue grecque.
+              </p>
+            </>
+          );
+                } else if (lang === 'hr') {
+          return (
+            <>
+              <p className="mb-6">
+                Helicro Transport pruža profesionalnu uslugu privatnog prijevoza u cijeloj Belgiji. 
+                Naši licencirani, višejezični vozači upravljaju udobnom flotom Ford kombija.
+              </p>
+              <h2 className={styles.sectionHeading}>{ui.serviceTitle}</h2>
+              <p className="mb-4">
+                Pokrivamo posebne potrebe prijevoza, uključujući vjenčanja, diplomatske misije, kruzerske luke i vožnje s vozačem koji govori grčki.
               </p>
             </>
           );
@@ -589,7 +721,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
             <>
               <p className="mb-6">
                 Η Helicro Transport παρέχει επαγγελματικές υπηρεσίες ιδιωτικών μεταφορών σε όλο το Βέλγιο. 
-                Οι οδηγοί μας είναι έμπειροι, πολύγλωσσοι και προσφέρουν έναν άνετο στόλο Mercedes minivan.
+                Οι οδηγοί μας είναι έμπειροι, πολύγλωσσοι και προσφέρουν έναν άνετο στόλο Ford minivan.
               </p>
               <h2 className={styles.sectionHeading}>{ui.serviceTitle}</h2>
               <p className="mb-4">
@@ -603,7 +735,7 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
             <>
               <p className="mb-6">
                 Helicro Transport provides professional private transfer services across Belgium. 
-                Our drivers are vetted, speak multiple languages, and offer a comfortable fleet of Mercedes minivans.
+                Our drivers are vetted, speak multiple languages, and offer a comfortable fleet of Ford minivans.
               </p>
               <h2 className={styles.sectionHeading}>{ui.serviceTitle}</h2>
               <p className="mb-4">

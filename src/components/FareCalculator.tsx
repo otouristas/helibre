@@ -28,8 +28,8 @@ export default function FareCalculator() {
       shared: 'Shared Shuttle',
       route: 'Route',
       timeOfDay: 'Time of Day',
-      day: 'Day (07:00 - 21:30)',
-      night: 'Night (21:30 - 07:00)',
+      day: 'Day (06:00 - 22:00)',
+      night: 'Night (22:00 - 06:00)',
       passengers: 'Number of Passengers',
       pax: 'Pax',
       paxMax: 'Pax max',
@@ -47,8 +47,8 @@ export default function FareCalculator() {
       shared: 'Gedeelde Shuttle',
       route: 'Route',
       timeOfDay: 'Tijdstip',
-      day: 'Overdag (07:00 - 21:30)',
-      night: 'Nacht (21:30 - 07:00)',
+      day: 'Overdag (06:00 - 22:00)',
+      night: 'Nacht (22:00 - 06:00)',
       passengers: 'Aantal Passagiers',
       pax: 'Pers.',
       paxMax: 'Pers. max',
@@ -66,8 +66,8 @@ export default function FareCalculator() {
       shared: 'Navette Partagée',
       route: 'Trajet',
       timeOfDay: 'Période de la Journée',
-      day: 'Jour (07:00 - 21:30)',
-      night: 'Nuit (21:30 - 07:00)',
+      day: 'Jour (06:00 - 22:00)',
+      night: 'Nuit (22:00 - 06:00)',
       passengers: 'Nombre de Passagers',
       pax: 'Pax',
       paxMax: 'Pax max',
@@ -85,8 +85,8 @@ export default function FareCalculator() {
       shared: 'Κοινόχρηστο Shuttle',
       route: 'Διαδρομή',
       timeOfDay: 'Ωρα της Ημέρας',
-      day: 'Ημέρα (07:00 - 21:30)',
-      night: 'Νύχτα (21:30 - 07:00)',
+      day: 'Ημέρα (06:00 - 22:00)',
+      night: 'Νύχτα (22:00 - 06:00)',
       passengers: 'Αριθμός Επιβατών',
       pax: 'Ατομα',
       paxMax: 'Ατομα μέγιστο',
@@ -97,12 +97,31 @@ export default function FareCalculator() {
       crlNote: '*Εκτιμώμενη τιμή. Οι τιμές ενδέχεται να διαφέρουν κατά +/- 10€ ανάλογα με την τοποθεσία παραλαβής, τις αποσκευές και την ώρα.',
       bruSharedNote: 'Τα κοινόχρηστα shuttles εκτελούνται μόνο για τη διαδρομή Βρυξέλλες <-> Αεροδρόμιο Charleroi. Επιλέξτε Ιδιωτική Μεταφορά.',
       sharedNote: 'Οι κοινόχρηστες μεταφορές περιλαμβάνουν την παραλαβή και άλλων επιβατών. Οι χρόνοι αναμονής ελαχιστοποιούνται.'
+    },
+    hr: {
+      title: 'Procijenite svoju cijenu',
+      private: 'Privatni transfer',
+      shared: 'Zajednički shuttle',
+      route: 'Ruta',
+      timeOfDay: 'Doba dana',
+      day: 'Dan (06:00 - 22:00)',
+      night: 'Noć (22:00 - 06:00)',
+      passengers: 'Broj putnika',
+      pax: 'pax',
+      paxMax: 'pax maks',
+      estimatedPrice: 'Procijenjena cijena',
+      btn: 'Zatražite vožnju online',
+      quoteRequired: 'Potrebna ponuda',
+      otherNote: 'Cijene za međugradske i druge prilagođene rute izrađuju se po mjeri. Kliknite ispod kako biste zatražili izravnu ponudu.',
+      crlNote: '*Procijenjena cijena. Cijene mogu varirati +/- 10 € ovisno o lokaciji preuzimanja, količini prtljage i vremenu preuzimanja.',
+      bruSharedNote: 'Zajednički shuttle dostupan je samo za rutu Brisel <-> Zračna luka Charleroi. Odaberite Privatni transfer.',
+      sharedNote: 'Zajednički prijevoz uključuje preuzimanje drugih putnika. Vrijeme čekanja je svedeno na minimum.'
     }
   }[lang];
 
   useEffect(() => {
-    if (type === 'shared' && passengers > 6) {
-      setPassengers(6);
+    if (type === 'shared' && passengers > 7) {
+      setPassengers(7);
     }
   }, [type, passengers]);
 
@@ -115,20 +134,32 @@ export default function FareCalculator() {
 
     if (type === 'private') {
       if (route === 'crl') {
-        if (passengers <= 2) setPrice(70);
-        else if (passengers === 3) setPrice(90);
-        else if (passengers === 4) setPrice(110);
-        else if (passengers === 5) setPrice(120);
-        else if (passengers === 6) setPrice(135);
-        else if (passengers === 7) setPrice(150);
-        else setPrice(160);
+        const crlPrices: Record<number, number> = { 1: 60, 2: 70, 3: 90, 4: 110, 5: 130, 6: 150, 7: 170, 8: 190 };
+        setPrice(crlPrices[passengers] ?? 190);
         setNote(ui.crlNote);
       } else {
-        if (passengers <= 2) setPrice(40);
-        else if (passengers <= 4) setPrice(50);
-        else if (passengers === 5) setPrice(55);
-        else setPrice(60);
-        setNote(ui.crlNote);
+        if (passengers === 1) {
+          setPrice('35€*');
+        } else if (passengers === 2) {
+          setPrice('40€*');
+        } else if (passengers <= 4) {
+          setPrice('45€*');
+        } else {
+          setPrice('55€*');
+        }
+        setNote(lang === 'fr' 
+          ? '* Tarifs pour la dépose-minute (Drop off Area). Supplément de 5€ pour dépose au P1.' 
+          : (lang === 'nl' 
+              ? '* Prijzen gelden voor de Drop-off. Toeslag van 5€ voor drop-off bij P1.' 
+              : (lang === 'el'
+                  ? '* Οι τιμές αφορούν τη ζώνη αποβίβασης (Drop off Area). Επιπλέον χρέωση 5€ για P1.'
+                  : (lang === 'hr'
+                      ? '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.'
+                      : '* Drop-off Area price. If you wish a drop-off at P1 Point, there is an extra charge of 5€.'
+                    )
+                )
+            )
+        );
       }
     } else {
       if (route === 'bru') {
@@ -138,11 +169,11 @@ export default function FareCalculator() {
       }
 
       if (time === 'day') {
-        const dayPrices: Record<number, number> = { 1: 25, 2: 50, 3: 75, 4: 90, 5: 110, 6: 120 };
-        setPrice(dayPrices[passengers] || 120);
+        const dayPrices: Record<number, number> = { 1: 25, 2: 50, 3: 75, 4: 90, 5: 110, 6: 120, 7: 130 };
+        setPrice(dayPrices[passengers] || 130);
       } else {
-        const nightPrices: Record<number, number> = { 1: 30, 2: 60, 3: 80, 4: 100, 5: 115, 6: 125 };
-        setPrice(nightPrices[passengers] || 125);
+        const nightPrices: Record<number, number> = { 1: 30, 2: 60, 3: 80, 4: 100, 5: 115, 6: 125, 7: 135 };
+        setPrice(nightPrices[passengers] || 135);
       }
       setNote(ui.sharedNote);
     }
@@ -218,7 +249,7 @@ export default function FareCalculator() {
           <input 
             type="range" 
             min="1" 
-            max={type === 'shared' ? "6" : "8"} 
+            max={type === 'shared' ? "7" : "8"} 
             className="w-full"
             style={{ accentColor: 'var(--primary)' }}
             value={passengers}
@@ -226,7 +257,7 @@ export default function FareCalculator() {
           />
           <div className="flex justify-between text-xs text-slate-400 mt-1">
             <span>1 {ui.pax}</span>
-            <span>{type === 'shared' ? `6 ${ui.paxMax}` : `8 ${ui.paxMax}`}</span>
+            <span>{type === 'shared' ? `7 ${ui.paxMax}` : `8 ${ui.paxMax}`}</span>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import HeaderLayout from '@/components/HeaderLayout';
 import Footer from '@/components/Footer';
-import AIAssistant from '@/components/AIAssistant';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const inter = Inter({
   subsets: ['latin', 'greek'],
@@ -15,7 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Helicro | Brussels Airport Taxi & Private Transfers',
-  description: 'Private airport transfers in Brussels with English-speaking drivers, a Mercedes fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
+  description: 'Private airport transfers in Brussels with English-speaking drivers, a Ford fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
   metadataBase: new URL('https://helicro.be'),
   alternates: {
     canonical: '/',
@@ -24,11 +24,12 @@ export const metadata: Metadata = {
       'nl': '/nl',
       'fr': '/fr',
       'el': '/el',
+      'hr': '/hr',
     }
   },
   openGraph: {
     title: 'Helicro | Brussels Airport Taxi & Private Transfers',
-    description: 'Private airport transfers in Brussels with English-speaking drivers, a Mercedes fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
+    description: 'Private airport transfers in Brussels with English-speaking drivers, a Ford fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
     url: 'https://helicro.be',
     siteName: 'Helicro',
     locale: 'en_BE',
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Helicro | Brussels Airport Taxi & Private Transfers',
-    description: 'Private airport transfers in Brussels with English-speaking drivers, a Mercedes fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
+    description: 'Private airport transfers in Brussels with English-speaking drivers, a Ford fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
     images: ['/images/brussels-must-see-travelstyle.jpg'],
   },
   verification: {
@@ -72,8 +73,8 @@ export default function RootLayout({
           {children}
         </main>
         
-        {/* Floating AI Assistant Chat Bot */}
-        <AIAssistant />
+        {/* Floating WhatsApp Button */}
+        <WhatsAppFloat />
         
         {/* Footer */}
         <Footer />

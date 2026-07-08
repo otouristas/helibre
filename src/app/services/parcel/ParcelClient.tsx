@@ -6,7 +6,7 @@ import { getLangFromPath } from '@/config/translations';
 import ServiceTemplate from '@/components/ServiceTemplate';
 import ServiceRequest from '@/components/ServiceRequest';
 
-export default function ParcelClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function ParcelClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -47,6 +47,18 @@ export default function ParcelClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el'
       adv3: 'Livraison le jour même pour les cargaisons urgentes.',
       adv4: 'Idéal pour le transport d\'objets fragiles, de valeur ou sans emballage karton.',
       footerNote: 'Aucun emballage ou conditionnement spécifique n\'est requis. Nous manipulons chaque envoi avec le plus grand soin.'
+    },
+        hr: {
+      metaTitle: 'Dostava paketa u Belgiji | Sigurna kurirska služba kombijem',
+      metaDesc: 'Preuzimanje paketa isti dan i izravna dostava u Belgiji. Idealno za lomljiv, vrijedan ili nezapakiran teret. Dostupno 24/7.',
+      title: 'Usluge dostave paketa unutar Belgije',
+      p1: 'U slučaju da trebate uslugu dostave paketa unutar Belgije, naša posvećena usluga dostave kombijem je idealno rješenje.',
+      advantages: 'Ključne prednosti:',
+      adv1: 'Prilagođeno vrijeme preuzimanja i isporuke prilagođeno vašem rasporedu.',
+      adv2: 'Preuzimanja i dostave vikendom, danju i noću.',
+      adv3: 'Mogućnost preuzimanja istog dana za hitan teret s kratkim rokom isporuke.',
+      adv4: 'Savršeno za prijevoz lomljivih, vrijednih ili nezapakiranih predmeta.',
+      footerNote: 'Nije potrebno posebno pakiranje niti kutije. Svakim paketom rukujemo s apsolutnom pažnjom.'
     },
     el: {
       metaTitle: 'Μεταφορά Δεμάτων Βέλγιο | Ασφαλείς Ταχυμεταφορές',

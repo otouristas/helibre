@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'nl' | 'fr' | 'el';
+export type Locale = 'en' | 'nl' | 'fr' | 'el' | 'hr';
 
 export const translations = {
   en: {
@@ -25,7 +25,7 @@ export const translations = {
     contactRegistry: 'Contact & Registry',
     copyright: 'All rights reserved.',
     profileDesc: "Licensed private transfer and chauffeur service based in Braine-l'Alleud. Run by a military veteran with over 30 years of professional driving experience in Belgium.",
-    profileLang: 'We specialize in English, Greek, French, and Dutch speaking private transfers and sightseeing.',
+    profileLang: 'We specialize in English, Greek, and French speaking private transfers and sightseeing.',
 
     // Fare Calculator
     calcTitle: 'Calculate My Price',
@@ -71,7 +71,7 @@ export const translations = {
     contactRegistry: 'Contact & Registratie',
     copyright: 'Alle rechten voorbehouden.',
     profileDesc: "Gelicentieerde privé chauffeur en minivans gevestigd in Braine-l'Alleud. Geleid door een militaire veteraan met meer dan 30 jaar professionele rijervaring in België.",
-    profileLang: 'Wij zijn gespecialiseerd in Engels, Grieks, Frans en Nederlands sprekende privé transfers en rondritten.',
+    profileLang: 'Wij zijn gespecialiseerd in Engels, Grieks en Frans sprekende privé transfers en rondritten.',
 
     // Fare Calculator
     calcTitle: 'Bereken Mijn Prijs',
@@ -117,7 +117,7 @@ export const translations = {
     contactRegistry: 'Contact & Enregistrement',
     copyright: 'Tous droits réservés.',
     profileDesc: "Chauffeur privé et service de minivan agréé basé à Braine-l'Alleud. Géré par un vétéran militaire avec plus de 30 ans d'expérience de conduite en Belgique.",
-    profileLang: 'Nous sommes spécialisés dans les transferts privés et excursions en anglais, grec, français et néerlandais.',
+    profileLang: 'Nous sommes spécialisés dans les transferts privés et excursions en anglais, grec et français.',
 
     // Fare Calculator
     calcTitle: 'Calculer Mon Tarif',
@@ -163,7 +163,7 @@ export const translations = {
     contactRegistry: 'ΕΠΙΚΟΙΝΩΝΙΑ & ΜΗΤΡΩΟ',
     copyright: 'Με επιφύλαξη παντός δικαιώματος.',
     profileDesc: "Αδειοδοτημένη υπηρεσία ιδιωτικών μεταφορών με έδρα το Braine-l'Alleud. Διευθύνεται από έμπειρο οδηγό με στρατιωτικό υπόβαθρο και πάνω από 30 χρόνια στους δρόμους του Βελγίου.",
-    profileLang: 'Ειδικευόμαστε σε ιδιωτικές μεταφορές και περιηγήσεις στα Αγγλικά, Ελληνικά, Γαλλικά και Ολλανδικά.',
+    profileLang: 'Ειδικευόμαστε σε ιδιωτικές μεταφορές και περιηγήσεις στα Αγγλικά, Ελληνικά και Γαλλικά.',
 
     // Fare Calculator
     calcTitle: 'ΥΠΟΛΟΓΙΣΤΕ ΤΗΝ ΤΙΜΗ',
@@ -184,6 +184,52 @@ export const translations = {
     reqSelect: 'ΕΠΙΛΟΓΗ ΥΠΗΡΕΣΙΑΣ',
     reqSubmit: 'ΥΠΟΒΟΛΗ ΑΙΤΗΜΑΤΟΣ',
     reqSuccess: 'Ευχαριστούμε! Το αίτημά σας υποβλήθηκε. Θα επιβεβαιώσουμε την τιμή σύντομα.'
+  },
+  hr: {
+    // Navbar
+    home: 'Početna',
+    pricing: 'Cijene',
+    aboutUs: 'O nama',
+    reviews: 'Recenzije',
+    services: 'Usluge',
+    fleet: 'Vozni park',
+    faq: 'Česta pitanja',
+    contact: 'Kontakt',
+    bookOnline: 'Rezerviraj online',
+    
+    // Services drop list
+    sightseeing: 'Privatni razgledi',
+    airportTransfers: 'Zračni prijevoz',
+    corporateShuttle: 'Korporativni prijevoz',
+    parcelDelivery: 'Dostava paketa',
+    eventTransport: 'Prijevoz za događaje',
+
+    // Footer
+    quickLinks: 'Brze poveznice',
+    contactRegistry: 'Kontakt i registracija',
+    copyright: 'Sva prava pridržana.',
+    profileDesc: "Licencirani privatni prijevoz i usluga vozača sa sjedištem u Braine-l'Alleudu. Vodi ga vojni veteran s više od 30 godina profesionalnog iskustva u vožnji u Belgiji.",
+    profileLang: 'Specijalizirani smo za privatne transfere i razgledavanje na engleskom, grčkom i francanskom jeziku.',
+
+    // Fare Calculator
+    calcTitle: 'Izračunaj moju cijenu',
+    pickupLabel: 'Od (adresa preuzimanja)',
+    dropoffLabel: 'Do (odredišna adresa)',
+    passengersLabel: 'Putnici',
+    timeLabel: 'Datum i vrijeme preuzimanja',
+    estimateLabel: 'Procijenjena cijena',
+    bookRoute: 'Rezerviraj ovu rutu',
+    simulatedNote: '* Simulacija cijene na temelju udaljenosti. Konačne fiksne cijene bit će potvrđene e-poštom ili SMS-om.',
+
+    // Service Request Form
+    reqTitle: 'Brzi zahtjev za rezervaciju',
+    reqName: 'Vaše ime',
+    reqEmail: 'E-adresa',
+    reqPhone: 'Broj telefona',
+    reqFlight: 'Broj leta i vrijeme dolaska (opcionalno)',
+    reqSelect: 'Odaberite uslugu',
+    reqSubmit: 'Pošalji zahtjev',
+    reqSuccess: 'Hvala vam! Vaš zahtjev je poslan. Uskoro ćemo potvrditi vašu cijenu.'
   }
 };
 
@@ -191,5 +237,6 @@ export const getLangFromPath = (pathname: string): Locale => {
   if (pathname.startsWith('/nl')) return 'nl';
   if (pathname.startsWith('/fr')) return 'fr';
   if (pathname.startsWith('/el')) return 'el';
+  if (pathname.startsWith('/hr')) return 'hr';
   return 'en';
 };

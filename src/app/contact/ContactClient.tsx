@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import ServiceRequest from '@/components/ServiceRequest';
 
-export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -55,6 +55,21 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       licensingDesc: 'Opérateur agréé conformément aux lois belges sur le transport.',
       formTitle: 'Envoyez un Message',
       formDesc: 'Indiquez vos détails de trajet, dates, nombre de passagers et destination. Nous vous répondrons avec un tarif fixe.'
+    },
+        hr: {
+      metaTitle: 'Kontaktirajte Helicro Transport | Privatni vozač i minivan u Briselu',
+      metaDesc: 'Stupite u kontakt s Helicro radi rezervacije transfera, razgledavanja ili cijena korporativnog prijevoza. Telefon +32 472 35 88 05.',
+      title: 'Kontaktirajte nas',
+      subtitle: 'Imate li upit, zahtjev za rezervaciju ili posebne potrebe za transferom? Stupite u kontakt s Gerasimosom i timom Helicro. Dostupni smo 24/7.',
+      coordsTitle: 'Koordinate Helicro',
+      officeLabel: 'Adresa ureda',
+      phoneLabel: 'Telefon i WhatsApp',
+      emailLabel: 'E-mail podrška',
+      hoursLabel: 'Radno vrijeme',
+      hoursDesc: '24 sata dnevno, 7 dana u tjednu (uključujući državne praznike).',
+      licensingDesc: 'Licencirani prijevoznik prema belgijskim propisima o prijevozu.',
+      formTitle: 'Pošaljite upit',
+      formDesc: 'Ispunite donji obrazac s detaljima vašeg putovanja, brojem putnika i odredištima. Javit ćemo vam se s fiksnom cijenom.'
     },
     el: {
       metaTitle: 'Επικοινωνία με τη Helicro Transport | Σοφέρ & Minivan Βρυξέλλες',
@@ -125,9 +140,18 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                 <span style={{ fontSize: '20px' }}>📞</span>
                 <div>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{ui.phoneLabel}</h3>
-                  <p style={{ marginTop: '4px' }}>
-                    <a href="tel:+32472358805" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '16px' }}>
-                      +32 472 35 88 05
+                  <p style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    <a href="tel:+32472358805" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '15px' }}>
+                      🇧🇪 +32 472 35 88 05
+                    </a>
+                    <a href="https://wa.me/32472358805" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
+                      💬 WhatsApp (Belgium)
+                    </a>
+                    <a href="tel:+306974581706" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '15px', marginTop: '6px' }}>
+                      🇬🇷 +30 697 458 1706
+                    </a>
+                    <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
+                      💬 WhatsApp (Greece)
                     </a>
                   </p>
                 </div>

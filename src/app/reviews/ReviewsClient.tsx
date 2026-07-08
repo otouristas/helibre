@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import TestimonialCard from '@/components/TestimonialCard';
 
-export default function ReviewsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function ReviewsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -27,6 +27,12 @@ export default function ReviewsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       subtitle: 'Découvrez les témoignages de nos passagers et pourquoi ils recommandent Helicro en Belgique.',
       invite: 'Vos avis sont précieux. Ils nous aident à grandir et à perfectionner nos services.',
       btn: 'Laissez un avis sur Google Maps'
+    },
+        hr: {
+      title: 'Recenzije kupaca',
+      subtitle: 'Pročitajte provjerena iskustva naših putnika i zašto preporučuju Helicro za putovanja u Belgiji.',
+      invite: 'Izuzetno cijenimo vaše recenzije. One pomažu našoj tvrtki da raste i poboljšava usluge.',
+      btn: 'Ocijenite nas na Google kartama'
     },
     el: {
       title: 'Αξιολογήσεις Πελατών',

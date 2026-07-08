@@ -6,7 +6,7 @@ import { getLangFromPath } from '@/config/translations';
 import ServiceTemplate from '@/components/ServiceTemplate';
 import ServiceRequest from '@/components/ServiceRequest';
 
-export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -33,8 +33,16 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       metaDesc: 'Services de transport professionnel et logistique événementielle à Bruxelles. Accueil VIP en gare/aéroport, facturation mensuelle.',
       title: 'Services de Navettes d\'Entreprise',
       p1: 'Un service professionnel pour les professionnels. Permettez-nous de coordonner les arrivées de vos groupes à l\'aéroport au meilleur coût.',
-      p2: 'Nous gérons tous les détails logistiques : taille des véhicules Mercedes, répartition des passagers et accueil personnalisé pour guider vos invités.',
+      p2: 'Nous gérons tous les détails logistiques : taille des véhicules Ford, répartition des passagers et accueil personnalisé pour guider vos invités.',
       p3: 'Notre équipe logistique suit l\'état des vols en direct pour garantir que nos minivans soient sur place à la minute près.'
+    },
+        hr: {
+      metaTitle: 'Korporativni prijevoz Bruxelles | Poslovni vozači i kombiji',
+      metaDesc: 'Profesionalna rješenja za poslovne transfere u Bruxellesu po fiksnim cijenama. Dolasci grupa u zračnu luku, diplomatska logistika i najam privatnih vozača.',
+      title: 'Usluge korporativnog prijevoza',
+      p1: 'Profesionalna usluga za profesionalne ljude. Prepustite nam koordinaciju dolazaka vaših velikih grupa u zračnu luku po razumnoj cijeni.',
+      p2: 'Pobrinut ćemo se za važne detalje poput veličine vozila, grupiranja putnika za preuzimanje i osiguravanja posvećenih pratitelja koji će dočekati vaše goste.',
+      p3: 'Naš iskusni dispečerski tim prati letove u stvarnom vremenu kako bi osigurao da stignemo točno na vrijeme, bez obzira na to stiže li vaš let ranije ili kasni.'
     },
     el: {
       metaTitle: 'Εταιρικές Μετακινήσεις Βρυξέλλες | Υπηρεσίες VIP Σοφέρ',

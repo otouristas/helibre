@@ -37,7 +37,7 @@ export const seoPages: SEOPage[] = [
     "h1": "Luchthavenvervoer Charleroi (CRL)",
     "keyword": "luchthavenvervoer charleroi",
     "title": "Luchthavenvervoer Charleroi | Vaste prijs en flexibel",
-    "description": "Priv\u00e9 minivan van en naar Brussels South Charleroi (CRL). Vaste prijzen vanaf 70 euro, 24/7, Engels-sprekende chauffeur.",
+    "description": "Priv\u00e9 minivan van en naar Brussels South Charleroi (CRL). Vaste prijzen vanaf 60 euro, 24/7, Engels-sprekende chauffeur.",
     "priority": "HIGH"
   },
   {
@@ -63,7 +63,7 @@ export const seoPages: SEOPage[] = [
     "url": "/en/route/brussels-zaventem",
     "h1": "Brussels to Zaventem airport transfer",
     "keyword": "brussels to zaventem",
-    "title": "Brussels to Zaventem Transfer From 40 EUR | Helicro",
+    "title": "Brussels to Zaventem Transfer From 35 EUR (Drop-off) | Helicro",
     "description": "Fixed-price private transfer from any Brussels address to Brussels Zaventem airport. Doorstep pickup, child seats, 24/7 dispatch.",
     "priority": "HIGH"
   },
@@ -346,15 +346,7 @@ export const seoPages: SEOPage[] = [
     "description": "Private day at the Battlefield of Waterloo with stops at the main historic sites. Direct from your hotel door.",
     "priority": "HIGH"
   },
-  {
-    "type": "Sightseeing",
-    "url": "/en/day-trip/dinant",
-    "h1": "Private Dinant and Bouillon day trip from Brussels",
-    "keyword": "dinant day trip from brussels",
-    "title": "Dinant and Bouillon Day Trip | Helicro Private",
-    "description": "Discover the Meuse valley and Ardennes castles with a private driver. Comfortable minivan, full day, lunch stop.",
-    "priority": "MEDIUM"
-  },
+
   {
     "type": "Festival",
     "url": "/en/festival/tomorrowland",
@@ -488,7 +480,7 @@ export const pageRevamps: PageRevamp[] = [
     "url": "/pricing",
     "h1": "Helicro Transport pricing for airport transfers and private rides",
     "title": "Fixed-Price Airport Transfers Belgium | Helicro Pricing",
-    "description": "Transparent fixed prices for Brussels Zaventem, Charleroi and Lille airport transfers. From 40 euros for 2 passengers. Instant quote calculator inside.",
+    "description": "Transparent fixed prices for Brussels Zaventem, Charleroi and Lille airport transfers. From 35 euros (Drop-off Area) for 1 passenger. Instant quote calculator inside.",
     "structure": "1) Instant quote calculator 2) Airport price table by city of origin 3) What is included 4) Surcharges (night tariff, group size, child seats, waiting time) 5) Cancellation and no-show policy 6) Loyalty discounts 7) Payment options 8) FAQ pricing-specific",
     "ctas": "Calculate my price | Book this route | Chat on WhatsApp",
     "priority": "HIGH"
@@ -506,7 +498,7 @@ export const pageRevamps: PageRevamp[] = [
     "url": "/services/sightseeing",
     "h1": "Private sightseeing tours of Belgium: Brussels, Ghent, Bruges and Durbuy",
     "title": "Private Sightseeing Tours Belgium | Brussels, Ghent, Bruges",
-    "description": "Tailored private day tours from Brussels to Bruges, Ghent, Durbuy, Waterloo and Dinant with an English- or Greek-speaking driver. Comfortable minivan, fixed price.",
+    "description": "Tailored private day tours from Brussels to Bruges, Ghent, Durbuy and Waterloo with an English- or Greek-speaking driver. Comfortable minivan, fixed price.",
     "structure": "1) Why private over coach tours 2) Our tour destinations 3) Sample full-day itineraries 4) What is included 5) Custom routes 6) Reviews from past tour guests 7) Pricing per group size 8) FAQ 9) Book now",
     "ctas": "Book a tour | Build my custom day | Talk to us",
     "priority": "HIGH"

@@ -12,7 +12,7 @@ interface CityTour {
   description: string;
 }
 
-export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -20,7 +20,7 @@ export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' |
   const ui = {
     en: {
       metaTitle: 'Private Sightseeing Belgium | Chauffeur Day Tours from Brussels',
-      metaDesc: 'Custom day trips to Bruges, Ghent and Durbuy with private Mercedes minivans. Set your own pace, choose stops and travel in comfort.',
+      metaDesc: 'Custom day trips to Bruges, Ghent and Durbuy with private Ford minivans. Set your own pace, choose stops and travel in comfort.',
       title: 'Private Sightseeing Car Ride',
       p1: 'Get to the city\'s main landmarks by a premium air-conditioned minivan with your hand-picked local driver. Choose the stops, visit the attractions, and don\'t waste any time waiting for public transports or buses.',
       
@@ -40,7 +40,7 @@ export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' |
       metaTitle: 'Privé Rondritten België | Dagtochten Brugge & Gent vanuit Brussel',
       metaDesc: 'Boek een luxe dagtocht met chauffeur naar Brugge, Gent of Durbuy. Bepaal uw eigen route, reisschema en stops in comfortabele minivans.',
       title: 'Privé Sightseeing & Rondritten',
-      p1: 'Ontdek de mooiste bezienswaardigheden in een luxe Mercedes minivan met uw persoonlijke chauffeur. Bepaal zelf uw stops, bezoek attracties en verlies geen tijd met het openbaar vervoer.',
+      p1: 'Ontdek de mooiste bezienswaardigheden in een luxe Ford minivan met uw persoonlijke chauffeur. Bepaal zelf uw stops, bezoek attracties en verlies geen tijd met het openbaar vervoer.',
       
       bruTourName: 'Brussel',
       bruTourDesc: 'Verken het hart van de Europese Unie en ontdek haar historische pleinen en charme met uw meertalige chauffeur. Geef vooraf uw persoonlijke voorkeuren door.',
@@ -56,7 +56,7 @@ export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' |
     },
     fr: {
       metaTitle: 'Circuit Touristique Privé Belgique | Excursions Bruges & Gand',
-      metaDesc: 'Visites guidées d\'une journée à Bruges, Gand ou Durbuy en van Mercedes privé depuis Bruxelles. Planifiez vos arrêts à votre rythme.',
+      metaDesc: 'Visites guidées d\'une journée à Bruges, Gand ou Durbuy en van Ford privé depuis Bruxelles. Planifiez vos arrêts à votre rythme.',
       title: 'Excursions Touristiques Privées',
       p1: 'Visitez les hauts lieux touristiques belges à bord d\'un minivan climatisé de standing avec chauffeur privé. Choisissez vos escales et évitez l\'attente des bus publics.',
       
@@ -72,9 +72,27 @@ export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' |
       durbuyTourName: 'Durbuy',
       durbuyTourDesc: 'Visitez Durbuy, perle de la province de Luxembourg dans les Ardennes. Historiquement labellisée la &apos;plus petite ville du monde&apos;, avec ses ruelles pavées pittoresques.'
     },
+    hr: {
+      metaTitle: 'Privatni izleti u Belgiji | Jednodnevni izleti s vozačem iz Brisela',
+      metaDesc: 'Prilagođeni jednodnevni izleti u Bruges, Ghent i Durbuy s privatnim Ford minivanima. Odredite vlastiti tempo i putujte u udobnosti.',
+      title: 'Privatne vožnje za razgledavanje',
+      p1: 'Dođite do glavnih gradskih znamenitosti vrhunskim klimatiziranim minivanom s vašim osobnim vozačem. Odaberite stajališta, posjetite atrakcije i ne gubite vrijeme čekajući javni prijevoz.',
+      
+      bruTourName: 'Brisel',
+      bruTourDesc: 'Osjetite duh grada koji se smatra srcem Europske unije i otkrijte njegove čari s vašim osobnim vozačem koji govori engleski i grčki. Obavijestite vozača o svojim željama prije vožnje.',
+      
+      ghentTourName: 'Gent',
+      ghentTourDesc: 'Jednodnevni izlet u Gent. Istražite ovaj flamanski dragulj bogat srednjovjekovnom arhitekturom, kanalima i kulturom s vašim vozačem koji govori engleski.',
+      
+      brugesTourName: 'Bruges',
+      brugesTourDesc: 'Istražite "Veneciju sjevera" na jednodnevnom izletu u Bruges s povratnim transferom iz Brisela. Posjetite jedan od najfascinantnijih srednjovjekovnih gradova u Europi, pogledajte Jezero ljubavi i uživajte u belgijskim čokoladama.',
+      
+      durbuyTourName: 'Durbuy',
+      durbuyTourDesc: 'Istražite Durbuy, prekrasno belgijsko selo u pokrajini Luxembourg u Valoniji. Povijesno poznat kao "najmanji grad na svijetu", nudi šarmantne kamene kuće, popločane ulice i zadivljujući krajolik Ardena.'
+    },
     el: {
       metaTitle: 'Ιδιωτικές Περιηγήσεις Βέλγιο | Ημερήσιες Εκδρομές Μπρυζ & Γάνδη',
-      metaDesc: 'Ημερήσιες εκδρομές σε Μπρυζ, Γάνδη και Durbuy με ιδιωτικό minivan Mercedes. Επιλέξτε τις στάσεις σας και ταξιδέψτε με άνεση.',
+      metaDesc: 'Ημερήσιες εκδρομές σε Μπρυζ, Γάνδη και Durbuy με ιδιωτικό minivan Ford. Επιλέξτε τις στάσεις σας και ταξιδέψτε με άνεση.',
       title: 'Ιδιωτικές Περιηγήσεις με Αυτοκίνητο',
       p1: 'Επισκεφθείτε τα κυριότερα αξιοθέατα των πόλεων με ένα premium κλιματιζόμενο minivan και τον προσωπικό σας οδηγό. Επιλέξτε τις στάσεις και μην χάνετε χρόνο στα μέσα μαζικής μεταφοράς.',
       

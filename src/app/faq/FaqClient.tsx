@@ -13,7 +13,7 @@ interface FAQCategory {
   }[];
 }
 
-export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
   const [openIndex, setOpenIndex] = useState<string | null>(null);
@@ -28,25 +28,31 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
       metaTitle: 'FAQ | Helicro Airport Transfers and Chauffeur Services',
       metaDesc: 'Frequently asked questions about booking, payments, cancellations, delays, and child safety booster seats for private transfers in Brussels.',
       title: 'Frequently Asked Questions',
-      subtitle: 'Find answers to common questions regarding bookings, payments, flight delays, and our Mercedes minivan fleet.'
+      subtitle: 'Find answers to common questions regarding bookings, payments, flight delays, and our Ford minivan fleet.'
     },
     nl: {
       metaTitle: 'Veelgestelde Vragen | Helicro Luchthavenvervoer',
       metaDesc: 'Veelgestelde vragen over boekingen, betalingen, annuleringen, vluchtvertragingen en kinderzitjes voor privévervoer in Brussel.',
       title: 'Veelgestelde Vragen (FAQ)',
-      subtitle: 'Vind antwoorden op veelgestelde vragen over boekingen, betalingen, vluchtvertragingen en ons Mercedes-wagenpark.'
+      subtitle: 'Vind antwoorden op veelgestelde vragen over boekingen, betalingen, vluchtvertragingen en ons Ford-wagenpark.'
     },
     fr: {
       metaTitle: 'FAQ | Helicro Navette Aéroport et Chauffeur Privé',
       metaDesc: 'Foire aux questions sur les réservations, paiements, annulations, retards de vol et sièges enfants à Bruxelles.',
       title: 'Foire Aux Questions (FAQ)',
-      subtitle: 'Retrouvez les réponses à vos questions concernant les réservations, les tarifs, les retards de vol et nos minivans Mercedes.'
+      subtitle: 'Retrouvez les réponses à vos questions concernant les réservations, les tarifs, les retards de vol et nos minivans Ford.'
     },
     el: {
       metaTitle: 'Συχνές Ερωτήσεις | Helicro Μεταφορές Αεροδρομίου',
       metaDesc: 'Συχνές ερωτήσεις σχετικά με κρατήσεις, πληρωμές, ακυρώσεις, καθυστερήσεις πτήσεων και παιδικά καθίσματα στις Βρυξέλλες.',
       title: 'Συχνές Ερωτήσεις',
       subtitle: 'Βρείτε απαντήσεις σε συνήθεις απορίες για κρατήσεις, τρόπους πληρωμής, καθυστερήσεις πτήσεων και τον στόλο μας.'
+    },
+    hr: {
+      metaTitle: 'Česta pitanja | Helicro privatni transferi',
+      metaDesc: 'Odgovori na uobičajena pitanja o rezervacijama, plaćanjima, otkazivanjima i dječjim autosjedalicama za privatne transfere u Briselu.',
+      title: 'Česta pitanja',
+      subtitle: 'Imate li pitanja o našim uslugama? Ovdje su odgovori na najčešće upite naših klijenata.'
     }
   }[lang];
 
@@ -92,7 +98,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
         items: [
           {
             q: 'What vehicles make up the Helicro fleet?',
-            a: 'Our fleet comprises clean, modern Mercedes-Benz minivans (V-Class and Vito) that fit up to 8 passengers comfortably, with large luggage storage space.'
+            a: 'Our fleet comprises clean, modern Ford minivans (Transit Custom and Tourneo Custom) that fit up to 8 passengers comfortably, with large luggage storage space.'
           },
           {
             q: 'Do you provide baby and child seats?',
@@ -100,7 +106,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
           },
           {
             q: 'Is driver language support available?',
-            a: 'Yes, our main chauffeur Gerasimos speaks fluent English, Greek, French, and Dutch, ensuring seamless, clear communication.'
+            a: 'Yes, our main chauffeur Gerasimos speaks fluent English, Greek, and French, ensuring seamless, clear communication.'
           }
         ]
       }
@@ -145,7 +151,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
         items: [
           {
             q: 'Welke voertuigen heeft Helicro?',
-            a: 'Ons wagenpark bestaat uit nette, jonge Mercedes-Benz Vito en V-Klasse minivans voor maximaal 8 personen en ruime bagageruimte.'
+            a: 'Ons wagenpark bestaat uit nette, jonge Ford Transit Custom en Tourneo Custom minivans voor maximaal 8 personen en ruime bagageruimte.'
           },
           {
             q: 'Levert u kinderstoeltjes en Maxi-Cosi?',
@@ -153,7 +159,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
           },
           {
             q: 'Welke talen spreekt de chauffeur?',
-            a: 'Onze hoofdchauffeur Gerasimos spreekt vloeiend Engels, Grieks, Frans en Nederlands.'
+            a: 'Onze hoofdchauffeur Gerasimos spreekt vloeiend Engels, Grieks en Frans.'
           }
         ]
       }
@@ -198,7 +204,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
         items: [
           {
             q: 'Quels véhicules compose la flotte d&apos;Helicro ?',
-            a: 'Notre flotte est constituée de minivans Mercedes-Benz Vito et Classe V récents, climatisés, pouvant accueillir jusqu&apos;à 8 passagers et de nombreuses valises.'
+            a: 'Notre flotte est constituée de minivans Ford Transit Custom et Classe V récents, climatisés, pouvant accueillir jusqu&apos;à 8 passagers et de nombreuses valises.'
           },
           {
             q: 'Fournissez-vous des sièges bébé et rehausseurs ?',
@@ -251,7 +257,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
         items: [
           {
             q: 'Από τι οχήματα αποτελείται ο στόλος σας;',
-            a: 'Ο στόλος μας αποτελείται από σύγχρονα και καθαρά Mercedes-Benz Vito και V-Class minivans, χωρητικότητας έως 8 επιβατών, με μεγάλους χώρους αποσκευών.'
+            a: 'Ο στόλος μας αποτελείται από σύγχρονα και καθαρά Ford Transit Custom και Tourneo Custom minivans, χωρητικότητας έως 8 επιβατών, με μεγάλους χώρους αποσκευών.'
           },
           {
             q: 'Παρέχετε παιδικά καθίσματα ασφαλείας;',
@@ -259,12 +265,65 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' })
           },
           {
             q: 'Σε ποιες γλώσσες εξυπηρετεί ο οδηγός;',
-            a: 'Ο βασικός μας οδηγός Γεράσιμος μιλάει άπταιστα Ελληνικά, Αγγλικά, Γαλλικά και Ολλανδικά.'
+            a: 'Ο βασικός μας οδηγός Γεράσιμος μιλάει άπταιστα Ελληνικά, Αγγλικά και Γαλλικά.'
           }
         ]
       }
-    ]
-  }[lang];
+    ],
+    hr: [
+        {
+          title: 'Rezervacije i otkazivanja',
+          items: [
+            {
+              q: 'Kako mogu zatražiti privatni transfer ili uslugu?',
+              a: 'Možete jednostavno zatražiti transfer ispunjavanjem našeg online obrasca za rezervaciju, kontaktiranjem putem WhatsAppa, slanjem SMS-a ili e-poštom. Ubrzo nakon toga primit ćete potvrdu cijene.'
+            },
+            {
+              q: 'Kakva je vaša politika otkazivanja i povrata novca?',
+              a: 'Otkazivanja i promjene rezervacija potpuno su besplatni do 24 sata prije zakazanog preuzimanja. Unutar 24 sata molimo da izravno nazovete našu hitnu dispečersku liniju.'
+            },
+            {
+              q: 'Što se događa ako moj let kasni ili bude otkazan?',
+              a: 'Pratimo dolazne letove u stvarnom vremenu. Ako vaš let kasni, vrijeme preuzimanja se automatski prilagođava. Ako je let otkazan, obavijestite nas što je prije moguće.'
+            }
+          ]
+        },
+        {
+          title: 'Cijene i plaćanja',
+          items: [
+            {
+              q: 'Jesu li vaše cijene fiksne ili se mjere taksimetrom?',
+              a: 'Sve naše cijene su fiksne i unaprijed dogovorene. Cijena koju vidite na ponudi je ono što plaćate. Nema skrivenih naknada, doplate za prtljagu ili troškova cestarine.'
+            },
+            {
+              q: 'Koje načine plaćanja podržavate?',
+              a: 'Podržavamo fleksibilne načine plaćanja. Možete sigurno platiti online, izravnim bankovnim transferom ili računom (za korporativne partnere). Također prihvaćamo gotovinsko plaćanje vozaču.'
+            },
+            {
+              q: 'Naplaćujete li dodatno za noćne transfere?',
+              a: 'Naše cijene privatnih transfera su fiksne — noćni doplatak se ne primjenjuje. Za rezervacije zajedničkog shuttlea, dnevne cijene vrijede od 06:00 do 22:00, a noćne od 22:00 do 06:00, kako je navedeno u našoj tablici cijena.'
+            }
+          ]
+        },
+        {
+          title: 'Detalji o voznom parku i uslugama',
+          items: [
+            {
+              q: 'Koja vozila čine vozni park Helicra?',
+              a: 'Naš vozni park čine čisti, moderni Ford minivani (Transit Custom i Tourneo Custom) u koje se udobno može smjestiti do 8 putnika, s velikim prostorom za prtljagu.'
+            },
+            {
+              q: 'Nudite li dječje sjedalice i boostere?',
+              a: 'Da, dječje autosjedalice i booster sjedalice dostupne su na zahtjev bez dodatnih troškova. Molimo navedite količinu i dob djece pri rezervaciji.'
+            },
+            {
+              q: 'Govori li vozač strane jezike?',
+              a: 'Da, naš glavni vozač Gerasimos tečno govori engleski, grčki i francuski, što osigurava jednostavnu i jasnu komunikaciju.'
+            }
+          ]
+        }
+      ]
+    }[lang];
 
   return (
     <div className="section">

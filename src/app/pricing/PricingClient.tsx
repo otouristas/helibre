@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import FareCalculator from '@/components/FareCalculator';
 
-export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -19,6 +19,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       minivanFares: 'Private Minivan • Flat Fares',
       zaventemTitle: 'Brussels to Zaventem (BRU)',
       charleroiTitle: 'Brussels to Charleroi (CRL)',
+      pax1: '1 Passenger',
+      pax2: '2 Passengers',
+      pax3: '3 Passengers',
+      pax4: '4 Passengers',
+      pax5: '5 Passengers',
+      pax6: '6 Passengers',
+      pax7: '7 Passengers',
+      pax8: '8 Passengers',
       pax12: '1 - 2 Passengers',
       pax34: '3 - 4 Passengers',
       pax58: '5 - 8 Passengers',
@@ -39,7 +47,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h3Surcharge: '4. Surcharge Policy',
       surchargeIntro: 'For standard pre-booked private transfers, our prices are strictly flat. Surcharges are only applied in specific cases:',
       surchargeNight: 'Night Rates:',
-      surchargeNightDesc: 'Only applicable to shared shuttle bookings (between 21:30 and 07:00).',
+      surchargeNightDesc: 'Only applicable to shared shuttle bookings (between 22:00 and 06:00).',
       surchargeWait: 'Extra Waiting Time:',
       surchargeWaitDesc: 'First 60 minutes after flight landing is free. Thereafter, billing is 30€/hour.',
       surchargeDetour: 'Detours:',
@@ -63,7 +71,8 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       a3: 'No. Airport parking fees (for the greeting time) and motorway toll fees (like the Liefkenshoek tunnel) are 100% included in the initial flat rate quote.',
 
       btnQuote: 'Request Fixed Quote',
-      btnWhatsapp: 'Chat on WhatsApp'
+      btnWhatsapp: 'Chat on WhatsApp',
+      zaventemFootnote: '* Prices are from the Drop-off Area. If you wish a drop-off at P1 Point, there is an extra charge of 5€.'
     },
     nl: {
       title: 'Tarieven van Helicro Transport voor luchthavenvervoer en privé ritten',
@@ -73,6 +82,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       minivanFares: 'Privé Minivan • Vaste Tarieven',
       zaventemTitle: 'Brussel naar Zaventem (BRU)',
       charleroiTitle: 'Brussel naar Charleroi (CRL)',
+      pax1: '1 Passagier',
+      pax2: '2 Passagiers',
+      pax3: '3 Passagiers',
+      pax4: '4 Passagiers',
+      pax5: '5 Passagiers',
+      pax6: '6 Passagiers',
+      pax7: '7 Passagiers',
+      pax8: '8 Passagiers',
       pax12: '1 - 2 Passagiers',
       pax34: '3 - 4 Passagiers',
       pax58: '5 - 8 Passagiers',
@@ -93,7 +110,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h3Surcharge: '4. Toeslagenbeleid',
       surchargeIntro: 'Voor standaard vooraf geboekte privé transfers gelden vaste prijzen. Extra toeslagen gelden alleen bij:',
       surchargeNight: 'Nachttarief:',
-      surchargeNightDesc: 'Alleen van toepassing op gedeelde shuttles (tussen 21:30 en 07:00 uur).',
+      surchargeNightDesc: 'Alleen van toepassing op gedeelde shuttles (tussen 22:00 en 06:00 uur).',
       surchargeWait: 'Extra Wachttijd:',
       surchargeWaitDesc: 'Eerste 60 minuten na landing zijn gratis. Daarna 30€ per uur.',
       surchargeDetour: 'Extra Tussenstop:',
@@ -117,7 +134,8 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       a3: 'Nee. Parkeergelden (voor de chauffeur bij aankomst) en snelwegtollen (zoals de Liefkenshoektunnel) zijn inbegrepen.',
 
       btnQuote: 'Vraag Vaste Offerte Aan',
-      btnWhatsapp: 'Chat op WhatsApp'
+      btnWhatsapp: 'Chat op WhatsApp',
+      zaventemFootnote: '* Prijzen gelden vanaf de Drop-off Area. Indien u afgezet wenst te worden bij P1, geldt een toeslag van 5€.'
     },
     fr: {
       title: 'Tarifs de Helicro Transport pour navettes aéroport et trajets privés',
@@ -127,6 +145,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       minivanFares: 'Minivan Privé • Tarifs Fixes',
       zaventemTitle: 'Bruxelles vers Zaventem (BRU)',
       charleroiTitle: 'Bruxelles vers Charleroi (CRL)',
+      pax1: '1 Passager',
+      pax2: '2 Passagers',
+      pax3: '3 Passagers',
+      pax4: '4 Passagers',
+      pax5: '5 Passagers',
+      pax6: '6 Passagers',
+      pax7: '7 Passagers',
+      pax8: '8 Passagers',
       pax12: '1 - 2 Passagers',
       pax34: '3 - 4 Passagers',
       pax58: '5 - 8 Passagers',
@@ -147,7 +173,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h3Surcharge: '4. Politique de Suppléments',
       surchargeIntro: 'Pour les transferts privés pré-réservés, nos tarifs sont fixes. Des frais supplémentaires s&apos;appliquent uniquement pour :',
       surchargeNight: 'Tarifs Nuit :',
-      surchargeNightDesc: 'Applicable uniquement aux réservations de navettes partagées (entre 21h30 et 7h00).',
+      surchargeNightDesc: 'Applicable uniquement aux réservations de navettes partagées (entre 22h00 et 6h00).',
       surchargeWait: 'Temps d&apos;Attente Supplémentaire :',
       surchargeWaitDesc: 'Les 60 premières minutes après atterrissage sont gratuites. Ensuite, 30€/heure.',
       surchargeDetour: 'Détours :',
@@ -168,7 +194,64 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       q2: 'Y a-t-il des frais pour les sièges enfants ?',
       a2: 'Non. Tous les rehausseurs et sièges de sécurité pour bébés sont mis à disposition gratuitement. Veuillez le préciser lors de la commande.',
       q3: 'Faut-il payer le péage ou le parking de l&apos;aéroport ?',
-      a3: 'Non. Les frais de parking aéroport et les péages routiers (comme le tunnel Liefkenshoek) sont intégralement compris dans le tarif.'
+      a3: 'Non. Les frais de parking aéroport et les péages routiers (comme le tunnel Liefkenshoek) sont intégralement compris dans le tarif.',
+      zaventemFootnote: '* Les tarifs s\'entendent depuis la dépose-minute (Drop off Area). Si vous souhaitez une dépose au parking P1, un supplément de 5€ s\'applique.'
+    },
+        hr: {
+      title: 'Transparentne fiksne cijene privatnih transfera',
+      subtitle: 'Potpuno jasne cijene bez iznenađenja. Uključena je cestarina, parking u zračnoj luci i dječje sjedalice.',
+      h2Calc: '1. IZRAČUNAJTE SVOJU CIJENU ODMAH',
+      h2Rates: '2. FIKSNE CIJENE ZA ZRAČNE LUKE (IZ BRISELA)',
+      minivanFares: 'Privatni minivan • Fiksne cijene',
+      zaventemTitle: 'Brisel ↔ Zračna luka Zaventem (BRU)',
+      charleroiTitle: 'Brisel ↔ Zračna luka Charleroi (CRL)',
+      pax1: '1 Putnik',
+      pax2: '2 Putnika',
+      pax3: '3 Putnika',
+      pax4: '4 Putnika',
+      pax5: '5 Putnika',
+      pax6: '6 Putnika',
+      pax7: '7 Putnika',
+      pax8: '8 Putnika',
+      pax12: '1 - 2 Putnika',
+      pax34: '3 - 4 Putnika',
+      pax58: '5 - 8 Putnika',
+      from: 'Od',
+      h3Included: '3. ŠTO JE UKLJUČENO U CIJENU?',
+      incTrack: 'Praćenje leta:',
+      incTrackDesc: 'Praćenje leta u stvarnom vremenu. Vrijeme dolaska prilagođavamo besplatno.',
+      incMeet: 'Usluga dočeka:',
+      incMeetDesc: 'Vozač vas čeka na dolaznom terminalu s natpisom s vašim imenom.',
+      incTolls: 'Cestarine i parking:',
+      incTollsDesc: 'Sve cestarine, tuneli i parking u zračnoj luci uključeni su u cijenu.',
+      incSeats: 'Dječje sjedalice:',
+      incSeatsDesc: 'Besplatno dostupne na zahtjev prilikom rezervacije.',
+      incLuggage: 'Prostran prtljažnik:',
+      incLuggageDesc: 'Dovoljno prostora za sve vaše torbe bez ikakve dodatne naplate.',
+      h3Surcharge: '4. POLITIKA DODATNIH TROŠKOVA',
+      surchargeIntro: 'Za sve naše unaprijed rezervirane privatne transfere cijena je fiksna. Dodatne naknade vrijede samo za:',
+      surchargeNight: 'Noćne vožnje:',
+      surchargeNightDesc: 'Vrijedi samo za zajedničke shuttle prijevoze (između 22:00 i 06:00).',
+      surchargeWait: 'Dodatno vrijeme čekanja:',
+      surchargeWaitDesc: 'Prvih 60 minuta nakon slijetanja leta je besplatno. Nakon toga se naplaćuje 30 € po satu.',
+      surchargeDetour: 'Skretanja s rute:',
+      surchargeDetourDesc: 'Dodatna usputna stajanja naplaćuju se fiksno 10 € po stajanju.',
+      h4Cancel: '5. POLITIKA OTKAZIVANJA',
+      cancelDesc: 'Otkazivanje i izmjene su 100% besplatni do 24 sata prije zakazanog transfera.',
+      h4Loyalty: '6. PROGRAM VJERNOSTI',
+      loyaltyDesc: 'Nudimo posebne cijene i mjesečne račune za poslovne subjekte, diplomatska veleposlanstva i redovite putnike.',
+      h4Payment: '7. NAČINI PLAĆANJA',
+      paymentDesc: 'Platite sigurno bankovnim transferom, online karticom ili gotovinom izravno vozaču.',
+      h3Faq: '8. ČESTO POSTAVLJANA PITANJA O CIJENAMA',
+      q1: 'Kako mogu saznati točnu cijenu?',
+      a1: 'Jednostavno unesite svoja odredišta, datum i broj putnika u naš kalkulator ili ispunite obrazac za rezervaciju. Poslat ćemo vam fiksnu ponudu.',
+      q2: 'Postoji li doplata za dječje autosjedalice?',
+      a2: 'Ne. Sve dječje autosjedalice i boosteri pružaju se potpuno besplatno. Samo ih navedite prilikom rezervacije.',
+      q3: 'Moramo li sami platiti cestarinu ili parking?',
+      a3: 'Ne. Sve cestarine i naknade za parking u zračnoj luci uračunate su u cijenu vašeg transfera.',
+      btnQuote: 'ZATRAŽITE FIKSNU CIJENU',
+      btnWhatsapp: 'ČAT NA WHATSAPPU',
+      zaventemFootnote: '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.'
     },
     el: {
       title: 'Τιμολογιακή πολιτική της Helicro Transport για ιδιωτικές μετακινήσεις',
@@ -178,6 +261,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       minivanFares: 'ΙΔΙΩΤΙΚΟ MINIVAN • ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ',
       zaventemTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ ZAVENTEM (BRU)',
       charleroiTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ CHARLEROI (CRL)',
+      pax1: '1 ΕΠΙΒΑΤΗΣ',
+      pax2: '2 ΕΠΙΒΑΤΕΣ',
+      pax3: '3 ΕΠΙΒΑΤΕΣ',
+      pax4: '4 ΕΠΙΒΑΤΕΣ',
+      pax5: '5 ΕΠΙΒΑΤΕΣ',
+      pax6: '6 ΕΠΙΒΑΤΕΣ',
+      pax7: '7 ΕΠΙΒΑΤΕΣ',
+      pax8: '8 ΕΠΙΒΑΤΕΣ',
       pax12: '1 - 2 ΕΠΙΒΑΤΕΣ',
       pax34: '3 - 4 ΕΠΙΒΑΤΕΣ',
       pax58: '5 - 8 ΕΠΙΒΑΤΕΣ',
@@ -198,7 +289,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h3Surcharge: '4. ΠΟΛΙΤΙΚΗ ΕΠΙΠΛΕΟΝ ΧΡΕΩΣΕΩΝ',
       surchargeIntro: 'Για τις προγραμματισμένες ιδιωτικές μεταφορές, οι τιμές είναι σταθερές. Επιπλέον χρεώσεις ισχύουν μόνο για:',
       surchargeNight: 'Νυχτερινές Διαδρομές:',
-      surchargeNightDesc: 'Ισχύει μόνο για κρατήσεις κοινόχρηστων shuttles (μεταξύ 21:30 και 07:00).',
+      surchargeNightDesc: 'Ισχύει μόνο για κρατήσεις κοινόχρηστων shuttles (μεταξύ 22:00 και 06:00).',
       surchargeWait: 'Επιπλέον Χρόνος Αναμονής:',
       surchargeWaitDesc: 'Τα πρώτα 60 λεπτά μετά την προσγείωση είναι δωρεάν. Μετά, η χρέωση είναι 30€/ώρα.',
       surchargeDetour: 'Παρακάμψεις:',
@@ -222,7 +313,8 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       a3: 'Οχι. Τα τέλη στάθμευσης στο αεροδρόμιο (για τον χρόνο υποδοχής) και τα διόδια αυτοκινητοδρόμων περιλαμβάνονται 100% στην αρχική τιμή.',
 
       btnQuote: 'ΑΙΤΗΣΗ ΓΙΑ ΣΤΑΘΕΡΗ ΤΙΜΗ',
-      btnWhatsapp: 'ΣΥΝΟΜΙΛΙΑ ΣΤΟ WHATSAPP'
+      btnWhatsapp: 'ΣΥΝΟΜΙΛΙΑ ΣΤΟ WHATSAPP',
+      zaventemFootnote: '* Οι τιμές αφορούν τη ζώνη αποβίβασης (Drop off Area). Αν επιθυμείτε αποβίβαση στο P1, υπάρχει επιπλέον χρέωση 5€.'
     }
   }[lang];
 
@@ -268,17 +360,20 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax12}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 40€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 35€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax34}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 50€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 45€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax58}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 60€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 55€*</strong>
                 </li>
               </ul>
+              <p style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '12px', lineHeight: '1.4' }}>
+                {ui.zaventemFootnote}
+              </p>
             </div>
 
             {/* Charleroi */}
@@ -291,16 +386,36 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax12}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 70€</strong>
+                  <span>{ui.pax1}</span>
+                  <strong style={{ color: 'var(--primary)' }}>60€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax34}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 90€</strong>
+                  <span>{ui.pax2}</span>
+                  <strong style={{ color: 'var(--primary)' }}>70€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax58}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 110€</strong>
+                  <span>{ui.pax3}</span>
+                  <strong style={{ color: 'var(--primary)' }}>90€</strong>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span>{ui.pax4}</span>
+                  <strong style={{ color: 'var(--primary)' }}>110€</strong>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span>{ui.pax5}</span>
+                  <strong style={{ color: 'var(--primary)' }}>130€</strong>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span>{ui.pax6}</span>
+                  <strong style={{ color: 'var(--primary)' }}>150€</strong>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span>{ui.pax7}</span>
+                  <strong style={{ color: 'var(--primary)' }}>170€</strong>
+                </li>
+                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span>{ui.pax8}</span>
+                  <strong style={{ color: 'var(--primary)' }}>190€</strong>
                 </li>
               </ul>
             </div>
@@ -406,7 +521,10 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
             {ui.btnQuote}
           </a>
           <a href="https://wa.me/32472358805" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
-            {ui.btnWhatsapp}
+            🇧🇪 {ui.btnWhatsapp}
+          </a>
+          <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
+            🇬🇷 WhatsApp Greece
           </a>
         </div>
       </div>

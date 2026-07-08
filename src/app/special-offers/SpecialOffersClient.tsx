@@ -4,7 +4,7 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 
-export default function SpecialOffersClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' }) {
+export default function SpecialOffersClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
   
 
@@ -54,6 +54,21 @@ export default function SpecialOffersClient({ lang }: { lang: 'en' | 'nl' | 'fr'
       cardType: 'Carte Fidélité',
       freeSlot: 'OFFERT',
       footerNote: 'Valable sur tous les transferts vers les aéroports de Zaventem & Charleroi. Tampon appliqué lors de la validation du trajet.'
+    },
+        hr: {
+      metaTitle: 'Posebne ponude i kartica vjernosti | Helicro vozač u Bruxellesu',
+      metaDesc: 'Dobijte besplatan privatni transfer za svakih 8 završenih transfera u Bruxellesu. Zatražite svoju fizičku karticu za pečate od svog vozača već danas.',
+      title: 'Posebne ponude i nagrade',
+      subtitle: 'Zaradite besplatne vožnje i pogodnosti s našim programima vjernosti.',
+      badge: 'Program vjernosti',
+      h2: 'Program nagrađivanja vjernosti',
+      p1: 'Kao znak naše zahvalnosti, sa zadovoljstvom vam nudimo besplatnu vožnju za svakih 8 jednosmjernih transfera do zračne luke koje završite s našom tvrtkom, između Bruxellesa i zračne luke Charleroi ili zračne luke Bruxelles Zaventem.',
+      p2: 'Vaša 9. vožnja je besplatna!',
+      p3: '* Zatražite od svog vozača fizičku karticu za pečate kako biste počeli pratiti svoje vožnje.',
+      cardTitle: 'HELICRO KARTICA',
+      cardType: 'Kartica za pečate',
+      freeSlot: 'BESPLATNO',
+      footerNote: 'Vrijedi za sve transfere do zračnih luka Zaventem i Charleroi. Pečati se označavaju nakon potvrde vožnje.'
     },
     el: {
       metaTitle: 'Ειδικές Προσφορές & Κάρτα Πιστότητας | Helicro Brussels',

@@ -24,6 +24,10 @@ export default function ServiceRequest() {
     el: {
       headline: 'Αναζητάτε μεταφορά;',
       btn: 'Αίτηση για αυτήν την Υπηρεσία'
+    },
+    hr: {
+      headline: 'Tražite transfer?',
+      btn: 'Zatražite ovu uslugu'
     }
   }[lang];
 

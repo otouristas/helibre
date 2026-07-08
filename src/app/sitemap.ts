@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allRoutes: string[] = [];
 
   // Generate localized versions of all base routes
-  const locales = ['en', 'nl', 'fr', 'el'];
+  const locales = ['en', 'nl', 'fr', 'el', 'hr'];
   
   locales.forEach((lang) => {
     baseRoutes.forEach((route) => {
