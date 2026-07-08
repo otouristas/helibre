@@ -403,19 +403,19 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax5}</span>
-                  <strong style={{ color: 'var(--primary)' }}>130€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>120€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax6}</span>
-                  <strong style={{ color: 'var(--primary)' }}>150€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>130€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax7}</span>
-                  <strong style={{ color: 'var(--primary)' }}>170€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>140€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax8}</span>
-                  <strong style={{ color: 'var(--primary)' }}>190€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>160€</strong>
                 </li>
               </ul>
             </div>

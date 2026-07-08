@@ -134,8 +134,8 @@ export default function FareCalculator() {
 
     if (type === 'private') {
       if (route === 'crl') {
-        const crlPrices: Record<number, number> = { 1: 60, 2: 70, 3: 90, 4: 110, 5: 130, 6: 150, 7: 170, 8: 190 };
-        setPrice(crlPrices[passengers] ?? 190);
+        const crlPrices: Record<number, number> = { 1: 60, 2: 70, 3: 90, 4: 110, 5: 120, 6: 130, 7: 140, 8: 160 };
+        setPrice(crlPrices[passengers] ?? 160);
         setNote(ui.crlNote);
       } else {
         if (passengers === 1) {
