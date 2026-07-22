@@ -62,7 +62,20 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4: Contact & Registration */}
+        {/* Column 4: Popular SEO landings */}
+        <div className={styles.col}>
+          <div className={styles.title}>{t.popularTransfers}</div>
+          <ul className={styles.list}>
+            <li><Link href="/en/airport-transfer/brussels-charleroi" className={styles.link}>Charleroi Airport (CRL)</Link></li>
+            <li><Link href="/en/airport-transfer/lille" className={styles.link}>Lille Airport</Link></li>
+            <li><Link href="/en/route/brussels-zaventem" className={styles.link}>Brussels ↔ Zaventem</Link></li>
+            <li><Link href="/en/service-area" className={styles.link}>Service areas</Link></li>
+            <li><Link href={localizePath('/services/event-transfers')} className={styles.link}>{t.eventTransfers}</Link></li>
+            <li><Link href="/en/blog" className={styles.link}>Travel blog</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 5: Contact & Registration */}
         <div className={styles.col}>
           <div className={styles.title}>{t.contactRegistry}</div>
           

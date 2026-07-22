@@ -1,16 +1,15 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { seoPages } from '@/config/seoPages';
 import DynamicSEOPage from '@/components/DynamicSEOPage';
+import { seoMetadataFromUrl } from '@/lib/seoMetadata';
 
 const URL = '/en/greek-speaking-driver-brussels';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const p = seoPages.find((page) => page.url === URL);
-  return {
-    title: p?.title || 'Greek-Speaking Driver Brussels | Helicro',
-    description: p?.description || 'Greek and English speaking driver.',
-  };
+  return seoMetadataFromUrl(URL, {
+    title: 'Greek-Speaking Driver Brussels | Helicro',
+    description: 'Greek and English speaking driver.',
+  });
 }
 
 export default function Page() {

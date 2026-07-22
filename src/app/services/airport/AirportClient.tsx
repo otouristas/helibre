@@ -115,6 +115,19 @@ export default function AirportClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
           </div>
         </div>
 
+        <div style={{ marginBottom: '28px' }}>
+          <p style={{ fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '10px' }}>
+            {lang === 'nl' ? 'Belangrijke luchthavenpagina\'s' : lang === 'fr' ? 'Pages aéroport clés' : lang === 'el' ? 'Κύριες σελίδες αεροδρομίου' : lang === 'hr' ? 'Ključne stranice zračnih luka' : 'Key airport transfer pages'}
+          </p>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 1.9 }}>
+            <li><a href="/en/airport-transfer/brussels-charleroi" style={{ color: 'var(--primary-dark)', fontWeight: 600 }}>Charleroi Airport (CRL) hub</a></li>
+            <li><a href="/en/airport-transfer/lille" style={{ color: 'var(--primary-dark)', fontWeight: 600 }}>Lille Airport hub</a></li>
+            <li><a href="/en/route/brussels-zaventem" style={{ color: 'var(--primary-dark)', fontWeight: 600 }}>Brussels ↔ Zaventem route</a></li>
+            <li><a href="/en/route/brussels-charleroi" style={{ color: 'var(--primary-dark)', fontWeight: 600 }}>Brussels ↔ Charleroi route</a></li>
+            <li><a href="/en/service-area" style={{ color: 'var(--primary-dark)', fontWeight: 600 }}>All service areas</a></li>
+          </ul>
+        </div>
+
         <p style={{ marginBottom: '24px', fontSize: '15px' }}>
           <a href={lang === 'en' ? '/services/event-transfers' : `/${lang}/services/event-transfers`} style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
             {lang === 'nl' ? 'Evenemententransfers (Tomorrowland, F1 Spa) →' : lang === 'fr' ? 'Transferts événementiels (Tomorrowland, F1 Spa) →' : 'Event Transfers (Tomorrowland, F1 Spa) →'}

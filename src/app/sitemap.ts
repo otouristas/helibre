@@ -1,9 +1,15 @@
 import { MetadataRoute } from 'next';
 import { seoPages } from '@/config/seoPages';
 
+function isValidSitemapUrl(urlPath: string): boolean {
+  if (!urlPath.startsWith('/')) return false;
+  if (urlPath.includes(' ') || urlPath.includes('(new)')) return false;
+  return true;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://helicro.be';
-  
+
   // 1. Core static routes
   const baseRoutes = [
     '',
@@ -37,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Generate localized versions of all base routes
   const locales = ['en', 'nl', 'fr', 'el', 'hr'];
-  
+
   locales.forEach((lang) => {
     baseRoutes.forEach((route) => {
       if (lang === 'en') {
@@ -67,39 +73,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 2. Add Strategy SEO Pages from seoPages.ts
   seoPages.forEach((p) => {
-    // Normalize url
     let urlPath = p.url;
     if (!urlPath.startsWith('/')) {
       urlPath = `/${urlPath}`;
     }
+    if (!isValidSitemapUrl(urlPath)) return;
     if (!allRoutes.includes(urlPath)) {
       allRoutes.push(urlPath);
     }
   });
 
   // Unique list
-  const uniqueRoutes = Array.from(new Set(allRoutes));
+  const uniqueRoutes = Array.from(new Set(allRoutes)).filter(isValidSitemapUrl);
 
   return uniqueRoutes.map((route) => {
     const cleanRoute = route === '/' ? '' : route;
     const url = `${baseUrl}${cleanRoute}`;
-    
-    // Set priority
+
     let priority = 0.5;
     if (route === '/' || route === '/en' || route === '/nl' || route === '/fr' || route === '/el') {
       priority = 1.0;
-    } else if (route.includes('/services/event-transfers/tomorrowland') || route.includes('/services/event-transfers/formula-1-spa-francorchamps')) {
+    } else if (
+      route.includes('/services/event-transfers/tomorrowland') ||
+      route.includes('/services/event-transfers/formula-1-spa-francorchamps')
+    ) {
       priority = 0.9;
     } else if (route.includes('/services/event-transfers')) {
       priority = 0.85;
+    } else if (route.includes('/airport-transfer/') || route.includes('/luchthavenvervoer/') || route.includes('/navette/')) {
+      priority = 0.8;
     } else if (route.startsWith('/en/blog/')) {
       priority = 0.65;
-    } else if (baseRoutes.some(r => r !== '' && route.endsWith(r))) {
+    } else if (baseRoutes.some((r) => r !== '' && route.endsWith(r))) {
       priority = 0.8;
     } else {
-      const pageInfo = seoPages.find(p => p.url === route);
+      const pageInfo = seoPages.find((p) => p.url === route);
       if (pageInfo?.priority === 'HIGH') {
-        priority = 0.7;
+        priority = 0.75;
       } else if (pageInfo?.priority === 'MEDIUM') {
         priority = 0.6;
       }

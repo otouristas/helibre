@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   description: 'Private airport transfers in Brussels with English-speaking drivers, a Ford fleet and fixed prices to Zaventem & Charleroi. Book online with Helicro.',
   metadataBase: new URL('https://helicro.be'),
   alternates: {
-    canonical: '/',
     languages: {
       'en': '/',
       'nl': '/nl',

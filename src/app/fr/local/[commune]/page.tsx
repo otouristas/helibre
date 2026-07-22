@@ -1,7 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { seoPages } from '@/config/seoPages';
 import DynamicSEOPage from '@/components/DynamicSEOPage';
+import { hasSeoPage, seoMetadataFromUrl } from '@/lib/seoMetadata';
 
 interface PageProps {
   params: Promise<{ commune: string }>;
@@ -18,14 +20,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { commune } = await params;
-  const p = seoPages.find((page) => page.url === `/fr/local/${commune}`);
-  return {
-    title: p?.title || 'Chauffeur Privé Local | Helicro',
-    description: p?.description || 'Service de taxi et navette local.',
-  };
+  return seoMetadataFromUrl(`/fr/local/${commune}`, {
+    title: 'Chauffeur Privé Local | Helicro',
+    description: 'Service de taxi et navette local.',
+  });
 }
 
 export default async function Page({ params }: PageProps) {
   const { commune } = await params;
-  return <DynamicSEOPage url={`/fr/local/${commune}`} />;
+  const url = `/fr/local/${commune}`;
+  if (!hasSeoPage(url)) notFound();
+  return <DynamicSEOPage url={url} />;
 }

@@ -779,19 +779,6 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
 
         {/* Dynamic Header */}
         <h1 className={styles.h1}>{page.h1}</h1>
-        
-        {/* Target Keyword Tag */}
-        <div style={{ marginBottom: '32px' }}>
-          <span className={styles.keywordTag}>
-            🎯 {ui.targeted} <strong>{page.keyword}</strong>
-          </span>
-          <span className={styles.priorityTag} style={{ 
-            backgroundColor: page.priority === 'HIGH' ? '#fee2e2' : '#fef3c7',
-            color: page.priority === 'HIGH' ? '#991b1b' : '#92400e'
-          }}>
-            {ui.priority} {page.priority}
-          </span>
-        </div>
 
         {/* Content Body Grid */}
         <div 
@@ -799,7 +786,8 @@ export default function DynamicSEOPage({ url }: DynamicSEOPageProps) {
             display: 'grid', 
             gridTemplateColumns: '1.4fr 1fr', 
             gap: '50px',
-            alignItems: 'start'
+            alignItems: 'start',
+            marginTop: '24px'
           }}
           className="grid-cols-mobile"
         >

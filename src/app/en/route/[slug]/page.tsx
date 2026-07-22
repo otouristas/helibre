@@ -1,7 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { seoPages } from '@/config/seoPages';
 import DynamicSEOPage from '@/components/DynamicSEOPage';
+import { hasSeoPage, seoMetadataFromUrl } from '@/lib/seoMetadata';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -18,14 +20,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const p = seoPages.find((page) => page.url === `/en/route/${slug}`);
-  return {
-    title: p?.title || 'Airport Transfer Route | Helicro',
-    description: p?.description || 'Private transfer route in Belgium.',
-  };
+  return seoMetadataFromUrl(`/en/route/${slug}`, {
+    title: 'Airport Transfer Route | Helicro',
+    description: 'Private transfer route in Belgium.',
+  });
 }
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  return <DynamicSEOPage url={`/en/route/${slug}`} />;
+  const url = `/en/route/${slug}`;
+  if (!hasSeoPage(url)) notFound();
+  return <DynamicSEOPage url={url} />;
 }

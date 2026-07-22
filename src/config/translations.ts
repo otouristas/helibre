@@ -20,6 +20,7 @@ export const translations = {
     parcelDelivery: 'Parcel Delivery',
     eventTransport: 'Weddings & Private Parties',
     eventTransfers: 'Event Transfers',
+    popularTransfers: 'Popular transfers',
 
     // Footer
     quickLinks: 'Quick Links',
@@ -67,6 +68,7 @@ export const translations = {
     parcelDelivery: 'Pakketbezorging',
     eventTransport: 'Trouwen & Privéfeesten',
     eventTransfers: 'Evenemententransfers',
+    popularTransfers: 'Populaire transfers',
 
     // Footer
     quickLinks: 'Snelle Links',
@@ -114,6 +116,7 @@ export const translations = {
     parcelDelivery: 'Livraison de Colis',
     eventTransport: 'Mariages & Soirées Privées',
     eventTransfers: 'Transferts Événementiels',
+    popularTransfers: 'Transferts populaires',
 
     // Footer
     quickLinks: 'Liens Rapides',
@@ -161,6 +164,7 @@ export const translations = {
     parcelDelivery: 'ΜΕΤΑΦΟΡΑ ΔΕΜΑΤΩΝ',
     eventTransport: 'ΜΕΤΑΦΟΡΕΣ ΓΑΜΩΝ',
     eventTransfers: 'ΜΕΤΑΦΟΡΕΣ ΕΚΔΗΛΩΣΕΩΝ',
+    popularTransfers: 'Δημοφιλείς μεταφορές',
 
     // Footer
     quickLinks: 'ΓΡΗΓΟΡΟΙ ΣΥΝΔΕΣΜΟΙ',
@@ -208,6 +212,7 @@ export const translations = {
     parcelDelivery: 'Dostava paketa',
     eventTransport: 'Vjenčanja i privatne zabave',
     eventTransfers: 'Prijevoz za događaje',
+    popularTransfers: 'Popularni transferi',
 
     // Footer
     quickLinks: 'Brze poveznice',

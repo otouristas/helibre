@@ -1,11 +1,13 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { seoMetadataFromUrl } from '@/lib/seoMetadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = seoMetadataFromUrl('/en/service-area', {
   title: 'Service Area | Helicro Transport Belgium',
-  description: 'See every Belgian city, airport and route Helicro covers, with maps, fixed prices and direct booking links.',
-};
+  description:
+    'See every Belgian city, airport and route Helicro covers, with maps, fixed prices and direct booking links.',
+});
 
 interface CityArea {
   name: string;
