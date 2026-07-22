@@ -35,4 +35,11 @@ The service operates in four languages:
 - Airport Transfers: https://helicro.be/services/airport
 - Corporate Shuttle: https://helicro.be/services/corporate
 - Parcel Express Delivery: https://helicro.be/services/parcel
-- Events & Weddings: https://helicro.be/services/events
+- Weddings & Private Parties: https://helicro.be/services/events
+- Event Transfers (Festivals & Motorsport): https://helicro.be/services/event-transfers
+- Tomorrowland VIP Transfers: https://helicro.be/services/event-transfers/tomorrowland
+- Spa-Francorchamps F1 Transfers: https://helicro.be/services/event-transfers/formula-1-spa-francorchamps
+
+### Blog Guides
+- Tomorrowland 2026 VIP Group Transport: https://helicro.be/en/blog/tomorrowland-2026-vip-group-transport
+- Spa-Francorchamps F1 Transfer Guide: https://helicro.be/en/blog/spa-francorchamps-f1-transfer-guide

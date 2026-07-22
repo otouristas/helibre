@@ -129,6 +129,7 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
                 <Link href={localizePath('/services/airport')} className={styles.dropdownItem}>{t.airportTransfers}</Link>
                 <Link href={localizePath('/services/corporate')} className={styles.dropdownItem}>{t.corporateShuttle}</Link>
                 <Link href={localizePath('/services/parcel')} className={styles.dropdownItem}>{t.parcelDelivery}</Link>
+                <Link href={localizePath('/services/event-transfers')} className={styles.dropdownItem}>{t.eventTransfers}</Link>
                 <Link href={localizePath('/services/events')} className={styles.dropdownItem}>{t.eventTransport}</Link>
               </div>
             </div>

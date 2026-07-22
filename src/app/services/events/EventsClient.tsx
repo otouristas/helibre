@@ -1,88 +1,83 @@
 'use client';
 
 import React from 'react';
-import { usePathname } from 'next/navigation';
-import { getLangFromPath } from '@/config/translations';
+import Link from 'next/link';
 import ServiceTemplate from '@/components/ServiceTemplate';
 import ServiceRequest from '@/components/ServiceRequest';
 
 export default function EventsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
-  const pathname = usePathname();
-  
+  const localizePath = (path: string) => {
+    if (lang === 'en') return path;
+    return `/${lang}${path}`;
+  };
 
-  // Localization Dictionary for Events Service
   const ui = {
     en: {
-      metaTitle: 'Events Transportation Belgium | Wedding & Party Shuttles',
-      metaDesc: 'Seamless group transfer logistics for weddings, private parties, corporate dinners and events in Belgium. Premium Ford minivans.',
-      title: 'Personal Events Transportation Services',
-      p1: 'An event to organize? A big meeting, special guests, or an end-of-year party? Do you need to move a large number of guests safely?',
-      p2: 'Do your guests have to travel to different venues or locations within a strict time frame?',
-      p3: 'We know that the success of these events depends on the details. We are experts in organizing seamless transport logistics for events.',
-      p4: 'Our event services cover everything from point-to-point shuttle service, driving guests home late at night, or coordinating a simple group excursion somewhere in Belgium.'
+      title: 'Wedding & Private Party Transportation',
+      p1: 'Planning a wedding, private celebration, or guest shuttle between venues? Helicro coordinates seamless group logistics so your guests arrive on time, together, and in comfort.',
+      p2: 'Our 8-passenger executive minivans are ideal for bridal parties, hotel-to-venue guest fleets, late-night returns after receptions, and multi-stop celebration itineraries across Belgium.',
+      p3: 'Every booking includes a named professional chauffeur, fixed flat rates, and multilingual service in English, French, and Greek.',
+      p4: 'Looking for major festivals or motorsport instead? See our dedicated Event Transfers for Tomorrowland, Spa-Francorchamps F1, and corporate summits.',
+      festLink: 'Explore Festival & Motorsport Transfers →',
+      weddingLink: 'Also see Wedding Transport Belgium →',
     },
     nl: {
-      metaTitle: 'Evenementen Vervoer België | Bruiloft & Feest Shuttles',
-      metaDesc: 'Groepsvervoer en logistiek voor bruiloften, bedrijfsfeesten en evenementen in België. Luxe Ford personenbussen met chauffeur.',
-      title: 'Evenementen- & Groepsvervoer',
-      p1: 'Heeft u een evenement te organiseren? Een grote vergadering, speciale gasten of een personeelsfeest? Moet u een groter aantal gasten veilig vervoeren?',
-      p2: 'Moeten uw gasten binnen een strak tijdschema naar verschillende locaties of hotels worden gebracht?',
-      p3: 'Wij begrijpen dat het succes van uw evenement afhangt van de details. Wij zijn experts in het vlekkeloos regelen van transportlogistiek.',
-      p4: 'Onze diensten omvatten alles: van directe shuttleverbindingen tot het veilig thuisbrengen van gasten na afloop of een groepsrondrit door België.'
+      title: 'Trouw- & privéfeestvervoer',
+      p1: 'Plant u een huwelijk, privéfeest of gastenshuttle tussen locaties? Helicro regelt vlekkeloze groepslogistiek zodat uw gasten samen, op tijd en comfortabel aankomen.',
+      p2: 'Onze executive minivans voor 8 personen zijn ideaal voor bridal parties, hotel-naar-locatie gastenvervoer, late retourritten na recepties en multi-stop vieringen in België.',
+      p3: 'Elke boeking omvat een vaste professionele chauffeur, forfaitaire tarieven en meertalige service in Engels, Frans en Grieks.',
+      p4: 'Op zoek naar grote festivals of motorsport? Bekijk onze Evenemententransfers voor Tomorrowland, Spa-Francorchamps F1 en bedrijfstoppen.',
+      festLink: 'Festival- & motorsporttransfers ontdekken →',
+      weddingLink: 'Ook: Wedding Transport Belgium →',
     },
     fr: {
-      metaTitle: 'Transport Événementiel Belgique | Navettes Mariage & Soirées',
-      metaDesc: 'Logistique de transport sur mesure pour mariages, soirées privées, séminaires ou galas en Belgique. Chauffeur privé et vans Ford.',
-      title: 'Transport pour Événements Privés & Professionnels',
-      p1: 'Un événement à organiser ? Un séminaire d\'entreprise, des invités VIP ou une fête de fin d\'année ? Devez-vous déplacer un grand nombre de personnes en toute sécurité ?',
-      p2: 'Vos invités doivent-ils se rendre dans différents lieux de réception selon un timing précis ?',
-      p3: 'Nous savons que le succès d\'un événement tient aux détails. Nous sommes experts dans la planification de logistique de transport fluide.',
-      p4: 'Nos services couvrent tout type de besoin : navettes de point à point, raccompagnement des invités tard dans la nuit ou excursions touristiques.'
+      title: 'Transport mariage & soirées privées',
+      p1: 'Vous organisez un mariage, une célébration privée ou une navette d’invités entre lieux ? Helicro coordonne une logistique de groupe fluide pour que vos invités arrivent à l’heure, ensemble et dans le confort.',
+      p2: 'Nos minivans exécutifs 8 places sont idéaux pour cortèges, flottes hôtel–lieu de réception, retours de nuit et itinéraires multi-arrêts en Belgique.',
+      p3: 'Chaque réservation inclut un chauffeur professionnel nommé, des tarifs forfaitaires et un service multilingue (anglais, français, grec).',
+      p4: 'Vous cherchez festivals ou motorsport ? Consultez nos Transferts événementiels pour Tomorrowland, F1 Spa-Francorchamps et sommets corporate.',
+      festLink: 'Découvrir les transferts festival & motorsport →',
+      weddingLink: 'Voir aussi Wedding Transport Belgium →',
     },
-        hr: {
-      metaTitle: 'Prijevoz za događaje u Belgiji | Shuttles za vjenčanja i zabave',
-      metaDesc: 'Besprijekorna logistika grupnog prijevoza za vjenčanja, privatne zabave, korporativne večere i događaje u Belgiji. Premium Ford kombiji.',
-      title: 'Usluge prijevoza za osobne događaje',
-      p1: 'Organizirate događaj? Veliki sastanak, posebne goste ili novogodišnju zabavu? Trebate li sigurno prevesti veći broj gostiju?',
-      p2: 'Moraju li vaši gosti putovati na različita mjesta ili lokacije unutar strogog vremenskog okvira?',
-      p3: 'Znamo da uspjeh ovih događaja ovisi o detaljima. Stručnjaci smo za organizaciju besprijekorne logistike prijevoza za događaje.',
-      p4: 'Naše usluge za događaje pokrivaju sve, od usluge shuttle prijevoza od točke do točke, vožnje gostiju kući kasno navečer, do koordinacije jednostavnog grupnog izleta negdje u Belgiji.'
+    hr: {
+      title: 'Prijevoz za vjenčanja i privatne zabave',
+      p1: 'Organizirate vjenčanje, privatnu proslavu ili shuttle gostiju između lokacija? Helicro koordinira besprijekornu grupnu logistiku.',
+      p2: 'Naši executive kombiji za 8 putnika idealni su za bridal party, prijevoz gostiju hotel–lokacija i kasne povratke nakon proslave.',
+      p3: 'Svaka rezervacija uključuje imenovanog profesionalnog vozača, fiksne cijene i višejezičnu uslugu.',
+      p4: 'Tražite festivale ili motorsport? Pogledajte naše Event Transfers stranice.',
+      festLink: 'Istražite festival i motorsport transfere →',
+      weddingLink: 'Također: Wedding Transport Belgium →',
     },
     el: {
-      metaTitle: 'Μεταφορές Εκδηλώσεων Βέλγιο | Shuttles για Γάμους & Πάρτι',
-      metaDesc: 'Οργάνωση μεταφορών για γάμους, ιδιωτικά πάρτι, εταιρικά δείπνα και εκδηλώσεις στο Βέλγιο. Πολυτελή Ford minivans.',
-      title: 'Μεταφορές Προσωπικών Εκδηλώσεων',
-      p1: 'Εχετε να οργανώσετε κάποια εκδήλωση; Μια μεγάλη συνάντηση, VIP καλεσμένους ή ένα πάρτι; Πρέπει να μετακινήσετε πολλούς καλεσμένους με ασφάλεια;',
-      p2: 'Πρέπει οι καλεσμένοι σας να μετακινηθούν σε διαφορετικούς χώρους ή τοποθεσίες εντός αυστηρού χρονικού πλαισίου;',
-      p3: 'Γνωρίζουμε ότι η επιτυχία αυτών των εκδηλώσεων εξαρτάται από τις λεπτομέρειες. Είμαστε ειδικοί στην οργάνωση logistics μεταφοράς.',
-      p4: 'Οι υπηρεσίες μας καλύπτουν τα πάντα: από μεταφορές shuttle, ασφαλή επιστροφή των καλεσμένων στο σπίτι αργά τη νύχτα, έως ομαδικές εκδρομές στο Βέλγιο.'
-    }
+      title: 'Μεταφορές γάμων & ιδιωτικών εκδηλώσεων',
+      p1: 'Οργανώνετε γάμο, ιδιωτική γιορτή ή shuttle καλεσμένων; Η Helicro συντονίζει άψογη ομαδική μετακίνηση.',
+      p2: 'Τα executive minivans 8 θέσεων είναι ιδανικά για bridal party, μεταφορές ξενοδοχείο–χώρος δεξίωσης και αργινές επιστροφές.',
+      p3: 'Κάθε κράτηση περιλαμβάνει επώνυμο επαγγελματία σοφέρ, σταθερές τιμές και πολύγλωσση εξυπηρέτηση.',
+      p4: 'Ψάχνετε φεστιβάλ ή motorsport; Δείτε τις σελίδες Event Transfers.',
+      festLink: 'Εξερευνήστε μεταφορές φεστιβάλ & motorsport →',
+      weddingLink: 'Δείτε επίσης Wedding Transport Belgium →',
+    },
   }[lang];
 
   return (
     <div className="section">
-      
-      
-
-      <ServiceTemplate 
-        img="/images/event-service.jpg" 
-        title={ui.title}
-      >
+      <ServiceTemplate img="/images/event-service.jpg" title={ui.title}>
         <div style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--text-secondary)' }}>
+          <p className="mb-4">{ui.p1}</p>
+          <p className="mb-4">{ui.p2}</p>
+          <p className="mb-4">{ui.p3}</p>
+          <p className="mb-4">{ui.p4}</p>
           <p className="mb-4">
-            {ui.p1}
-          </p>
-          <p className="mb-4">
-            {ui.p2}
-          </p>
-          <p className="mb-4">
-            {ui.p3}
+            <Link href={localizePath('/services/event-transfers')} style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
+              {ui.festLink}
+            </Link>
           </p>
           <p className="mb-6">
-            {ui.p4}
+            <Link href="/en/wedding-transport-belgium" style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
+              {ui.weddingLink}
+            </Link>
           </p>
         </div>
-
         <ServiceRequest />
       </ServiceTemplate>
     </div>

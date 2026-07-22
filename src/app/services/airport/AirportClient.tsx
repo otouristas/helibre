@@ -115,6 +115,12 @@ export default function AirportClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
           </div>
         </div>
 
+        <p style={{ marginBottom: '24px', fontSize: '15px' }}>
+          <a href={lang === 'en' ? '/services/event-transfers' : `/${lang}/services/event-transfers`} style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
+            {lang === 'nl' ? 'Evenemententransfers (Tomorrowland, F1 Spa) →' : lang === 'fr' ? 'Transferts événementiels (Tomorrowland, F1 Spa) →' : 'Event Transfers (Tomorrowland, F1 Spa) →'}
+          </a>
+        </p>
+
         <ServiceRequest />
 
         {/* CSS workaround for mobile grid */}

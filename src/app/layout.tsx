@@ -5,6 +5,8 @@ import './globals.css';
 import HeaderLayout from '@/components/HeaderLayout';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import JsonLd from '@/components/JsonLd';
+import { localBusinessSchema } from '@/lib/schema';
 
 const inter = Inter({
   subsets: ['latin', 'greek'],
@@ -65,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <JsonLd data={localBusinessSchema()} />
         {/* Header Layout: Banner, Desktop Navbar, Mobile Drawer */}
         <HeaderLayout />
         

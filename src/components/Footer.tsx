@@ -57,6 +57,7 @@ export default function Footer() {
             <li><Link href={localizePath('/services/sightseeing')} className={styles.link}>{t.sightseeing}</Link></li>
             <li><Link href={localizePath('/services/corporate')} className={styles.link}>{t.corporateShuttle}</Link></li>
             <li><Link href={localizePath('/services/parcel')} className={styles.link}>{t.parcelDelivery}</Link></li>
+            <li><Link href={localizePath('/services/event-transfers')} className={styles.link}>{t.eventTransfers}</Link></li>
             <li><Link href={localizePath('/services/events')} className={styles.link}>{t.eventTransport}</Link></li>
           </ul>
         </div>

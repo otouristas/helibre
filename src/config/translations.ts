@@ -18,7 +18,8 @@ export const translations = {
     airportTransfers: 'Airport Transfers',
     corporateShuttle: 'Corporate Shuttle',
     parcelDelivery: 'Parcel Delivery',
-    eventTransport: 'Event Transportation',
+    eventTransport: 'Weddings & Private Parties',
+    eventTransfers: 'Event Transfers',
 
     // Footer
     quickLinks: 'Quick Links',
@@ -64,7 +65,8 @@ export const translations = {
     airportTransfers: 'Luchthavenvervoer',
     corporateShuttle: 'Zakelijk Vervoer',
     parcelDelivery: 'Pakketbezorging',
-    eventTransport: 'Evenementen Vervoer',
+    eventTransport: 'Trouwen & Privéfeesten',
+    eventTransfers: 'Evenemententransfers',
 
     // Footer
     quickLinks: 'Snelle Links',
@@ -110,7 +112,8 @@ export const translations = {
     airportTransfers: 'Navettes Aéroport',
     corporateShuttle: 'Navette d\'Entreprise',
     parcelDelivery: 'Livraison de Colis',
-    eventTransport: 'Transport d\'Événements',
+    eventTransport: 'Mariages & Soirées Privées',
+    eventTransfers: 'Transferts Événementiels',
 
     // Footer
     quickLinks: 'Liens Rapides',
@@ -156,7 +159,8 @@ export const translations = {
     airportTransfers: 'ΜΕΤΑΦΟΡΕΣ ΑΕΡΟΔΡΟΜΙΟΥ',
     corporateShuttle: 'ΕΤΑΙΡΙΚΕΣ ΜΕΤΑΚΙΝΗΣΕΙΣ',
     parcelDelivery: 'ΜΕΤΑΦΟΡΑ ΔΕΜΑΤΩΝ',
-    eventTransport: 'ΜΕΤΑΦΟΡΕΣ ΕΚΔΗΛΩΣΕΩΝ',
+    eventTransport: 'ΜΕΤΑΦΟΡΕΣ ΓΑΜΩΝ',
+    eventTransfers: 'ΜΕΤΑΦΟΡΕΣ ΕΚΔΗΛΩΣΕΩΝ',
 
     // Footer
     quickLinks: 'ΓΡΗΓΟΡΟΙ ΣΥΝΔΕΣΜΟΙ',
@@ -202,7 +206,8 @@ export const translations = {
     airportTransfers: 'Zračni prijevoz',
     corporateShuttle: 'Korporativni prijevoz',
     parcelDelivery: 'Dostava paketa',
-    eventTransport: 'Prijevoz za događaje',
+    eventTransport: 'Vjenčanja i privatne zabave',
+    eventTransfers: 'Prijevoz za događaje',
 
     // Footer
     quickLinks: 'Brze poveznice',

@@ -117,6 +117,9 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             <Link href={localizePath('/services/parcel')} className={isServiceActive('/services/parcel')} onClick={onClose}>
               {t.parcelDelivery}
             </Link>
+            <Link href={localizePath('/services/event-transfers')} className={isServiceActive('/services/event-transfers')} onClick={onClose}>
+              {t.eventTransfers}
+            </Link>
             <Link href={localizePath('/services/events')} className={isServiceActive('/services/events')} onClick={onClose}>
               {t.eventTransport}
             </Link>

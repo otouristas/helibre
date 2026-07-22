@@ -1,0 +1,163 @@
+.eventPage {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.eventPage h2 {
+  color: var(--primary-dark);
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin: 2rem 0 1rem;
+}
+
+.eventPage h3 {
+  color: var(--primary-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.eventPage ul {
+  margin: 0 0 1.25rem 1.25rem;
+  padding: 0;
+}
+
+.eventPage li {
+  margin-bottom: 0.5rem;
+}
+
+.eventPage p {
+  margin-bottom: 1rem;
+}
+
+.featureList {
+  list-style: none;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.featureList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.packageTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0 1.75rem;
+  font-size: 0.95rem;
+}
+
+.packageTable th,
+.packageTable td {
+  border: 1px solid var(--card-border);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.packageTable th {
+  background: var(--primary-dark);
+  color: #fff;
+  font-weight: 700;
+}
+
+.packageTable tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.eventCard {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.eventCard a {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 1rem 0 1.5rem;
+}
+
+.relatedLinks a {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: none;
+  background: #fff;
+}
+
+.relatedLinks a:hover {
+  border-color: var(--accent);
+}
+
+.faqItem {
+  margin-bottom: 1.25rem;
+}
+
+.faqItem h3 {
+  margin-top: 0;
+}
+
+.ctaInline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.ctaInline a {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.waBtn {
+  background: #25d366;
+  color: #fff !important;
+}
+
+.bookBtn {
+  background: var(--accent);
+  color: #111 !important;
+}
+
+.note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .packageTable {
+    display: block;
+    overflow-x: auto;
+  }
+}

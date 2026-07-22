@@ -349,11 +349,29 @@ export const seoPages: SEOPage[] = [
 
   {
     "type": "Festival",
-    "url": "/en/festival/tomorrowland",
-    "h1": "Tomorrowland private transfer from Brussels and the airports",
-    "keyword": "tomorrowland transport",
-    "title": "Tomorrowland Private Transfer From Brussels Airport | Helicro",
-    "description": "VIP private minivan to Tomorrowland from Brussels airport, Charleroi airport or Brussels city. Fixed price, return slots.",
+    "url": "/services/event-transfers/tomorrowland",
+    "h1": "Tomorrowland VIP private transfers & chauffeur van service",
+    "keyword": "tomorrowland private transfer",
+    "title": "Tomorrowland Private Transfers | Brussels to Boom Chauffeur Van | Helicro",
+    "description": "Private 8-seater VIP transfers to Tomorrowland in Boom. Direct pickups from Brussels Airport (BRU), Charleroi (CRL), and hotels. Fixed rates & guaranteed night rides.",
+    "priority": "HIGH"
+  },
+  {
+    "type": "Festival",
+    "url": "/services/event-transfers/formula-1-spa-francorchamps",
+    "h1": "Circuit de Spa-Francorchamps private chauffeur & group transfers",
+    "keyword": "spa francorchamps private transfer",
+    "title": "Spa-Francorchamps F1 & Motorsport Transfers | Private Chauffeur | Helicro",
+    "description": "Premium private transfers to Circuit de Spa-Francorchamps for Formula 1, Ferrari track days, and 24h Spa. Luxury 8-seater van from Brussels & airports.",
+    "priority": "HIGH"
+  },
+  {
+    "type": "Festival",
+    "url": "/services/event-transfers",
+    "h1": "Premium event transfers & chauffeur services in Belgium",
+    "keyword": "event transfers Belgium",
+    "title": "Private Event Transfers Belgium | Luxury 8-Seater Chauffeur | Helicro",
+    "description": "Premium private transfers to Belgium’s top festivals, Formula 1, Ferrari track days, and corporate summits. Fixed flat rates, up to 8 passengers, guaranteed late-night pickups.",
     "priority": "HIGH"
   },
   {
@@ -523,11 +541,11 @@ export const pageRevamps: PageRevamp[] = [
   },
   {
     "url": "/services/events",
-    "h1": "Event transportation in Belgium: festivals, weddings, conferences and team days",
-    "title": "Event Transport Belgium | Festivals, Weddings, Conferences",
-    "description": "Private group transfers for major Belgian festivals, weddings, conferences and team off-sites. Coordinated logistics, named driver.",
-    "structure": "1) Festivals we cover 2) Wedding transport (guest fleet, bride and groom car) 3) Conferences and MICE 4) Team off-sites and celebrations 5) Group size and fleet 6) Pricing and booking lead time 7) Reviews 8) Get a custom quote",
-    "ctas": "Plan my event transfer | Book festival transport | Wedding quote",
+    "h1": "Wedding and private party transportation in Belgium",
+    "title": "Wedding & Private Party Transport Belgium | Helicro",
+    "description": "Guest fleet and private party shuttles for weddings and celebrations across Belgium. For festivals and motorsport, see Event Transfers.",
+    "structure": "1) Weddings (guest fleet, bride/groom) 2) Private parties 3) Link to Event Transfers for festivals/F1 4) Fleet 5) Pricing lead time 6) FAQ 7) Quote",
+    "ctas": "Wedding quote | Party shuttle | Festival & F1 transfers",
     "priority": "HIGH"
   },
   {

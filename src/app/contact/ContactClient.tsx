@@ -4,10 +4,11 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import ServiceRequest from '@/components/ServiceRequest';
+import EventQuoteCTA from '@/components/EventQuoteCTA';
 
 export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
-  
+  const eventLang = lang === 'nl' || lang === 'fr' ? lang : 'en';
 
   // Localization Dictionary for Contact
   const ui = {
@@ -204,7 +205,10 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <p style={{ color: 'var(--text-secondary)', fontSize: '14.5px', marginBottom: '28px', lineHeight: '1.6' }}>
                 {ui.formDesc}
               </p>
-              <ServiceRequest />
+              <EventQuoteCTA lang={eventLang} />
+              <div style={{ marginTop: 24 }}>
+                <ServiceRequest />
+              </div>
             </div>
           </div>
         </div>

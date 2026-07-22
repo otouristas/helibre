@@ -204,24 +204,46 @@ export const metaTranslations: Record<string, Record<'en' | 'nl' | 'fr' | 'el' |
   },
   'services/events': {
     en: {
-      title: 'Event & Wedding Transportation Belgium | Group Minivans',
-      description: 'Stress-free group and guest transportation for weddings, concerts, corporate events, and parties. Ford minivans and professional organization.'
+      title: 'Wedding & Private Party Transport Belgium | Helicro',
+      description: 'Guest fleet and private party shuttles for weddings and celebrations across Belgium. Comfortable minivans for up to 8 passengers.'
     },
     nl: {
-      title: 'Evenementen & Trouwvervoer België | Groepsvervoer Minivans',
-      description: 'Zorgeloos groepsvervoer voor huwelijken, evenementen, congressen en privéfeesten. Comfortabele Ford minivans en flexibele shuttles.'
+      title: 'Trouw- & Privéfeestvervoer België | Helicro',
+      description: 'Gastenvloten en shuttles voor huwelijken en privéfeesten in België. Comfortabele minivans tot 8 personen.'
     },
     fr: {
-      title: 'Navette Événements & Mariage Belgique | Vans de Groupe',
-      description: 'Organisation de transferts de groupe pour mariages, soirées d\'entreprise et événements culturels. Flotte Ford avec chauffeurs coordonnés.'
+      title: 'Transport Mariage & Soirées Privées Belgique | Helicro',
+      description: 'Navettes invités et flotte pour mariages et soirées privées en Belgique. Minivans confortables jusqu’à 8 places.'
     },
     el: {
-      title: 'ΜΕΤΑΦΟΡΑ ΣΕ ΕΚΔΗΛΩΣΕΙΣ & ΓΑΜΟΥΣ | MINIVANS ΟΜΑΔΩΝ ΒΕΛΓΙΟ',
-      description: 'Μετακίνηση καλεσμένων για γάμους, συνέδρια, πάρτι και συναυλίες. Ford minivans και επαγγελματικός συντονισμός για κάθε εκδήλωση.'
+      title: 'ΜΕΤΑΦΟΡΑ ΓΑΜΩΝ & ΙΔΙΩΤΙΚΩΝ ΕΚΔΗΛΩΣΕΩΝ | HELICRO',
+      description: 'Μετακίνηση καλεσμένων για γάμους και ιδιωτικά πάρτι στο Βέλγιο. Άνετα minivans έως 8 επιβάτες.'
     },
     hr: {
-      title: 'Prijevoz za događaje i festivale u Belgiji | Helicro',
-      description: 'Grupni prijevoz za festivale poput Tomorrowland, vjenčanja i sportske događaje. Udobni Ford kombiji za do 8 putnika.'
+      title: 'Prijevoz za vjenčanja i privatne zabave | Helicro',
+      description: 'Prijevoz gostiju za vjenčanja i privatne zabave u Belgiji. Udobni kombiji do 8 putnika.'
+    }
+  },
+  'services/event-transfers': {
+    en: {
+      title: 'Private Event Transfers Belgium | Luxury 8-Seater Chauffeur | Helicro',
+      description: 'Premium private transfers to Belgium’s top festivals, Formula 1, Ferrari track days, and corporate summits. Fixed flat rates, up to 8 passengers.'
+    },
+    nl: {
+      title: 'Privé Evenemententransfers België | Luxe 8-Zitter Chauffeur | Helicro',
+      description: 'Premium privétransfers naar festivals, Formule 1, Ferrari track days en bedrijfstoppen. Vaste tarieven, tot 8 passagiers.'
+    },
+    fr: {
+      title: 'Transferts Événementiels Belgique | Chauffeur Minivan 8 Places | Helicro',
+      description: 'Transferts privés premium vers festivals, Formule 1, Ferrari track days et sommets corporate. Tarifs forfaitaires, jusqu’à 8 passagers.'
+    },
+    el: {
+      title: 'Μεταφορές Εκδηλώσεων Βέλγιο | Helicro',
+      description: 'Ιδιωτικές μεταφορές για φεστιβάλ, F1 και εταιρικές εκδηλώσεις στο Βέλγιο.'
+    },
+    hr: {
+      title: 'Prijevoz za događaje Belgija | Helicro',
+      description: 'Privatni transferi za festivale, F1 i korporativne događaje u Belgiji.'
     }
   },
   'services/parcel': {

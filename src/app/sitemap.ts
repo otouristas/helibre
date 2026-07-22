@@ -19,6 +19,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/corporate',
     '/services/parcel',
     '/services/events',
+    '/services/event-transfers',
+  ];
+
+  const eventTransferRoutes = [
+    '/services/event-transfers/tomorrowland',
+    '/services/event-transfers/formula-1-spa-francorchamps',
+  ];
+
+  const blogRoutes = [
+    '/en/blog',
+    '/en/blog/tomorrowland-2026-vip-group-transport',
+    '/en/blog/spa-francorchamps-f1-transfer-guide',
   ];
 
   const allRoutes: string[] = [];
@@ -39,6 +51,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     });
   });
+
+  // Event transfer child pages: EN / NL / FR only
+  ['en', 'nl', 'fr'].forEach((lang) => {
+    eventTransferRoutes.forEach((route) => {
+      if (lang === 'en') {
+        allRoutes.push(route);
+      } else {
+        allRoutes.push(`/${lang}${route}`);
+      }
+    });
+  });
+
+  blogRoutes.forEach((route) => allRoutes.push(route));
 
   // 2. Add Strategy SEO Pages from seoPages.ts
   seoPages.forEach((p) => {
@@ -63,6 +88,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     let priority = 0.5;
     if (route === '/' || route === '/en' || route === '/nl' || route === '/fr' || route === '/el') {
       priority = 1.0;
+    } else if (route.includes('/services/event-transfers/tomorrowland') || route.includes('/services/event-transfers/formula-1-spa-francorchamps')) {
+      priority = 0.9;
+    } else if (route.includes('/services/event-transfers')) {
+      priority = 0.85;
+    } else if (route.startsWith('/en/blog/')) {
+      priority = 0.65;
     } else if (baseRoutes.some(r => r !== '' && route.endsWith(r))) {
       priority = 0.8;
     } else {

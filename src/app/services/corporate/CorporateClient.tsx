@@ -75,6 +75,12 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
           </p>
         </div>
 
+        <p style={{ marginBottom: '24px', fontSize: '15px' }}>
+          <a href={lang === 'en' ? '/services/event-transfers' : `/${lang}/services/event-transfers`} style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
+            {lang === 'nl' ? 'EU-toppen & evenemententransfers →' : lang === 'fr' ? 'Sommets UE & transferts événementiels →' : 'EU summits & Event Transfers →'}
+          </a>
+        </p>
+
         <ServiceRequest />
       </ServiceTemplate>
     </div>
