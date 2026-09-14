@@ -1,45 +1,89 @@
-# Helicro Chauffeur & Private Transfer Services
+# Helicro Transport
 
-Helicro is a licensed premium private transfer and minivan chauffeur service based in Belgium (Braine-l'Alleud), operated by Gerasimos and his team of professional drivers with over 30 years of road experience.
+> Helicro Transport (Helicro SRL, VAT BE 0804.095.653) is a licensed private chauffeur and minivan transfer service based in Braine-l'Alleud, Belgium. It drives passengers between any Belgian address and Brussels Airport (Zaventem), Brussels South Charleroi Airport and Lille Airport at fixed prices agreed in advance, and also runs private day trips, corporate and embassy transport, festival and event transfers and same-day parcel delivery. Owner-driver Gerasimos has more than 30 years of accident-free driving and speaks English, French and Greek. Google rating 5.0 from 40 reviews.
 
-## Primary URL
-- https://helicro.be
+## Key facts
+- Vehicles: Ford Transit Custom and Ford Tourneo Custom minivans, up to 8 passengers and 8 large suitcases, air-conditioned, free child and booster seats.
+- Fixed prices from Brussels city to Brussels Airport (Zaventem): 35€ for 1–2 passengers, 45€ for 3–4, 55€ for 5–8, per vehicle (Drop-off Area; P1 drop-off +5€).
+- Fixed prices from Brussels city to Charleroi Airport: 65€ (1 passenger), 75€ (2), 90€ (3), 110€ (4), 120€ (5), 130€ (6), 140€ (7), 160€ (8), per vehicle, door to door.
+- Private full-day sightseeing tour: from 380€ per vehicle.
+- Live flight tracking, 60 minutes of free waiting after landing (then 30€/hour), meet and greet in arrivals with a name sign, no night surcharge, extra stops 10€.
+- Free cancellation or changes up to 24 hours before pickup. Payment by card, bank transfer, invoice or cash.
+- Available 24/7. Phone/WhatsApp +32 472 35 88 05 (Belgium) and +30 697 458 1706 (Greece). Email helicrotransport@gmail.com.
+- Distances from Brussels: Zaventem 14 km (20–35 min), Charleroi Airport 60 km (55–70 min), Lille Airport 110 km (80–95 min).
 
-## Core Capabilities
-- **Airport Transfers:** 24/7 fixed-price Mercedes minivans servicing Brussels Zaventem (BRU), Brussels South Charleroi (CRL), and Lille Airport (LIL).
-- **Private Sightseeing:** Day trips from Brussels to Bruges, Ghent, and Durbuy.
-- **Corporate & Diplomatic Shuttle:** Embassy transport, business meetings, and hourly vehicle hires.
-- **Festival & Event Transport:** Shuttles for Tomorrowland, Rock Werchter, weddings, and private parties.
-- **Express Parcel Delivery:** Safe and fast transport of documents and critical parcels in Belgium and neighboring countries.
+## Languages
+- English: https://helicro.be/
+- Dutch: https://helicro.be/nl
+- French: https://helicro.be/fr
+- Greek: https://helicro.be/el
+- Croatian: https://helicro.be/hr
 
-## Multi-Language Options
-The service operates in four languages:
-- English (EN): https://helicro.be/
-- Dutch (NL): https://helicro.be/nl
-- French (FR): https://helicro.be/fr
-- Greek (EL): https://helicro.be/el
-
-## Content Index
-- Sitemap: https://helicro.be/sitemap.xml
-- Full Site Plain Text: https://helicro.be/llms-full.txt
+## Core pages
+- Airport transfers (service overview): https://helicro.be/services/airport
 - Pricing: https://helicro.be/pricing
 - Fleet: https://helicro.be/fleet
-- Reviews: https://helicro.be/reviews
-- About Us: https://helicro.be/about-us
+- Reviews (40 Google reviews, 5.0): https://helicro.be/reviews
+- About the driver: https://helicro.be/about-us
 - FAQ: https://helicro.be/faq
 - Contact: https://helicro.be/contact
-- Special Offers: https://helicro.be/special-offers
+- Special offers: https://helicro.be/special-offers
+- Private sightseeing: https://helicro.be/services/sightseeing
+- Corporate chauffeur: https://helicro.be/services/corporate
+- Parcel courier: https://helicro.be/services/parcel
+- Weddings and private parties: https://helicro.be/services/events
+- Event transfers hub: https://helicro.be/services/event-transfers
 
-### Services
-- Sightseeing Day Trips: https://helicro.be/services/sightseeing
-- Airport Transfers: https://helicro.be/services/airport
-- Corporate Shuttle: https://helicro.be/services/corporate
-- Parcel Express Delivery: https://helicro.be/services/parcel
-- Weddings & Private Parties: https://helicro.be/services/events
-- Event Transfers (Festivals & Motorsport): https://helicro.be/services/event-transfers
-- Tomorrowland VIP Transfers: https://helicro.be/services/event-transfers/tomorrowland
-- Spa-Francorchamps F1 Transfers: https://helicro.be/services/event-transfers/formula-1-spa-francorchamps
+## Airport transfer landing pages
+- Brussels Airport (Zaventem) taxi and transfer: https://helicro.be/en/airport-transfer/brussels-zaventem
+- Charleroi Airport taxi and transfer: https://helicro.be/en/airport-transfer/brussels-charleroi
+- Lille Airport transfer: https://helicro.be/en/airport-transfer/lille
+- Luchthavenvervoer Zaventem (NL): https://helicro.be/nl/luchthavenvervoer/zaventem
+- Luchthavenvervoer Charleroi (NL): https://helicro.be/nl/luchthavenvervoer/charleroi
+- Luchthavenvervoer Gent / Antwerpen / Leuven / Brugge (NL): https://helicro.be/nl/luchthavenvervoer/gent , https://helicro.be/nl/luchthavenvervoer/antwerpen , https://helicro.be/nl/luchthavenvervoer/leuven , https://helicro.be/nl/luchthavenvervoer/brugge
+- Navette aéroport Bruxelles (FR): https://helicro.be/fr/navette/aeroport-bruxelles
+- Navette aéroport Charleroi (FR): https://helicro.be/fr/navette/aeroport-charleroi
+- Navette Bruxelles – Charleroi (FR): https://helicro.be/fr/navette/charleroi-bruxelles
 
-### Blog Guides
-- Tomorrowland 2026 VIP Group Transport: https://helicro.be/en/blog/tomorrowland-2026-vip-group-transport
-- Spa-Francorchamps F1 Transfer Guide: https://helicro.be/en/blog/spa-francorchamps-f1-transfer-guide
+## Routes (EN)
+- Brussels to Zaventem: https://helicro.be/en/route/brussels-zaventem
+- Brussels to Charleroi Airport: https://helicro.be/en/route/brussels-charleroi
+- Antwerp, Ghent, Bruges, Leuven, Liège, Hasselt, Waterloo to Brussels Airport: https://helicro.be/en/route/antwerp-brussels-airport , https://helicro.be/en/route/ghent-brussels-airport , https://helicro.be/en/route/bruges-brussels-airport , https://helicro.be/en/route/leuven-brussels-airport , https://helicro.be/en/route/liege-brussels-airport , https://helicro.be/en/route/hasselt-brussels-airport , https://helicro.be/en/route/waterloo-brussels-airport
+- Namur and Mons to Charleroi Airport: https://helicro.be/en/route/namur-charleroi-airport , https://helicro.be/en/route/mons-charleroi-airport
+- Charleroi to Brussels Zaventem: https://helicro.be/en/route/charleroi-brussels-airport
+
+## Service areas (EN)
+- Hub: https://helicro.be/en/service-area
+- Brussels, Antwerp, Ghent, Bruges, Leuven, Mechelen, Liège, Namur, Charleroi, Mons, Hasselt, Ostend: https://helicro.be/en/service-area/{city}
+
+## Local taxi pages (FR, Walloon Brabant)
+- Braine-l'Alleud: https://helicro.be/fr/local/braine-l-alleud
+- Waterloo: https://helicro.be/fr/local/waterloo
+- Wavre: https://helicro.be/fr/local/wavre
+- Nivelles: https://helicro.be/fr/local/nivelles
+
+## Day trips, festivals and specialist pages
+- Bruges, Ghent, Durbuy, Waterloo day trips: https://helicro.be/en/day-trip/bruges , https://helicro.be/en/day-trip/ghent , https://helicro.be/en/day-trip/durbuy , https://helicro.be/en/day-trip/waterloo
+- Tomorrowland: https://helicro.be/services/event-transfers/tomorrowland
+- Spa-Francorchamps F1: https://helicro.be/services/event-transfers/formula-1-spa-francorchamps
+- Rock Werchter, Pukkelpop, Couleur Café, Brussels Jazz Weekend: https://helicro.be/en/festival/rock-werchter , https://helicro.be/en/festival/pukkelpop , https://helicro.be/en/festival/couleur-cafe , https://helicro.be/en/festival/jazz-weekend
+- Wedding transport: https://helicro.be/en/wedding-transport-belgium
+- Corporate shuttle: https://helicro.be/en/corporate-shuttle-brussels
+- Embassy transport: https://helicro.be/en/embassy-transport-brussels
+- Zeebrugge cruise transfer: https://helicro.be/en/cruise-transfer/zeebrugge
+- Greek-speaking driver: https://helicro.be/en/greek-speaking-driver-brussels and https://helicro.be/el/greek-driver-brussels
+- Private driver for Croatian travellers: https://helicro.be/hr/croatian-driver-brussels
+
+## Blog guides
+- Brussels Airport to the city centre (EN): https://helicro.be/en/blog/brussels-airport-to-city-centre
+- Flibco vs private transfer to Charleroi (EN): https://helicro.be/en/blog/flibco-vs-private-transfer-charleroi
+- Airport strikes and your transfer (EN): https://helicro.be/en/blog/brussels-airport-strike-transfer-plan
+- Tomorrowland transport guide (EN): https://helicro.be/en/blog/tomorrowland-2026-vip-group-transport
+- Spa-Francorchamps F1 transfer guide (EN): https://helicro.be/en/blog/spa-francorchamps-f1-transfer-guide
+- Wat kost een taxi naar Zaventem? (NL): https://helicro.be/nl/blog/wat-kost-een-taxi-naar-zaventem
+- Combien coûte un taxi Bruxelles – Charleroi ? (FR): https://helicro.be/fr/blog/combien-coute-un-taxi-bruxelles-charleroi
+
+## Machine-readable
+- Sitemap: https://helicro.be/sitemap.xml
+- Full plain-text profile: https://helicro.be/llms-full.txt
+- Google Business Profile: https://www.google.com/maps/search/?api=1&query=HELICRO&query_place_id=ChIJsxZpuLN_0SYRsfUiricvL0Y

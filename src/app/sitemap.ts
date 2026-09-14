@@ -1,125 +1,98 @@
-import { MetadataRoute } from 'next';
-import { seoPages } from '@/config/seoPages';
+import type { MetadataRoute } from 'next';
+import { blogArticles } from '@/config/blogArticles';
+import { getSeoLanding, seoLandingUrls } from '@/lib/seoContent';
+import { absoluteUrl, sharedPathAlternates, type AlternateMap, type Locale } from '@/lib/seo';
 
-function isValidSitemapUrl(urlPath: string): boolean {
-  if (!urlPath.startsWith('/')) return false;
-  if (urlPath.includes(' ') || urlPath.includes('(new)')) return false;
-  return true;
+/** Date of the last site-wide content revision. Bump when content changes materially. */
+const CONTENT_UPDATED = new Date('2026-09-14T00:00:00Z');
+
+type Entry = MetadataRoute.Sitemap[number];
+
+function languagesOf(map: AlternateMap): Record<string, string> {
+  const languages: Record<string, string> = {};
+  (Object.keys(map) as Locale[]).forEach((l) => {
+    if (map[l]) languages[l] = absoluteUrl(map[l]!);
+  });
+  const xDefault = map.en ?? Object.values(map)[0];
+  if (xDefault) languages['x-default'] = absoluteUrl(xDefault);
+  return languages;
+}
+
+function group(map: AlternateMap, priority: number, changeFrequency: Entry['changeFrequency'], lastModified: Date = CONTENT_UPDATED): Entry[] {
+  const languages = languagesOf(map);
+  return (Object.keys(map) as Locale[])
+    .filter((l) => map[l])
+    .map((l) => ({
+      url: absoluteUrl(map[l]!),
+      lastModified,
+      changeFrequency,
+      priority,
+      alternates: { languages },
+    }));
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://helicro.be';
+  const entries: Entry[] = [];
 
-  // 1. Core static routes
-  const baseRoutes = [
-    '',
-    '/pricing',
-    '/about-us',
-    '/reviews',
-    '/special-offers',
-    '/fleet',
-    '/faq',
-    '/contact',
-    '/services/sightseeing',
-    '/services/airport',
-    '/services/corporate',
-    '/services/parcel',
-    '/services/events',
-    '/services/event-transfers',
-  ];
+  // Home pages
+  entries.push(...group(sharedPathAlternates('/'), 1.0, 'weekly'));
 
-  const eventTransferRoutes = [
-    '/services/event-transfers/tomorrowland',
-    '/services/event-transfers/formula-1-spa-francorchamps',
-  ];
+  // Core service pages (all five locales)
+  ['/services/airport', '/services/sightseeing', '/services/corporate', '/services/parcel', '/services/events'].forEach((p) =>
+    entries.push(...group(sharedPathAlternates(p), 0.9, 'monthly'))
+  );
 
-  const blogRoutes = [
-    '/en/blog',
-    '/en/blog/tomorrowland-2026-vip-group-transport',
-    '/en/blog/spa-francorchamps-f1-transfer-guide',
-  ];
+  // Event transfer cluster (EN/NL/FR)
+  entries.push(...group(sharedPathAlternates('/services/event-transfers', ['en', 'nl', 'fr']), 0.85, 'monthly'));
+  ['/services/event-transfers/tomorrowland', '/services/event-transfers/formula-1-spa-francorchamps'].forEach((p) =>
+    entries.push(...group(sharedPathAlternates(p, ['en', 'nl', 'fr']), 0.85, 'monthly'))
+  );
 
-  const allRoutes: string[] = [];
+  // Company pages
+  ['/pricing', '/fleet', '/reviews', '/about-us', '/faq', '/contact', '/special-offers'].forEach((p) =>
+    entries.push(...group(sharedPathAlternates(p), p === '/pricing' ? 0.9 : 0.7, 'monthly'))
+  );
 
-  // Generate localized versions of all base routes
-  const locales = ['en', 'nl', 'fr', 'el', 'hr'];
+  // Programmatic landing pages: one entry per URL, hreflang from the content engine
+  const seen = new Set<string>();
+  seoLandingUrls().forEach((url) => {
+    if (seen.has(url)) return;
+    const c = getSeoLanding(url);
+    if (!c) return;
+    const languages = languagesOf(c.alternates);
+    const isHub = c.type === 'Airport hub' || c.type === 'City airport transfer';
+    entries.push({
+      url: absoluteUrl(url),
+      lastModified: CONTENT_UPDATED,
+      changeFrequency: 'monthly',
+      priority: isHub ? 0.85 : c.type === 'Route' ? 0.8 : 0.7,
+      alternates: { languages },
+    });
+    seen.add(url);
+  });
 
-  locales.forEach((lang) => {
-    baseRoutes.forEach((route) => {
-      if (lang === 'en') {
-        if (route === '') {
-          allRoutes.push('/');
-        } else {
-          allRoutes.push(route);
-        }
-      } else {
-        allRoutes.push(`/${lang}${route}`);
-      }
+  // Hubs
+  entries.push({ url: absoluteUrl('/en/service-area'), lastModified: CONTENT_UPDATED, changeFrequency: 'monthly', priority: 0.6 });
+  entries.push({ url: absoluteUrl('/en/blog'), lastModified: CONTENT_UPDATED, changeFrequency: 'weekly', priority: 0.6 });
+
+  // Blog articles
+  blogArticles.forEach((a) => {
+    const path = a.lang === 'en' ? `/en/blog/${a.slug}` : `/${a.lang}/blog/${a.slug}`;
+    entries.push({
+      url: absoluteUrl(path),
+      lastModified: new Date(a.dateModified ?? a.datePublished),
+      changeFrequency: 'monthly',
+      priority: 0.65,
+      ...(a.alternates ? { alternates: { languages: languagesOf(a.alternates) } } : {}),
     });
   });
+  if (blogArticles.some((a) => a.lang === 'nl')) entries.push({ url: absoluteUrl('/nl/blog'), lastModified: CONTENT_UPDATED, changeFrequency: 'weekly', priority: 0.6 });
+  if (blogArticles.some((a) => a.lang === 'fr')) entries.push({ url: absoluteUrl('/fr/blog'), lastModified: CONTENT_UPDATED, changeFrequency: 'weekly', priority: 0.6 });
 
-  // Event transfer child pages: EN / NL / FR only
-  ['en', 'nl', 'fr'].forEach((lang) => {
-    eventTransferRoutes.forEach((route) => {
-      if (lang === 'en') {
-        allRoutes.push(route);
-      } else {
-        allRoutes.push(`/${lang}${route}`);
-      }
-    });
+  // De-duplicate by URL, keeping the first (highest-priority) entry
+  const byUrl = new Map<string, Entry>();
+  entries.forEach((e) => {
+    if (!byUrl.has(e.url)) byUrl.set(e.url, e);
   });
-
-  blogRoutes.forEach((route) => allRoutes.push(route));
-
-  // 2. Add Strategy SEO Pages from seoPages.ts
-  seoPages.forEach((p) => {
-    let urlPath = p.url;
-    if (!urlPath.startsWith('/')) {
-      urlPath = `/${urlPath}`;
-    }
-    if (!isValidSitemapUrl(urlPath)) return;
-    if (!allRoutes.includes(urlPath)) {
-      allRoutes.push(urlPath);
-    }
-  });
-
-  // Unique list
-  const uniqueRoutes = Array.from(new Set(allRoutes)).filter(isValidSitemapUrl);
-
-  return uniqueRoutes.map((route) => {
-    const cleanRoute = route === '/' ? '' : route;
-    const url = `${baseUrl}${cleanRoute}`;
-
-    let priority = 0.5;
-    if (route === '/' || route === '/en' || route === '/nl' || route === '/fr' || route === '/el') {
-      priority = 1.0;
-    } else if (
-      route.includes('/services/event-transfers/tomorrowland') ||
-      route.includes('/services/event-transfers/formula-1-spa-francorchamps')
-    ) {
-      priority = 0.9;
-    } else if (route.includes('/services/event-transfers')) {
-      priority = 0.85;
-    } else if (route.includes('/airport-transfer/') || route.includes('/luchthavenvervoer/') || route.includes('/navette/')) {
-      priority = 0.8;
-    } else if (route.startsWith('/en/blog/')) {
-      priority = 0.65;
-    } else if (baseRoutes.some((r) => r !== '' && route.endsWith(r))) {
-      priority = 0.8;
-    } else {
-      const pageInfo = seoPages.find((p) => p.url === route);
-      if (pageInfo?.priority === 'HIGH') {
-        priority = 0.75;
-      } else if (pageInfo?.priority === 'MEDIUM') {
-        priority = 0.6;
-      }
-    }
-
-    return {
-      url,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority,
-    };
-  });
+  return Array.from(byUrl.values());
 }

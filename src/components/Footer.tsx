@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath, translations } from '@/config/translations';
+import { HUB_LINKS } from '@/config/hubLinks';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -62,16 +63,22 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4: Popular SEO landings */}
+        {/* Column 4: Popular landing pages, localized */}
         <div className={styles.col}>
-          <div className={styles.title}>{t.popularTransfers}</div>
+          <div className={styles.title}>{HUB_LINKS[lang][0].title}</div>
           <ul className={styles.list}>
-            <li><Link href="/en/airport-transfer/brussels-charleroi" className={styles.link}>Charleroi Airport (CRL)</Link></li>
-            <li><Link href="/en/airport-transfer/lille" className={styles.link}>Lille Airport</Link></li>
-            <li><Link href="/en/route/brussels-zaventem" className={styles.link}>Brussels ↔ Zaventem</Link></li>
-            <li><Link href="/en/service-area" className={styles.link}>Service areas</Link></li>
-            <li><Link href={localizePath('/services/event-transfers')} className={styles.link}>{t.eventTransfers}</Link></li>
-            <li><Link href="/en/blog" className={styles.link}>Travel blog</Link></li>
+            {HUB_LINKS[lang][0].links.map((l) => (
+              <li key={l.href}><Link href={l.href} className={styles.link}>{l.label}</Link></li>
+            ))}
+            {lang === 'en' && (
+              <li><Link href="/en/blog" className={styles.link}>Travel blog</Link></li>
+            )}
+            {lang === 'nl' && (
+              <li><Link href="/nl/blog" className={styles.link}>Reisblog</Link></li>
+            )}
+            {lang === 'fr' && (
+              <li><Link href="/fr/blog" className={styles.link}>Blog voyage</Link></li>
+            )}
           </ul>
         </div>
 
@@ -118,6 +125,7 @@ export default function Footer() {
           <Link href="/nl" className={styles.bottomLink}>Nederlands</Link>
           <Link href="/fr" className={styles.bottomLink}>Français</Link>
           <Link href="/el" className={styles.bottomLink}>Ελληνικά</Link>
+          <Link href="/hr" className={styles.bottomLink}>Hrvatski</Link>
         </div>
       </div>
     </footer>
