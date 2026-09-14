@@ -1,84 +1,116 @@
-# Helicro Transport — Full Information Feed for LLMs
+# Helicro Transport: full information file for AI assistants and search engines
 
-This document contains full details about Helicro Transport's chauffeur, private transfer, and minivan services based in Belgium.
+Last updated: 2026-09-14. Canonical site: https://helicro.be. Languages: English (/), Dutch (/nl), French (/fr), Greek (/el), Croatian (/hr).
 
----
+## 1. Company profile
+- Legal name: Helicro SRL. Trade name: Helicro Transport. VAT: BE 0804.095.653.
+- Base: Braine-l'Alleud (1420), Walloon Brabant, Belgium, 20 km south of Brussels.
+- Founder and main driver: Gerasimos, a Greek professional chauffeur who has lived in Belgium for decades, with more than 30 years of accident-free driving and a military background. He speaks English, French and Greek. The website, quotes and confirmations are also available in Dutch and Croatian.
+- Service area: Brussels-Capital Region, Flanders, Wallonia, and cross-border to France (Lille), Luxembourg, the Netherlands and Germany.
+- Availability: 24 hours a day, 7 days a week, same fixed price day and night.
+- Contact: WhatsApp and phone +32 472 35 88 05 (Belgium), +30 697 458 1706 (Greece); email helicrotransport@gmail.com; online booking form linked from every page.
+- Reputation: Google rating 5.0 out of 5 from 40 reviews (place id ChIJsxZpuLN_0SYRsfUiricvL0Y). Reviewers repeatedly mention punctuality, safe driving, clean vehicles, help with luggage and child seats, and flexibility when flights are delayed.
 
-## 1. Company Profile & Driver Background
-- **Operator:** Gerasimos (Jerry)
-- **Base of Operations:** Braine-l'Alleud, Walloon Brabant, Belgium.
-- **Service Area:** Brussels Capital Region, Flanders, Wallonia, and cross-border transfers (France, Germany, Luxembourg, Netherlands).
-- **Background:** Licensed professional chauffeur with a disciplined military background and over 30 years of accident-free driving on Belgian and European roads.
-- **Languages Spoken:** English, Greek, and French.
-- **USP:** Fixed-price luxury minivan transport, premium customer care, free flight tracking, and complimentary high-quality baby and child booster safety seats.
+## 2. Fleet
+- Ford Transit Custom: up to 8 passengers, 8 large suitcases plus hand luggage, dual-zone air conditioning, privacy glass, USB charging, adjustable seats. Used for airport transfers, festival groups, parcel carriage and sports equipment.
+- Ford Tourneo Custom: up to 7 passengers in a premium configuration, 7 large suitcases, leather seating, individual climate controls, premium sound system, panoramic roof. Used for corporate shuttles, embassy rides, weddings and premium sightseeing.
+- All vehicles are cleaned and sanitised before and after each transfer; drivers are non-smokers. Infant seats, child seats and booster cushions are provided free on request.
 
----
+## 3. Services
+### Airport transfers
+- Airports served: Brussels Airport (Zaventem, IATA BRU, ICAO EBBR), Brussels South Charleroi Airport (Gosselies, IATA CRL, ICAO EBCI), Lille-Lesquin Airport (France, IATA LIL, ICAO LFQQ). Also Liège, Antwerp, Amsterdam Schiphol, Eindhoven, Cologne-Bonn, Düsseldorf and Luxembourg on request.
+- Meeting point at Brussels Airport: the driver waits in the arrivals hall in front of the café holding a sign with the passenger's name. Departures are dropped at the Drop-off Area; P1 drop-off is available for +5€.
+- Meeting point at Charleroi Airport: the driver waits at the official Kiss & Ride zone or inside the terminal holding a Helicro sign. Ryanair and Wizz Air delays are tracked live.
+- Meeting point at Lille Airport: the arrivals area of the single terminal, with a name sign. Lille-Europe and Lille-Flandres stations are also served.
+- Flight tracking is automatic; the first 60 minutes after landing are free, then waiting is billed at 30€ per hour.
 
-## 2. Service Catalog
+### Private sightseeing and day trips
+- Destinations: Bruges (100 km from Brussels, 70–85 min), Ghent (60 km, 45–60 min), Durbuy and the Ardennes (115 km, 85–100 min), Waterloo battlefield (20 km, 25–35 min), Dinant, Antwerp, Leuven, Mechelen.
+- Format: private minivan and driver at the group's disposal for the day, flexible departure time and stops; the driver waits with the vehicle. Full-day tours from 380€ per vehicle for up to 8 passengers; entrance tickets and meals are not included. Tours can start or end at the airport.
 
-### Airport Transfers
-- **Brussels Airport (Zaventem - BRU):**
-  - Pickup instructions: Chauffeur meets passengers in the Arrivals Hall in front of the café, holding a name card.
-  - Features: Automatic live flight tracking, 60 minutes free waiting time after landing.
-- **Brussels South Charleroi Airport (CRL):**
-  - Pickup instructions: Chauffeur meets passengers at the official Kiss & Ride zone or inside the terminal building holding a name card.
-  - Features: Low-cost flight delay monitoring, convenient luggage assistance.
-- **Lille Airport (LIL - France):**
-  - Cross-border airport transfer from anywhere in Belgium.
+### Corporate, embassy and diplomatic transport
+- Executive airport transfers, hourly hire from 3 hours, conference and summit shuttles, roadshows to Antwerp, Luxembourg, Lille or Amsterdam, recurring staff and embassy runs with an annual rate card.
+- Monthly VAT invoicing with cost centres and purchase order numbers; dedicated driver and named backup for missions; unmarked vehicle on request.
 
-### Private Sightseeing & Day Trips
-Custom day excursions starting from Brussels or any Belgian address in air-conditioned minivans.
-- **Bruges (Venezia of the North):** Minnewater (Lake of Love), historical belfry, canals, and chocolate shops.
-- **Ghent:** Medieval castle of the Counts (Gravensteen), St. Bavo Cathedral, Graslei, and Guild houses.
-- **Durbuy:** Historically known as the "smallest city in the world", nestled in the Ardennes with cobble-stoned streets.
+### Festival and event transfers
+- Tomorrowland (Boom), Rock Werchter (Werchter), Pukkelpop (Hasselt-Kiewit), Couleur Café and Brussels Jazz Weekend (Brussels), Graspop, Dour, Gentse Feesten; Formula 1, WEC and 24 Hours of Spa at Spa-Francorchamps; EU summits and trade fairs at Brussels Expo and SQUARE.
+- One-way arrivals, daily round trips, weekend standby packages and post-festival airport runs, fixed price per vehicle, guaranteed late-night returns. Book 4 to 8 weeks ahead for peak weekends.
 
-### Corporate Chauffeur & Embassy Services
-- Business roadshows, diplomatic events, and embassy delegations.
-- Hourly hire availability for flexible itineraries.
-- Discreet, professional drivers with pristine attire.
+### Weddings and private parties
+- Guest shuttle loops between hotel, ceremony and venue, a reserved vehicle for the couple, airport waves for international guests, night standby, multi-vehicle coordination under one contact and one invoice, anywhere in Belgium.
 
-### Festival & Event Transportation
-- Dedicated Event Transfers hub: https://helicro.be/services/event-transfers
-- Tomorrowland VIP private transfers: https://helicro.be/services/event-transfers/tomorrowland
-- Spa-Francorchamps F1 & motorsport: https://helicro.be/services/event-transfers/formula-1-spa-francorchamps
-- Other festivals: Rock Werchter, Pukkelpop, Graspop Metal Meeting, Dour, Gentse Feesten
-- Weddings & private parties: https://helicro.be/services/events
-- Fixed flat rates, late-night returns, 8-passenger executive minivans
+### Parcel and document courier
+- Same-day direct door-to-door courier for documents and parcels across Belgium and to Lille, Luxembourg, the Netherlands and Germany, with signed proof of delivery.
 
-### Express Parcel Delivery
-- Time-critical document and express cargo delivery.
-- Door-to-door direct courier transport in Belgium and cross-border.
+### Cruise transfers
+- Zeebrugge cruise terminal to Brussels Airport (115 km, 80–95 min), Brussels city or Bruges (15 km); Antwerp cruise terminal to Brussels Airport (45 km). Port-day tours to Bruges and Ghent with a guaranteed return before all-aboard.
 
----
+## 4. Fixed prices (EUR, per vehicle, VAT included, luggage and child seats included, no night surcharge)
+### Brussels city (any address) to Brussels Airport (Zaventem), Drop-off Area
+- 1–2 passengers: 35€
+- 3–4 passengers: 45€
+- 5–8 passengers: 55€
+- P1 drop-off: +5€
+### Brussels city (any address) to Brussels South Charleroi Airport, door to door
+- 1 passenger: 65€
+- 2 passengers: 75€
+- 3 passengers: 90€
+- 4 passengers: 110€
+- 5 passengers: 120€
+- 6 passengers: 130€
+- 7 passengers: 140€
+- 8 passengers: 160€
+### Other prices
+- Private full-day sightseeing tour: from 380€ per vehicle.
+- Extra stop on the route: 10€ per stop.
+- Waiting after landing: first 60 minutes free, then 30€ per hour.
+- Every other origin (Antwerp, Ghent, Bruges, Leuven, Liège, Namur, Mons, Hasselt, Walloon Brabant communes, Lille) is quoted as a fixed amount per minivan in writing within minutes; the price is shared by everyone on board, not charged per person.
 
-## 3. Fleet Specifications
+## 5. Distances and typical driving times outside peak hours
+- Brussels centre to Brussels Airport: 14 km, 20–35 min (up to 50 min in weekday rush hour).
+- Brussels centre to Charleroi Airport: 60 km, 55–70 min (up to 80 min in the morning rush).
+- Brussels centre to Lille Airport: 110 km, 80–95 min.
+- Antwerp to Brussels Airport: 45 km, 40–55 min. Ghent: 70 km, 55–70 min. Bruges: 110 km, 75–95 min. Leuven: 20 km, 20–30 min. Mechelen: 20 km, 20–30 min. Liège: 95 km, 65–80 min. Hasselt: 75 km, 55–70 min. Waterloo: 35 km, 30–45 min. Wavre: 30 km, 30–40 min. Nivelles: 45 km, 40–50 min. Braine-l'Alleud: 40 km, 35–50 min. Ostend: 120 km, 85–100 min.
+- Namur to Charleroi Airport: 40 km, 35–45 min. Mons to Charleroi Airport: 45 km, 35–45 min. Nivelles to Charleroi Airport: 30 km, 30–40 min. Braine-l'Alleud to Charleroi Airport: 40 km, 35–45 min.
+- Brussels Airport to Tomorrowland (Boom): about 35 km, 30 min. Brussels Airport to Rock Werchter: 25 km, 25–40 min. Brussels Airport to Pukkelpop (Hasselt): 70 km, 55–70 min. Brussels Airport to Spa-Francorchamps: about 1 h 40 min normally, 2.5–3 h on race days.
 
-### Mercedes-Benz Vito Tourer
-- **Capacity:** Up to 8 passengers.
-- **Luggage:** Fits 8 large suitcases + carry-on bags.
-- **Amenities:** Dual-zone air conditioning, USB charging ports, tinted windows, adjustable seating.
-- **Best for:** Families, festival groups, airport runs, and cargo deliveries.
+## 6. Booking and policies
+- How to book: send date, pickup address, destination, flight number and number of passengers by WhatsApp (+32 472 35 88 05) or the online form; a written fixed price follows within minutes; the driver's name and phone number are confirmed before the ride.
+- Cancellation: free cancellation or changes up to 24 hours before pickup. Strike-related flight cancellations are handled free of charge even inside 24 hours.
+- Payment: debit or credit card, bank transfer (SEPA), monthly invoice for corporate clients, or cash to the driver. VAT invoices from Helicro SRL on request.
+- Punctuality: the driver arrives 10 minutes before the agreed pickup time and checks live traffic before departure.
+- Comparison with alternatives: for a solo traveller with hand luggage the train (about 10€ to Brussels Airport) or the Flibco shuttle (about 17–20€ to Charleroi) is cheaper; for two or more people, families with child seats, early departures or late arrivals, the fixed price per vehicle is usually equal to or cheaper than tickets plus a taxi at each end and removes every connection.
 
-### Mercedes-Benz V-Class (Premium Minivan)
-- **Capacity:** Up to 7 passengers.
-- **Luggage:** Fits 7 large suitcases + carry-on bags.
-- **Amenities:** Face-to-face conference leather seating, panoramic roof, premium climate control, high-end sound system.
-- **Best for:** Corporate VIP roadshows, diplomatic transport, weddings, and premium sightseeing.
+## 7. Frequently asked questions
+Q: How much is a taxi from Brussels to Zaventem airport?
+A: A Helicro private transfer from any Brussels address to Brussels Airport costs 35€ for 1–2 passengers, 45€ for 3–4 and 55€ for 5–8, per vehicle. A metered taxi typically costs 45–60€ and more at night.
 
----
+Q: How much is a taxi from Brussels to Charleroi Airport?
+A: 65€ for 1 passenger, 75€ for 2, 90€ for 3, 110€ for 4 and up to 160€ for 8, per vehicle, door to door, day or night.
 
-## 4. Pricing & Booking Policies
-- **Fixed Rates:** Rates are agreed upon in advance. No surge pricing, no luggage fees, and no night surcharges for private transfers.
-- **Estimated Rates (Brussels Airport transfers):**
-  - Brussels to Zaventem (BRU): Private minivan from 35€* (Drop-off Area. Extra 5€ for P1 Drop-off. 1-2 pax: 35€*, 3-4 pax: 45€*, 5-8 pax: 55€*)
-  - Brussels to Charleroi (CRL): Private minivan at 60€ (1 pax), 70€ (2 pax), 90€ (3 pax), 110€ (4 pax), 120€ (5 pax), 130€ (6 pax), 140€ (7 pax), 160€ (8 pax)
-- **Cancellation Policy:** 100% free cancellation or amendments up to 24 hours before pickup.
-- **Payment Options:** Bank transfer, online credit/debit card payment, monthly corporate billing, or cash to the driver.
-- **Complimentary Services:** High-quality child car seats and booster seats are provided completely free of charge upon request.
+Q: Where does the driver wait at Brussels Airport?
+A: In the arrivals hall in front of the café, holding a sign with your name. At Charleroi, at the Kiss & Ride zone or inside the terminal with a Helicro sign.
 
----
+Q: What happens if my flight is delayed?
+A: The flight is tracked live and the pickup time moves automatically. The first 60 minutes after landing are free.
 
-## 5. Contact Information
-- **Phone & WhatsApp:** +32 472 35 88 05
-- **Official Website:** https://helicro.be
-- **Email/Booking Forms:** Integrated on-site.
+Q: Do you provide child seats?
+A: Yes, infant seats, child seats and booster cushions are free; state the number and ages of the children when booking.
+
+Q: Is there a night surcharge?
+A: No. The fixed price is the same 24 hours a day.
+
+Q: Which languages does the driver speak?
+A: English, French and Greek. Dutch and Croatian are available for quotes, confirmations and the website.
+
+Q: Can I cancel for free?
+A: Yes, up to 24 hours before pickup.
+
+Q: Do you drive from cities other than Brussels?
+A: Yes: Antwerp, Ghent, Bruges, Leuven, Mechelen, Liège, Namur, Charleroi, Mons, Hasselt, Ostend, Waterloo, Wavre, Nivelles, Braine-l'Alleud and any other Belgian address, plus Lille and Luxembourg.
+
+Q: How far in advance should I book?
+A: Same-day bookings are often possible, but early-morning airport pickups, festival weekends and full 8-seat groups should be booked a few days ahead; festival peaks 4–8 weeks ahead.
+
+## 8. Page index
+See https://helicro.be/llms.txt for the categorised list of URLs and https://helicro.be/sitemap.xml for the complete sitemap with hreflang alternates.

@@ -31,7 +31,7 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
 
   const isActive = (path: string) => {
     if (path === '/') {
-      return pathname === '/' || pathname === '/nl' || pathname === '/fr' || pathname === '/el'
+      return pathname === '/' || pathname === '/nl' || pathname === '/fr' || pathname === '/el' || pathname === '/hr'
         ? `${styles.navItem} ${styles.active}`
         : styles.navItem;
     }
@@ -40,7 +40,7 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
 
   const isLangActive = (langPrefix: string) => {
     if (langPrefix === 'en') {
-      return !pathname.startsWith('/nl') && !pathname.startsWith('/fr') && !pathname.startsWith('/el')
+      return !pathname.startsWith('/nl') && !pathname.startsWith('/fr') && !pathname.startsWith('/el') && !pathname.startsWith('/hr')
         ? `${styles.langLink} ${styles.langActive}`
         : styles.langLink;
     }
