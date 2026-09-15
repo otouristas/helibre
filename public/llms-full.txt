@@ -1,6 +1,6 @@
 # Helicro Transport: full information file for AI assistants and search engines
 
-Last updated: 2026-09-14. Canonical site: https://helicro.be. Languages: English (/), Dutch (/nl), French (/fr), Greek (/el), Croatian (/hr).
+Last updated: 2026-09-15. Canonical site: https://helicro.be. Languages: English (/), Dutch (/nl), French (/fr), Greek (/el), Croatian (/hr).
 
 ## 1. Company profile
 - Legal name: Helicro SRL. Trade name: Helicro Transport. VAT: BE 0804.095.653.
@@ -13,7 +13,7 @@ Last updated: 2026-09-14. Canonical site: https://helicro.be. Languages: English
 
 ## 2. Fleet
 - Ford Transit Custom: up to 8 passengers, 8 large suitcases plus hand luggage, dual-zone air conditioning, privacy glass, USB charging, adjustable seats. Used for airport transfers, festival groups, parcel carriage and sports equipment.
-- Ford Tourneo Custom: up to 7 passengers in a premium configuration, 7 large suitcases, leather seating, individual climate controls, premium sound system, panoramic roof. Used for corporate shuttles, embassy rides, weddings and premium sightseeing.
+- Ford Tourneo Custom: up to 8 passengers in a premium configuration, 7 large suitcases, leather seating, individual climate controls, premium sound system, panoramic roof. Used for corporate shuttles, embassy rides, weddings and premium sightseeing.
 - All vehicles are cleaned and sanitised before and after each transfer; drivers are non-smokers. Infant seats, child seats and booster cushions are provided free on request.
 
 ## 3. Services

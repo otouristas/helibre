@@ -40,7 +40,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vitoAm: ['Dual-zone Air Conditioning', 'Privacy Glass', 'USB Charging Ports', 'Adjustable Seats'],
 
       // Ford Tourneo Custom specs
-      vClassCap: 'Up to 7 Passengers',
+      vClassCap: 'Up to 8 Passengers',
       vClassLug: '7 Large Bags + Hand Luggage',
       vClassUse: 'The ideal premium option for corporate shuttles, diplomatic embassy rides, wedding parties, and luxury sightseeing tours.',
       vClassAm: ['Leather Conference Seating', 'Individual Climate Controls', 'Premium Sound System', 'Panoramic Roof']
@@ -64,7 +64,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vitoUse: 'Uitstekend geschikt voor luchthavenvervoer, festival shuttles voor vriendengroepen, pakketdienst en sportuitrusting.',
       vitoAm: ['Dual-zone Airconditioning', 'Privacy Glass', 'USB Oplaadpunten', 'Verstelbare Stoelen'],
 
-      vClassCap: 'Tot 7 Passagiers',
+      vClassCap: 'Tot 8 Passagiers',
       vClassLug: '7 Grote Koffers + Handbagage',
       vClassUse: 'De ideale premium optie voor zakelijke shuttles, diplomatiek vervoer, trouwpartijen en luxe rondritten.',
       vClassAm: ['Lederen Conferentiestoelen', 'Individuele Klimaatregeling', 'Premium Geluidssysteem', 'Panoramadak']
@@ -88,7 +88,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vitoUse: 'Parfait pour les navettes aéroport, les transferts de festival en groupe, le transport de colis et de matériel de sport.',
       vitoAm: ['Climatisation Bi-zone', 'Vitrages Teintés', 'Prises de Recharge USB', 'Sièges Ajustables'],
 
-      vClassCap: 'Jusqu\'à 7 Passagers',
+      vClassCap: 'Jusqu\'à 8 Passagers',
       vClassLug: '7 Grandes Valises + Bagages à Main',
       vClassUse: 'L\'option premium idéale pour les navettes d\'affaires, les délégations diplomatiques, mariages et excursions touristiques de standing.',
       vClassAm: ['Salon en Cuir Face-à-Face', 'Climatisation Individuelle', 'Système Audio Premium', 'Toit Panoramique']
@@ -110,7 +110,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vitoLug: '8 velikih kovčega + ručna prtljaga',
       vitoUse: 'Savršeno za transfere do zračne luke, povoljne grupne festivalske prijevoze, prijevoz paketa i sportske opreme.',
       vitoAm: ['Dvo-zonska klimatizacija', 'Zatamnjena stakla', 'USB priključci', 'Podesiva sjedala'],
-      vClassCap: 'Do 7 putnika',
+      vClassCap: 'Do 8 putnika',
       vClassLug: '7 velikih kovčega + ručna prtljaga',
       vClassUse: 'Idealan premium izbor za korporativne prijevoze, diplomatska veleposlanstva, vjenčanja i luksuzne izlete.',
       vClassAm: ['Kožna sjedala u obliku konferencije', 'Pojedinačne kontrole klime', 'Vrhunski audio sustav', 'Panoramski krov']
@@ -134,7 +134,7 @@ export default function FleetClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' 
       vitoUse: 'Ιδανικό για μεταφορές αεροδρομίου, ομαδικές μεταφορές σε φεστιβάλ, μεταφορές δεμάτων και αθλητικού εξοπλισμού.',
       vitoAm: ['Κλιματισμός Dual-zone', 'Φιμέ Τζάμια', 'Θύρες Φόρτισης USB', 'Ρυθμιζόμενα Καθίσματα'],
  
-      vClassCap: 'Εως 7 Επιβάτες',
+      vClassCap: 'Εως 8 Επιβάτες',
       vClassLug: '7 Μεγάλες Αποσκευές + Χειραποσκευές',
       vClassUse: 'Η ιδανική premium επιλογή για εταιρικές μετακινήσεις, διπλωματικές αποστολές, γάμους και πολυτελείς περιηγήσεις.',
       vClassAm: ['Δερμάτινα Καθίσματα Συνεδριάσεων', 'Ατομικός Κλιματισμός', 'Premium Ηχοσύστημα', 'Πανοραμική Οροφή']
