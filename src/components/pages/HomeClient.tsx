@@ -532,31 +532,31 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       answer: {
         en: (
           <span>
-            Our Ford Transit Custom and Tourneo Custom minivans carry up to 7 or 8 passengers and easily fit 7 to 8 large suitcases 
+            Our Ford Transit Custom and Tourneo Custom minivans carry up to 8 passengers and easily fit 7 to 8 large suitcases 
             along with hand luggage. They are perfect for families, ski trips, or festival groups.
           </span>
         ),
         nl: (
           <span>
-            Onze Ford Transit Custom en Tourneo Custom minivans vervoeren tot 7 of 8 passagiers en bieden gemakkelijk plaats aan 7 tot 8 grote koffers 
+            Onze Ford Transit Custom en Tourneo Custom minivans vervoeren tot 8 passagiers en bieden gemakkelijk plaats aan 7 tot 8 grote koffers 
             en handbagage. Ze zijn perfect voor gezinnen, skivakanties of festivalgroepen.
           </span>
         ),
         fr: (
           <span>
-            Nos minivans Ford Transit Custom et Tourneo Custom transportent jusqu’à 7 ou 8 passagers et accueillent facilement 7 à 8 grandes valises 
+            Nos minivans Ford Transit Custom et Tourneo Custom transportent jusqu’à 8 passagers et accueillent facilement 7 à 8 grandes valises 
             ainsi que les bagages à main. Ils sont parfaits pour les familles, les séjours de ski ou les groupes de festivals.
           </span>
         ),
         el: (
           <span>
-            Τα Ford Transit Custom και Tourneo Custom minivans μας μεταφέρουν έως και 7 ή 8 επιβάτες και χωρούν εύκολα 7 έως 8 μεγάλες βαλίτσες 
+            Τα Ford Transit Custom και Tourneo Custom minivans μας μεταφέρουν έως και 8 επιβάτες και χωρούν εύκολα 7 έως 8 μεγάλες βαλίτσες 
             μαζί με χειραποσκευές. Είναι ιδανικά για οικογένειες, εκδρομές για σκι ή παρέες για φεστιβάλ.
           </span>
         ),
         hr: (
           <span>
-            Naša kombi vozila Ford Transit Custom i Tourneo Custom prevoze do 7 ili 8 putnika i lako primaju 7 do 8 velikih kofera 
+            Naša kombi vozila Ford Transit Custom i Tourneo Custom prevoze do 8 putnika i lako primaju 7 do 8 velikih kofera 
             uz ručnu prtljagu. Savršeni su za obitelji, skijaške izlete ili festivalske grupe.
           </span>
         )
