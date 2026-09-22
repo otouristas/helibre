@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import PricingClient from '@/components/pages/PricingClient';
 import { metaTranslations } from '@/config/metaTranslations';
 import { pageMetadata, sharedPathAlternates } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import { priceCatalogSchema } from '@/lib/schema';
 
 export const metadata: Metadata = pageMetadata({
   lang: 'fr',
@@ -11,5 +13,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function Page() {
-  return <PricingClient lang="fr" />;
+  return (
+    <>
+      <JsonLd data={priceCatalogSchema('fr')} />
+      <PricingClient lang="fr" />
+    </>
+  );
 }

@@ -1,4 +1,5 @@
-import { AIRPORTS, type AirportCode } from '@/config/seoFacts';
+import { AIRPORTS, DESTINATIONS, FIXED_PRICES, PRICED_ROUTES, SHARED_SHUTTLE, SPA_F1, type AirportCode } from '@/config/seoFacts';
+import { PRICED_ROUTE_URLS, PRICE_LIST_URLS, SHARED_SHUTTLE_URLS } from '@/config/pricedRoutePages';
 import { AVERAGE_RATING, GOOGLE_MAPS_URL, REVIEW_COUNT, googleReviews } from '@/config/googleReviews';
 
 export const SITE_URL = 'https://helicro.be';
@@ -245,5 +246,44 @@ export function reviewsSchema() {
         url: r.reviewUrl,
         publisher: { '@type': 'Organization', name: 'Google' },
       })),
+  };
+}
+
+/** Every published fixed price as an OfferCatalog, for the pricing and price-list pages. */
+export function priceCatalogSchema(lang: 'en' | 'nl' | 'fr' | 'el' | 'hr') {
+  const pageUrl = lang === 'en' || lang === 'nl' || lang === 'fr' ? PRICE_LIST_URLS[lang] : '/pricing';
+  const offer = (name: string, price: number, url?: string) => ({
+    '@type': 'Offer',
+    name,
+    price,
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    url: abs(url ?? pageUrl),
+    priceSpecification: { '@type': 'PriceSpecification', price, priceCurrency: 'EUR', valueAddedTaxIncluded: true },
+  });
+  const offers = [
+    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`Brussels to Brussels Airport (Zaventem), ${t.pax} passengers, per vehicle`, t.price, '/en/route/brussels-zaventem')),
+    ...FIXED_PRICES.brusselsToCRL.map((t) => offer(`Brussels to Charleroi Airport, ${t.pax} passenger(s), per vehicle`, t.price, '/en/route/brussels-charleroi')),
+    offer('Shared shuttle Brussels to Charleroi Airport, per person, day', SHARED_SHUTTLE.perPassengerDay, SHARED_SHUTTLE_URLS.en),
+    offer('Shared shuttle Brussels to Charleroi Airport, per person, night', SHARED_SHUTTLE.perPassengerNight, SHARED_SHUTTLE_URLS.en),
+    ...PRICED_ROUTES.flatMap((r) =>
+      r.tiers.map((t) => offer(`${r.from === 'crl' ? 'Charleroi Airport' : 'Brussels'} to ${DESTINATIONS[r.to].name.en}, ${t.pax} passengers, per vehicle`, t.price, PRICED_ROUTE_URLS[r.key]?.en))
+    ),
+    offer('Spa-Francorchamps race weekend, chauffeur and 8-seat minivan, per day', SPA_F1.perDay, '/services/event-transfers/formula-1-spa-francorchamps'),
+    offer('Private full-day sightseeing tour, up to 8 passengers', FIXED_PRICES.dayTourFrom, '/services/sightseeing'),
+  ];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Helicro fixed-price private transfers',
+    serviceType: 'Airport transfer and long-distance chauffeur service',
+    provider: { '@id': BUSINESS_ID },
+    areaServed: [{ '@type': 'Country', name: 'Belgium' }, { '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Netherlands' }, { '@type': 'Country', name: 'Germany' }, { '@type': 'Country', name: 'Luxembourg' }],
+    url: abs(pageUrl),
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Helicro price list 2026',
+      itemListElement: offers,
+    },
   };
 }

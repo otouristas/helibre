@@ -1,4 +1,4 @@
-import { AIRPORTS, FIXED_PRICES, PLACES, type AirportCode, type Leg } from '@/config/seoFacts';
+import { AIRPORTS, FIXED_PRICES, PLACES, pricedRoute, type AirportCode, type Leg } from '@/config/seoFacts';
 import type { SEOPage } from '@/config/seoPages';
 import { UI, brusselsPriceTable, comparisonSection, howItWorksSection, includedSection, legText, pickFaqs } from './shared';
 import type { SeoLandingContent, SeoSection } from './types';
@@ -43,6 +43,8 @@ export function buildRoute(page: SEOPage, lang: 'en' | 'fr', spec: RouteSpec): S
   const airportName = a.name[lang];
   const isBrussels = spec.origin === 'brussels';
   const published = isBrussels && (spec.airport === 'BRU' || spec.airport === 'CRL');
+  /** City pairs with a published two-tier price (Brussels / Brussels Airport to Antwerp, Ghent, Bruges). */
+  const tiered = !isBrussels && spec.airport === 'BRU' ? pricedRoute('brussels', spec.origin) : undefined;
   const bruP = FIXED_PRICES.brusselsToBRU;
   const crlP = FIXED_PRICES.brusselsToCRL;
 
@@ -57,7 +59,9 @@ export function buildRoute(page: SEOPage, lang: 'en' | 'fr', spec: RouteSpec): S
       ? spec.airport === 'BRU'
         ? `A private Helicro transfer from any Brussels address to ${airportName} costs a fixed ${bruP[0].price}€ for 1–2 passengers, ${bruP[1].price}€ for 3–4 and ${bruP[2].price}€ for 5–8, per vehicle. The ${leg.km} km drive takes ${leg.minMin} to ${leg.maxMin} minutes outside peak hours, door to Drop-off Area, with luggage and child seats included.`
         : `A private Helicro transfer from any Brussels address to ${airportName} costs a fixed ${crlP[0].price}€ for 1 passenger, ${crlP[1].price}€ for 2, ${crlP[3].price}€ for 4 and ${crlP[7].price}€ for 8, per vehicle, door to door. The ${leg.km} km drive takes ${leg.minMin} to ${leg.maxMin} minutes outside peak hours.`
-      : `Helicro drives you from any address in ${origin} to ${airportName} in a private Ford minivan for one fixed price per vehicle, agreed in writing before you travel. The route is about ${leg.km} km and takes ${leg.minMin} to ${leg.maxMin} minutes outside peak hours, with pickup at your door and drop-off in front of departures.`;
+      : tiered
+        ? `A private Helicro transfer from any address in ${origin} to ${airportName} costs a fixed ${tiered.tiers[0].price}€ for 1 to 3 passengers and ${tiered.tiers[1].price}€ for 4 to 8 passengers, per vehicle, in either direction. The route is about ${leg.km} km and takes ${leg.minMin} to ${leg.maxMin} minutes outside peak hours, with pickup at your door, luggage and child seats included and drop-off in front of departures.`
+        : `Helicro drives you from any address in ${origin} to ${airportName} in a private Ford minivan for one fixed price per vehicle, agreed in writing before you travel. The route is about ${leg.km} km and takes ${leg.minMin} to ${leg.maxMin} minutes outside peak hours, with pickup at your door and drop-off in front of departures.`;
     intro = [
       isBrussels
         ? spec.airport === 'BRU'
@@ -72,13 +76,23 @@ export function buildRoute(page: SEOPage, lang: 'en' | 'fr', spec: RouteSpec): S
           paragraphs: [`${ui.perVehicle} The price is the same at night and at weekends.`],
           table: brusselsPriceTable(lang, spec.airport as 'BRU' | 'CRL'),
         }
-      : {
-          h2: `Fixed price from ${origin} to ${a.shortName.en}`,
-          paragraphs: [
-            `The transfer from ${origin} to ${airportName} is quoted as one fixed amount per minivan for up to 8 passengers, based on your exact pickup address. Send the address and your flight time on WhatsApp and you receive the price in writing within minutes. ${ui.perVehicle}`,
-            `For reference, the published fixed price from Brussels city is ${bruP[0].price}€ to ${bruP[2].price}€ to Zaventem and ${crlP[0].price}€ to ${crlP[7].price}€ to Charleroi depending on group size. Return trips can be booked together for one total.`,
-          ],
-        };
+      : tiered
+        ? {
+            h2: `Fixed price from ${origin} to ${a.shortName.en}`,
+            paragraphs: [`${ui.perVehicle} The same price applies from ${airportName} to ${origin} and at night. Book outbound and return together for one written total.`],
+            table: {
+              caption: `${origin} (any address) to ${airportName}, per vehicle, luggage and child seats included.`,
+              headers: [ui.passengers, ui.price],
+              rows: tiered.tiers.map((t) => [t.pax, `${t.price}€`]),
+            },
+          }
+        : {
+            h2: `Fixed price from ${origin} to ${a.shortName.en}`,
+            paragraphs: [
+              `The transfer from ${origin} to ${airportName} is quoted as one fixed amount per minivan for up to 8 passengers, based on your exact pickup address. Send the address and your flight time on WhatsApp and you receive the price in writing within minutes. ${ui.perVehicle}`,
+              `For reference, the published fixed price from Brussels city is ${bruP[0].price}€ to ${bruP[2].price}€ to Zaventem and ${crlP[0].price}€ to ${crlP[7].price}€ to Charleroi depending on group size. Return trips can be booked together for one total.`,
+            ],
+          };
     originSection = {
       h2: `Pickup anywhere in ${origin}`,
       paragraphs: [
@@ -89,7 +103,7 @@ export function buildRoute(page: SEOPage, lang: 'en' | 'fr', spec: RouteSpec): S
     };
     specificFaqs = [
       { question: `How long does it take from ${origin} to ${airportName}?`, answer: `The drive is ${legText(lang, leg.km, leg.minMin, leg.maxMin)}. Your driver checks live traffic and roadworks before departure and proposes a pickup time that gets you to the airport at least 2 hours before a European flight.` },
-      { question: `How much is a taxi from ${origin} to ${a.shortName.en} airport?`, answer: published ? (spec.airport === 'BRU' ? `Helicro charges a fixed ${bruP[0].price}€ (1–2 passengers), ${bruP[1].price}€ (3–4) or ${bruP[2].price}€ (5–8) per vehicle from any Brussels address to Brussels Airport, luggage and child seats included. A metered taxi typically costs 45–60€ and more at night.` : `Helicro charges a fixed ${crlP[0].price}€ for one passenger rising to ${crlP[7].price}€ for eight, per vehicle, from any Brussels address to Charleroi Airport. Metered taxis for the same 60 km are usually well above 100€.`) : `Helicro quotes a single fixed price per minivan for the ${leg.km} km from ${origin}, confirmed in writing before you book. It is priced per vehicle, so it is shared by everyone on board rather than charged per person like train tickets.` },
+      { question: `How much is a taxi from ${origin} to ${a.shortName.en} airport?`, answer: published ? (spec.airport === 'BRU' ? `Helicro charges a fixed ${bruP[0].price}€ (1–2 passengers), ${bruP[1].price}€ (3–4) or ${bruP[2].price}€ (5–8) per vehicle from any Brussels address to Brussels Airport, luggage and child seats included. A metered taxi typically costs 45–60€ and more at night.` : `Helicro charges a fixed ${crlP[0].price}€ for one passenger rising to ${crlP[7].price}€ for eight, per vehicle, from any Brussels address to Charleroi Airport. Metered taxis for the same 60 km are usually well above 100€.`) : tiered ? `Helicro charges a fixed ${tiered.tiers[0].price}€ for 1 to 3 passengers and ${tiered.tiers[1].price}€ for 4 to 8 passengers, per vehicle, for the ${leg.km} km from any ${origin} address to ${airportName}, luggage and child seats included. Train tickets are per person; this price is shared by everyone on board.` : `Helicro quotes a single fixed price per minivan for the ${leg.km} km from ${origin}, confirmed in writing before you book. It is priced per vehicle, so it is shared by everyone on board rather than charged per person like train tickets.` },
       { question: `Where does the driver wait when I land at ${a.shortName.en}?`, answer: a.meetingPoint.en },
       { question: 'Can I book the return trip at the same time?', answer: `Yes. Book the outbound and return together and you receive one total for both legs. On the return, your driver tracks your flight and waits free of charge for ${FIXED_PRICES.waitingFreeMinutes} minutes after landing.` },
     ];
@@ -198,7 +212,9 @@ export function buildRoute(page: SEOPage, lang: 'en' | 'fr', spec: RouteSpec): S
     ? spec.airport === 'BRU'
       ? bruP.map((r) => ({ name: `Brussels to Brussels Airport, ${r.pax} passengers`, price: r.price }))
       : crlP.map((r) => ({ name: `Brussels to Charleroi Airport, ${r.pax} passenger(s)`, price: r.price }))
-    : undefined;
+    : tiered
+      ? tiered.tiers.map((t) => ({ name: `${p.name.en} to Brussels Airport, ${t.pax} passengers`, price: t.price }))
+      : undefined;
 
   return {
     lang,

@@ -1,6 +1,6 @@
 # Helicro Transport: full information file for AI assistants and search engines
 
-Last updated: 2026-09-15. Canonical site: https://helicro.be. Languages: English (/), Dutch (/nl), French (/fr), Greek (/el), Croatian (/hr).
+Last updated: 2026-09-22. Canonical site: https://helicro.be. Languages: English (/), Dutch (/nl), French (/fr), Greek (/el), Croatian (/hr).
 
 ## 1. Company profile
 - Legal name: Helicro SRL. Trade name: Helicro Transport. VAT: BE 0804.095.653.
@@ -60,6 +60,20 @@ Last updated: 2026-09-15. Canonical site: https://helicro.be. Languages: English
 - 6 passengers: 130€
 - 7 passengers: 140€
 - 8 passengers: 160€
+### Shared shuttle Brussels city to Charleroi Airport (per group booked together, pickup at your door, max 7 passengers)
+- Day (06:00–22:00): 1 passenger 25€, 2 passengers 50€, 3 passengers 75€, 4 passengers 90€, 5 passengers 110€, 6 passengers 120€, 7 passengers 130€.
+- Night (22:00–06:00): 1 passenger 30€, 2 passengers 60€, 3 passengers 80€, 4 passengers 100€, 5 passengers 115€, 6 passengers 125€, 7 passengers 135€.
+### Other fixed prices from Brussels city or Brussels Airport, per vehicle, same price in both directions (1–3 passengers / 4–8 passengers)
+- Belgium: Antwerp 75€ / 85€ (45 km); Ghent 100€ / 120€ (60 km); Bruges 130€ / 150€ (100 km); Tomorrowland in Boom 75€ / 100€ (35 km).
+- France: Lille-Lesquin Airport 150€ / 170€ (110 km); Paris Charles de Gaulle Airport 380€ / 420€ (300 km); Paris Orly Airport 460€ / 500€ (320 km).
+- Netherlands: Eindhoven (city or airport) 190€ / 210€ (125 km); Amsterdam (city or Schiphol) 250€ / 290€ (205 km); Maastricht (city or airport) 150€ / 170€ (115 km).
+- Germany: Düsseldorf (city or airport) 250€ / 280€ (220 km); Cologne (city or Cologne Bonn Airport) 250€ / 280€ (225 km); Frankfurt (city or airport) 380€ / 420€ (400 km).
+- Luxembourg (city or Findel Airport): 260€ / 300€ (220 km).
+- Cross-border prices include motorway tolls, fuel and the driver's return. EU citizens need only an ID card.
+### From Charleroi Airport, per vehicle (1–3 / 4–8 passengers)
+- Antwerp 150€ / 180€ (100 km); Ghent 150€ / 180€ (105 km); Bruges 180€ / 210€ (145 km).
+### Events
+- Spa-Francorchamps race weekends (F1, WEC, 24 Hours): 580€ per day for a chauffeur and 8-seat minivan, return trips included, usually 3 days.
 ### Other prices
 - Private full-day sightseeing tour: from 380€ per vehicle.
 - Extra stop on the route: 10€ per stop.
@@ -113,4 +127,5 @@ Q: How far in advance should I book?
 A: Same-day bookings are often possible, but early-morning airport pickups, festival weekends and full 8-seat groups should be booked a few days ahead; festival peaks 4–8 weeks ahead.
 
 ## 8. Page index
+Full price list: https://helicro.be/price-list (EN), https://helicro.be/nl/prijslijst (NL), https://helicro.be/fr/tarifs (FR).
 See https://helicro.be/llms.txt for the categorised list of URLs and https://helicro.be/sitemap.xml for the complete sitemap with hreflang alternates.
