@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import styles from './faq.module.css';
+import JsonLd from '@/components/JsonLd';
+import { faqSchema } from '@/lib/schema';
 
 interface FAQCategory {
   title: string;
@@ -327,8 +329,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
 
   return (
     <div className="section">
-      
-      
+      <JsonLd data={faqSchema(categories.flatMap((c) => c.items.map((i) => ({ question: i.q, answer: i.a }))))} />
 
       <div className="container" style={{ maxWidth: '800px' }}>
         <h1 className="text-center text-4xl font-extrabold mb-4" style={{ color: 'var(--primary-dark)' }}>

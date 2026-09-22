@@ -9,6 +9,8 @@ import { buildDayTrip } from './dayTrip';
 import { buildFestival } from './festival';
 import { buildRoute, ROUTES } from './route';
 import { buildVertical, hasVertical } from './vertical';
+import { buildPricedRoute, buildSharedShuttle } from './pricedRoute';
+import { pricedRouteFor, sharedShuttleLangFor } from '@/config/pricedRoutePages';
 import type { SeoLandingContent } from './types';
 
 export type { SeoLandingContent } from './types';
@@ -56,6 +58,10 @@ export function getSeoLanding(url: string): SeoLandingContent | null {
   if (url.startsWith('/en/day-trip/')) return buildDayTrip(page, lastSegment(url));
   if (url.startsWith('/en/festival/')) return buildFestival(page, lastSegment(url));
   if (hasVertical(url)) return buildVertical(page);
+  const priced = pricedRouteFor(url);
+  if (priced) return buildPricedRoute(page, priced.lang, priced.route);
+  const sharedLang = sharedShuttleLangFor(url);
+  if (sharedLang) return buildSharedShuttle(page, sharedLang);
   return null;
 }
 

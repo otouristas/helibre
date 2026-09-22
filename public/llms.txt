@@ -6,6 +6,10 @@
 - Vehicles: Ford Transit Custom and Ford Tourneo Custom minivans, up to 8 passengers and 8 large suitcases, air-conditioned, free child and booster seats.
 - Fixed prices from Brussels city to Brussels Airport (Zaventem): 35€ for 1–2 passengers, 45€ for 3–4, 55€ for 5–8, per vehicle (Drop-off Area; P1 drop-off +5€).
 - Fixed prices from Brussels city to Charleroi Airport: 65€ (1 passenger), 75€ (2), 90€ (3), 110€ (4), 120€ (5), 130€ (6), 140€ (7), 160€ (8), per vehicle, door to door.
+- Shared shuttle Brussels to Charleroi Airport: 25€ per person by day (06:00–22:00), 30€ at night, pickup at your door, maximum 7 passengers per van.
+- Other fixed prices per vehicle (1–3 passengers / 4–8 passengers), from Brussels city or Brussels Airport, same price both ways: Antwerp 75€/85€, Ghent 100€/120€, Bruges 130€/150€, Tomorrowland (Boom) 75€/100€, Lille Airport 150€/170€, Paris CDG 380€/420€, Paris Orly 460€/500€, Eindhoven 190€/210€, Amsterdam or Schiphol 250€/290€, Maastricht 150€/170€, Düsseldorf 250€/280€, Cologne 250€/280€, Frankfurt 380€/420€, Luxembourg 260€/300€.
+- From Charleroi Airport: Antwerp 150€/180€, Ghent 150€/180€, Bruges 180€/210€ (1–3 / 4–8 passengers, per vehicle).
+- Spa-Francorchamps race weekends: 580€ per day for a chauffeur and 8-seat minivan, return trips included.
 - Private full-day sightseeing tour: from 380€ per vehicle.
 - Live flight tracking, 60 minutes of free waiting after landing (then 30€/hour), meet and greet in arrivals with a name sign, no night surcharge, extra stops 10€.
 - Free cancellation or changes up to 24 hours before pickup. Payment by card, bank transfer, invoice or cash.
@@ -22,6 +26,7 @@
 ## Core pages
 - Airport transfers (service overview): https://helicro.be/services/airport
 - Pricing: https://helicro.be/pricing
+- Full price list 2026 (EN): https://helicro.be/price-list ; NL: https://helicro.be/nl/prijslijst ; FR: https://helicro.be/fr/tarifs
 - Fleet: https://helicro.be/fleet
 - Reviews (40 Google reviews, 5.0): https://helicro.be/reviews
 - About the driver: https://helicro.be/about-us
@@ -45,6 +50,19 @@
 - Navette aéroport Charleroi (FR): https://helicro.be/fr/navette/aeroport-charleroi
 - Navette Bruxelles – Charleroi (FR): https://helicro.be/fr/navette/charleroi-bruxelles
 
+## Shared shuttle Brussels – Charleroi Airport (25€ per person)
+- EN: https://helicro.be/en/route/brussels-charleroi-shared-shuttle ; NL: https://helicro.be/nl/route/brussel-charleroi-gedeelde-shuttle ; FR: https://helicro.be/fr/navette/bruxelles-charleroi-navette-partagee
+
+## Charleroi Airport to Flemish cities (fixed price)
+- Antwerp: https://helicro.be/en/route/charleroi-airport-antwerp , https://helicro.be/nl/route/charleroi-airport-antwerpen , https://helicro.be/fr/navette/charleroi-aeroport-anvers
+- Ghent: https://helicro.be/en/route/charleroi-airport-ghent , https://helicro.be/nl/route/charleroi-airport-gent , https://helicro.be/fr/navette/charleroi-aeroport-gand
+- Bruges: https://helicro.be/en/route/charleroi-airport-bruges , https://helicro.be/nl/route/charleroi-airport-brugge , https://helicro.be/fr/navette/charleroi-aeroport-bruges
+
+## Long-distance and cross-border from Brussels (fixed price)
+- EN: https://helicro.be/en/route/brussels-{paris-cdg|paris-orly|eindhoven|amsterdam|maastricht|dusseldorf|cologne|frankfurt|luxembourg}
+- NL: https://helicro.be/nl/route/brussel-{rijsel-luchthaven|parijs-cdg|parijs-orly|eindhoven|amsterdam|maastricht|dusseldorf|keulen|frankfurt|luxemburg}
+- FR: https://helicro.be/fr/navette/bruxelles-{lille-aeroport|paris-cdg|paris-orly|eindhoven|amsterdam|maastricht|dusseldorf|cologne|francfort|luxembourg}
+
 ## Routes (EN)
 - Brussels to Zaventem: https://helicro.be/en/route/brussels-zaventem
 - Brussels to Charleroi Airport: https://helicro.be/en/route/brussels-charleroi
@@ -61,6 +79,12 @@
 - Waterloo: https://helicro.be/fr/local/waterloo
 - Wavre: https://helicro.be/fr/local/wavre
 - Nivelles: https://helicro.be/fr/local/nivelles
+- Louvain-la-Neuve and Ottignies: https://helicro.be/fr/local/louvain-la-neuve
+- Tubize: https://helicro.be/fr/local/tubize
+- Rixensart and Genval: https://helicro.be/fr/local/rixensart
+- Lasne: https://helicro.be/fr/local/lasne
+- Genappe: https://helicro.be/fr/local/genappe
+- La Hulpe: https://helicro.be/fr/local/la-hulpe
 
 ## Day trips, festivals and specialist pages
 - Bruges, Ghent, Durbuy, Waterloo day trips: https://helicro.be/en/day-trip/bruges , https://helicro.be/en/day-trip/ghent , https://helicro.be/en/day-trip/durbuy , https://helicro.be/en/day-trip/waterloo
@@ -80,6 +104,8 @@
 - Airport strikes and your transfer (EN): https://helicro.be/en/blog/brussels-airport-strike-transfer-plan
 - Tomorrowland transport guide (EN): https://helicro.be/en/blog/tomorrowland-2026-vip-group-transport
 - Spa-Francorchamps F1 transfer guide (EN): https://helicro.be/en/blog/spa-francorchamps-f1-transfer-guide
+- Charleroi Airport to Brussels: bus, train, taxi or transfer (EN): https://helicro.be/en/blog/charleroi-airport-to-brussels
+- Van Charleroi Airport naar Brussel (NL): https://helicro.be/nl/blog/van-charleroi-airport-naar-brussel
 - Wat kost een taxi naar Zaventem? (NL): https://helicro.be/nl/blog/wat-kost-een-taxi-naar-zaventem
 - Combien coûte un taxi Bruxelles – Charleroi ? (FR): https://helicro.be/fr/blog/combien-coute-un-taxi-bruxelles-charleroi
 

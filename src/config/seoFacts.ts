@@ -228,6 +228,42 @@ export const PLACES: Record<string, PlaceFact> = {
     { en: 'the Belgian coast', nl: 'de Belgische kust', fr: 'la côte belge', el: 'τις βελγικές ακτές', hr: 'belgijskoj obali' },
     { toBRU: { km: 115, minMin: 80, maxMin: 95 }, toCRL: { km: 150, minMin: 105, maxMin: 125 } }
   ),
+  'louvain-la-neuve': P(
+    'louvain-la-neuve',
+    { en: 'Louvain-la-Neuve', nl: 'Louvain-la-Neuve', fr: 'Louvain-la-Neuve', el: 'Louvain-la-Neuve', hr: 'Louvain-la-Neuve' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 35, minMin: 35, maxMin: 45 }, toCRL: { km: 45, minMin: 40, maxMin: 50 } }
+  ),
+  tubize: P(
+    'tubize',
+    { en: 'Tubize', nl: 'Tubeke', fr: 'Tubize', el: 'Tubize', hr: 'Tubize' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 40, minMin: 40, maxMin: 50 }, toCRL: { km: 45, minMin: 40, maxMin: 50 } }
+  ),
+  rixensart: P(
+    'rixensart',
+    { en: 'Rixensart', nl: 'Rixensart', fr: 'Rixensart', el: 'Rixensart', hr: 'Rixensart' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 25, minMin: 25, maxMin: 40 }, toCRL: { km: 55, minMin: 45, maxMin: 55 } }
+  ),
+  lasne: P(
+    'lasne',
+    { en: 'Lasne', nl: 'Lasne', fr: 'Lasne', el: 'Lasne', hr: 'Lasne' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 30, minMin: 30, maxMin: 45 }, toCRL: { km: 50, minMin: 45, maxMin: 55 } }
+  ),
+  genappe: P(
+    'genappe',
+    { en: 'Genappe', nl: 'Genepiën', fr: 'Genappe', el: 'Genappe', hr: 'Genappe' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 45, minMin: 40, maxMin: 55 }, toCRL: { km: 30, minMin: 30, maxMin: 40 } }
+  ),
+  'la-hulpe': P(
+    'la-hulpe',
+    { en: 'La Hulpe', nl: 'Terhulpen', fr: 'La Hulpe', el: 'La Hulpe', hr: 'La Hulpe' },
+    { en: 'Walloon Brabant', nl: 'Waals-Brabant', fr: 'le Brabant wallon', el: 'το Βαλλονικό Βραβάντη', hr: 'Valonskom Brabantu' },
+    { toBRU: { km: 22, minMin: 25, maxMin: 35 }, toCRL: { km: 55, minMin: 45, maxMin: 60 } }
+  ),
 };
 
 /** Published fixed prices (EUR, per vehicle, not per person). */
@@ -253,6 +289,209 @@ export const FIXED_PRICES = {
   extraStop: 10,
   dayTourFrom: 380,
   cancellationHours: 24,
+};
+
+/** Destinations with a published fixed price (source: Helicro price list, September 2026). */
+export type DestinationCountry = 'BE' | 'FR' | 'NL' | 'DE' | 'LU';
+
+export interface DestinationFact {
+  key: string;
+  name: L;
+  /** What the fixed price covers at the destination end, e.g. "city centre or Schiphol Airport". */
+  scope: L;
+  country: DestinationCountry;
+  /** Road distance and typical time from Brussels (city or Brussels Airport). */
+  fromBrussels: Leg;
+  /** Road distance and typical time from Charleroi Airport, when a CRL price exists. */
+  fromCRL?: Leg;
+  /** Main motorway or route used, per language. */
+  road: L;
+  /** IATA code when the destination is an airport. */
+  iata?: string;
+}
+
+export const DESTINATIONS: Record<string, DestinationFact> = {
+  antwerp: {
+    key: 'antwerp',
+    name: PLACES.antwerp.name,
+    scope: { en: 'any address in Antwerp city or the port area', nl: 'elk adres in Antwerpen-stad of de haven', fr: 'toute adresse à Anvers ou dans la zone portuaire', el: 'οποιαδήποτε διεύθυνση στην Αμβέρσα', hr: 'bilo koja adresa u Antwerpenu' },
+    country: 'BE',
+    fromBrussels: { km: 45, minMin: 40, maxMin: 55 },
+    fromCRL: { km: 100, minMin: 75, maxMin: 90 },
+    road: { en: 'E19 north via Mechelen', nl: 'E19 richting noorden via Mechelen', fr: 'E19 vers le nord via Malines', el: 'E19 βόρεια μέσω Μέχελεν', hr: 'E19 na sjever preko Mechelena' },
+  },
+  ghent: {
+    key: 'ghent',
+    name: PLACES.ghent.name,
+    scope: { en: 'any address in Ghent, including Gent-Sint-Pieters station', nl: 'elk adres in Gent, ook station Gent-Sint-Pieters', fr: 'toute adresse à Gand, y compris la gare de Gent-Sint-Pieters', el: 'οποιαδήποτε διεύθυνση στη Γάνδη', hr: 'bilo koja adresa u Gentu' },
+    country: 'BE',
+    fromBrussels: { km: 60, minMin: 45, maxMin: 60 },
+    fromCRL: { km: 105, minMin: 80, maxMin: 95 },
+    road: { en: 'E40 west', nl: 'E40 richting westen', fr: 'E40 vers l’ouest', el: 'E40 δυτικά', hr: 'E40 na zapad' },
+  },
+  bruges: {
+    key: 'bruges',
+    name: PLACES.bruges.name,
+    scope: { en: 'any address or hotel in Bruges, including Zeebrugge on request', nl: 'elk adres of hotel in Brugge, Zeebrugge op aanvraag', fr: 'toute adresse ou hôtel à Bruges, Zeebrugge sur demande', el: 'οποιαδήποτε διεύθυνση ή ξενοδοχείο στην Μπριζ', hr: 'bilo koja adresa ili hotel u Brugesu' },
+    country: 'BE',
+    fromBrussels: { km: 100, minMin: 70, maxMin: 85 },
+    fromCRL: { km: 145, minMin: 100, maxMin: 120 },
+    road: { en: 'E40 west past Ghent', nl: 'E40 richting westen voorbij Gent', fr: 'E40 vers l’ouest après Gand', el: 'E40 δυτικά μετά τη Γάνδη', hr: 'E40 na zapad pokraj Genta' },
+  },
+  tomorrowland: {
+    key: 'tomorrowland',
+    name: { en: 'Tomorrowland (Boom)', nl: 'Tomorrowland (Boom)', fr: 'Tomorrowland (Boom)', el: 'Tomorrowland (Boom)', hr: 'Tomorrowland (Boom)' },
+    scope: { en: 'the official drop-off zones at De Schorre, Boom, or DreamVille', nl: 'de officiële afzetzones aan De Schorre in Boom of DreamVille', fr: 'les zones de dépose officielles de De Schorre à Boom ou DreamVille', el: 'τις επίσημες ζώνες αποβίβασης στο De Schorre, Boom', hr: 'službene zone iskrcaja u De Schorreu, Boom' },
+    country: 'BE',
+    fromBrussels: { km: 35, minMin: 30, maxMin: 45 },
+    road: { en: 'A12 north', nl: 'A12 richting noorden', fr: 'A12 vers le nord', el: 'A12 βόρεια', hr: 'A12 na sjever' },
+  },
+  'lille-airport': {
+    key: 'lille-airport',
+    name: AIRPORTS.LIL.name,
+    scope: { en: 'the terminal at Lille-Lesquin, or Lille-Europe and Lille-Flandres stations', nl: 'de terminal van Lille-Lesquin of de stations Lille-Europe en Lille-Flandres', fr: 'le terminal de Lille-Lesquin, ou les gares de Lille-Europe et Lille-Flandres', el: 'τον τερματικό σταθμό Lille-Lesquin', hr: 'terminal Lille-Lesquin' },
+    country: 'FR',
+    fromBrussels: { km: 110, minMin: 80, maxMin: 95 },
+    road: { en: 'E19 and A27/A1 via Tournai', nl: 'E19 en A27/A1 via Doornik', fr: 'E19 puis A27/A1 via Tournai', el: 'E19 και A27/A1 μέσω Tournai', hr: 'E19 i A27/A1 preko Tournaija' },
+    iata: 'LIL',
+  },
+  'paris-cdg': {
+    key: 'paris-cdg',
+    name: { en: 'Paris Charles de Gaulle Airport', nl: 'Luchthaven Parijs Charles de Gaulle', fr: 'Aéroport Paris Charles de Gaulle', el: 'Αεροδρόμιο Παρίσι Charles de Gaulle', hr: 'Zračna luka Pariz Charles de Gaulle' },
+    scope: { en: 'any terminal at Roissy Charles de Gaulle (CDG)', nl: 'elke terminal van Roissy Charles de Gaulle (CDG)', fr: 'tout terminal de Roissy Charles de Gaulle (CDG)', el: 'οποιονδήποτε τερματικό στο Roissy CDG', hr: 'bilo koji terminal u Roissyju CDG' },
+    country: 'FR',
+    fromBrussels: { km: 300, minMin: 180, maxMin: 210 },
+    road: { en: 'E19 and A1 via Valenciennes', nl: 'E19 en A1 via Valenciennes', fr: 'E19 puis A1 via Valenciennes', el: 'E19 και A1 μέσω Valenciennes', hr: 'E19 i A1 preko Valenciennesa' },
+    iata: 'CDG',
+  },
+  'paris-orly': {
+    key: 'paris-orly',
+    name: { en: 'Paris Orly Airport', nl: 'Luchthaven Parijs Orly', fr: 'Aéroport Paris Orly', el: 'Αεροδρόμιο Παρίσι Orly', hr: 'Zračna luka Pariz Orly' },
+    scope: { en: 'any terminal at Paris Orly (ORY)', nl: 'elke terminal van Parijs Orly (ORY)', fr: 'tout terminal de Paris Orly (ORY)', el: 'οποιονδήποτε τερματικό στο Orly', hr: 'bilo koji terminal u Orlyju' },
+    country: 'FR',
+    fromBrussels: { km: 320, minMin: 195, maxMin: 230 },
+    road: { en: 'A1 and the Paris ring road', nl: 'A1 en de Parijse ring', fr: 'A1 puis le périphérique parisien', el: 'A1 και περιφερειακός Παρισιού', hr: 'A1 i pariška obilaznica' },
+    iata: 'ORY',
+  },
+  eindhoven: {
+    key: 'eindhoven',
+    name: { en: 'Eindhoven', nl: 'Eindhoven', fr: 'Eindhoven', el: 'Eindhoven', hr: 'Eindhoven' },
+    scope: { en: 'Eindhoven Airport (EIN) or any address in the city', nl: 'Eindhoven Airport (EIN) of elk adres in de stad', fr: 'l’aéroport d’Eindhoven (EIN) ou toute adresse en ville', el: 'το αεροδρόμιο Eindhoven ή τη πόλη', hr: 'zračnu luku Eindhoven ili grad' },
+    country: 'NL',
+    fromBrussels: { km: 125, minMin: 85, maxMin: 105 },
+    road: { en: 'E19 and E34/A67 via Antwerp and Turnhout', nl: 'E19 en E34/A67 via Antwerpen en Turnhout', fr: 'E19 puis E34/A67 via Anvers et Turnhout', el: 'E19 και E34 μέσω Αμβέρσας', hr: 'E19 i E34 preko Antwerpena' },
+    iata: 'EIN',
+  },
+  amsterdam: {
+    key: 'amsterdam',
+    name: { en: 'Amsterdam', nl: 'Amsterdam', fr: 'Amsterdam', el: 'Άμστερνταμ', hr: 'Amsterdam' },
+    scope: { en: 'Amsterdam Schiphol Airport (AMS) or any address in the city', nl: 'Amsterdam Schiphol Airport (AMS) of elk adres in de stad', fr: 'l’aéroport d’Amsterdam Schiphol (AMS) ou toute adresse en ville', el: 'το αεροδρόμιο Schiphol ή την πόλη', hr: 'zračnu luku Schiphol ili grad' },
+    country: 'NL',
+    fromBrussels: { km: 205, minMin: 130, maxMin: 160 },
+    road: { en: 'E19 north via Antwerp, Breda and Rotterdam', nl: 'E19 richting noorden via Antwerpen, Breda en Rotterdam', fr: 'E19 vers le nord via Anvers, Breda et Rotterdam', el: 'E19 βόρεια μέσω Αμβέρσας και Ρότερνταμ', hr: 'E19 na sjever preko Antwerpena i Rotterdama' },
+    iata: 'AMS',
+  },
+  maastricht: {
+    key: 'maastricht',
+    name: { en: 'Maastricht', nl: 'Maastricht', fr: 'Maastricht', el: 'Μάαστριχτ', hr: 'Maastricht' },
+    scope: { en: 'Maastricht Aachen Airport (MST) or any address in the city', nl: 'Maastricht Aachen Airport (MST) of elk adres in de stad', fr: 'l’aéroport Maastricht Aachen (MST) ou toute adresse en ville', el: 'το αεροδρόμιο Maastricht Aachen ή την πόλη', hr: 'zračnu luku Maastricht Aachen ili grad' },
+    country: 'NL',
+    fromBrussels: { km: 115, minMin: 75, maxMin: 95 },
+    road: { en: 'E40 east via Leuven and Liège', nl: 'E40 richting oosten via Leuven en Luik', fr: 'E40 vers l’est via Louvain et Liège', el: 'E40 ανατολικά μέσω Λέουβεν και Λιέγης', hr: 'E40 na istok preko Leuvena i Liègea' },
+    iata: 'MST',
+  },
+  dusseldorf: {
+    key: 'dusseldorf',
+    name: { en: 'Düsseldorf', nl: 'Düsseldorf', fr: 'Düsseldorf', el: 'Ντίσελντορφ', hr: 'Düsseldorf' },
+    scope: { en: 'Düsseldorf Airport (DUS) or any address in the city', nl: 'Düsseldorf Airport (DUS) of elk adres in de stad', fr: 'l’aéroport de Düsseldorf (DUS) ou toute adresse en ville', el: 'το αεροδρόμιο Ντίσελντορφ ή την πόλη', hr: 'zračnu luku Düsseldorf ili grad' },
+    country: 'DE',
+    fromBrussels: { km: 220, minMin: 135, maxMin: 165 },
+    road: { en: 'E40 and A44 via Liège and Aachen', nl: 'E40 en A44 via Luik en Aken', fr: 'E40 puis A44 via Liège et Aix-la-Chapelle', el: 'E40 και A44 μέσω Λιέγης και Άαχεν', hr: 'E40 i A44 preko Liègea i Aachena' },
+    iata: 'DUS',
+  },
+  cologne: {
+    key: 'cologne',
+    name: { en: 'Cologne', nl: 'Keulen', fr: 'Cologne', el: 'Κολωνία', hr: 'Köln' },
+    scope: { en: 'Cologne Bonn Airport (CGN) or any address in Cologne or Bonn', nl: 'Köln Bonn Airport (CGN) of elk adres in Keulen of Bonn', fr: 'l’aéroport de Cologne-Bonn (CGN) ou toute adresse à Cologne ou Bonn', el: 'το αεροδρόμιο Κολωνίας-Βόννης ή την πόλη', hr: 'zračnu luku Köln Bonn ili grad' },
+    country: 'DE',
+    fromBrussels: { km: 225, minMin: 140, maxMin: 170 },
+    road: { en: 'E40 and A4 via Liège and Aachen', nl: 'E40 en A4 via Luik en Aken', fr: 'E40 puis A4 via Liège et Aix-la-Chapelle', el: 'E40 και A4 μέσω Λιέγης και Άαχεν', hr: 'E40 i A4 preko Liègea i Aachena' },
+    iata: 'CGN',
+  },
+  frankfurt: {
+    key: 'frankfurt',
+    name: { en: 'Frankfurt', nl: 'Frankfurt', fr: 'Francfort', el: 'Φρανκφούρτη', hr: 'Frankfurt' },
+    scope: { en: 'Frankfurt Airport (FRA) or any address in the city', nl: 'Frankfurt Airport (FRA) of elk adres in de stad', fr: 'l’aéroport de Francfort (FRA) ou toute adresse en ville', el: 'το αεροδρόμιο Φρανκφούρτης ή την πόλη', hr: 'zračnu luku Frankfurt ili grad' },
+    country: 'DE',
+    fromBrussels: { km: 400, minMin: 240, maxMin: 280 },
+    road: { en: 'E40 and A3 via Cologne', nl: 'E40 en A3 via Keulen', fr: 'E40 puis A3 via Cologne', el: 'E40 και A3 μέσω Κολωνίας', hr: 'E40 i A3 preko Kölna' },
+    iata: 'FRA',
+  },
+  luxembourg: {
+    key: 'luxembourg',
+    name: { en: 'Luxembourg', nl: 'Luxemburg', fr: 'Luxembourg', el: 'Λουξεμβούργο', hr: 'Luksemburg' },
+    scope: { en: 'Luxembourg Findel Airport (LUX), the city or Kirchberg', nl: 'Luxembourg Findel Airport (LUX), de stad of Kirchberg', fr: 'l’aéroport de Luxembourg-Findel (LUX), la ville ou le Kirchberg', el: 'το αεροδρόμιο Findel ή την πόλη', hr: 'zračnu luku Findel ili grad' },
+    country: 'LU',
+    fromBrussels: { km: 220, minMin: 135, maxMin: 165 },
+    road: { en: 'E411 south via Namur and Arlon', nl: 'E411 richting zuiden via Namen en Aarlen', fr: 'E411 vers le sud via Namur et Arlon', el: 'E411 νότια μέσω Ναμύρ και Arlon', hr: 'E411 na jug preko Namura i Arlona' },
+    iata: 'LUX',
+  },
+};
+
+export interface PriceTier {
+  pax: string;
+  price: number;
+}
+
+export interface PricedRoute {
+  /** Stable key, e.g. 'brussels-amsterdam' or 'crl-antwerp'. */
+  key: string;
+  from: 'brussels' | 'crl';
+  to: string; // DESTINATIONS key
+  tiers: PriceTier[];
+}
+
+const T2 = (a: number, b: number): PriceTier[] => [
+  { pax: '1–3', price: a },
+  { pax: '4–8', price: b },
+];
+
+/** Fixed prices per vehicle, VAT included, from Brussels (city or Brussels Airport) and from Charleroi Airport. */
+export const PRICED_ROUTES: PricedRoute[] = [
+  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 85) },
+  { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(100, 120) },
+  { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(130, 150) },
+  { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(75, 100) },
+  { key: 'crl-antwerp', from: 'crl', to: 'antwerp', tiers: T2(150, 180) },
+  { key: 'crl-ghent', from: 'crl', to: 'ghent', tiers: T2(150, 180) },
+  { key: 'crl-bruges', from: 'crl', to: 'bruges', tiers: T2(180, 210) },
+  { key: 'brussels-lille-airport', from: 'brussels', to: 'lille-airport', tiers: T2(150, 170) },
+  { key: 'brussels-paris-cdg', from: 'brussels', to: 'paris-cdg', tiers: T2(380, 420) },
+  { key: 'brussels-paris-orly', from: 'brussels', to: 'paris-orly', tiers: T2(460, 500) },
+  { key: 'brussels-eindhoven', from: 'brussels', to: 'eindhoven', tiers: T2(190, 210) },
+  { key: 'brussels-amsterdam', from: 'brussels', to: 'amsterdam', tiers: T2(250, 290) },
+  { key: 'brussels-maastricht', from: 'brussels', to: 'maastricht', tiers: T2(150, 170) },
+  { key: 'brussels-dusseldorf', from: 'brussels', to: 'dusseldorf', tiers: T2(250, 280) },
+  { key: 'brussels-cologne', from: 'brussels', to: 'cologne', tiers: T2(250, 280) },
+  { key: 'brussels-frankfurt', from: 'brussels', to: 'frankfurt', tiers: T2(380, 420) },
+  { key: 'brussels-luxembourg', from: 'brussels', to: 'luxembourg', tiers: T2(260, 300) },
+];
+
+export function pricedRoute(from: 'brussels' | 'crl', to: string): PricedRoute | undefined {
+  return PRICED_ROUTES.find((r) => r.from === from && r.to === to);
+}
+
+/** Shared (seat-in-van) shuttle between Brussels and Charleroi Airport, per passenger. */
+export const SHARED_SHUTTLE = {
+  perPassengerDay: 25,
+  perPassengerNight: 30,
+  maxPassengers: 7,
+};
+
+/** Spa-Francorchamps race weekends: full-day chauffeur and 8-seat minivan, return trips included. */
+export const SPA_F1 = {
+  perDay: 580,
+  typicalDays: 3,
 };
 
 export interface DayTripFact {

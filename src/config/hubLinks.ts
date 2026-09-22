@@ -16,7 +16,19 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
         { href: '/en/airport-transfer/lille', label: 'Lille Airport transfer' },
         { href: '/en/route/brussels-zaventem', label: 'Brussels to Zaventem from 35€' },
         { href: '/en/route/brussels-charleroi', label: 'Brussels to Charleroi from 65€' },
-        { href: '/en/cruise-transfer/zeebrugge', label: 'Zeebrugge cruise transfer' },
+        { href: '/en/route/brussels-charleroi-shared-shuttle', label: 'Shared shuttle to Charleroi from 25€ pp' },
+        { href: '/price-list', label: 'Full price list 2026' },
+      ],
+    },
+    {
+      title: 'Long-distance and cross-border',
+      links: [
+        { href: '/en/route/charleroi-airport-antwerp', label: 'Charleroi Airport to Antwerp from 150€' },
+        { href: '/en/route/brussels-amsterdam', label: 'Brussels to Amsterdam / Schiphol from 250€' },
+        { href: '/en/route/brussels-paris-cdg', label: 'Brussels to Paris CDG from 380€' },
+        { href: '/en/airport-transfer/lille', label: 'Brussels to Lille Airport from 150€' },
+        { href: '/en/route/brussels-luxembourg', label: 'Brussels to Luxembourg from 260€' },
+        { href: '/en/route/brussels-cologne', label: 'Brussels to Cologne from 250€' },
       ],
     },
     {
@@ -66,6 +78,17 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       ],
     },
     {
+      title: 'Vaste prijzen en lange afstand',
+      links: [
+        { href: '/nl/prijslijst', label: 'Volledige prijslijst 2026' },
+        { href: '/nl/route/brussel-charleroi-gedeelde-shuttle', label: 'Gedeelde shuttle Charleroi vanaf 25€ pp' },
+        { href: '/nl/route/charleroi-airport-antwerpen', label: 'Charleroi Airport – Antwerpen vanaf 150€' },
+        { href: '/nl/route/brussel-amsterdam', label: 'Brussel – Amsterdam / Schiphol vanaf 250€' },
+        { href: '/nl/route/brussel-parijs-cdg', label: 'Brussel – Parijs CDG vanaf 380€' },
+        { href: '/nl/route/brussel-rijsel-luchthaven', label: 'Brussel – luchthaven Rijsel vanaf 150€' },
+      ],
+    },
+    {
       title: 'Diensten',
       links: [
         { href: '/nl/services/airport', label: 'Luchthavenvervoer: alle info' },
@@ -90,9 +113,21 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       ],
     },
     {
+      title: 'Prix fixes et longue distance',
+      links: [
+        { href: '/fr/tarifs', label: 'Liste complète des tarifs 2026' },
+        { href: '/fr/navette/bruxelles-charleroi-navette-partagee', label: 'Navette partagée Charleroi dès 25€ pp' },
+        { href: '/fr/navette/charleroi-aeroport-anvers', label: 'Aéroport de Charleroi – Anvers dès 150€' },
+        { href: '/fr/navette/bruxelles-paris-cdg', label: 'Bruxelles – Paris CDG dès 380€' },
+        { href: '/fr/navette/bruxelles-lille-aeroport', label: 'Bruxelles – aéroport de Lille dès 150€' },
+        { href: '/fr/navette/bruxelles-luxembourg', label: 'Bruxelles – Luxembourg dès 260€' },
+      ],
+    },
+    {
       title: 'Services',
       links: [
         { href: '/fr/local/nivelles', label: 'Taxi Nivelles' },
+        { href: '/fr/local/louvain-la-neuve', label: 'Taxi Louvain-la-Neuve' },
         { href: '/fr/services/airport', label: 'Navette aéroport : le service' },
         { href: '/fr/pricing', label: 'Prix fixes' },
         { href: '/fr/services/sightseeing', label: 'Excursions privées' },

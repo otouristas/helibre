@@ -20,7 +20,58 @@ const COMMUNE_NOTES: Record<string, { quartiers: string; extra: string }> = {
     quartiers: 'le centre de Nivelles, la gare, le zoning de Nivelles-Sud, Baulers, Thines et Monstreux',
     extra: 'Nivelles se trouve à mi-chemin entre les deux aéroports : Charleroi en 30 minutes par l’A54, Zaventem en 45 minutes par l’E19 et le ring.',
   },
+  'louvain-la-neuve': {
+    quartiers: 'le centre piétonnier de Louvain-la-Neuve, la gare et l’Esplanade, le Biéreau, Lauzelle, les Bruyères, Hocaille, le parc scientifique et l’ensemble d’Ottignies (centre, Limelette, Céroux-Mousty)',
+    extra: 'Louvain-la-Neuve accueille des milliers d’étudiants et de chercheurs internationaux de l’UCLouvain : Helicro assure les navettes vers Zaventem et Charleroi en début et fin de semestre, les trajets vers les gares TGV et les déplacements de délégations du parc scientifique, avec un chauffeur qui parle français, anglais et grec.',
+  },
+  tubize: {
+    quartiers: 'le centre de Tubize, la gare, Clabecq, Oisquercq, Saintes et la zone des Forges',
+    extra: 'Depuis Tubize, la N6 puis le ring ouest de Bruxelles rejoignent Zaventem en 40 à 50 minutes, et l’E19 mène à Charleroi en un temps comparable : la commune est idéalement placée pour choisir l’aéroport le moins cher à chaque voyage.',
+  },
+  rixensart: {
+    quartiers: 'le centre de Rixensart, Genval et le lac de Genval, Rosières, Bourgeois et les abords de la gare de Rixensart',
+    extra: 'Rixensart et Genval comptent de nombreux cadres et familles internationales qui voyagent souvent : Helicro y assure des navettes aéroport récurrentes avec facture mensuelle, ainsi que les trajets vers Bruxelles-Midi pour l’Eurostar.',
+  },
+  lasne: {
+    quartiers: 'Lasne centre, Ohain, Plancenoit, Couture-Saint-Germain, Maransart et Chapelle-Saint-Lambert',
+    extra: 'Lasne est à 10 minutes de la base de Helicro à Braine-l’Alleud : les prises en charge très matinales, avant 5h, y sont assurées sans difficulté, et Zaventem se rejoint en une demi-heure par la N5 et le ring.',
+  },
+  genappe: {
+    quartiers: 'le centre de Genappe, Baisy-Thy, Bousval, Glabais, Houtain-le-Val, Loupoigne, Vieux-Genappe et Ways',
+    extra: 'Genappe est plus proche de Charleroi que de Zaventem : l’aéroport de Charleroi est à 30 minutes par la N5 et l’A54, ce qui rend la navette privée particulièrement compétitive pour les vols Ryanair du matin.',
+  },
+  'la-hulpe': {
+    quartiers: 'le centre de La Hulpe, la gare, le domaine Solvay et le château de La Hulpe, Gaillemarde et les quartiers proches de la forêt de Soignes',
+    extra: 'La Hulpe est l’une des communes les plus proches de Zaventem dans le Brabant wallon : 25 minutes hors heures de pointe par la N275 et le ring, ce qui permet des départs plus tardifs et un retour rapide depuis l’aéroport.',
+  },
 };
+
+/** Distance and time from the commune to central Brussels / Gare du Midi (row in the price table). */
+const TO_BRUSSELS: Record<string, [string, string]> = {
+  'braine-l-alleud': ['25 km', '30–45 min'],
+  waterloo: ['20 km', '25–40 min'],
+  wavre: ['30 km', '30–45 min'],
+  nivelles: ['35 km', '35–50 min'],
+  'louvain-la-neuve': ['30 km', '30–45 min'],
+  tubize: ['25 km', '30–45 min'],
+  rixensart: ['25 km', '30–40 min'],
+  lasne: ['25 km', '30–40 min'],
+  genappe: ['35 km', '35–50 min'],
+  'la-hulpe': ['20 km', '25–35 min'],
+};
+
+const COMMUNE_LINKS: { href: string; label: string }[] = [
+  { href: '/fr/local/braine-l-alleud', label: 'Taxi Braine-l’Alleud' },
+  { href: '/fr/local/waterloo', label: 'Taxi Waterloo' },
+  { href: '/fr/local/wavre', label: 'Taxi Wavre' },
+  { href: '/fr/local/nivelles', label: 'Taxi Nivelles' },
+  { href: '/fr/local/louvain-la-neuve', label: 'Taxi Louvain-la-Neuve et Ottignies' },
+  { href: '/fr/local/tubize', label: 'Taxi Tubize' },
+  { href: '/fr/local/rixensart', label: 'Taxi Rixensart et Genval' },
+  { href: '/fr/local/lasne', label: 'Taxi Lasne' },
+  { href: '/fr/local/genappe', label: 'Taxi Genappe' },
+  { href: '/fr/local/la-hulpe', label: 'Taxi La Hulpe' },
+];
 
 export function buildCommune(page: SEOPage, placeKey: string): SeoLandingContent {
   const lang = 'fr' as const;
@@ -55,7 +106,7 @@ export function buildCommune(page: SEOPage, placeKey: string): SeoLandingContent
       rows: [
         [AIRPORTS.CRL.name.fr, `${crl.km} km`, `${crl.minMin}–${crl.maxMin} min`],
         [AIRPORTS.BRU.name.fr, `${bru.km} km`, `${bru.minMin}–${bru.maxMin} min`],
-        ['Bruxelles centre / Gare du Midi', placeKey === 'wavre' ? '30 km' : placeKey === 'nivelles' ? '35 km' : '25 km', placeKey === 'wavre' ? '30–45 min' : placeKey === 'nivelles' ? '35–50 min' : '30–45 min'],
+        ['Bruxelles centre / Gare du Midi', ...(TO_BRUSSELS[placeKey] ?? ['25 km', '30–45 min'])],
       ],
     },
   };
@@ -102,12 +153,7 @@ export function buildCommune(page: SEOPage, placeKey: string): SeoLandingContent
     related: [
       {
         title: ui.cities,
-        links: [
-          { href: '/fr/local/braine-l-alleud', label: 'Taxi Braine-l’Alleud' },
-          { href: '/fr/local/waterloo', label: 'Taxi Waterloo' },
-          { href: '/fr/local/wavre', label: 'Taxi Wavre' },
-          { href: '/fr/local/nivelles', label: 'Taxi Nivelles' },
-        ].filter((l) => l.href !== page.url),
+        links: COMMUNE_LINKS.filter((l) => l.href !== page.url),
       },
       {
         title: ui.hubs,

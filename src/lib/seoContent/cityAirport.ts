@@ -1,7 +1,15 @@
-import { AIRPORTS, FIXED_PRICES, PLACES } from '@/config/seoFacts';
+import { AIRPORTS, FIXED_PRICES, PLACES, pricedRoute } from '@/config/seoFacts';
 import type { SEOPage } from '@/config/seoPages';
 import { UI, comparisonSection, howItWorksSection, includedSection, pickFaqs } from './shared';
 import type { SeoLandingContent, SeoSection } from './types';
+
+/** EN route pages that describe the same journey, for hreflang. */
+const NL_EN_ALTERNATES: Record<string, string> = {
+  ghent: '/en/route/ghent-brussels-airport',
+  antwerp: '/en/route/antwerp-brussels-airport',
+  leuven: '/en/route/leuven-brussels-airport',
+  bruges: '/en/route/bruges-brussels-airport',
+};
 
 /** Dutch "luchthavenvervoer {stad}" pages: from a Flemish city to both Belgian airports. */
 export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingContent {
@@ -11,28 +19,45 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
   const city = p.name.nl;
   const bru = p.toBRU!;
   const crl = p.toCRL!;
+  const bruPrice = pricedRoute('brussels', placeKey);
+  const crlPrice = pricedRoute('crl', placeKey);
 
-  const lead = `Helicro haalt u op aan elk adres in ${city} en ${p.region.nl} en brengt u rechtstreeks naar Brussels Airport (Zaventem, ${bru.km} km, ${bru.minMin}–${bru.maxMin} min) of Brussels South Charleroi (${crl.km} km, ${crl.minMin}–${crl.maxMin} min) tegen een vaste prijs per minivan voor maximaal 8 personen. U ontvangt de prijs schriftelijk voor u boekt.`;
+  const lead = bruPrice && crlPrice
+    ? `Helicro haalt u op aan elk adres in ${city} en ${p.region.nl} en brengt u rechtstreeks naar Brussels Airport (Zaventem, ${bru.km} km) voor een vaste ${bruPrice.tiers[0].price}€ (1–3 passagiers) of ${bruPrice.tiers[1].price}€ (4–8 passagiers) per minivan, en naar Brussels South Charleroi (${crl.km} km) voor ${crlPrice.tiers[0].price}€ of ${crlPrice.tiers[1].price}€. Bagage, kinderzitjes en btw zijn inbegrepen; de prijs geldt in beide richtingen.`
+    : `Helicro haalt u op aan elk adres in ${city} en ${p.region.nl} en brengt u rechtstreeks naar Brussels Airport (Zaventem, ${bru.km} km, ${bru.minMin}–${bru.maxMin} min) of Brussels South Charleroi (${crl.km} km, ${crl.minMin}–${crl.maxMin} min) tegen een vaste prijs per minivan voor maximaal 8 personen. U ontvangt de prijs schriftelijk voor u boekt.`;
 
   const intro = [
     `Luchthavenvervoer vanuit ${city} betekent meestal een vroege trein met overstap in Brussel-Noord of een parkeerplaats op de luchthaven die duurder uitvalt dan de vlucht. Met een privé minivan van Helicro vertrekt u van thuis, laadt de chauffeur uw koffers in en stapt u uit aan de vertrekhal. Op de terugweg wacht dezelfde chauffeur u op in de aankomsthal, ook als uw vlucht vertraging heeft.`,
     `Gerasimos rijdt al meer dan 30 jaar schadevrij op de Belgische wegen en spreekt Engels, Frans en Grieks. Elke rit is een vaste prijs per voertuig: een gezin of een groep collega’s uit ${city} deelt dus één tarief in plaats van vier of vijf treintickets plus een taxi aan de luchthaven.`,
   ];
 
-  const priceSection: SeoSection = {
-    h2: `Wat kost luchthavenvervoer vanuit ${city}?`,
-    paragraphs: [
-      `De prijs vanuit ${city} is een vast bedrag per voertuig dat afhangt van uw exacte adres en de luchthaven; u krijgt hem binnen enkele minuten via WhatsApp. Ter referentie: vanuit Brussel-centrum betaalt u ${FIXED_PRICES.brusselsToBRU[0].price}€ tot ${FIXED_PRICES.brusselsToBRU[2].price}€ naar Zaventem en ${FIXED_PRICES.brusselsToCRL[0].price}€ tot ${FIXED_PRICES.brusselsToCRL[7].price}€ naar Charleroi, afhankelijk van het aantal passagiers. ${ui.perVehicle}`,
-    ],
-    table: {
-      caption: `Afstand en gemiddelde rijtijd vanuit ${city} buiten de spits.`,
-      headers: ['Luchthaven', ui.distance, ui.time],
-      rows: [
-        [AIRPORTS.BRU.name.nl, `${bru.km} km`, `${bru.minMin}–${bru.maxMin} min`],
-        [AIRPORTS.CRL.name.nl, `${crl.km} km`, `${crl.minMin}–${crl.maxMin} min`],
-      ],
-    },
-  };
+  const priceSection: SeoSection = bruPrice && crlPrice
+    ? {
+        h2: `Wat kost luchthavenvervoer vanuit ${city}?`,
+        paragraphs: [`${ui.perVehicle} Dezelfde prijs geldt van de luchthaven naar ${city} en ’s nachts. Boek heen en terug samen voor één totaalprijs op papier.`],
+        table: {
+          caption: `Vaste prijzen per minivan vanuit ${city} (elk adres), buiten de spits ${bru.minMin}–${bru.maxMin} min naar Zaventem en ${crl.minMin}–${crl.maxMin} min naar Charleroi.`,
+          headers: ['Luchthaven', ui.distance, '1–3 passagiers', '4–8 passagiers'],
+          rows: [
+            [AIRPORTS.BRU.name.nl, `${bru.km} km`, `${bruPrice.tiers[0].price}€`, `${bruPrice.tiers[1].price}€`],
+            [AIRPORTS.CRL.name.nl, `${crl.km} km`, `${crlPrice.tiers[0].price}€`, `${crlPrice.tiers[1].price}€`],
+          ],
+        },
+      }
+    : {
+        h2: `Wat kost luchthavenvervoer vanuit ${city}?`,
+        paragraphs: [
+          `De prijs vanuit ${city} is een vast bedrag per voertuig dat afhangt van uw exacte adres en de luchthaven; u krijgt hem binnen enkele minuten via WhatsApp. Ter referentie: vanuit Brussel-centrum betaalt u ${FIXED_PRICES.brusselsToBRU[0].price}€ tot ${FIXED_PRICES.brusselsToBRU[2].price}€ naar Zaventem en ${FIXED_PRICES.brusselsToCRL[0].price}€ tot ${FIXED_PRICES.brusselsToCRL[7].price}€ naar Charleroi, afhankelijk van het aantal passagiers. ${ui.perVehicle}`,
+        ],
+        table: {
+          caption: `Afstand en gemiddelde rijtijd vanuit ${city} buiten de spits.`,
+          headers: ['Luchthaven', ui.distance, ui.time],
+          rows: [
+            [AIRPORTS.BRU.name.nl, `${bru.km} km`, `${bru.minMin}–${bru.maxMin} min`],
+            [AIRPORTS.CRL.name.nl, `${crl.km} km`, `${crl.minMin}–${crl.maxMin} min`],
+          ],
+        },
+      };
 
   const meeting: SeoSection = {
     h2: ui.meetingPoint,
@@ -55,7 +80,7 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
 
   const specificFaqs = [
     { question: `Hoe lang duurt de rit van ${city} naar Zaventem?`, answer: `Ongeveer ${bru.km} km en ${bru.minMin} tot ${bru.maxMin} minuten buiten de spits. Op weekdagen tussen 7u en 9u30 rekent uw chauffeur een extra marge in, zodat u minstens 2 uur voor vertrek op de luchthaven bent.` },
-    { question: `Rijden jullie ook van ${city} naar Charleroi Airport?`, answer: `Ja. Charleroi ligt op ${crl.km} km van ${city}, ongeveer ${crl.minMin} tot ${crl.maxMin} minuten. Omdat er geen rechtstreekse trein is, is een privé minivan vanuit ${city} de eenvoudigste optie voor Ryanair- en Wizz Air-vluchten.` },
+    { question: `Rijden jullie ook van ${city} naar Charleroi Airport?`, answer: `Ja. Charleroi ligt op ${crl.km} km van ${city}, ongeveer ${crl.minMin} tot ${crl.maxMin} minuten.${crlPrice ? ` De vaste prijs is ${crlPrice.tiers[0].price}€ voor 1 tot 3 en ${crlPrice.tiers[1].price}€ voor 4 tot 8 passagiers per minivan.` : ''} Omdat er geen rechtstreekse trein is, is een privé minivan vanuit ${city} de eenvoudigste optie voor Ryanair- en Wizz Air-vluchten.` },
     { question: `Wat als mijn vlucht laat landt en ik terug naar ${city} moet?`, answer: `We volgen uw vlucht live op. Het eerste uur na de landing wachten we gratis; daarna rekenen we ${FIXED_PRICES.waitingPerHour}€ per uur. ’s Nachts geldt dezelfde vaste prijs als overdag.` },
   ];
 
@@ -97,7 +122,7 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
         ],
       },
     ],
-    alternates: { nl: page.url, ...(placeKey === 'ghent' ? { en: '/en/route/ghent-brussels-airport' } : placeKey === 'antwerp' ? { en: '/en/route/antwerp-brussels-airport' } : placeKey === 'leuven' ? { en: '/en/route/leuven-brussels-airport' } : placeKey === 'bruges' ? { en: '/en/route/bruges-brussels-airport' } : {}) },
+    alternates: { nl: page.url, ...(NL_EN_ALTERNATES[placeKey] ? { en: NL_EN_ALTERNATES[placeKey] } : {}) },
     schema: {
       serviceName: page.h1,
       serviceType: 'Airport transfer',
@@ -106,6 +131,12 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
         { type: 'City', name: 'Zaventem' },
         { type: 'Country', name: 'Belgium' },
       ],
+      offers: bruPrice && crlPrice
+        ? [
+            ...bruPrice.tiers.map((t) => ({ name: `${p.name.en} to Brussels Airport, ${t.pax} passengers`, price: t.price })),
+            ...crlPrice.tiers.map((t) => ({ name: `${p.name.en} to Charleroi Airport, ${t.pax} passengers`, price: t.price })),
+          ]
+        : undefined,
     },
     cta: { headline: ui.ctaHeadline, text: ui.ctaText },
     image: '/images/airport-2.jpg',

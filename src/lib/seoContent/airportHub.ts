@@ -1,5 +1,5 @@
 import type { Locale } from '@/lib/seo';
-import { AIRPORTS, FIXED_PRICES, PLACES, type AirportCode, type Leg } from '@/config/seoFacts';
+import { AIRPORTS, FIXED_PRICES, PLACES, pricedRoute, type AirportCode, type Leg } from '@/config/seoFacts';
 import type { SEOPage } from '@/config/seoPages';
 import { UI, brusselsPriceTable, comparisonSection, howItWorksSection, includedSection, legText, pickFaqs } from './shared';
 import type { SeoLandingContent, SeoLink, SeoSection, SeoTable } from './types';
@@ -86,6 +86,12 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
   const fromBrussels = legFor(code, 'brussels')!;
   const priceBRU = FIXED_PRICES.brusselsToBRU;
   const priceCRL = FIXED_PRICES.brusselsToCRL;
+  const priceLIL = pricedRoute('brussels', 'lille-airport')!;
+  const lilTable = (l: HubLang): SeoTable => ({
+    caption: l === 'en' ? 'Brussels (any address or Brussels Airport) to Lille-Lesquin airport, per vehicle, tolls included.' : l === 'nl' ? 'Brussel (elk adres of Brussels Airport) naar de luchthaven Lille-Lesquin, per voertuig, tol inbegrepen.' : 'Bruxelles (toute adresse ou Brussels Airport) vers l’aéroport de Lille-Lesquin, par véhicule, péages compris.',
+    headers: [UI[l].passengers, UI[l].price],
+    rows: priceLIL.tiers.map((t) => [t.pax, `${t.price}€`]),
+  });
 
   let lead = '';
   let intro: string[] = [];
@@ -99,7 +105,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
         ? `Helicro drives you from any address in Belgium to ${name} in a private Ford minivan for a price fixed in advance: ${priceBRU[0].price}€ for 1–2 passengers, ${priceBRU[1].price}€ for 3–4 and ${priceBRU[2].price}€ for 5–8 from Brussels city. Meet and greet in arrivals, live flight tracking and free child seats are included.`
         : code === 'CRL'
           ? `Helicro drives you between any Belgian address and ${name} (CRL) in a private Ford minivan for a fixed price: ${priceCRL[0].price}€ for 1 passenger, ${priceCRL[1].price}€ for 2, ${priceCRL[3].price}€ for 4 and ${priceCRL[7].price}€ for a full 8-seater from Brussels. Your driver tracks Ryanair and Wizz Air delays and waits inside the terminal.`
-          : `Helicro provides private cross-border transfers from Brussels, Wallonia and the whole of Belgium to ${name}, about ${fromBrussels.km} km and ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes from Brussels. One fixed price per vehicle, an English-speaking driver and no change of vehicle at the French border.`;
+          : `Helicro provides private cross-border transfers from Brussels and the whole of Belgium to ${name}, about ${fromBrussels.km} km and ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes from Brussels, for a fixed ${priceLIL.tiers[0].price}€ for 1 to 3 passengers and ${priceLIL.tiers[1].price}€ for 4 to 8, per vehicle, tolls included. An English-speaking driver and no change of vehicle at the French border.`;
     intro =
       code === 'BRU'
         ? [
@@ -120,9 +126,9 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
         ? {
             h2: ui.fixedPrices,
             paragraphs: [
-              `A private minivan from Brussels to Lille Airport is quoted as one fixed amount per vehicle for up to 8 passengers, agreed in writing before you travel. Distances from the most common departure points are listed below; send your address for an exact price.`,
+              `From Brussels or Brussels Airport to Lille-Lesquin the fixed price is ${priceLIL.tiers[0].price}€ for 1 to 3 passengers and ${priceLIL.tiers[1].price}€ for 4 to 8, per vehicle, in either direction, tolls and luggage included. ${ui.perVehicle} From Mons, Charleroi or Tournai the price is lower and confirmed in writing within minutes.`,
             ],
-            table: originsTable(lang, code),
+            table: lilTable(lang),
           }
         : {
             h2: ui.fixedPrices,
@@ -198,7 +204,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
         ? `Helicro brengt u van elk adres in België naar ${name} in een privé Ford minivan tegen een vooraf vastgelegde prijs: ${priceBRU[0].price}€ voor 1–2 passagiers, ${priceBRU[1].price}€ voor 3–4 en ${priceBRU[2].price}€ voor 5–8 vanuit Brussel. Ontvangst in de aankomsthal, live vluchtopvolging en gratis kinderzitjes zijn inbegrepen.`
         : code === 'CRL'
           ? `Helicro rijdt tussen elk Belgisch adres en ${name} (CRL) in een privé Ford minivan tegen een vaste prijs: ${priceCRL[0].price}€ voor 1 passagier, ${priceCRL[1].price}€ voor 2, ${priceCRL[3].price}€ voor 4 en ${priceCRL[7].price}€ voor een volle 8-zitter vanuit Brussel. Uw chauffeur volgt Ryanair- en Wizz Air-vertragingen op en wacht in de terminal.`
-          : `Helicro verzorgt grensoverschrijdend privévervoer van Brussel, Wallonië en heel België naar ${name}, ongeveer ${fromBrussels.km} km en ${fromBrussels.minMin} tot ${fromBrussels.maxMin} minuten van Brussel. Eén vaste prijs per voertuig en geen overstap aan de Franse grens.`;
+          : `Helicro verzorgt grensoverschrijdend privévervoer van Brussel en heel België naar ${name}, ongeveer ${fromBrussels.km} km en ${fromBrussels.minMin} tot ${fromBrussels.maxMin} minuten van Brussel, voor een vaste ${priceLIL.tiers[0].price}€ voor 1 tot 3 passagiers en ${priceLIL.tiers[1].price}€ voor 4 tot 8, per voertuig, tol inbegrepen. Geen overstap aan de Franse grens.`;
     intro =
       code === 'BRU'
         ? [
@@ -218,8 +224,8 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
       code === 'LIL'
         ? {
             h2: ui.fixedPrices,
-            paragraphs: ['Een privé minivan van Brussel naar de luchthaven van Rijsel wordt als één vast bedrag per voertuig voor maximaal 8 passagiers aangeboden, schriftelijk bevestigd voor vertrek. Hieronder de afstanden vanuit de meest voorkomende vertrekpunten; stuur uw adres voor een exacte prijs.'],
-            table: originsTable(lang, code),
+            paragraphs: [`Van Brussel of Brussels Airport naar Lille-Lesquin betaalt u een vaste ${priceLIL.tiers[0].price}€ voor 1 tot 3 passagiers en ${priceLIL.tiers[1].price}€ voor 4 tot 8, per voertuig, in beide richtingen, tol en bagage inbegrepen. ${ui.perVehicle} Vanuit Bergen, Charleroi of Doornik ligt de prijs lager en krijgt u hem binnen enkele minuten op papier.`],
+            table: lilTable(lang),
           }
         : {
             h2: ui.fixedPrices,
@@ -289,7 +295,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
         ? `Helicro vous conduit de n’importe quelle adresse en Belgique vers l’${name} en minivan Ford privé, à un prix fixé à l’avance : ${priceBRU[0].price}€ pour 1–2 passagers, ${priceBRU[1].price}€ pour 3–4 et ${priceBRU[2].price}€ pour 5–8 depuis Bruxelles. Accueil aux arrivées, suivi de vol en direct et sièges enfants gratuits inclus.`
         : code === 'CRL'
           ? `Helicro assure la navette entre toute adresse belge et l’${name} (CRL) en minivan Ford privé à prix fixe : ${priceCRL[0].price}€ pour 1 passager, ${priceCRL[1].price}€ pour 2, ${priceCRL[3].price}€ pour 4 et ${priceCRL[7].price}€ pour un 8 places complet depuis Bruxelles. Votre chauffeur suit les retards Ryanair et Wizz Air et vous attend dans le terminal.`
-          : `Helicro propose des transferts privés transfrontaliers depuis Bruxelles, la Wallonie et toute la Belgique vers l’${name}, à environ ${fromBrussels.km} km et ${fromBrussels.minMin} à ${fromBrussels.maxMin} minutes de Bruxelles. Un seul prix fixe par véhicule, sans changement de voiture à la frontière.`;
+          : `Helicro propose des transferts privés transfrontaliers depuis Bruxelles et toute la Belgique vers l’${name}, à environ ${fromBrussels.km} km et ${fromBrussels.minMin} à ${fromBrussels.maxMin} minutes de Bruxelles, pour un prix fixe de ${priceLIL.tiers[0].price}€ pour 1 à 3 passagers et ${priceLIL.tiers[1].price}€ pour 4 à 8, par véhicule, péages compris. Sans changement de voiture à la frontière.`;
     intro =
       code === 'BRU'
         ? [
@@ -309,8 +315,8 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
       code === 'LIL'
         ? {
             h2: ui.fixedPrices,
-            paragraphs: ['Un minivan privé de Bruxelles vers l’aéroport de Lille est proposé à un montant fixe par véhicule pour 8 passagers maximum, confirmé par écrit avant le départ. Les distances depuis les points de départ les plus fréquents figurent ci-dessous ; envoyez votre adresse pour un prix exact.'],
-            table: originsTable(lang, code),
+            paragraphs: [`De Bruxelles ou Brussels Airport vers Lille-Lesquin, le prix fixe est de ${priceLIL.tiers[0].price}€ pour 1 à 3 passagers et ${priceLIL.tiers[1].price}€ pour 4 à 8, par véhicule, dans les deux sens, péages et bagages compris. ${ui.perVehicle} Depuis Mons, Charleroi ou Tournai, le prix est plus bas et confirmé par écrit en quelques minutes.`],
+            table: lilTable(lang),
           }
         : {
             h2: ui.fixedPrices,
@@ -385,7 +391,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
           ? `Van het centrum van Brussel naar ${short} is het ${legText(lang, fromBrussels.km, fromBrussels.minMin, fromBrussels.maxMin)}. Uw chauffeur checkt het verkeer voor vertrek en rekent een marge voor wegenwerken op de ring, zodat u nooit vroeger dan nodig hoeft te vertrekken.`
           : `Du centre de Bruxelles à ${short}, comptez ${legText(lang, fromBrussels.km, fromBrussels.minMin, fromBrussels.maxMin)}. Votre chauffeur vérifie le trafic en direct avant de partir et prévoit une marge pour les travaux sur le ring, pour ne jamais vous faire partir plus tôt que nécessaire.`,
     ],
-    table: code === 'LIL' ? undefined : originsTable(lang, code),
+    table: originsTable(lang, code),
   };
 
   const meetingSection: SeoSection = { h2: ui.meetingPoint, paragraphs: [a.meetingPoint[lang]] };
@@ -441,7 +447,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
       ? priceBRU.map((p) => ({ name: `Brussels to Brussels Airport, ${p.pax} passengers`, price: p.price }))
       : code === 'CRL'
         ? priceCRL.map((p) => ({ name: `Brussels to Charleroi Airport, ${p.pax} passenger(s)`, price: p.price }))
-        : undefined;
+        : priceLIL.tiers.map((t) => ({ name: `Brussels to Lille Airport, ${t.pax} passengers`, price: t.price }));
 
   const homeLabel = ui.home;
   const airportCrumb: Record<HubLang, string> = { en: 'Airport transfers', nl: 'Luchthavenvervoer', fr: 'Navettes aéroport' };
@@ -464,7 +470,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
       { name: page.h1, url: page.url },
     ],
     related: relatedGroups,
-    alternates: a.hub,
+    alternates: code === 'LIL' ? { en: a.hub.en!, nl: '/nl/route/brussel-rijsel-luchthaven', fr: '/fr/navette/bruxelles-lille-aeroport' } : a.hub,
     schema: {
       serviceName: page.h1,
       serviceType: 'Airport transfer',
