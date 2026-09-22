@@ -28,6 +28,9 @@ export const translations = {
     copyright: 'All rights reserved.',
     profileDesc: "Licensed private transfer and chauffeur service based in Braine-l'Alleud. Run by a military veteran with over 30 years of professional driving experience in Belgium.",
     profileLang: 'We specialize in English, Greek, and French speaking private transfers and sightseeing.',
+    photosByPexels: 'Photos provided by Pexels',
+    designedBy: 'Designed by',
+    poweredBy: 'Powered by',
 
     // Fare Calculator
     calcTitle: 'Calculate My Price',
@@ -76,6 +79,9 @@ export const translations = {
     copyright: 'Alle rechten voorbehouden.',
     profileDesc: "Gelicentieerde privé chauffeur en minivans gevestigd in Braine-l'Alleud. Geleid door een militaire veteraan met meer dan 30 jaar professionele rijervaring in België.",
     profileLang: 'Wij zijn gespecialiseerd in Engels, Grieks en Frans sprekende privé transfers en rondritten.',
+    photosByPexels: "Foto's aangeleverd door Pexels",
+    designedBy: 'Ontworpen door',
+    poweredBy: 'Aangedreven door',
 
     // Fare Calculator
     calcTitle: 'Bereken Mijn Prijs',
@@ -124,6 +130,9 @@ export const translations = {
     copyright: 'Tous droits réservés.',
     profileDesc: "Chauffeur privé et service de minivan agréé basé à Braine-l'Alleud. Géré par un vétéran militaire avec plus de 30 ans d'expérience de conduite en Belgique.",
     profileLang: 'Nous sommes spécialisés dans les transferts privés et excursions en anglais, grec et français.',
+    photosByPexels: 'Photos fournies par Pexels',
+    designedBy: 'Conçu par',
+    poweredBy: 'Propulsé par',
 
     // Fare Calculator
     calcTitle: 'Calculer Mon Tarif',
@@ -172,6 +181,9 @@ export const translations = {
     copyright: 'Με επιφύλαξη παντός δικαιώματος.',
     profileDesc: "Αδειοδοτημένη υπηρεσία ιδιωτικών μεταφορών με έδρα το Braine-l'Alleud. Διευθύνεται από έμπειρο οδηγό με στρατιωτικό υπόβαθρο και πάνω από 30 χρόνια στους δρόμους του Βελγίου.",
     profileLang: 'Ειδικευόμαστε σε ιδιωτικές μεταφορές και περιηγήσεις στα Αγγλικά, Ελληνικά και Γαλλικά.',
+    photosByPexels: 'Φωτογραφίες από το Pexels',
+    designedBy: 'Σχεδιασμός από',
+    poweredBy: 'Με την υποστήριξη της',
 
     // Fare Calculator
     calcTitle: 'ΥΠΟΛΟΓΙΣΤΕ ΤΗΝ ΤΙΜΗ',
@@ -220,6 +232,9 @@ export const translations = {
     copyright: 'Sva prava pridržana.',
     profileDesc: "Licencirani privatni prijevoz i usluga vozača sa sjedištem u Braine-l'Alleudu. Vodi ga vojni veteran s više od 30 godina profesionalnog iskustva u vožnji u Belgiji.",
     profileLang: 'Specijalizirani smo za privatne transfere i razgledavanje na engleskom, grčkom i francanskom jeziku.',
+    photosByPexels: 'Fotografije ustupio Pexels',
+    designedBy: 'Dizajnirao',
+    poweredBy: 'Pokreće',
 
     // Fare Calculator
     calcTitle: 'Izračunaj moju cijenu',
