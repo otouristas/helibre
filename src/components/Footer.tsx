@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath, translations } from '@/config/translations';
 import { HUB_LINKS } from '@/config/hubLinks';
@@ -127,6 +128,25 @@ export default function Footer() {
           <Link href="/el" className={styles.bottomLink}>Ελληνικά</Link>
           <Link href="/hr" className={styles.bottomLink}>Hrvatski</Link>
         </div>
+      </div>
+
+      <div className={styles.credits}>
+        <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
+          <Image
+            src="https://images.pexels.com/lib/api/pexels-white.png"
+            alt="Pexels"
+            width={80}
+            height={20}
+            className={styles.creditLogo}
+          />
+          <span>{t.photosByPexels}</span>
+        </a>
+        <a href="https://anotherseoguru.com" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
+          {t.designedBy} <span className={styles.creditBrand}>AnotherSEOGuru</span>
+        </a>
+        <a href="https://touristas.ai" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
+          {t.poweredBy} <span className={styles.creditBrand}>Touristas AI</span>
+        </a>
       </div>
     </footer>
   );
