@@ -23,7 +23,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
     {
       title: 'Long-distance and cross-border',
       links: [
-        { href: '/en/route/charleroi-airport-antwerp', label: 'Charleroi Airport to Antwerp from 150€' },
+        { href: '/en/route/charleroi-airport-antwerp', label: 'Charleroi Airport to Antwerp from 135€' },
         { href: '/en/route/brussels-amsterdam', label: 'Brussels to Amsterdam / Schiphol from 250€' },
         { href: '/en/route/brussels-paris-cdg', label: 'Brussels to Paris CDG from 380€' },
         { href: '/en/airport-transfer/lille', label: 'Brussels to Lille Airport from 150€' },
@@ -82,7 +82,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       links: [
         { href: '/nl/prijslijst', label: 'Volledige prijslijst 2026' },
         { href: '/nl/route/brussel-charleroi-gedeelde-shuttle', label: 'Gedeelde shuttle Charleroi vanaf 25€ pp' },
-        { href: '/nl/route/charleroi-airport-antwerpen', label: 'Charleroi Airport – Antwerpen vanaf 150€' },
+        { href: '/nl/route/charleroi-airport-antwerpen', label: 'Charleroi Airport – Antwerpen vanaf 135€' },
         { href: '/nl/route/brussel-amsterdam', label: 'Brussel – Amsterdam / Schiphol vanaf 250€' },
         { href: '/nl/route/brussel-parijs-cdg', label: 'Brussel – Parijs CDG vanaf 380€' },
         { href: '/nl/route/brussel-rijsel-luchthaven', label: 'Brussel – luchthaven Rijsel vanaf 150€' },
@@ -117,7 +117,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       links: [
         { href: '/fr/tarifs', label: 'Liste complète des tarifs 2026' },
         { href: '/fr/navette/bruxelles-charleroi-navette-partagee', label: 'Navette partagée Charleroi dès 25€ pp' },
-        { href: '/fr/navette/charleroi-aeroport-anvers', label: 'Aéroport de Charleroi – Anvers dès 150€' },
+        { href: '/fr/navette/charleroi-aeroport-anvers', label: 'Aéroport de Charleroi – Anvers dès 135€' },
         { href: '/fr/navette/bruxelles-paris-cdg', label: 'Bruxelles – Paris CDG dès 380€' },
         { href: '/fr/navette/bruxelles-lille-aeroport', label: 'Bruxelles – aéroport de Lille dès 150€' },
         { href: '/fr/navette/bruxelles-luxembourg', label: 'Bruxelles – Luxembourg dès 260€' },
