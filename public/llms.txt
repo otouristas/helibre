@@ -8,7 +8,7 @@
 - Fixed prices from Brussels city to Charleroi Airport: 65€ (1 passenger), 75€ (2), 90€ (3), 110€ (4), 120€ (5), 130€ (6), 140€ (7), 160€ (8), per vehicle, door to door.
 - Shared shuttle Brussels to Charleroi Airport: 25€ per person by day (06:00–22:00), 30€ at night, pickup at your door, maximum 7 passengers per van.
 - Other fixed prices per vehicle (1–3 passengers / 4–8 passengers), from Brussels city or Brussels Airport, same price both ways: Antwerp 75€/85€, Ghent 100€/120€, Bruges 130€/150€, Tomorrowland (Boom) 75€/100€, Lille Airport 150€/170€, Paris CDG 380€/420€, Paris Orly 460€/500€, Eindhoven 190€/210€, Amsterdam or Schiphol 250€/290€, Maastricht 150€/170€, Düsseldorf 250€/280€, Cologne 250€/280€, Frankfurt 380€/420€, Luxembourg 260€/300€.
-- From Charleroi Airport: Antwerp 150€/180€, Ghent 150€/180€, Bruges 180€/210€ (1–3 / 4–8 passengers, per vehicle).
+- From Charleroi Airport: Antwerp 135€/180€, Ghent 150€/180€, Bruges 180€/210€ (1–3 / 4–8 passengers, per vehicle).
 - Spa-Francorchamps race weekends: 580€ per day for a chauffeur and 8-seat minivan, return trips included.
 - Private full-day sightseeing tour: from 380€ per vehicle.
 - Live flight tracking, 60 minutes of free waiting after landing (then 30€/hour), meet and greet in arrivals with a name sign, no night surcharge, extra stops 10€.

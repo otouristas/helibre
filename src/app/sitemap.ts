@@ -4,7 +4,7 @@ import { getSeoLanding, seoLandingUrls } from '@/lib/seoContent';
 import { absoluteUrl, sharedPathAlternates, type AlternateMap, type Locale } from '@/lib/seo';
 
 /** Date of the last site-wide content revision. Bump when content changes materially. */
-const CONTENT_UPDATED = new Date('2026-09-22T00:00:00Z');
+const CONTENT_UPDATED = new Date('2026-09-23T00:00:00Z');
 
 type Entry = MetadataRoute.Sitemap[number];
 

@@ -462,7 +462,7 @@ export const PRICED_ROUTES: PricedRoute[] = [
   { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(100, 120) },
   { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(130, 150) },
   { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(75, 100) },
-  { key: 'crl-antwerp', from: 'crl', to: 'antwerp', tiers: T2(150, 180) },
+  { key: 'crl-antwerp', from: 'crl', to: 'antwerp', tiers: T2(135, 180) },
   { key: 'crl-ghent', from: 'crl', to: 'ghent', tiers: T2(150, 180) },
   { key: 'crl-bruges', from: 'crl', to: 'bruges', tiers: T2(180, 210) },
   { key: 'brussels-lille-airport', from: 'brussels', to: 'lille-airport', tiers: T2(150, 170) },
