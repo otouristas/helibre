@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath, Locale } from '@/config/translations';
 import styles from './AIAssistant.module.css';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 
 interface Message {
   id: string;
@@ -242,17 +243,28 @@ export default function AIAssistant() {
     ];
 
     if (
+      query.includes('waiting') || query.includes('delay') || query.includes('schengen') ||
+      query.includes('wachtt') || query.includes('vertraging') || query.includes('attente') ||
+      query.includes('retard') || query.includes('αναμον') || query.includes('καθυστ') ||
+      query.includes('cekan') || query.includes('čekan') || query.includes('kasnjen')
+    ) {
+      const policy = BOOKING_POLICIES[lang];
+      const text = `**${policy.airportWaitingTitle}**\n${policy.airportWaiting.join('\n\n')}`;
+      return { id, sender: 'bot', text, cta: defaultCtas };
+    }
+
+    if (
       query.includes('rate') || query.includes('price') || query.includes('fare') || query.includes('cost') ||
       query.includes('tarief') || query.includes('tarif') || query.includes('harga') ||
       query.includes('τιμη') || query.includes('τιμες') || query.includes('κοστος') ||
       query.includes('charleroi') || query.includes('zaventem') || query.includes('bru') || query.includes('crl')
     ) {
       const texts = {
-        en: "Our private minivan airport transfers from Brussels are strictly flat-rate with no night or luggage surcharges:\n• **Brussels to Zaventem (BRU):** From 35€* (1-2 pax), 45€* (3-4 pax), 55€* (5-8 pax)\n• **Brussels to Charleroi (CRL):** 1 pax: 60€ • 2 pax: 70€ • 3 pax: 90€ • 4 pax: 110€ • 5 pax: 120€ • 6 pax: 130€ • 7 pax: 140€ • 8 pax: 160€\n• **Day Trips (Bruges, Ghent):** From 380€\n\n* Zaventem prices are from the Drop-off Area (extra 5€ for P1 Drop-off).\nInfant & child booster seats are provided completely free of charge upon request.",
-        nl: "Onze privé minivan luchthaventransfers vanuit Brussel hebben vaste all-in tarieven:\n• **Brussel naar Zaventem (BRU):** Vanaf 35€* (1-2 pers), 45€* (3-4 pers), 55€* (5-8 pers)\n• **Brussel naar Charleroi (CRL):** 1 pers: 60€ • 2 pers: 70€ • 3 pers: 90€ • 4 pers: 110€ • 5 pers: 120€ • 6 pers: 130€ • 7 pers: 140€ • 8 pers: 160€\n• **Dagtochten (Brugge, Gent):** Vanaf 380€\n\n* Zaventem prijzen gelden vanaf de Drop-off Area (toeslag van 5€ voor P1).\nKinderzitjes en Maxi-Cosi's zijn geheel gratis op aanvraag bij uw boeking.",
-        fr: "Nos navettes aéroport privées en minivan au départ de Bruxelles sont à tarifs fixes :\n• **Bruxelles vers Zaventem (BRU) :** À partir de 35€* (1-2 pax), 45€* (3-4 pax), 55€* (5-8 pax)\n• **Bruxelles vers Charleroi (CRL) :** 1 pax : 60€ • 2 pax : 70€ • 3 pax : 90€ • 4 pax : 110€ • 5 pax : 120€ • 6 pax : 130€ • 7 pax : 140€ • 8 pax : 160€\n• **Excursions (Bruges, Gand) :** À partir de 380€\n\n* Les tarifs pour Zaventem s'entendent depuis la dépose-minute (supplément de 5€ pour dépose au P1).\nLes sièges bébés et rehausseurs sont installés gratuitement sur simple demande.",
-        el: "Οι ιδιωτικές μεταφορές με minivan από τις Βρυξέλλες προς τα αεροδρόμια είναι με σταθερές τιμές, χωρίς νυχτερινές χρεώσεις:\n• **Βρυξέλλες προς Zaventem (BRU):** Από 35€* (1-2 άτομα), 45€* (3-4 άτομα), 55€* (5-8 άτομα)\n• **Βρυξέλλες προς Charleroi (CRL):** 1 άτομο: 60€ • 2 άτομα: 70€ • 3 άτομα: 90€ • 4 άτομα: 110€ • 5 άτομα: 120€ • 6 άτομα: 130€ • 7 άτομα: 140€ • 8 άτομα: 160€\n• **Ημερήσιες Εκδρομές (Μπρυζ, Γάνδη):** Από 380€\n\n* Οι τιμές για Zaventem αφορούν τη ζώνη αποβίβασης Drop-off (επιπλέον χρέωση 5€ για P1).\nΤα παιδικά καθίσματα παρέχονται εντελώς δωρεάν κατόπιν αιτήματος.",
-        hr: "Naši privatni transferi minivanom iz Bruxellesa do zračnih luka imaju fiksne cijene bez noćnih doplataka:\n• **Bruxelles do Zaventem (BRU):** Od 35€* (1-2 osobe), 45€* (3-4 osobe), 55€* (5-8 osoba)\n• **Bruxelles do Charleroi (CRL):** 1 osoba: 60€ • 2 osobe: 70€ • 3 osobe: 90€ • 4 osobe: 110€ • 5 osoba: 120€ • 6 osoba: 130€ • 7 osoba: 140€ • 8 osoba: 160€\n• **Jednodnevni izleti (Bruges, Ghent):** Od 380€\n\n* Cijene za Zaventem vrijede od Drop-off zone (dodatnih 5€ za P1).\nDječje sjedalice i boosteri su potpuno besplatni na zahtjev."
+        en: "Our private minivan airport transfers from Brussels have no night or luggage surcharges:\n• **Brussels to Zaventem (BRU): FROM 35€* (1-2 pax), FROM 45€* (3-4 pax), FROM 55€* (5-8 pax).** These are starting prices, not a fixed fare.\n• **Brussels to Charleroi (CRL):** 1 pax: 70€ • 2 pax: 80€ • 3 pax: 90€ • 4 pax: 110€ • 5 pax: 120€ • 6 pax: 130€ • 7 pax: 140€ • 8 pax: 160€\n• **Day Trips (Bruges, Ghent):** From 400€\n\n* Zaventem prices start at the Drop-off Area (extra 5€ for P1 Drop-off) and rise with passengers and the exact address.\nInfant & child booster seats are provided completely free of charge upon request.",
+        nl: "Onze privé minivan luchthaventransfers vanuit Brussel hebben geen nacht- of bagagetoeslag:\n• **Brussel naar Zaventem (BRU): VANAF 35€* (1-2 pers), VANAF 45€* (3-4 pers), VANAF 55€* (5-8 pers).** Dit zijn startprijzen, geen vast tarief.\n• **Brussel naar Charleroi (CRL):** 1 pers: 70€ • 2 pers: 80€ • 3 pers: 90€ • 4 pers: 110€ • 5 pers: 120€ • 6 pers: 130€ • 7 pers: 140€ • 8 pers: 160€\n• **Dagtochten (Brugge, Gent):** Vanaf 400€\n\n* Zaventem-prijzen starten aan de Drop-off zone (toeslag van 5€ voor P1) en stijgen met het aantal passagiers en het exacte adres.\nKinderzitjes en Maxi-Cosi's zijn geheel gratis op aanvraag bij uw boeking.",
+        fr: "Nos navettes aéroport privées en minivan au départ de Bruxelles n'ont pas de supplément de nuit ou de bagages :\n• **Bruxelles vers Zaventem (BRU) : DÈS 35€* (1-2 pax), DÈS 45€* (3-4 pax), DÈS 55€* (5-8 pax).** Ce sont des prix de départ, pas un tarif fixe.\n• **Bruxelles vers Charleroi (CRL) :** 1 pax : 70€ • 2 pax : 80€ • 3 pax : 90€ • 4 pax : 110€ • 5 pax : 120€ • 6 pax : 130€ • 7 pax : 140€ • 8 pax : 160€\n• **Excursions (Bruges, Gand) :** À partir de 400€\n\n* Les prix Zaventem partent de la dépose-minute (supplément de 5€ pour le P1) et augmentent avec les passagers et l'adresse exacte.\nLes sièges bébés et rehausseurs sont installés gratuitement sur simple demande.",
+        el: "Οι ιδιωτικές μεταφορές με minivan από τις Βρυξέλλες προς τα αεροδρόμια δεν έχουν νυχτερινή χρέωση ή χρέωση αποσκευών:\n• **Βρυξέλλες προς Zaventem (BRU): ΑΠΟ 35€* (1-2 άτομα), ΑΠΟ 45€* (3-4 άτομα), ΑΠΟ 55€* (5-8 άτομα).** Τιμές εκκίνησης, όχι σταθερή τιμή.\n• **Βρυξέλλες προς Charleroi (CRL):** 1 άτομο: 70€ • 2 άτομα: 80€ • 3 άτομα: 90€ • 4 άτομα: 110€ • 5 άτομα: 120€ • 6 άτομα: 130€ • 7 άτομα: 140€ • 8 άτομα: 160€\n• **Ημερήσιες Εκδρομές (Μπρυζ, Γάνδη):** Από 400€\n\n* Οι τιμές Zaventem ξεκινούν από τη ζώνη Drop-off (επιπλέον 5€ για P1) και ανεβαίνουν με τους επιβάτες και την ακριβή διεύθυνση.\nΤα παιδικά καθίσματα παρέχονται εντελώς δωρεάν κατόπιν αιτήματος.",
+        hr: "Naši privatni transferi minivanom iz Bruxellesa do zračnih luka nemaju noćnu doplatu ni doplatu za prtljagu:\n• **Bruxelles do Zaventem (BRU): OD 35€* (1-2 osobe), OD 45€* (3-4 osobe), OD 55€* (5-8 osoba).** Početne cijene, ne fiksna cijena.\n• **Bruxelles do Charleroi (CRL):** 1 osoba: 70€ • 2 osobe: 80€ • 3 osobe: 90€ • 4 osobe: 110€ • 5 osoba: 120€ • 6 osoba: 130€ • 7 osoba: 140€ • 8 osoba: 160€\n• **Jednodnevni izleti (Bruges, Ghent):** Od 400€\n\n* Cijene za Zaventem kreću od Drop-off zone (dodatnih 5€ za P1) i rastu s brojem putnika i točnom adresom.\nDječje sjedalice i boosteri su potpuno besplatni na zahtjev."
       }[lang];
 
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
@@ -329,11 +341,11 @@ export default function AIAssistant() {
       query.includes('excursion') || query.includes('εκδρομη') || query.includes('εκδρομες') || query.includes('μπρυζ') || query.includes('γανδη')
     ) {
       const texts = {
-        en: "We arrange premium private day trips from Brussels starting from 380€, with a dedicated minivan and driver at your disposal for the whole day:\n• **Bruges Tour:** Medieval belfry, Lake of Love, canals.\n• **Ghent Tour:** Gravensteen castle, St. Bavo Cathedral.\n• **Durbuy Tour:** The smallest city in the world nestled in Ardennes.\n\nYou can set your own pace and route stops as you travel.",
-        nl: "Wij organiseren luxe privédagtochten vanuit Brussel vanaf 380€, waarbij de minivan en chauffeur de hele dag tot uw beschikking staan:\n• **Brugge Tour:** Middeleeuws belfort, Minnewater, grachten.\n• **Gent Tour:** Gravensteen kasteel, Sint-Baafskathedraal.\n• **Durbuy Tour:** Het kleinste stadje ter wereld in de Ardennen.\n\nU kunt uw eigen tempo bepalen en tussenstops in overleg plannen.",
-        fr: "Nous organisons des excursions privées d'une journée au départ de Bruxelles à partir de 380€, avec véhicule et chauffeur à votre entière disposition :\n• **Circuit Bruges :** Beffroi médiéval, lac d'Amour, canaux.\n• **Circuit Gand :** Château des Comtes, Cathédrale Saint-Bavon.\n• **Circuit Durbuy :** La plus petite ville du monde dans les Ardennes.\n\nVous êtes libre de définir vos escales et votre rythme de visite.",
-        el: "Διοργανώνουμε ιδιωτικές ημερήσιες εκδρομές από τις Βρυξέλλες από 380€, με το minivan και τον οδηγό στη διάθεσή σας για όλη τη μέρα:\n• **Εκδρομή στη Μπρυζ:** Μεσαιωνικό καμπαναριό, Λίμνη της Αγάπης, κανάλια.\n• **Εκδρομή στη Γάνδη:** Κάστρο Gravensteen, Καθεδρικός Ναός Αγίου Βονιφατίου.\n• **Εκδρομή στο Ντυρμπουί:** Η μικρότερη πόλη του κόσμου στις Αρδέννες.\n\nΜπορείτε να ορίσετε τον δικό σας ρυθμό και τις στάσεις σας.",
-        hr: "Organiziramo premium privatne jednodnevne izlete iz Bruxellesa od 380€, s posvećenim minivanom i vozačem na raspolaganju cijeli dan:\n• **Izlet u Bruges:** Srednjovjekovni zvonik, Jezero ljubavi, kanali.\n• **Izlet u Ghent:** Dvorac Gravensteen, Katedrala svetog Bava.\n• **Izlet u Durbuy:** Najmanji grad na svijetu u Ardenima.\n\nMožete odrediti vlastiti tempo i zaustavljanja na ruti."
+        en: `We arrange premium private day trips from Brussels starting from 400€, with a dedicated minivan and driver at your disposal for the whole day:\n• **Bruges Tour:** Medieval belfry, Lake of Love, canals.\n• **Ghent Tour:** Gravensteen castle, St. Bavo Cathedral.\n• **Durbuy Tour:** The smallest city in the world nestled in Ardennes.\n\nYou can set your own pace and route stops as you travel.\n\n${BOOKING_POLICIES.en.multiDayShort}`,
+        nl: "Wij organiseren luxe privédagtochten vanuit Brussel vanaf 400€, waarbij de minivan en chauffeur de hele dag tot uw beschikking staan:\n• **Brugge Tour:** Middeleeuws belfort, Minnewater, grachten.\n• **Gent Tour:** Gravensteen kasteel, Sint-Baafskathedraal.\n• **Durbuy Tour:** Het kleinste stadje ter wereld in de Ardennen.\n\nU kunt uw eigen tempo bepalen en tussenstops in overleg plannen.",
+        fr: "Nous organisons des excursions privées d'une journée au départ de Bruxelles à partir de 400€, avec véhicule et chauffeur à votre entière disposition :\n• **Circuit Bruges :** Beffroi médiéval, lac d'Amour, canaux.\n• **Circuit Gand :** Château des Comtes, Cathédrale Saint-Bavon.\n• **Circuit Durbuy :** La plus petite ville du monde dans les Ardennes.\n\nVous êtes libre de définir vos escales et votre rythme de visite.",
+        el: "Διοργανώνουμε ιδιωτικές ημερήσιες εκδρομές από τις Βρυξέλλες από 400€, με το minivan και τον οδηγό στη διάθεσή σας για όλη τη μέρα:\n• **Εκδρομή στη Μπρυζ:** Μεσαιωνικό καμπαναριό, Λίμνη της Αγάπης, κανάλια.\n• **Εκδρομή στη Γάνδη:** Κάστρο Gravensteen, Καθεδρικός Ναός Αγίου Βονιφατίου.\n• **Εκδρομή στο Ντυρμπουί:** Η μικρότερη πόλη του κόσμου στις Αρδέννες.\n\nΜπορείτε να ορίσετε τον δικό σας ρυθμό και τις στάσεις σας.",
+        hr: "Organiziramo premium privatne jednodnevne izlete iz Bruxellesa od 400€, s posvećenim minivanom i vozačem na raspolaganju cijeli dan:\n• **Izlet u Bruges:** Srednjovjekovni zvonik, Jezero ljubavi, kanali.\n• **Izlet u Ghent:** Dvorac Gravensteen, Katedrala svetog Bava.\n• **Izlet u Durbuy:** Najmanji grad na svijetu u Ardenima.\n\nMožete odrediti vlastiti tempo i zaustavljanja na ruti."
       }[lang];
 
       return { id, sender: 'bot', text: texts, cta: defaultCtas };
@@ -341,15 +353,17 @@ export default function AIAssistant() {
 
     if (
       query.includes('cancel') || query.includes('refund') || query.includes('change') || query.includes('policy') ||
+      query.includes('deposit') || query.includes('voorschot') || query.includes('acompte') ||
       query.includes('pay') || query.includes('card') || query.includes('cash') || query.includes('invoice') ||
-      query.includes('ακυρωση') || query.includes('πληρωμη') || query.includes('καρτα') || query.includes('μετρητα')
+      query.includes('ακυρωση') || query.includes('πληρωμη') || query.includes('καρτα') || query.includes('μετρητα') ||
+      query.includes('προκαταβολ') || query.includes('polog')
     ) {
       const texts = {
-        en: "• **Cancellation Policy:** 100% free cancellation or booking changes up to 24 hours prior to the transfer.\n• **Payment Methods:** We accept secure online credit/debit card payments, bank transfers, corporate invoices, or cash directly to the driver at the end of the trip.",
-        nl: "• **Annuleringsvoorwaarden:** 100% gratis annuleren of wijzigen tot 24 uur voor aanvang.\n• **Betaalwijzen:** Wij accepteren beveiligde online kaartbetalingen, bankoverschrijvingen, facturen of contant geld rechtstreeks aan de chauffeur bij aankomst.",
-        fr: "• **Conditions d'annulation :** Modifications et annulations 100% gratuites jusqu'à 24 heures avant la prise en charge.\n• **Moyens de paiement :** Paiement en ligne sécurisé par carte, virement bancaire, facturation d'entreprise ou espèces directement au chauffeur.",
-        el: "• **Πολιτική Ακύρωσης:** 100% δωρεάν ακύρωση ή αλλαγές έως και 24 ώρες πριν την παραλαβή.\n• **Τρόποι Πληρωμής:** Δεχόμαστε online πληρωμές με κάρτα, τραπεζικά εμβάσματα, εταιρικά τιμολόγια ή μετρητά απευθείας στον οδηγό στο τέλος της διαδρομής.",
-        hr: "• **Politika otkazivanja:** 100% besplatno otkazivanje ili promjene do 24 sata prije transfera.\n• **Načini plaćanja:** Prihvaćamo sigurna online plaćanja karticom, bankovne transfere, korporativne račune ili gotovinu izravno vozaču na kraju vožnje."
+        en: `• **Cancellation:** ${BOOKING_POLICIES.en.standardCancel}\n• **Payment Methods:** We accept secure online credit/debit card payments, bank transfers, corporate invoices, or cash directly to the driver at the end of the trip.`,
+        nl: `• **Annuleringsvoorwaarden:** ${BOOKING_POLICIES.nl.standardCancel}\n• **Betaalwijzen:** Wij accepteren beveiligde online kaartbetalingen, bankoverschrijvingen, facturen of contant geld rechtstreeks aan de chauffeur bij aankomst.`,
+        fr: `• **Conditions d'annulation :** ${BOOKING_POLICIES.fr.standardCancel}\n• **Moyens de paiement :** Paiement en ligne sécurisé par carte, virement bancaire, facturation d'entreprise ou espèces directement au chauffeur.`,
+        el: `• **Πολιτική Ακύρωσης:** ${BOOKING_POLICIES.el.standardCancel}\n• **Τρόποι Πληρωμής:** Δεχόμαστε online πληρωμές με κάρτα, τραπεζικά εμβάσματα, εταιρικά τιμολόγια ή μετρητά απευθείας στον οδηγό στο τέλος της διαδρομής.`,
+        hr: `• **Politika otkazivanja:** ${BOOKING_POLICIES.hr.standardCancel}\n• **Načini plaćanja:** Prihvaćamo sigurna online plaćanja karticom, bankovne transfere, korporativne račune ili gotovinu izravno vozaču na kraju vožnje.`
       }[lang];
 
       return { id, sender: 'bot', text: texts, cta: defaultCtas };

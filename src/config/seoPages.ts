@@ -92,8 +92,8 @@ export const seoPages: SEOPage[] = [
     "url": "/fr/navette/charleroi-bruxelles",
     "h1": "Navette Bruxelles – Charleroi aéroport à prix fixe",
     "keyword": "navette bruxelles charleroi",
-    "title": "Navette Bruxelles Charleroi aéroport | Taxi prix fixe dès 65€ | Helicro",
-    "description": "Navette privée entre Bruxelles et l’aéroport de Charleroi (CRL) : prix fixe dès 65€ par véhicule, porte à porte, 24/7, chauffeur qui attend en cas de retard. Réservez en 2 minutes.",
+    "title": "Navette Bruxelles Charleroi aéroport | Taxi prix fixe dès 70€ | Helicro",
+    "description": "Navette privée entre Bruxelles et l’aéroport de Charleroi (CRL) : prix fixe dès 70€ par véhicule, porte à porte, 24/7, chauffeur qui attend en cas de retard. Réservez en 2 minutes.",
     "priority": "HIGH"
   },
   {
@@ -110,8 +110,8 @@ export const seoPages: SEOPage[] = [
     "url": "/en/airport-transfer/brussels-charleroi",
     "h1": "Charleroi Airport (CRL) taxi and private transfer",
     "keyword": "charleroi airport transfer",
-    "title": "Taxi Charleroi Airport | Private Transfer Fixed Price From 65€ | Helicro",
-    "description": "Door-to-door private transfer to and from Brussels South Charleroi (CRL). Fixed price from 65€ per vehicle, flight tracking for Ryanair and Wizz Air, meet and greet, 24/7.",
+    "title": "Taxi Charleroi Airport | Private Transfer Fixed Price From 70€ | Helicro",
+    "description": "Door-to-door private transfer to and from Brussels South Charleroi (CRL). Fixed price from 70€ per vehicle, flight tracking for Ryanair and Wizz Air, meet and greet, 24/7.",
     "priority": "HIGH"
   },
   {
@@ -119,8 +119,8 @@ export const seoPages: SEOPage[] = [
     "url": "/nl/luchthavenvervoer/charleroi",
     "h1": "Luchthavenvervoer Charleroi (CRL): privé taxi met vaste prijs",
     "keyword": "luchthavenvervoer charleroi",
-    "title": "Luchthavenvervoer Charleroi | Taxi vaste prijs vanaf 65€ | Helicro",
-    "description": "Privé minivan van en naar Brussels South Charleroi (CRL). Vaste prijzen vanaf 65€ per voertuig, vluchtopvolging voor Ryanair en Wizz Air, ontvangst in de terminal, 24/7.",
+    "title": "Luchthavenvervoer Charleroi | Taxi vaste prijs vanaf 70€ | Helicro",
+    "description": "Privé minivan van en naar Brussels South Charleroi (CRL). Vaste prijzen vanaf 70€ per voertuig, vluchtopvolging voor Ryanair en Wizz Air, ontvangst in de terminal, 24/7.",
     "priority": "HIGH"
   },
   {
@@ -128,8 +128,8 @@ export const seoPages: SEOPage[] = [
     "url": "/fr/navette/aeroport-charleroi",
     "h1": "Navette aéroport Charleroi (CRL) : taxi privé à prix fixe",
     "keyword": "navette aeroport charleroi",
-    "title": "Taxi aéroport Charleroi | Navette privée prix fixe dès 65€ | Helicro",
-    "description": "Minivan privé vers et depuis l’aéroport de Charleroi (CRL). Prix fixes dès 65€ par véhicule, suivi des vols Ryanair et Wizz Air, accueil dans le terminal, 24/7.",
+    "title": "Taxi aéroport Charleroi | Navette privée prix fixe dès 70€ | Helicro",
+    "description": "Minivan privé vers et depuis l’aéroport de Charleroi (CRL). Prix fixes dès 70€ par véhicule, suivi des vols Ryanair et Wizz Air, accueil dans le terminal, 24/7.",
     "priority": "HIGH"
   },
   {
@@ -155,8 +155,8 @@ export const seoPages: SEOPage[] = [
     "url": "/en/route/brussels-charleroi",
     "h1": "Brussels to Charleroi airport transfer",
     "keyword": "brussels to charleroi airport",
-    "title": "Brussels to Charleroi Airport Transfer | Fixed Price From 65€ | Helicro",
-    "description": "Private door-to-door transfer from any Brussels address to Brussels South Charleroi (CRL): from 65€ for 1 passenger to 160€ for 8, per vehicle. 55–70 minutes, 24/7.",
+    "title": "Brussels to Charleroi Airport Transfer | Fixed Price From 70€ | Helicro",
+    "description": "Private door-to-door transfer from any Brussels address to Brussels South Charleroi (CRL): from 70€ for 1 passenger to 160€ for 8, per vehicle. 55–70 minutes, 24/7.",
     "priority": "HIGH"
   },
   {
@@ -452,7 +452,7 @@ export const seoPages: SEOPage[] = [
     "url": "/en/day-trip/bruges",
     "h1": "Private Bruges day trip from Brussels",
     "keyword": "bruges day trip from brussels",
-    "title": "Private Bruges Day Trip From Brussels | Driver From 380€ | Helicro",
+    "title": "Private Bruges Day Trip From Brussels | Driver From 400€ | Helicro",
     "description": "Tailored Bruges day trip with private driver. Canals, lace, chocolate, gothic gems and lunch stops at your own pace.",
     "priority": "HIGH"
   },
@@ -461,7 +461,7 @@ export const seoPages: SEOPage[] = [
     "url": "/en/day-trip/ghent",
     "h1": "Private Ghent day trip from Brussels",
     "keyword": "ghent day trip from brussels",
-    "title": "Private Ghent Day Trip From Brussels | Driver From 380€ | Helicro",
+    "title": "Private Ghent Day Trip From Brussels | Driver From 400€ | Helicro",
     "description": "Private day tour to Ghent from Brussels: cathedral, castle, historic quarter and street art with an English-speaking driver.",
     "priority": "HIGH"
   },

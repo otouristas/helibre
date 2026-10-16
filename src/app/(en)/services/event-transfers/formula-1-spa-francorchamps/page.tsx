@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'en',
   title: 'Spa-Francorchamps F1 & Motorsport Transfers | Private Chauffeur | Helicro',
   description: 'Premium private transfers to Circuit de Spa-Francorchamps for Formula 1, Ferrari track days, and 24h Spa. Luxury 8-seater van from Brussels & airports.',
-  alternates: sharedPathAlternates('/services/event-transfers/formula-1-spa-francorchamps', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers/formula-1-spa-francorchamps'),
   image: '/images/event-service.jpg',
 });
 

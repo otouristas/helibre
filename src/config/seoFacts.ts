@@ -274,8 +274,8 @@ export const FIXED_PRICES = {
     { pax: '5–8', price: 55 },
   ],
   brusselsToCRL: [
-    { pax: '1', price: 65 },
-    { pax: '2', price: 75 },
+    { pax: '1', price: 70 },
+    { pax: '2', price: 80 },
     { pax: '3', price: 90 },
     { pax: '4', price: 110 },
     { pax: '5', price: 120 },
@@ -284,11 +284,21 @@ export const FIXED_PRICES = {
     { pax: '8', price: 160 },
   ],
   bruP1Surcharge: 5,
+  /** Complimentary airport wait from actual landing, Schengen flights. */
   waitingFreeMinutes: 60,
+  /** Complimentary airport wait from actual landing, flights from outside Schengen. */
+  waitingFreeMinutesNonSchengen: 80,
+  /** Extra waiting after the complimentary period, per additional 30 minutes. */
+  waitingPer30Min: 15,
+  /** Hourly equivalent of waitingPer30Min. Kept so older copy can still resolve. */
   waitingPerHour: 30,
   extraStop: 10,
-  dayTourFrom: 380,
+  dayTourFrom: 400,
   cancellationHours: 24,
+  /** Deposit for multi-day exclusive vehicle-and-driver bookings, percent of the agreed price. */
+  multiDayDepositPercent: 20,
+  /** Full deposit refund if a multi-day booking is cancelled this many hours before the service. */
+  multiDayCancelHours: 48,
 };
 
 /** Destinations with a published fixed price (source: Helicro price list, September 2026). */
@@ -458,7 +468,7 @@ const T2 = (a: number, b: number): PriceTier[] => [
 
 /** Fixed prices per vehicle, VAT included, from Brussels (city or Brussels Airport) and from Charleroi Airport. */
 export const PRICED_ROUTES: PricedRoute[] = [
-  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 85) },
+  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 90) },
   { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(100, 120) },
   { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(130, 150) },
   { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(75, 100) },
@@ -469,7 +479,7 @@ export const PRICED_ROUTES: PricedRoute[] = [
   { key: 'brussels-paris-cdg', from: 'brussels', to: 'paris-cdg', tiers: T2(380, 420) },
   { key: 'brussels-paris-orly', from: 'brussels', to: 'paris-orly', tiers: T2(460, 500) },
   { key: 'brussels-eindhoven', from: 'brussels', to: 'eindhoven', tiers: T2(190, 210) },
-  { key: 'brussels-amsterdam', from: 'brussels', to: 'amsterdam', tiers: T2(250, 290) },
+  { key: 'brussels-amsterdam', from: 'brussels', to: 'amsterdam', tiers: T2(280, 320) },
   { key: 'brussels-maastricht', from: 'brussels', to: 'maastricht', tiers: T2(150, 170) },
   { key: 'brussels-dusseldorf', from: 'brussels', to: 'dusseldorf', tiers: T2(250, 280) },
   { key: 'brussels-cologne', from: 'brussels', to: 'cologne', tiers: T2(250, 280) },

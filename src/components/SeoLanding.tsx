@@ -5,6 +5,7 @@ import ServiceRequest from '@/components/ServiceRequest';
 import JsonLd from '@/components/JsonLd';
 import GoogleReviews from '@/components/GoogleReviews';
 import { airportSchema, breadcrumbSchema, faqSchema, serviceSchema } from '@/lib/schema';
+import { translations } from '@/config/translations';
 import { LOCALES, LOCALE_NAMES, type Locale } from '@/lib/seo';
 import { UI } from '@/lib/seoContent/shared';
 import type { SeoLandingContent, SeoSection } from '@/lib/seoContent/types';
@@ -101,7 +102,7 @@ export default function SeoLanding({ content, children }: { content: SeoLandingC
     <div className="section">
       <div className="container">
         <JsonLd data={schema} />
-        <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+        <nav className={styles.breadcrumbs} aria-label={translations[c.lang].breadcrumb}>
           {c.breadcrumbs.map((b, i) => (
             <React.Fragment key={i}>
               {i > 0 && <span>/</span>}

@@ -6,7 +6,7 @@ import ServiceTemplate from '@/components/ServiceTemplate';
 import EventQuoteCTA, { EventType } from '@/components/EventQuoteCTA';
 import styles from './EventTransferPage.module.css';
 
-export type EventLang = 'en' | 'nl' | 'fr';
+export type EventLang = 'en' | 'nl' | 'fr' | 'el' | 'hr';
 
 export interface EventFaq {
   question: string;
@@ -55,8 +55,16 @@ export interface EventTransferContent {
   img: string;
 }
 
+const RELATED_FALLBACK: Record<EventLang, string> = {
+  en: 'Related services',
+  nl: 'Gerelateerde diensten',
+  fr: 'Services associés',
+  el: 'Σχετικές υπηρεσίες',
+  hr: 'Povezane usluge',
+};
+
 function localizePath(path: string, lang: EventLang) {
-  if (lang === 'en') return path;
+  if (lang === 'en' || /^\/(en|nl|fr|el|hr)(\/|$)/.test(path)) return path;
   return `/${lang}${path}`;
 }
 
@@ -157,7 +165,7 @@ export default function EventTransferPage({
 
           {content.related && content.related.length > 0 && (
             <>
-              <h2>{content.relatedTitle || 'Related services'}</h2>
+              <h2>{content.relatedTitle || RELATED_FALLBACK[lang]}</h2>
               <div className={styles.relatedLinks}>
                 {content.related.map((r, i) => (
                   <Link key={i} href={localizePath(r.href, lang)}>

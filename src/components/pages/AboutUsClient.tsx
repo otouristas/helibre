@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath } from '@/config/translations';
+import { getLangFromPath, translations } from '@/config/translations';
 
 export default function AboutUsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
@@ -257,7 +257,7 @@ export default function AboutUsClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
             🇧🇪 {ui.btnWhatsapp}
           </a>
           <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 28px' }}>
-            🇬🇷 WhatsApp Greece
+            🇬🇷 {translations[lang].whatsappGreece}
           </a>
           <Link href={localizePath('/reviews')} className="btn btn-outline" style={{ padding: '14px 28px' }}>
             {ui.btnReviews}

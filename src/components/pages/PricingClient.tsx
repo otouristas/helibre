@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath } from '@/config/translations';
+import { getLangFromPath, priceListHref, translations } from '@/config/translations';
 import FareCalculator from '@/components/FareCalculator';
+import BookingPolicyPanels from '@/components/BookingPolicyPanels';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 
 export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
@@ -18,6 +21,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Fixed Airport Transfer Flat Rates (Brussels Origins)',
       minivanFares: 'Private Minivan • Flat Fares',
       zaventemTitle: 'Brussels to Zaventem (BRU)',
+      zaventemFromNotice: 'FROM — these are starting prices, not a fixed fare.',
       charleroiTitle: 'Brussels to Charleroi (CRL)',
       pax1: '1 Passenger',
       pax2: '2 Passengers',
@@ -30,7 +34,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passengers',
       pax34: '3 - 4 Passengers',
       pax58: '5 - 8 Passengers',
-      from: 'From',
+      from: 'FROM',
       
       h3Included: '3. What is Included in the Fare?',
       incTrack: 'Flight Tracking:',
@@ -49,12 +53,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       surchargeNight: 'Night Rates:',
       surchargeNightDesc: 'Only applicable to shared shuttle bookings (between 22:00 and 06:00).',
       surchargeWait: 'Extra Waiting Time:',
-      surchargeWaitDesc: 'First 60 minutes after flight landing is free. Thereafter, billing is 30€/hour.',
+      surchargeWaitDesc: BOOKING_POLICIES.en.airportWaitingShort,
       surchargeDetour: 'Detours:',
       surchargeDetourDesc: 'Extra pickups/dropoffs along the route are billed at a flat 10€ per stop.',
 
       h4Cancel: '5. Cancellation Policy',
-      cancelDesc: 'Cancellations and updates are 100% free of charge up to 24 hours prior to the transfer. Inside 24 hours, last-minute changes are subject to dispatch availability.',
+      cancelDesc: 'Cancellations and updates for standard transfers are free of charge up to 24 hours prior to pickup. Inside 24 hours, last-minute changes are subject to dispatch availability. Multi-day bookings with exclusive use of a vehicle and driver follow the deposit terms below.',
       
       h4Loyalty: '6. Loyalty Discounts',
       loyaltyDesc: 'We offer preferred contract billing and discounts for frequent business commuters, corporate shuttle needs, embassy logistics, and repeat clients.',
@@ -81,6 +85,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Vaste Tarieven Luchthavenvervoer (Vanuit Brussel)',
       minivanFares: 'Privé Minivan • Vaste Tarieven',
       zaventemTitle: 'Brussel naar Zaventem (BRU)',
+      zaventemFromNotice: 'VANAF — dit zijn startprijzen, geen vast tarief.',
       charleroiTitle: 'Brussel naar Charleroi (CRL)',
       pax1: '1 Passagier',
       pax2: '2 Passagiers',
@@ -93,7 +98,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passagiers',
       pax34: '3 - 4 Passagiers',
       pax58: '5 - 8 Passagiers',
-      from: 'Vanaf',
+      from: 'VANAF',
       
       h3Included: '3. Wat is Inbegrepen in de Prijs?',
       incTrack: 'Vluchtmonitoring:',
@@ -112,12 +117,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       surchargeNight: 'Nachttarief:',
       surchargeNightDesc: 'Alleen van toepassing op gedeelde shuttles (tussen 22:00 en 06:00 uur).',
       surchargeWait: 'Extra Wachttijd:',
-      surchargeWaitDesc: 'Eerste 60 minuten na landing zijn gratis. Daarna 30€ per uur.',
+      surchargeWaitDesc: BOOKING_POLICIES.nl.airportWaitingShort,
       surchargeDetour: 'Extra Tussenstop:',
       surchargeDetourDesc: 'Tussenstops op de route worden gefactureerd aan 10€ per stop.',
 
       h4Cancel: '5. Annuleringsvoorwaarden',
-      cancelDesc: 'Annuleren en wijzigen is 100% gratis tot 24 uur voor aanvang. Binnen 24 uur zijn wijzigingen afhankelijk van beschikbaarheid.',
+      cancelDesc: 'Annuleren en wijzigen van standaardritten is gratis tot 24 uur voor aanvang. Binnen 24 uur zijn wijzigingen afhankelijk van beschikbaarheid. Meerdaagse boekingen met exclusief gebruik van voertuig en chauffeur volgen het voorschotbeleid hieronder.',
       
       h4Loyalty: '6. Klantenkorting',
       loyaltyDesc: 'Wij bieden contracten en kortingen voor frequente zakelijke reizigers, zakelijke shuttles, ambassades en trouwe klanten.',
@@ -144,6 +149,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Tarifs Forfaitaires Aéroport (Départs de Bruxelles)',
       minivanFares: 'Minivan Privé • Tarifs Fixes',
       zaventemTitle: 'Bruxelles vers Zaventem (BRU)',
+      zaventemFromNotice: 'DÈS — ce sont des prix de départ, pas un tarif fixe.',
       charleroiTitle: 'Bruxelles vers Charleroi (CRL)',
       pax1: '1 Passager',
       pax2: '2 Passagers',
@@ -156,7 +162,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passagers',
       pax34: '3 - 4 Passagers',
       pax58: '5 - 8 Passagers',
-      from: 'À partir de',
+      from: 'DÈS',
       
       h3Included: '3. Qu&apos;est-ce qui est Inclus dans le Tarif ?',
       incTrack: 'Suivi des Vols :',
@@ -175,12 +181,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       surchargeNight: 'Tarifs Nuit :',
       surchargeNightDesc: 'Applicable uniquement aux réservations de navettes partagées (entre 22h00 et 6h00).',
       surchargeWait: 'Temps d&apos;Attente Supplémentaire :',
-      surchargeWaitDesc: 'Les 60 premières minutes après atterrissage sont gratuites. Ensuite, 30€/heure.',
+      surchargeWaitDesc: BOOKING_POLICIES.fr.airportWaitingShort,
       surchargeDetour: 'Détours :',
       surchargeDetourDesc: 'Les arrêts supplémentaires sur le trajet sont facturés 10€ par arrêt.',
 
       h4Cancel: '5. Conditions d&apos;Annulation',
-      cancelDesc: 'Les annulations et modifications sont 100% gratuites jusqu&apos;à 24h avant le trajet. Moins de 24h avant, les changements dépendent des disponibilités.',
+      cancelDesc: 'Les annulations et modifications des transferts ordinaires sont gratuites jusqu’à 24 h avant le trajet. Moins de 24 h avant, les changements dépendent des disponibilités. Les réservations de plusieurs jours avec usage exclusif d’un véhicule et d’un chauffeur suivent les conditions d’acompte ci-dessous.',
       
       h4Loyalty: '6. Tarifs Préférentiels',
       loyaltyDesc: 'Nous proposons une facturation contractuelle et des remises pour les voyageurs d&apos;affaires fréquents, navettes d&apos;entreprise et ambassades.',
@@ -204,6 +210,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. FIKSNE CIJENE ZA ZRAČNE LUKE (IZ BRISELA)',
       minivanFares: 'Privatni minivan • Fiksne cijene',
       zaventemTitle: 'Brisel ↔ Zračna luka Zaventem (BRU)',
+      zaventemFromNotice: 'OD — početne cijene, ne fiksna cijena.',
       charleroiTitle: 'Brisel ↔ Zračna luka Charleroi (CRL)',
       pax1: '1 Putnik',
       pax2: '2 Putnika',
@@ -216,7 +223,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Putnika',
       pax34: '3 - 4 Putnika',
       pax58: '5 - 8 Putnika',
-      from: 'Od',
+      from: 'OD',
       h3Included: '3. ŠTO JE UKLJUČENO U CIJENU?',
       incTrack: 'Praćenje leta:',
       incTrackDesc: 'Praćenje leta u stvarnom vremenu. Vrijeme dolaska prilagođavamo besplatno.',
@@ -233,11 +240,11 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       surchargeNight: 'Noćne vožnje:',
       surchargeNightDesc: 'Vrijedi samo za zajedničke shuttle prijevoze (između 22:00 i 06:00).',
       surchargeWait: 'Dodatno vrijeme čekanja:',
-      surchargeWaitDesc: 'Prvih 60 minuta nakon slijetanja leta je besplatno. Nakon toga se naplaćuje 30 € po satu.',
+      surchargeWaitDesc: BOOKING_POLICIES.hr.airportWaitingShort,
       surchargeDetour: 'Skretanja s rute:',
       surchargeDetourDesc: 'Dodatna usputna stajanja naplaćuju se fiksno 10 € po stajanju.',
       h4Cancel: '5. POLITIKA OTKAZIVANJA',
-      cancelDesc: 'Otkazivanje i izmjene su 100% besplatni do 24 sata prije zakazanog transfera.',
+      cancelDesc: 'Otkazivanje i izmjene standardnih transfera besplatni su do 24 sata prije zakazanog transfera. Višednevne rezervacije s isključivom uporabom vozila i vozača slijede uvjete pologa u nastavku.',
       h4Loyalty: '6. PROGRAM VJERNOSTI',
       loyaltyDesc: 'Nudimo posebne cijene i mjesečne račune za poslovne subjekte, diplomatska veleposlanstva i redovite putnike.',
       h4Payment: '7. NAČINI PLAĆANJA',
@@ -260,6 +267,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ ΜΕΤΑΦΟΡΑΣ ΑΕΡΟΔΡΟΜΙΟΥ (ΑΠΟ ΒΡΥΞΕΛΛΕΣ)',
       minivanFares: 'ΙΔΙΩΤΙΚΟ MINIVAN • ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ',
       zaventemTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ ZAVENTEM (BRU)',
+      zaventemFromNotice: 'ΑΠΟ — τιμές εκκίνησης, όχι σταθερή τιμή.',
       charleroiTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ CHARLEROI (CRL)',
       pax1: '1 ΕΠΙΒΑΤΗΣ',
       pax2: '2 ΕΠΙΒΑΤΕΣ',
@@ -291,12 +299,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       surchargeNight: 'Νυχτερινές Διαδρομές:',
       surchargeNightDesc: 'Ισχύει μόνο για κρατήσεις κοινόχρηστων shuttles (μεταξύ 22:00 και 06:00).',
       surchargeWait: 'Επιπλέον Χρόνος Αναμονής:',
-      surchargeWaitDesc: 'Τα πρώτα 60 λεπτά μετά την προσγείωση είναι δωρεάν. Μετά, η χρέωση είναι 30€/ώρα.',
+      surchargeWaitDesc: BOOKING_POLICIES.el.airportWaitingShort,
       surchargeDetour: 'Παρακάμψεις:',
       surchargeDetourDesc: 'Οι επιπλέον στάσεις κατά μήκος της διαδρομής χρεώνονται με σταθερά 10€ ανά στάση.',
 
       h4Cancel: '5. ΠΟΛΙΤΙΚΗ ΑΚΥΡΩΣΗΣ',
-      cancelDesc: 'Οι ακυρώσεις και οι αλλαγές είναι 100% δωρεάν έως και 24 ώρες πριν από τη μεταφορά. Εντός 24 ωρών, οι αλλαγές εξαρτώνται από τη διαθεσιμότητα.',
+      cancelDesc: 'Οι ακυρώσεις και οι αλλαγές για τις συνηθισμένες μεταφορές είναι δωρεάν έως 24 ώρες πριν τη μεταφορά. Εντός 24 ωρών, οι αλλαγές εξαρτώνται από τη διαθεσιμότητα. Οι πολυήμερες κρατήσεις με αποκλειστική χρήση οχήματος και οδηγού ακολουθούν τους όρους προκαταβολής παρακάτω.',
       
       h4Loyalty: '6. ΕΚΠΤΩΣΕΙΣ ΣΥΧΝΩΝ ΠΕΛΑΤΩΝ',
       loyaltyDesc: 'Προσφέρουμε προνομιακές τιμές και εκπτώσεις για συχνούς επαγγελματίες ταξιδιώτες, εταιρικές ανάγκες, διπλωματικές αποστολές και σταθερούς πελάτες.',
@@ -325,8 +333,13 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
         <h1 className="text-center text-4xl font-extrabold mb-4" style={{ color: 'var(--primary-dark)' }}>
           {ui.title}
         </h1>
-        <p className="text-center text-slate-500 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-slate-500 max-w-2xl mx-auto mb-4">
           {ui.subtitle}
+        </p>
+        <p className="text-center mb-12">
+          <Link href={priceListHref(lang)} style={{ fontWeight: 700, color: 'var(--primary)' }}>
+            {translations[lang].priceList} →
+          </Link>
         </p>
 
         {/* 1. Instant Quote Calculator */}
@@ -354,21 +367,21 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--primary-dark)', marginBottom: '8px' }}>
                 {ui.zaventemTitle}
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '16px' }}>
-                {ui.minivanFares}
+              <p style={{ background: '#fef3c7', color: '#92400e', fontWeight: 800, fontSize: '14px', padding: '10px 12px', borderRadius: '8px', marginBottom: '16px' }}>
+                {ui.zaventemFromNotice}
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax12}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 35€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 35€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax34}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 45€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 45€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax58}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 55€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 55€*</strong>
                 </li>
               </ul>
               <p style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '12px', lineHeight: '1.4' }}>
@@ -387,11 +400,11 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax1}</span>
-                  <strong style={{ color: 'var(--primary)' }}>65€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>70€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax2}</span>
-                  <strong style={{ color: 'var(--primary)' }}>75€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>80€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax3}</span>
@@ -482,6 +495,8 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
           </div>
         </div>
 
+        <BookingPolicyPanels lang={lang} />
+
         {/* 8. Pricing FAQ */}
         <div style={{ background: '#ffffff', padding: '40px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--card-border)', boxShadow: 'var(--shadow)', marginBottom: '48px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--primary-dark)', marginBottom: '24px', textAlign: 'center' }}>
@@ -524,7 +539,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
             🇧🇪 {ui.btnWhatsapp}
           </a>
           <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
-            🇬🇷 WhatsApp Greece
+            🇬🇷 {translations[lang].whatsappGreece}
           </a>
         </div>
       </div>

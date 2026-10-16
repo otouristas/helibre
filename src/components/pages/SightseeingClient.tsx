@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import ServiceTemplate from '@/components/ServiceTemplate';
 import ServiceRequest from '@/components/ServiceRequest';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 import GoogleReviews from '@/components/GoogleReviews';
 
 interface CityTour {
@@ -191,6 +192,10 @@ export default function SightseeingClient({ lang }: { lang: 'en' | 'nl' | 'fr' |
             </div>
           ))}
         </div>
+
+        <p style={{ fontSize: '15px', lineHeight: '1.7', color: 'var(--text-secondary)', marginBottom: '28px' }}>
+          {BOOKING_POLICIES[lang].multiDayShort}
+        </p>
 
         <GoogleReviews lang={lang} variant="strip" limit={4} />
 

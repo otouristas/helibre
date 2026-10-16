@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'en',
   title: 'Tomorrowland Private Transfers | Brussels to Boom Chauffeur Van | Helicro',
   description: 'Private 8-seater VIP transfers to Tomorrowland in Boom. Direct pickups from Brussels Airport (BRU), Charleroi (CRL), and hotels. Fixed rates & guaranteed night rides.',
-  alternates: sharedPathAlternates('/services/event-transfers/tomorrowland', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers/tomorrowland'),
   image: '/images/event-service.jpg',
 });
 

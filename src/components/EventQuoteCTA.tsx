@@ -13,13 +13,47 @@ export type EventType =
 const BOOK_URL = 'https://forms.clickup.com/9015129384/f/8cnfx98-215/HYNDJD9OSRESGIPWVM';
 const WA_NUMBER = '32472358805';
 
-const EVENT_MESSAGES: Record<EventType, string> = {
-  general: 'Hello Helicro, I would like a quote for an event transfer.',
-  tomorrowland: 'Hi Helicro, I need a quote for Tomorrowland transfers.',
-  spa_f1: 'Hi Helicro, I need a quote for Spa-Francorchamps transfers.',
-  ferrari_track_day: 'Hi Helicro, I need a quote for a Ferrari / motorsport track day transfer.',
-  corporate_summit: 'Hi Helicro, I need a quote for an EU summit / trade fair transfer.',
-  other_festival: 'Hi Helicro, I need a quote for a music festival transfer.',
+const EVENT_MESSAGES: Record<'en' | 'nl' | 'fr' | 'el' | 'hr', Record<EventType, string>> = {
+  en: {
+    general: 'Hello Helicro, I would like a quote for an event transfer.',
+    tomorrowland: 'Hi Helicro, I need a quote for Tomorrowland transfers.',
+    spa_f1: 'Hi Helicro, I need a quote for Spa-Francorchamps transfers.',
+    ferrari_track_day: 'Hi Helicro, I need a quote for a Ferrari / motorsport track day transfer.',
+    corporate_summit: 'Hi Helicro, I need a quote for an EU summit / trade fair transfer.',
+    other_festival: 'Hi Helicro, I need a quote for a music festival transfer.',
+  },
+  nl: {
+    general: 'Hallo Helicro, ik wil graag een offerte voor een evenemententransfer.',
+    tomorrowland: 'Hallo Helicro, ik heb een offerte nodig voor Tomorrowland-transfers.',
+    spa_f1: 'Hallo Helicro, ik heb een offerte nodig voor transfers naar Spa-Francorchamps.',
+    ferrari_track_day: 'Hallo Helicro, ik heb een offerte nodig voor een Ferrari / motorsport track day.',
+    corporate_summit: 'Hallo Helicro, ik heb een offerte nodig voor een EU-top of beurs.',
+    other_festival: 'Hallo Helicro, ik heb een offerte nodig voor een muziekfestival.',
+  },
+  fr: {
+    general: 'Bonjour Helicro, je souhaite un devis pour un transfert événementiel.',
+    tomorrowland: 'Bonjour Helicro, je souhaite un devis pour des transferts Tomorrowland.',
+    spa_f1: 'Bonjour Helicro, je souhaite un devis pour des transferts Spa-Francorchamps.',
+    ferrari_track_day: 'Bonjour Helicro, je souhaite un devis pour une journée circuit Ferrari / motorsport.',
+    corporate_summit: 'Bonjour Helicro, je souhaite un devis pour un sommet UE ou un salon.',
+    other_festival: 'Bonjour Helicro, je souhaite un devis pour un festival de musique.',
+  },
+  el: {
+    general: 'Γεια σας Helicro, θα ήθελα προσφορά για μεταφορά εκδήλωσης.',
+    tomorrowland: 'Γεια σας Helicro, χρειάζομαι προσφορά για μεταφορές Tomorrowland.',
+    spa_f1: 'Γεια σας Helicro, χρειάζομαι προσφορά για μεταφορές Spa-Francorchamps.',
+    ferrari_track_day: 'Γεια σας Helicro, χρειάζομαι προσφορά για ημέρα πίστας Ferrari / motorsport.',
+    corporate_summit: 'Γεια σας Helicro, χρειάζομαι προσφορά για σύνοδο ΕΕ ή έκθεση.',
+    other_festival: 'Γεια σας Helicro, χρειάζομαι προσφορά για μουσικό φεστιβάλ.',
+  },
+  hr: {
+    general: 'Pozdrav Helicro, želio bih ponudu za transfer na događaj.',
+    tomorrowland: 'Pozdrav Helicro, trebam ponudu za transfere na Tomorrowland.',
+    spa_f1: 'Pozdrav Helicro, trebam ponudu za transfere do Spa-Francorchampsa.',
+    ferrari_track_day: 'Pozdrav Helicro, trebam ponudu za Ferrari / motorsport dan na stazi.',
+    corporate_summit: 'Pozdrav Helicro, trebam ponudu za sastanak EU ili sajam.',
+    other_festival: 'Pozdrav Helicro, trebam ponudu za glazbeni festival.',
+  },
 };
 
 const LABELS = {
@@ -62,6 +96,32 @@ const LABELS = {
     whatsapp: 'Demander un devis sur WhatsApp',
     book: 'Réserver en ligne',
   },
+  el: {
+    label: 'Εκδήλωση / ειδική περίσταση (προαιρετικό)',
+    options: {
+      general: 'Γενική / τυπική μεταφορά',
+      tomorrowland: 'Tomorrowland (Boom)',
+      spa_f1: 'Formula 1 Spa-Francorchamps',
+      ferrari_track_day: 'Ferrari / ημέρα πίστας',
+      corporate_summit: 'Σύνοδος ΕΕ / έκθεση',
+      other_festival: 'Άλλο μουσικό φεστιβάλ',
+    },
+    whatsapp: 'Αίτημα προσφοράς στο WhatsApp',
+    book: 'Online κράτηση',
+  },
+  hr: {
+    label: 'Događaj / posebna prigoda (neobavezno)',
+    options: {
+      general: 'Općenito / standardni transfer',
+      tomorrowland: 'Tomorrowland (Boom)',
+      spa_f1: 'Formula 1 Spa-Francorchamps',
+      ferrari_track_day: 'Ferrari / dan na stazi',
+      corporate_summit: 'Sastanak EU / sajam',
+      other_festival: 'Drugi glazbeni festival',
+    },
+    whatsapp: 'Zatražite ponudu na WhatsAppu',
+    book: 'Rezervirajte online',
+  },
 } as const;
 
 type Lang = keyof typeof LABELS;
@@ -82,12 +142,12 @@ export default function EventQuoteCTA({
   bookLabel,
 }: EventQuoteCTAProps) {
   const [eventType, setEventType] = useState<EventType>(defaultEvent);
-  const t = LABELS[lang] || LABELS.en;
+  const t = LABELS[lang];
 
   const waHref = useMemo(() => {
-    const msg = EVENT_MESSAGES[eventType];
+    const msg = EVENT_MESSAGES[lang][eventType];
     return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-  }, [eventType]);
+  }, [eventType, lang]);
 
   const bookHref = useMemo(() => {
     return `${BOOK_URL}?event_type=${encodeURIComponent(eventType)}`;

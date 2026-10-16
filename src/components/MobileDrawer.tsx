@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, translations } from '@/config/translations';
+import { AIRPORT_BOOKING_URL, getLangFromPath, isPriceListPath, OTHER_SERVICES_BOOKING_URL, priceListHref, translations } from '@/config/translations';
 import styles from './MobileDrawer.module.css';
 
 interface MobileDrawerProps {
@@ -57,8 +57,8 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       {/* Slide-out Drawer */}
       <aside className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`}>
         <div className={styles.header}>
-          <img src="/images/logo-2.png" alt="Helicro Logo" className={styles.logo} />
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close menu">
+          <img src="/images/logo-2.png" alt={t.logoAlt} className={styles.logo} />
+          <button className={styles.closeBtn} onClick={onClose} aria-label={t.closeMenu}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -67,7 +67,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </div>
 
         {/* Language Grid */}
-        <div className={styles.sectionTitle}>Select Language</div>
+        <div className={styles.sectionTitle}>{t.selectLanguage}</div>
         <div className={styles.langGrid}>
           <Link href="/" className={isLangActive('en')} onClick={onClose}>EN</Link>
           <Link href="/nl" className={isLangActive('nl')} onClick={onClose}>NL</Link>
@@ -82,9 +82,15 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           <Link href={localizePath('/')} className={isActive('/')} onClick={onClose}>
             {t.home}
           </Link>
-          <Link href={localizePath('/pricing')} className={isActive('/pricing')} onClick={onClose}>
-            {t.pricing}
-          </Link>
+          <div className={styles.sectionTitle} style={{ marginTop: '12px' }}>{t.pricing}</div>
+          <div className={styles.servicesList}>
+            <Link href={localizePath('/pricing')} className={isServiceActive('/pricing')} onClick={onClose}>
+              {t.ratesOverview}
+            </Link>
+            <Link href={priceListHref(lang)} className={isPriceListPath(pathname) ? `${styles.serviceLink} ${styles.serviceActive}` : styles.serviceLink} onClick={onClose}>
+              {t.priceList}
+            </Link>
+          </div>
           <Link href={localizePath('/about-us')} className={isActive('/about-us')} onClick={onClose}>
             {t.aboutUs}
           </Link>
@@ -142,17 +148,23 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             <span>🇬🇷 +30 697 458 1706</span>
           </a>
           
-          <a 
-            href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM"
+          <a
+            href={AIRPORT_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaBtn}
             onClick={onClose}
           >
-            <span>{t.bookOnline}</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+            <span>{t.bookAirport}</span>
+          </a>
+          <a
+            href={OTHER_SERVICES_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}
+            onClick={onClose}
+          >
+            <span>{t.bookOther}</span>
           </a>
         </div>
       </aside>

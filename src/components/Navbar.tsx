@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, translations } from '@/config/translations';
+import { AIRPORT_BOOKING_URL, getLangFromPath, isPriceListPath, OTHER_SERVICES_BOOKING_URL, priceListHref, translations } from '@/config/translations';
 import styles from './Navbar.module.css';
 
 interface NavbarProps {
@@ -96,23 +96,34 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
         <div className={styles.inner}>
           {/* Logo emblem */}
           <Link href={localizePath('/')} className={styles.logo}>
-            <img src="/images/logo-2.png" alt="Helicro Logo" className={styles.logoImg} />
+            <img src="/images/logo-2.png" alt={t.logoAlt} className={styles.logoImg} />
           </Link>
 
           {/* Hamburger menu */}
-          <button className={styles.hamburger} onClick={onOpenMobileMenu} aria-label="Open navigation menu">
+          <button className={styles.hamburger} onClick={onOpenMobileMenu} aria-label={t.openMenu}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
-            <span>Menu</span>
+            <span>{t.menu}</span>
           </button>
 
           {/* Desktop Navigation Links */}
           <nav className={styles.navLinks}>
             <Link href={localizePath('/')} className={isActive('/')}>{t.home}</Link>
-            <Link href={localizePath('/pricing')} className={isActive('/pricing')}>{t.pricing}</Link>
+            <div className={styles.dropdownContainer}>
+              <span className={`${styles.navItem} ${pathname.includes('/pricing') || isPriceListPath(pathname) ? styles.active : ''} flex items-center`}>
+                {t.pricing}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+              <div className={`${styles.dropdown} ${styles.dropdownWide}`}>
+                <Link href={localizePath('/pricing')} className={`${styles.dropdownItem} ${pathname.includes('/pricing') ? styles.dropdownItemActive : ''}`}>{t.ratesOverview}</Link>
+                <Link href={priceListHref(lang)} className={`${styles.dropdownItem} ${isPriceListPath(pathname) ? styles.dropdownItemActive : ''}`}>{t.priceList}</Link>
+              </div>
+            </div>
             <Link href={localizePath('/about-us')} className={isActive('/about-us')}>{t.aboutUs}</Link>
             <Link href={localizePath('/reviews')} className={isActive('/reviews')}>{t.reviews}</Link>
             
@@ -139,18 +150,22 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
             <Link href={localizePath('/contact')} className={isActive('/contact')}>{t.contact}</Link>
           </nav>
 
-          {/* Right section: Booking CTA button */}
           <div className={styles.rightSection}>
-            <a 
-              href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM"
+            <a
+              href={AIRPORT_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaBtn}
             >
-              <span>{t.bookOnline}</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
+              <span>{t.bookAirport}</span>
+            </a>
+            <a
+              href={OTHER_SERVICES_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}
+            >
+              <span>{t.bookOther}</span>
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { blogArticles } from '@/config/blogArticles';
 import { getSeoLanding, seoLandingUrls } from '@/lib/seoContent';
+import { PRICE_LIST_PATHS } from '@/config/translations';
 import { absoluteUrl, sharedPathAlternates, type AlternateMap, type Locale } from '@/lib/seo';
 
 /** Date of the last site-wide content revision. Bump when content changes materially. */
@@ -42,14 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push(...group(sharedPathAlternates(p), 0.9, 'monthly'))
   );
 
-  // Event transfer cluster (EN/NL/FR)
-  entries.push(...group(sharedPathAlternates('/services/event-transfers', ['en', 'nl', 'fr']), 0.85, 'monthly'));
+  // Event transfer cluster
+  entries.push(...group(sharedPathAlternates('/services/event-transfers'), 0.85, 'monthly'));
   ['/services/event-transfers/tomorrowland', '/services/event-transfers/formula-1-spa-francorchamps'].forEach((p) =>
-    entries.push(...group(sharedPathAlternates(p, ['en', 'nl', 'fr']), 0.85, 'monthly'))
+    entries.push(...group(sharedPathAlternates(p), 0.85, 'monthly'))
   );
 
-  // Price list (EN/NL/FR)
-  entries.push(...group({ en: '/price-list', nl: '/nl/prijslijst', fr: '/fr/tarifs' }, 0.9, 'monthly'));
+  // Price list
+  entries.push(...group(PRICE_LIST_PATHS, 0.9, 'monthly'));
 
   // Company pages
   ['/pricing', '/fleet', '/reviews', '/about-us', '/faq', '/contact', '/special-offers'].forEach((p) =>

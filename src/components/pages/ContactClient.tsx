@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath } from '@/config/translations';
+import { getLangFromPath, translations } from '@/config/translations';
 import ServiceRequest from '@/components/ServiceRequest';
 import EventQuoteCTA from '@/components/EventQuoteCTA';
 
 export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
   const pathname = usePathname();
-  const eventLang = lang === 'nl' || lang === 'fr' ? lang : 'en';
+  const labels = translations[lang];
 
   // Localization Dictionary for Contact
   const ui = {
@@ -132,7 +132,7 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                 <div>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{ui.officeLabel}</h3>
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', marginTop: '4px' }}>
-                    Braine-l&apos;Alleud, 1420<br />Walloon Brabant, Belgium
+                    Braine-l&apos;Alleud, 1420<br />{labels.regionLine}
                   </p>
                 </div>
               </div>
@@ -146,13 +146,13 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                       🇧🇪 +32 472 35 88 05
                     </a>
                     <a href="https://wa.me/32472358805" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
-                      💬 WhatsApp (Belgium)
+                      💬 {labels.whatsappBelgium}
                     </a>
                     <a href="tel:+306974581706" style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '15px', marginTop: '6px' }}>
                       🇬🇷 +30 697 458 1706
                     </a>
                     <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
-                      💬 WhatsApp (Greece)
+                      💬 {labels.whatsappGreece}
                     </a>
                   </p>
                 </div>
@@ -205,7 +205,7 @@ export default function ContactClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <p style={{ color: 'var(--text-secondary)', fontSize: '14.5px', marginBottom: '28px', lineHeight: '1.6' }}>
                 {ui.formDesc}
               </p>
-              <EventQuoteCTA lang={eventLang} />
+              <EventQuoteCTA lang={lang} />
               <div style={{ marginTop: 24 }}>
                 <ServiceRequest />
               </div>

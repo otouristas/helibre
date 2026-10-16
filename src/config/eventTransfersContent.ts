@@ -1,4 +1,5 @@
 import { EventTransferContent, EventLang } from '@/components/EventTransferPage';
+import { eventHubElHr, spaElHr, tomorrowlandElHr } from '@/config/eventTransfersElHr';
 
 export const eventTransfersHub: Record<EventLang, EventTransferContent> = {
   en: {
@@ -232,6 +233,7 @@ export const eventTransfersHub: Record<EventLang, EventTransferContent> = {
     ],
     defaultEvent: 'general',
   },
+  ...eventHubElHr,
 };
 
 export const tomorrowlandContent: Record<EventLang, EventTransferContent> = {
@@ -472,6 +474,7 @@ export const tomorrowlandContent: Record<EventLang, EventTransferContent> = {
     ],
     defaultEvent: 'tomorrowland',
   },
+  ...tomorrowlandElHr,
 };
 
 export const spaMotorsportContent: Record<EventLang, EventTransferContent> = {
@@ -697,4 +700,5 @@ export const spaMotorsportContent: Record<EventLang, EventTransferContent> = {
     ],
     defaultEvent: 'spa_f1',
   },
+  ...spaElHr,
 };
