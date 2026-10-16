@@ -21,6 +21,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Fixed Airport Transfer Flat Rates (Brussels Origins)',
       minivanFares: 'Private Minivan • Flat Fares',
       zaventemTitle: 'Brussels to Zaventem (BRU)',
+      zaventemFromNotice: 'FROM — these are starting prices, not a fixed fare.',
       charleroiTitle: 'Brussels to Charleroi (CRL)',
       pax1: '1 Passenger',
       pax2: '2 Passengers',
@@ -33,7 +34,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passengers',
       pax34: '3 - 4 Passengers',
       pax58: '5 - 8 Passengers',
-      from: 'From',
+      from: 'FROM',
       
       h3Included: '3. What is Included in the Fare?',
       incTrack: 'Flight Tracking:',
@@ -84,6 +85,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Vaste Tarieven Luchthavenvervoer (Vanuit Brussel)',
       minivanFares: 'Privé Minivan • Vaste Tarieven',
       zaventemTitle: 'Brussel naar Zaventem (BRU)',
+      zaventemFromNotice: 'VANAF — dit zijn startprijzen, geen vast tarief.',
       charleroiTitle: 'Brussel naar Charleroi (CRL)',
       pax1: '1 Passagier',
       pax2: '2 Passagiers',
@@ -96,7 +98,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passagiers',
       pax34: '3 - 4 Passagiers',
       pax58: '5 - 8 Passagiers',
-      from: 'Vanaf',
+      from: 'VANAF',
       
       h3Included: '3. Wat is Inbegrepen in de Prijs?',
       incTrack: 'Vluchtmonitoring:',
@@ -147,6 +149,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. Tarifs Forfaitaires Aéroport (Départs de Bruxelles)',
       minivanFares: 'Minivan Privé • Tarifs Fixes',
       zaventemTitle: 'Bruxelles vers Zaventem (BRU)',
+      zaventemFromNotice: 'DÈS — ce sont des prix de départ, pas un tarif fixe.',
       charleroiTitle: 'Bruxelles vers Charleroi (CRL)',
       pax1: '1 Passager',
       pax2: '2 Passagers',
@@ -159,7 +162,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Passagers',
       pax34: '3 - 4 Passagers',
       pax58: '5 - 8 Passagers',
-      from: 'À partir de',
+      from: 'DÈS',
       
       h3Included: '3. Qu&apos;est-ce qui est Inclus dans le Tarif ?',
       incTrack: 'Suivi des Vols :',
@@ -207,6 +210,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. FIKSNE CIJENE ZA ZRAČNE LUKE (IZ BRISELA)',
       minivanFares: 'Privatni minivan • Fiksne cijene',
       zaventemTitle: 'Brisel ↔ Zračna luka Zaventem (BRU)',
+      zaventemFromNotice: 'OD — početne cijene, ne fiksna cijena.',
       charleroiTitle: 'Brisel ↔ Zračna luka Charleroi (CRL)',
       pax1: '1 Putnik',
       pax2: '2 Putnika',
@@ -219,7 +223,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       pax12: '1 - 2 Putnika',
       pax34: '3 - 4 Putnika',
       pax58: '5 - 8 Putnika',
-      from: 'Od',
+      from: 'OD',
       h3Included: '3. ŠTO JE UKLJUČENO U CIJENU?',
       incTrack: 'Praćenje leta:',
       incTrackDesc: 'Praćenje leta u stvarnom vremenu. Vrijeme dolaska prilagođavamo besplatno.',
@@ -263,6 +267,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       h2Rates: '2. ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ ΜΕΤΑΦΟΡΑΣ ΑΕΡΟΔΡΟΜΙΟΥ (ΑΠΟ ΒΡΥΞΕΛΛΕΣ)',
       minivanFares: 'ΙΔΙΩΤΙΚΟ MINIVAN • ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ',
       zaventemTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ ZAVENTEM (BRU)',
+      zaventemFromNotice: 'ΑΠΟ — τιμές εκκίνησης, όχι σταθερή τιμή.',
       charleroiTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ CHARLEROI (CRL)',
       pax1: '1 ΕΠΙΒΑΤΗΣ',
       pax2: '2 ΕΠΙΒΑΤΕΣ',
@@ -362,21 +367,21 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--primary-dark)', marginBottom: '8px' }}>
                 {ui.zaventemTitle}
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', marginBottom: '16px' }}>
-                {ui.minivanFares}
+              <p style={{ background: '#fef3c7', color: '#92400e', fontWeight: 800, fontSize: '14px', padding: '10px 12px', borderRadius: '8px', marginBottom: '16px' }}>
+                {ui.zaventemFromNotice}
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax12}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 35€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 35€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax34}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 45€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 45€*</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax58}</span>
-                  <strong style={{ color: 'var(--primary)' }}>{ui.from} 55€*</strong>
+                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 55€*</strong>
                 </li>
               </ul>
               <p style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '12px', lineHeight: '1.4' }}>

@@ -17,9 +17,12 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Home',
     pricing: 'Pricing',
     h1: 'Helicro price list 2026: every fixed price per minivan',
-    lead: 'All Helicro prices are fixed per vehicle (up to 8 passengers), VAT included, the same by day and by night, and confirmed in writing before you travel. Luggage, child seats and flight tracking are included. Complimentary airport waiting is 60 minutes after landing for Schengen flights and 80 minutes for flights from outside Schengen. Prices from Brussels also apply from Brussels Airport (Zaventem).',
+    lead: 'All Helicro prices are fixed per vehicle (up to 8 passengers), VAT included, the same by day and by night, and confirmed in writing before you travel. Brussels to Zaventem is the exception: those figures are starting prices (from), not a fixed fare. Luggage, child seats and flight tracking are included. Complimentary airport waiting is 60 minutes after landing for Schengen flights and 80 minutes for flights from outside Schengen.',
     zaventem: 'Brussels to Brussels Airport (Zaventem)',
-    zaventemNote: 'Any Brussels address to the Drop-off Area in front of departures. P1 drop-off +5€. Brussels city and the airport are 14 km apart, 20 to 35 minutes outside peak hours.',
+    zaventemFromNotice: 'FROM — these Brussels to Zaventem prices are starting prices, not a fixed fare.',
+    fromWord: 'from',
+    priceFrom: 'From (not a fixed fare)',
+    zaventemNote: 'Any Brussels address to the Drop-off Area in front of departures. P1 drop-off +5€. The amount goes up with the number of passengers and the exact address. Brussels city and the airport are 14 km apart, 20 to 35 minutes outside peak hours.',
     charleroi: 'Brussels to Charleroi Airport, private transfer',
     charleroiNote: 'Any Brussels address to the Kiss & Ride in front of the Charleroi terminal, door to door, 60 km in 55 to 70 minutes. The same price applies in the other direction.',
     shared: 'Brussels to Charleroi Airport, shared shuttle',
@@ -57,9 +60,12 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Home',
     pricing: 'Prijzen',
     h1: 'Prijslijst Helicro 2026: alle vaste prijzen per minivan',
-    lead: 'Alle prijzen van Helicro zijn vast per voertuig (tot 8 passagiers), inclusief btw, dezelfde overdag en ’s nachts, en worden schriftelijk bevestigd voor u vertrekt. Bagage, kinderzitjes en vluchtopvolging zijn inbegrepen. Gratis wachttijd op de luchthaven is 60 minuten na de landing voor Schengenvluchten en 80 minuten voor vluchten van buiten Schengen. Prijzen vanuit Brussel gelden ook vanaf Brussels Airport (Zaventem).',
+    lead: 'Alle prijzen van Helicro zijn vast per voertuig (tot 8 passagiers), inclusief btw, dezelfde overdag en ’s nachts, en worden schriftelijk bevestigd voor u vertrekt. Brussel naar Zaventem is de uitzondering: die bedragen zijn startprijzen (vanaf), geen vast tarief. Bagage, kinderzitjes en vluchtopvolging zijn inbegrepen. Gratis wachttijd op de luchthaven is 60 minuten na de landing voor Schengenvluchten en 80 minuten voor vluchten van buiten Schengen.',
     zaventem: 'Brussel naar Brussels Airport (Zaventem)',
-    zaventemNote: 'Elk Brussels adres naar de Drop-off zone voor de vertrekhal. P1 drop-off +5€. Brussel en de luchthaven liggen 14 km uit elkaar, 20 tot 35 minuten buiten de spits.',
+    zaventemFromNotice: 'VANAF — de prijzen Brussel–Zaventem zijn startprijzen, geen vast tarief.',
+    fromWord: 'vanaf',
+    priceFrom: 'Vanaf (geen vast tarief)',
+    zaventemNote: 'Elk Brussels adres naar de Drop-off zone voor de vertrekhal. P1 drop-off +5€. Het bedrag stijgt met het aantal passagiers en het exacte adres. Brussel en de luchthaven liggen 14 km uit elkaar, 20 tot 35 minuten buiten de spits.',
     charleroi: 'Brussel naar Charleroi Airport, privétransfer',
     charleroiNote: 'Elk Brussels adres naar de Kiss & Ride voor de terminal van Charleroi, van deur tot deur, 60 km in 55 tot 70 minuten. Dezelfde prijs geldt in de andere richting.',
     shared: 'Brussel naar Charleroi Airport, gedeelde shuttle',
@@ -97,9 +103,12 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Accueil',
     pricing: 'Tarifs',
     h1: 'Tarifs Helicro 2026 : tous les prix fixes par minivan',
-    lead: 'Tous les prix Helicro sont fixes par véhicule (jusqu’à 8 passagers), TVA comprise, identiques de jour comme de nuit, et confirmés par écrit avant le départ. Bagages, sièges enfants et suivi de vol sont inclus. L’attente gratuite à l’aéroport est de 60 minutes après l’atterrissage pour les vols Schengen et de 80 minutes pour les vols en provenance de l’extérieur de Schengen. Les prix depuis Bruxelles s’appliquent aussi depuis Brussels Airport (Zaventem).',
+    lead: 'Tous les prix Helicro sont fixes par véhicule (jusqu’à 8 passagers), TVA comprise, identiques de jour comme de nuit, et confirmés par écrit avant le départ. Bruxelles vers Zaventem est l’exception : ces montants sont des prix de départ (dès), pas un tarif fixe. Bagages, sièges enfants et suivi de vol sont inclus. L’attente gratuite à l’aéroport est de 60 minutes après l’atterrissage pour les vols Schengen et de 80 minutes pour les vols en provenance de l’extérieur de Schengen.',
     zaventem: 'Bruxelles vers Brussels Airport (Zaventem)',
-    zaventemNote: 'Toute adresse bruxelloise vers la zone Drop-off devant les départs. Dépose P1 +5€. Bruxelles et l’aéroport sont à 14 km, soit 20 à 35 minutes hors heures de pointe.',
+    zaventemFromNotice: 'DÈS — les prix Bruxelles–Zaventem sont des prix de départ, pas un tarif fixe.',
+    fromWord: 'dès',
+    priceFrom: 'Dès (pas un tarif fixe)',
+    zaventemNote: 'Toute adresse bruxelloise vers la zone Drop-off devant les départs. Dépose P1 +5€. Le montant augmente avec le nombre de passagers et l’adresse exacte. Bruxelles et l’aéroport sont à 14 km, soit 20 à 35 minutes hors heures de pointe.',
     charleroi: 'Bruxelles vers l’aéroport de Charleroi, navette privée',
     charleroiNote: 'Toute adresse bruxelloise vers le Kiss & Ride devant le terminal de Charleroi, porte à porte, 60 km en 55 à 70 minutes. Le même prix s’applique dans l’autre sens.',
     shared: 'Bruxelles vers l’aéroport de Charleroi, navette partagée',
@@ -265,8 +274,9 @@ export default function PriceList({ lang }: { lang: PricedLang }) {
             <p className={styles.lead}>{t.lead}</p>
 
             <h2 className={styles.h2}>{t.zaventem}</h2>
+            <p style={{ fontWeight: 800 }}>{t.zaventemFromNotice}</p>
             <p>{t.zaventemNote}</p>
-            <Table headers={[t.passengers, t.price]} rows={F.brusselsToBRU.map((r) => [r.pax, `${r.price}€`])} />
+            <Table headers={[t.passengers, t.priceFrom]} rows={F.brusselsToBRU.map((r) => [r.pax, `${t.fromWord} ${r.price}€`])} />
 
             <h2 className={styles.h2}>{t.charleroi}</h2>
             <p>{t.charleroiNote}</p>

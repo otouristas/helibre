@@ -262,7 +262,7 @@ export function priceCatalogSchema(lang: 'en' | 'nl' | 'fr' | 'el' | 'hr') {
     priceSpecification: { '@type': 'PriceSpecification', price, priceCurrency: 'EUR', valueAddedTaxIncluded: true },
   });
   const offers = [
-    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`Brussels to Brussels Airport (Zaventem), ${t.pax} passengers, per vehicle`, t.price, '/en/route/brussels-zaventem')),
+    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`Brussels to Brussels Airport (Zaventem), from ${t.price}€, ${t.pax} passengers, starting price not a fixed fare`, t.price, '/en/route/brussels-zaventem')),
     ...FIXED_PRICES.brusselsToCRL.map((t) => offer(`Brussels to Charleroi Airport, ${t.pax} passenger(s), per vehicle`, t.price, '/en/route/brussels-charleroi')),
     offer('Shared shuttle Brussels to Charleroi Airport, per person, day', SHARED_SHUTTLE.perPassengerDay, SHARED_SHUTTLE_URLS.en),
     offer('Shared shuttle Brussels to Charleroi Airport, per person, night', SHARED_SHUTTLE.perPassengerNight, SHARED_SHUTTLE_URLS.en),

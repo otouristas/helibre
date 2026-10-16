@@ -102,7 +102,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
   if (lang === 'en') {
     lead =
       code === 'BRU'
-        ? `Helicro drives you from any address in Belgium to ${name} in a private Ford minivan for a price fixed in advance: ${priceBRU[0].price}€ for 1–2 passengers, ${priceBRU[1].price}€ for 3–4 and ${priceBRU[2].price}€ for 5–8 from Brussels city. Meet and greet in arrivals, live flight tracking and free child seats are included.`
+        ? `Helicro drives you from any address in Belgium to ${name} in a private Ford minivan. From Brussels city the price starts from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8. That is a starting price, not a fixed fare. Meet and greet in arrivals, live flight tracking and free child seats are included.`
         : code === 'CRL'
           ? `Helicro drives you between any Belgian address and ${name} (CRL) in a private Ford minivan for a fixed price: ${priceCRL[0].price}€ for 1 passenger, ${priceCRL[1].price}€ for 2, ${priceCRL[3].price}€ for 4 and ${priceCRL[7].price}€ for a full 8-seater from Brussels. Your driver tracks Ryanair and Wizz Air delays and waits inside the terminal.`
           : `Helicro provides private cross-border transfers from Brussels and the whole of Belgium to ${name}, about ${fromBrussels.km} km and ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes from Brussels, for a fixed ${priceLIL.tiers[0].price}€ for 1 to 3 passengers and ${priceLIL.tiers[1].price}€ for 4 to 8, per vehicle, tolls included. An English-speaking driver and no change of vehicle at the French border.`;
@@ -134,7 +134,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             h2: ui.fixedPrices,
             paragraphs: [
               code === 'BRU'
-                ? `From Brussels city to ${name} the fixed price is ${priceBRU[0].price}€ for 1–2 passengers, ${priceBRU[1].price}€ for 3–4 and ${priceBRU[2].price}€ for 5–8, per vehicle, drop-off at the Drop-off Area (P1 drop-off +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
+                ? `From Brussels city to ${name} the price is from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8. These are starting prices, not a fixed fare, per vehicle, drop-off at the Drop-off Area (P1 drop-off +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
                 : `From Brussels city to ${name} the fixed price starts at ${priceCRL[0].price}€ for 1 passenger and rises with group size up to ${priceCRL[7].price}€ for 8 passengers, per vehicle, door to door. ${ui.perVehicle}`,
             ],
             table: brusselsPriceTable(lang, code),
@@ -181,7 +181,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
     specificFaqs =
       code === 'BRU'
         ? [
-            { question: 'How much is a taxi from Brussels to Zaventem airport?', answer: `A Helicro private transfer from any Brussels address to Brussels Airport costs ${priceBRU[0].price}€ for 1–2 passengers, ${priceBRU[1].price}€ for 3–4 and ${priceBRU[2].price}€ for 5–8, per vehicle, including luggage and child seats. A metered street taxi typically costs 45 to 60€ for one to four people and more at night.` },
+            { question: 'How much is a taxi from Brussels to Zaventem airport?', answer: `A Helicro private transfer from Brussels to Brussels Airport starts from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8. That is a starting price, not a fixed fare. A metered street taxi typically costs 45 to 60€ for one to four people and more at night.` },
             { question: 'How long does the transfer from Brussels to Brussels Airport take?', answer: `The distance is about ${fromBrussels.km} km. Outside peak hours it takes ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes; between 7:00 and 9:30 or 16:00 and 19:00 on weekdays plan for up to 50 minutes on the E40 and the Brussels ring.` },
             { question: 'Where does the driver wait at Brussels Airport?', answer: a.meetingPoint.en },
             { question: 'Can you pick me up for a 6:00 flight?', answer: 'Yes. Helicro operates 24 hours a day at the same fixed price. For a 6:00 departure from Brussels city we usually collect you between 3:45 and 4:15 depending on your address.' },
@@ -201,7 +201,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
   } else if (lang === 'nl') {
     lead =
       code === 'BRU'
-        ? `Helicro brengt u van elk adres in België naar ${name} in een privé Ford minivan tegen een vooraf vastgelegde prijs: ${priceBRU[0].price}€ voor 1–2 passagiers, ${priceBRU[1].price}€ voor 3–4 en ${priceBRU[2].price}€ voor 5–8 vanuit Brussel. Ontvangst in de aankomsthal, live vluchtopvolging en gratis kinderzitjes zijn inbegrepen.`
+        ? `Helicro brengt u van elk adres in België naar ${name} in een privé Ford minivan. Vanuit Brussel begint de prijs vanaf ${priceBRU[0].price}€ voor 1–2 passagiers, vanaf ${priceBRU[1].price}€ voor 3–4 en vanaf ${priceBRU[2].price}€ voor 5–8. Dat is een startprijs, geen vast tarief. Ontvangst in de aankomsthal, live vluchtopvolging en gratis kinderzitjes zijn inbegrepen.`
         : code === 'CRL'
           ? `Helicro rijdt tussen elk Belgisch adres en ${name} (CRL) in een privé Ford minivan tegen een vaste prijs: ${priceCRL[0].price}€ voor 1 passagier, ${priceCRL[1].price}€ voor 2, ${priceCRL[3].price}€ voor 4 en ${priceCRL[7].price}€ voor een volle 8-zitter vanuit Brussel. Uw chauffeur volgt Ryanair- en Wizz Air-vertragingen op en wacht in de terminal.`
           : `Helicro verzorgt grensoverschrijdend privévervoer van Brussel en heel België naar ${name}, ongeveer ${fromBrussels.km} km en ${fromBrussels.minMin} tot ${fromBrussels.maxMin} minuten van Brussel, voor een vaste ${priceLIL.tiers[0].price}€ voor 1 tot 3 passagiers en ${priceLIL.tiers[1].price}€ voor 4 tot 8, per voertuig, tol inbegrepen. Geen overstap aan de Franse grens.`;
@@ -231,7 +231,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             h2: ui.fixedPrices,
             paragraphs: [
               code === 'BRU'
-                ? `Van Brussel naar ${name} betaalt u ${priceBRU[0].price}€ voor 1–2 passagiers, ${priceBRU[1].price}€ voor 3–4 en ${priceBRU[2].price}€ voor 5–8, per voertuig, afzetten aan de Drop-off zone (P1 +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
+                ? `Van Brussel naar ${name} betaalt u vanaf ${priceBRU[0].price}€ voor 1–2 passagiers, vanaf ${priceBRU[1].price}€ voor 3–4 en vanaf ${priceBRU[2].price}€ voor 5–8. Dat zijn startprijzen, geen vast tarief, per voertuig, afzetten aan de Drop-off zone (P1 +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
                 : `Van Brussel naar ${name} start de vaste prijs bij ${priceCRL[0].price}€ voor 1 passagier en loopt op met de groepsgrootte tot ${priceCRL[7].price}€ voor 8 passagiers, per voertuig, van deur tot deur. ${ui.perVehicle}`,
             ],
             table: brusselsPriceTable(lang, code),
@@ -272,7 +272,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
     specificFaqs =
       code === 'BRU'
         ? [
-            { question: 'Wat kost een taxi van Brussel naar Zaventem?', answer: `Een Helicro-privétransfer van elk Brussels adres naar Brussels Airport kost ${priceBRU[0].price}€ voor 1–2 passagiers, ${priceBRU[1].price}€ voor 3–4 en ${priceBRU[2].price}€ voor 5–8, per voertuig, inclusief bagage en kinderzitjes. Een gewone taxi met meter kost doorgaans 45 tot 60€ voor één tot vier personen en meer ’s nachts.` },
+            { question: 'Wat kost een taxi van Brussel naar Zaventem?', answer: `Een Helicro-privétransfer van Brussel naar Brussels Airport begint vanaf ${priceBRU[0].price}€ voor 1–2 passagiers, vanaf ${priceBRU[1].price}€ voor 3–4 en vanaf ${priceBRU[2].price}€ voor 5–8. Dat is een startprijs, geen vast tarief. Een gewone taxi met meter kost doorgaans 45 tot 60€ voor één tot vier personen en meer ’s nachts.` },
             { question: 'Hoe lang duurt de rit van Brussel naar Brussels Airport?', answer: `De afstand is ongeveer ${fromBrussels.km} km. Buiten de spits duurt het ${fromBrussels.minMin} tot ${fromBrussels.maxMin} minuten; op weekdagen tussen 7u en 9u30 of 16u en 19u rekent u op maximaal 50 minuten via de E40 en de Brusselse ring.` },
             { question: 'Waar wacht de chauffeur op Brussels Airport?', answer: a.meetingPoint.nl },
             { question: 'Kunnen jullie mij ophalen voor een vlucht om 6u?', answer: 'Ja. Helicro rijdt 24 uur per dag tegen dezelfde vaste prijs. Voor een vertrek om 6u vanuit Brussel halen we u meestal op tussen 3u45 en 4u15, afhankelijk van uw adres.' },
@@ -292,7 +292,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
   } else {
     lead =
       code === 'BRU'
-        ? `Helicro vous conduit de n’importe quelle adresse en Belgique vers l’${name} en minivan Ford privé, à un prix fixé à l’avance : ${priceBRU[0].price}€ pour 1–2 passagers, ${priceBRU[1].price}€ pour 3–4 et ${priceBRU[2].price}€ pour 5–8 depuis Bruxelles. Accueil aux arrivées, suivi de vol en direct et sièges enfants gratuits inclus.`
+        ? `Helicro vous conduit de n’importe quelle adresse en Belgique vers l’${name} en minivan Ford privé. Depuis Bruxelles, le prix part de ${priceBRU[0].price}€ pour 1–2 passagers, dès ${priceBRU[1].price}€ pour 3–4 et dès ${priceBRU[2].price}€ pour 5–8. C’est un prix de départ, pas un tarif fixe. Accueil aux arrivées, suivi de vol en direct et sièges enfants gratuits inclus.`
         : code === 'CRL'
           ? `Helicro assure la navette entre toute adresse belge et l’${name} (CRL) en minivan Ford privé à prix fixe : ${priceCRL[0].price}€ pour 1 passager, ${priceCRL[1].price}€ pour 2, ${priceCRL[3].price}€ pour 4 et ${priceCRL[7].price}€ pour un 8 places complet depuis Bruxelles. Votre chauffeur suit les retards Ryanair et Wizz Air et vous attend dans le terminal.`
           : `Helicro propose des transferts privés transfrontaliers depuis Bruxelles et toute la Belgique vers l’${name}, à environ ${fromBrussels.km} km et ${fromBrussels.minMin} à ${fromBrussels.maxMin} minutes de Bruxelles, pour un prix fixe de ${priceLIL.tiers[0].price}€ pour 1 à 3 passagers et ${priceLIL.tiers[1].price}€ pour 4 à 8, par véhicule, péages compris. Sans changement de voiture à la frontière.`;
@@ -322,7 +322,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             h2: ui.fixedPrices,
             paragraphs: [
               code === 'BRU'
-                ? `De Bruxelles vers l’${name}, le prix fixe est de ${priceBRU[0].price}€ pour 1–2 passagers, ${priceBRU[1].price}€ pour 3–4 et ${priceBRU[2].price}€ pour 5–8, par véhicule, dépose à la zone Drop-off (P1 +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
+                ? `De Bruxelles vers l’${name}, le prix est dès ${priceBRU[0].price}€ pour 1–2 passagers, dès ${priceBRU[1].price}€ pour 3–4 et dès ${priceBRU[2].price}€ pour 5–8. Ce sont des prix de départ, pas un tarif fixe, par véhicule, dépose à la zone Drop-off (P1 +${FIXED_PRICES.bruP1Surcharge}€). ${ui.perVehicle}`
                 : `De Bruxelles vers l’${name}, le prix fixe commence à ${priceCRL[0].price}€ pour 1 passager et augmente avec la taille du groupe jusqu’à ${priceCRL[7].price}€ pour 8 passagers, par véhicule, porte à porte. ${ui.perVehicle}`,
             ],
             table: brusselsPriceTable(lang, code),
@@ -363,7 +363,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
     specificFaqs =
       code === 'BRU'
         ? [
-            { question: 'Combien coûte un taxi de Bruxelles à l’aéroport de Zaventem ?', answer: `Une navette privée Helicro depuis toute adresse bruxelloise vers Brussels Airport coûte ${priceBRU[0].price}€ pour 1–2 passagers, ${priceBRU[1].price}€ pour 3–4 et ${priceBRU[2].price}€ pour 5–8, par véhicule, bagages et sièges enfants compris. Un taxi au compteur revient généralement à 45–60€ pour une à quatre personnes, davantage la nuit.` },
+            { question: 'Combien coûte un taxi de Bruxelles à l’aéroport de Zaventem ?', answer: `Une navette privée Helicro de Bruxelles vers Brussels Airport part de ${priceBRU[0].price}€ pour 1–2 passagers, dès ${priceBRU[1].price}€ pour 3–4 et dès ${priceBRU[2].price}€ pour 5–8. C’est un prix de départ, pas un tarif fixe. Un taxi au compteur revient généralement à 45–60€ pour une à quatre personnes, davantage la nuit.` },
             { question: 'Combien de temps dure le trajet Bruxelles – Brussels Airport ?', answer: `La distance est d’environ ${fromBrussels.km} km. Hors heures de pointe, comptez ${fromBrussels.minMin} à ${fromBrussels.maxMin} minutes ; en semaine entre 7h et 9h30 ou 16h et 19h, prévoyez jusqu’à 50 minutes via l’E40 et le ring de Bruxelles.` },
             { question: 'Où le chauffeur attend-il à Brussels Airport ?', answer: a.meetingPoint.fr },
             { question: 'Pouvez-vous venir me chercher pour un vol à 6h ?', answer: 'Oui. Helicro roule 24 h/24 au même prix fixe. Pour un départ à 6h depuis Bruxelles, nous vous prenons en charge généralement entre 3h45 et 4h15 selon votre adresse.' },

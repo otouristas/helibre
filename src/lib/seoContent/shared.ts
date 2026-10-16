@@ -364,18 +364,25 @@ export function comparisonSection(lang: Locale, intro?: string): SeoSection {
 export function brusselsPriceTable(lang: Locale, airport: 'BRU' | 'CRL'): SeoTable {
   const ui = UI[lang];
   const rows = airport === 'BRU' ? FIXED_PRICES.brusselsToBRU : FIXED_PRICES.brusselsToCRL;
-  const suffix = airport === 'BRU' ? '*' : '';
+  const fromWord: Record<Locale, string> = { en: 'from', nl: 'vanaf', fr: 'dès', el: 'από', hr: 'od' };
+  const fromHeader: Record<Locale, string> = {
+    en: 'From (not a fixed fare)',
+    nl: 'Vanaf (geen vast tarief)',
+    fr: 'Dès (pas un tarif fixe)',
+    el: 'Από (όχι σταθερή τιμή)',
+    hr: 'Od (ne fiksna cijena)',
+  };
   const captions: Record<Locale, string> = {
-    en: airport === 'BRU' ? 'Brussels (any address) to Brussels Airport, Drop-off Area. *P1 drop-off +5€.' : 'Brussels (any address) to Brussels South Charleroi Airport, door to door.',
-    nl: airport === 'BRU' ? 'Brussel (elk adres) naar Brussels Airport, Drop-off zone. *P1 drop-off +5€.' : 'Brussel (elk adres) naar Brussels South Charleroi Airport, van deur tot deur.',
-    fr: airport === 'BRU' ? 'Bruxelles (toute adresse) vers Brussels Airport, zone Drop-off. *Dépose P1 +5€.' : 'Bruxelles (toute adresse) vers l’aéroport de Charleroi, porte à porte.',
-    el: airport === 'BRU' ? 'Βρυξέλλες (οποιαδήποτε διεύθυνση) προς Brussels Airport, ζώνη Drop-off. *Αποβίβαση P1 +5€.' : 'Βρυξέλλες (οποιαδήποτε διεύθυνση) προς αεροδρόμιο Charleroi, πόρτα σε πόρτα.',
-    hr: airport === 'BRU' ? 'Bruxelles (bilo koja adresa) do zračne luke Bruxelles, Drop-off zona. *Iskrcaj P1 +5€.' : 'Bruxelles (bilo koja adresa) do zračne luke Charleroi, od vrata do vrata.',
+    en: airport === 'BRU' ? 'FROM: starting prices for Brussels to Zaventem, not a fixed fare. Drop-off Area. *P1 drop-off +5€. The price rises with passengers and the exact address.' : 'Brussels (any address) to Brussels South Charleroi Airport, door to door.',
+    nl: airport === 'BRU' ? 'VANAF: startprijzen voor Brussel naar Zaventem, geen vast tarief. Drop-off zone. *P1 +5€. De prijs stijgt met het aantal passagiers en het exacte adres.' : 'Brussel (elk adres) naar Brussels South Charleroi Airport, van deur tot deur.',
+    fr: airport === 'BRU' ? 'DÈS : prix de départ Bruxelles–Zaventem, pas un tarif fixe. Zone Drop-off. *Dépose P1 +5€. Le prix augmente avec les passagers et l’adresse exacte.' : 'Bruxelles (toute adresse) vers l’aéroport de Charleroi, porte à porte.',
+    el: airport === 'BRU' ? 'ΑΠΟ: τιμές εκκίνησης Βρυξέλλες–Zaventem, όχι σταθερή τιμή. Ζώνη Drop-off. *P1 +5€. Η τιμή ανεβαίνει με τους επιβάτες και την ακριβή διεύθυνση.' : 'Βρυξέλλες (οποιαδήποτε διεύθυνση) προς αεροδρόμιο Charleroi, πόρτα σε πόρτα.',
+    hr: airport === 'BRU' ? 'OD: početne cijene Bruxelles–Zaventem, ne fiksna cijena. Drop-off zona. *P1 +5€. Cijena raste s brojem putnika i točnom adresom.' : 'Bruxelles (bilo koja adresa) do zračne luke Charleroi, od vrata do vrata.',
   };
   return {
     caption: captions[lang],
-    headers: [ui.passengers, ui.price],
-    rows: rows.map((r) => [r.pax, `${r.price}€${suffix}`]),
+    headers: [ui.passengers, airport === 'BRU' ? fromHeader[lang] : ui.price],
+    rows: rows.map((r) => [r.pax, airport === 'BRU' ? `${fromWord[lang]} ${r.price}€*` : `${r.price}€`]),
   };
 }
 

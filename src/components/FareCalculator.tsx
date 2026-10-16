@@ -138,24 +138,25 @@ export default function FareCalculator() {
         setPrice(crlPrices[passengers] ?? 160);
         setNote(ui.crlNote);
       } else {
+        const fromWord = lang === 'fr' ? 'DÈS' : lang === 'nl' ? 'VANAF' : lang === 'el' ? 'ΑΠΟ' : lang === 'hr' ? 'OD' : 'FROM';
         if (passengers === 1) {
-          setPrice('35€*');
+          setPrice(`${fromWord} 35€*`);
         } else if (passengers === 2) {
-          setPrice('40€*');
+          setPrice(`${fromWord} 40€*`);
         } else if (passengers <= 4) {
-          setPrice('45€*');
+          setPrice(`${fromWord} 45€*`);
         } else {
-          setPrice('55€*');
+          setPrice(`${fromWord} 55€*`);
         }
         setNote(lang === 'fr' 
-          ? '* Tarifs pour la dépose-minute (Drop off Area). Supplément de 5€ pour dépose au P1.' 
+          ? 'Prix de départ, pas un tarif fixe. Dépose-minute. Supplément de 5€ pour le P1.' 
           : (lang === 'nl' 
-              ? '* Prijzen gelden voor de Drop-off. Toeslag van 5€ voor drop-off bij P1.' 
+              ? 'Startprijs, geen vast tarief. Drop-off zone. Toeslag van 5€ voor P1.' 
               : (lang === 'el'
-                  ? '* Οι τιμές αφορούν τη ζώνη αποβίβασης (Drop off Area). Επιπλέον χρέωση 5€ για P1.'
+                  ? 'Τιμή εκκίνησης, όχι σταθερή τιμή. Ζώνη Drop-off. Επιπλέον 5€ για το P1.'
                   : (lang === 'hr'
-                      ? '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.'
-                      : '* Drop-off Area price. If you wish a drop-off at P1 Point, there is an extra charge of 5€.'
+                      ? 'Početna cijena, ne fiksna. Drop-off zona. Dodatnih 5€ za P1.'
+                      : 'Starting price, not a fixed fare. Drop-off Area. Extra 5€ for P1.'
                     )
                 )
             )

@@ -24,7 +24,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
   const ui = {
     en: {
       heroTitle: 'Premium Private Transfers & Minivans',
-      heroSubtitle: 'Fixed prices from Brussels to Zaventem (from 35€* Drop-off Area) & Charleroi (from 65€). Licensed Belgian chauffeur service with 30+ years of professional experience.',
+      heroSubtitle: 'Brussels to Zaventem from 35€ — a starting price, not a fixed fare. Charleroi from 65€. Licensed Belgian chauffeur service with 30+ years of professional experience.',
       badgeTrust: 'TRUSTED BELGIAN OPERATOR',
       whyTitle: 'Why travel with Helicro?',
       whyP1: "Helicro Transport is a fully licensed private passenger transfer operator based in Braine-l'Alleud, servicing Brussels, Wallonia, and Flanders.",
@@ -37,11 +37,13 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       f3Desc: 'Flat-rate quotes. No hidden luggage or traffic fees.',
       f4Title: '✓ Free Flight Tracking',
       f4Desc: 'Real-time arrivals monitoring to adjust pick-up times.',
-      ratesTitle: 'Popular Flat Rates',
-      ratesSubtitle: 'Check out our fixed flat rates for our spacious Ford Minivan up to 8 passengers. Perfect for families or business groups.',
+      ratesTitle: 'Popular prices',
+      ratesSubtitle: 'Brussels to Zaventem is a starting price (from), not a fixed fare. Charleroi and day tours are a fixed price per vehicle for up to 8 passengers.',
       rate1Title: 'Brussels to Zaventem (BRU)',
-      rate1Price: 'From 35€*',
-      rate1Note: '* Prices are from Drop-off Area. Extra 5€ for P1 drop-off. Up to 8 passengers, free child booster seats, flight tracking.',
+      rate1From: 'From',
+      rate1Amount: '35€*',
+      rate1NotFixed: 'Starting price, not a fixed fare.',
+      rate1Note: '* From the Drop-off Area. Extra 5€ for P1 drop-off. The price rises with passengers and the exact address. Up to 8 passengers, free child booster seats, flight tracking.',
       rate2Title: 'Brussels to Charleroi (CRL)',
       rate2Price: 'From 65€',
       rate2Note: '1: 65€ • 2: 75€ • 3: 90€ • 4: 110€ • 5: 120€ • 6: 130€ • 7: 140€ • 8: 160€. Flat rate, door-to-door.',
@@ -74,7 +76,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
     },
     nl: {
       heroTitle: 'Premium Privé-transfers & Minivans',
-      heroSubtitle: 'Vaste prijzen van Brussel naar Zaventem (vanaf 35€* Drop-off zone) & Charleroi (vanaf 65€). Gelicenseerde Belgische chauffeursdienst met meer dan 30 jaar professionele ervaring.',
+      heroSubtitle: 'Brussel naar Zaventem vanaf 35€ — een startprijs, geen vast tarief. Charleroi vanaf 65€. Gelicenseerde Belgische chauffeursdienst met meer dan 30 jaar professionele ervaring.',
       badgeTrust: 'VERTROUWDE BELGISCHE OPERATOR',
       whyTitle: 'Waarom reizen met Helicro?',
       whyP1: "Helicro Transport is een volledig gelicenseerde exploitant van privé-personenvervoer gevestigd in Braine-l'Alleud, die Brussel, Wallonië en Vlaanderen bedient.",
@@ -87,11 +89,13 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       f3Desc: 'Vaste offertes. Geen verborgen bagage- of filekosten.',
       f4Title: '✓ Gratis Vlucht Volgen',
       f4Desc: 'Realtime monitoring van aankomsten om ophaaltijden aan te passen.',
-      ratesTitle: 'Populaire Vaste Tarieven',
-      ratesSubtitle: 'Bekijk onze vaste tarieven voor onze ruime Ford Minivan tot 8 passagiers. Ideaal voor gezinnen of zakelijke groepen.',
+      ratesTitle: 'Populaire prijzen',
+      ratesSubtitle: 'Brussel naar Zaventem is een startprijs (vanaf), geen vast tarief. Charleroi en dagtochten zijn een vaste prijs per voertuig voor maximaal 8 passagiers.',
       rate1Title: 'Brussel naar Zaventem (BRU)',
-      rate1Price: 'Vanaf 35€*',
-      rate1Note: '* Prijzen zijn vanaf de Drop-off zone. Extra 5€ voor P1 drop-off. Tot 8 passagiers, gratis kinderzitjes, vlucht tracking.',
+      rate1From: 'Vanaf',
+      rate1Amount: '35€*',
+      rate1NotFixed: 'Startprijs, geen vast tarief.',
+      rate1Note: '* Vanaf de Drop-off zone. Extra 5€ voor P1. De prijs stijgt met het aantal passagiers en het exacte adres. Tot 8 passagiers, gratis kinderzitjes, vluchttracking.',
       rate2Title: 'Brussel naar Charleroi (CRL)',
       rate2Price: 'Vanaf 65€',
       rate2Note: '1: 65€ • 2: 75€ • 3: 90€ • 4: 110€ • 5: 120€ • 6: 130€ • 7: 140€ • 8: 160€. Vast tarief, van deur tot deur.',
@@ -124,7 +128,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
     },
     fr: {
       heroTitle: 'Transferts Privés & Minivans Premium',
-      heroSubtitle: "Tarifs fixes de Bruxelles à Zaventem (dès 35€* Dépose-minute) & Charleroi (dès 65€). Service de chauffeur belge agréé avec plus de 30 ans d'expérience.",
+      heroSubtitle: "Bruxelles vers Zaventem dès 35€ — un prix de départ, pas un tarif fixe. Charleroi dès 65€. Service de chauffeur belge agréé avec plus de 30 ans d'expérience.",
       badgeTrust: 'OPÉRATEUR BELGE DE CONFIANCE',
       whyTitle: 'Pourquoi voyager avec Helicro ?',
       whyP1: "Helicro Transport is un opérateur de transport privé de personnes entièrement agréé, basé à Braine-l'Alleud, desservant Bruxelles, la Wallonie et la Flandre.",
@@ -137,11 +141,13 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       f3Desc: 'Tarifs forfaitaires sans frais cachés de bagages ou de trafic.',
       f4Title: '✓ Suivi de Vol Gratuit',
       f4Desc: "Suivi des vols en temps réel pour ajuster l'heure de prise en charge.",
-      ratesTitle: 'Tarifs Fixes Populaires',
-      ratesSubtitle: "Découvrez nos tarifs forfaitaires fixes pour notre spacieux monospace Ford pouvant accueillir jusqu'à 8 passagers. Idéal pour les familles ou groupes d'affaires.",
+      ratesTitle: 'Prix populaires',
+      ratesSubtitle: "Bruxelles vers Zaventem est un prix de départ (dès), pas un tarif fixe. Charleroi et les excursions sont un prix fixe par véhicule jusqu'à 8 passagers.",
       rate1Title: 'Bruxelles à Zaventem (BRU)',
-      rate1Price: 'Dès 35€*',
-      rate1Note: "* Les tarifs s'entendent à partir du Dépose-minute. Supplément de 5€ pour le parking P1. Jusqu'à 8 passagers, sièges enfants gratuits, suivi de vol.",
+      rate1From: 'Dès',
+      rate1Amount: '35€*',
+      rate1NotFixed: 'Prix de départ, pas un tarif fixe.',
+      rate1Note: "* Dès la dépose-minute. Supplément de 5€ pour le P1. Le prix augmente avec le nombre de passagers et l'adresse exacte. Jusqu'à 8 passagers, sièges enfants gratuits, suivi de vol.",
       rate2Title: 'Bruxelles à Charleroi (CRL)',
       rate2Price: 'Dès 65€',
       rate2Note: '1 : 65€ • 2 : 75€ • 3 : 90€ • 4 : 110€ • 5 : 120€ • 6 : 130€ • 7 : 140€ • 8 : 160€. Tarif fixe, porte-à-porte.',
@@ -174,7 +180,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
     },
     el: {
       heroTitle: 'Premium Ιδιωτικές Μεταφορές & Minivans',
-      heroSubtitle: 'Σταθερές τιμές από Βρυξέλλες προς Zaventem (από 35€* Drop-off Area) & Charleroi (από 65€). Πιστοποιημένη βελγική υπηρεσία σοφέρ με 30+ χρόνια επαγγελματικής εμπειρίας.',
+      heroSubtitle: 'Βρυξέλλες προς Zaventem από 35€ — τιμή εκκίνησης, όχι σταθερή τιμή. Charleroi από 65€. Πιστοποιημένη βελγική υπηρεσία σοφέρ με 30+ χρόνια επαγγελματικής εμπειρίας.',
       badgeTrust: 'ΑΞΙΟΠΙΣΤΟΣ ΒΕΛΓΟΣ ΜΕΤΑΦΟΡΕΑΣ',
       whyTitle: 'Γιατί να ταξιδέψετε με την Helicro;',
       whyP1: "Η Helicro Transport είναι ένας πλήρως αδειοδοτημένος φορέας ιδιωτικών μεταφορών με έδρα το Braine-l'Alleud, που εξυπηρετεί τις Βρυξέλλες, τη Βαλλονία και τη Φλάνδρα.",
@@ -187,11 +193,13 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       f3Desc: "Κατ' αποκοπή τιμές. Χωρίς κρυφές χρεώσεις αποσκευών ή κίνησης.",
       f4Title: '✓ Δωρεάν Παρακολούθηση Πτήσης',
       f4Desc: 'Παρακολούθηση αφίξεων σε πραγματικό χρόνο για προσαρμογή της ώρας παραλαβής.',
-      ratesTitle: 'Δημοφιλείς Σταθερές Τιμές',
-      ratesSubtitle: 'Δείτε τις σταθερές τιμές μας για το ευρύχωρο Ford Minivan έως 8 επιβατών. Ιδανικό για οικογένειες ή επαγγελματικές ομάδες.',
+      ratesTitle: 'Δημοφιλείς τιμές',
+      ratesSubtitle: 'Βρυξέλλες προς Zaventem είναι τιμή εκκίνησης (από), όχι σταθερή τιμή. Charleroi και εκδρομές έχουν σταθερή τιμή ανά όχημα έως 8 επιβάτες.',
       rate1Title: 'Βρυξέλλες προς Zaventem (BRU)',
-      rate1Price: 'Από 35€*',
-      rate1Note: '* Οι τιμές αφορούν το Drop-off Area. Επιπλέον 5€ για το P1 drop-off. Έως 8 επιβάτες, δωρεάν παιδικά καθίσματα, παρακολούθηση πτήσης.',
+      rate1From: 'Από',
+      rate1Amount: '35€*',
+      rate1NotFixed: 'Τιμή εκκίνησης, όχι σταθερή τιμή.',
+      rate1Note: '* Από τη ζώνη Drop-off. Επιπλέον 5€ για το P1. Η τιμή ανεβαίνει με τους επιβάτες και την ακριβή διεύθυνση. Έως 8 επιβάτες, δωρεάν παιδικά καθίσματα, παρακολούθηση πτήσης.',
       rate2Title: 'Βρυξέλλες προς Charleroi (CRL)',
       rate2Price: 'Από 65€',
       rate2Note: '1: 65€ • 2: 75€ • 3: 90€ • 4: 110€ • 5: 120€ • 6: 130€ • 7: 140€ • 8: 160€. Σταθερή τιμή, πόρτα-πόρτα.',
@@ -224,7 +232,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
     },
     hr: {
       heroTitle: 'Premium privatni transferi i kombi vozila',
-      heroSubtitle: 'Fiksne cijene od Bruxellesa do Zaventema (od 35€* Drop-off zona) i Charleroia (od 65€). Licencirana belgijska usluga vozača s više od 30 godina profesionalnog iskustva.',
+      heroSubtitle: 'Bruxelles do Zaventema od 35€ — početna cijena, ne fiksna. Charleroi od 65€. Licencirana belgijska usluga vozača s više od 30 godina profesionalnog iskustva.',
       badgeTrust: 'POUZDANI BELGIJSKI OPERATER',
       whyTitle: 'Zašto putovati s Helicroom?',
       whyP1: "Helicro Transport je potpuno licencirani privatni operater za prijevoz putnika sa sjedištem u Braine-l'Alleudu, koji pruža usluge u Bruxellesu, Valoniji i Flandriji.",
@@ -237,11 +245,13 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       f3Desc: 'Paušalne ponude. Bez skrivenih naknada za prtljagu ili prometne gužve.',
       f4Title: '✓ Besplatno praćenje leta',
       f4Desc: 'Praćenje dolazaka u stvarnom vremenu za prilagodbu vremena preuzimanja.',
-      ratesTitle: 'Popularne fiksne cijene',
-      ratesSubtitle: 'Provjerite naše fiksne cijene za naš prostrani Ford kombi za do 8 putnika. Savršeno za obitelji ili poslovne grupe.',
+      ratesTitle: 'Popularne cijene',
+      ratesSubtitle: 'Bruxelles do Zaventema je početna cijena (od), ne fiksna. Charleroi i izleti imaju fiksnu cijenu po vozilu za do 8 putnika.',
       rate1Title: 'Bruxelles do Zaventem (BRU)',
-      rate1Price: 'Od 35€*',
-      rate1Note: '* Cijene su iz Drop-off zone. Dodatnih 5€ za P1 drop-off. Do 8 putnika, besplatne dječje sjedalice, praćenje leta.',
+      rate1From: 'Od',
+      rate1Amount: '35€*',
+      rate1NotFixed: 'Početna cijena, ne fiksna cijena.',
+      rate1Note: '* Od Drop-off zone. Dodatnih 5€ za P1. Cijena raste s brojem putnika i točnom adresom. Do 8 putnika, besplatne dječje sjedalice, praćenje leta.',
       rate2Title: 'Bruxelles do Charleroi (CRL)',
       rate2Price: 'Od 65€',
       rate2Note: '1: 65€ • 2: 75€ • 3: 90€ • 4: 110€ • 5: 120€ • 6: 130€ • 7: 140€ • 8: 160€. Fiksna cijena, od vrata do vrata.',
@@ -762,8 +772,16 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
               <h3 style={{ fontWeight: 800, fontSize: '16px', color: 'var(--primary-dark)', marginBottom: '8px' }}>
                 {ui.rate1Title}
               </h3>
-              <p style={{ color: 'var(--primary-light)', fontSize: '28px', fontWeight: 800, margin: '12px 0' }}>
-                {ui.rate1Price}
+              <p style={{ margin: '12px 0' }}>
+                <span style={{ display: 'inline-block', background: '#fef3c7', color: '#92400e', fontSize: '13px', fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '4px 10px', borderRadius: '999px', marginBottom: '8px' }}>
+                  {ui.rate1From}
+                </span>
+                <span style={{ display: 'block', color: 'var(--primary-light)', fontSize: '28px', fontWeight: 800 }}>
+                  {ui.rate1Amount}
+                </span>
+              </p>
+              <p style={{ fontSize: '14px', fontWeight: 800, color: '#92400e', marginBottom: '8px' }}>
+                {ui.rate1NotFixed}
               </p>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                 {ui.rate1Note}
