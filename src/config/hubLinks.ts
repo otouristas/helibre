@@ -24,7 +24,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       title: 'Long-distance and cross-border',
       links: [
         { href: '/en/route/charleroi-airport-antwerp', label: 'Charleroi Airport to Antwerp from 135€' },
-        { href: '/en/route/brussels-amsterdam', label: 'Brussels to Amsterdam / Schiphol from 250€' },
+        { href: '/en/route/brussels-amsterdam', label: 'Brussels to Amsterdam / Schiphol from 280€' },
         { href: '/en/route/brussels-paris-cdg', label: 'Brussels to Paris CDG from 380€' },
         { href: '/en/airport-transfer/lille', label: 'Brussels to Lille Airport from 150€' },
         { href: '/en/route/brussels-luxembourg', label: 'Brussels to Luxembourg from 260€' },
@@ -83,7 +83,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
         { href: '/nl/prijslijst', label: 'Volledige prijslijst 2026' },
         { href: '/nl/route/brussel-charleroi-gedeelde-shuttle', label: 'Gedeelde shuttle Charleroi vanaf 25€ pp' },
         { href: '/nl/route/charleroi-airport-antwerpen', label: 'Charleroi Airport – Antwerpen vanaf 135€' },
-        { href: '/nl/route/brussel-amsterdam', label: 'Brussel – Amsterdam / Schiphol vanaf 250€' },
+        { href: '/nl/route/brussel-amsterdam', label: 'Brussel – Amsterdam / Schiphol vanaf 280€' },
         { href: '/nl/route/brussel-parijs-cdg', label: 'Brussel – Parijs CDG vanaf 380€' },
         { href: '/nl/route/brussel-rijsel-luchthaven', label: 'Brussel – luchthaven Rijsel vanaf 150€' },
       ],
