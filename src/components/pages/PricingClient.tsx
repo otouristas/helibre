@@ -539,7 +539,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
             🇧🇪 {ui.btnWhatsapp}
           </a>
           <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
-            🇬🇷 WhatsApp Greece
+            🇬🇷 {translations[lang].whatsappGreece}
           </a>
         </div>
       </div>

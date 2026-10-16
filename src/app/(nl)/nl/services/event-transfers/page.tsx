@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'nl',
   title: 'Privé Evenemententransfers België | Luxe 8-Zitter Chauffeur | Helicro',
   description: PAGE_DESCRIPTION,
-  alternates: sharedPathAlternates('/services/event-transfers', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers'),
   image: '/images/event-service.jpg',
 });
 

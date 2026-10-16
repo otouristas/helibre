@@ -85,7 +85,15 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
 
         <p style={{ marginBottom: '24px', fontSize: '15px' }}>
           <a href={lang === 'en' ? '/services/event-transfers' : `/${lang}/services/event-transfers`} style={{ fontWeight: 700, color: 'var(--primary-dark)' }}>
-            {lang === 'nl' ? 'EU-toppen & evenemententransfers →' : lang === 'fr' ? 'Sommets UE & transferts événementiels →' : 'EU summits & Event Transfers →'}
+            {lang === 'nl'
+              ? 'EU-toppen & evenemententransfers →'
+              : lang === 'fr'
+                ? 'Sommets UE & transferts événementiels →'
+                : lang === 'el'
+                  ? 'Σύνοδοι ΕΕ και μεταφορές εκδηλώσεων →'
+                  : lang === 'hr'
+                    ? 'Sastanci EU i transferi za događaje →'
+                    : 'EU summits & Event Transfers →'}
           </a>
         </p>
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'fr',
   title: 'Transferts Événementiels Belgique | Chauffeur Minivan 8 Places | Helicro',
   description: PAGE_DESCRIPTION,
-  alternates: sharedPathAlternates('/services/event-transfers', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers'),
   image: '/images/event-service.jpg',
 });
 

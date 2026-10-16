@@ -39,7 +39,7 @@ export default function RootShell({ lang, children }: { lang: Locale; children: 
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
-        <JsonLd data={localBusinessSchema()} />
+        <JsonLd data={localBusinessSchema(lang)} />
         <HeaderLayout />
         <main style={{ flexGrow: 1 }}>{children}</main>
         <WhatsAppFloat />

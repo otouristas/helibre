@@ -60,7 +60,7 @@ export default function BlogArticle({ article }: { article: Article }) {
   const path = blogPath(article);
   const blogHub = lang === 'en' ? '/en/blog' : `/${lang}/blog`;
   const defaultEvent = article.slug.includes('tomorrowland') ? 'tomorrowland' : article.slug.includes('spa') ? 'spa_f1' : 'general';
-  const eventLang = (['en', 'nl', 'fr'] as const).includes(lang as 'en' | 'nl' | 'fr') ? (lang as 'en' | 'nl' | 'fr') : 'en';
+  const eventLang = lang;
 
   const schema: Record<string, unknown>[] = [
     articleSchema({ headline: article.title, description: article.excerpt, url: path, datePublished: article.datePublished, dateModified: article.dateModified, lang, image: article.image }),

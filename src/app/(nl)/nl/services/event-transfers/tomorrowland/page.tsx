@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'nl',
   title: 'Tomorrowland Privétransfers | Brussel naar Boom Chauffeur | Helicro',
   description: PAGE_DESCRIPTION,
-  alternates: sharedPathAlternates('/services/event-transfers/tomorrowland', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers/tomorrowland'),
   image: '/images/event-service.jpg',
 });
 

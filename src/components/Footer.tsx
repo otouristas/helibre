@@ -27,7 +27,7 @@ export default function Footer() {
       <div className={styles.grid}>
         {/* Column 1: Brand description */}
         <div className={styles.col}>
-          <img src="/images/logo-2.png" alt="Helicro Logo" className={styles.footerLogo} />
+          <img src="/images/logo-2.png" alt={t.logoAlt} className={styles.footerLogo} />
           <div className={styles.title}>Helicro Transport</div>
           <p className={styles.description}>
             {t.profileDesc}
@@ -93,7 +93,7 @@ export default function Footer() {
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span>Braine-l&apos;Alleud, 1420<br />Walloon Brabant, Belgium</span>
+            <span>Braine-l&apos;Alleud, 1420<br />{t.regionLine}</span>
           </div>
 
           <div className={styles.contactItem}>
@@ -113,7 +113,7 @@ export default function Footer() {
           </div>
 
           <div className={styles.contactItem} style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.5)', marginTop: '8px' }}>
-            <span>VAT ID: BE 0804.095.653<br />Helicro SRL</span>
+            <span>{t.vatId}: BE 0804.095.653<br />Helicro SRL</span>
           </div>
         </div>
       </div>

@@ -1,8 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { getLangFromPath, translations } from '@/config/translations';
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
+  const t = translations[getLangFromPath(pathname)];
   const [open, setOpen] = useState(false);
 
   return (
@@ -22,7 +26,7 @@ export default function WhatsAppFloat() {
           border: '1px solid #e8f5e9'
         }}>
           <p style={{ fontSize: '12px', fontWeight: 700, color: '#666', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
-            Chat on WhatsApp
+            {t.whatsappChat}
           </p>
 
           {/* Belgian number */}
@@ -45,7 +49,7 @@ export default function WhatsAppFloat() {
           >
             <span style={{ fontSize: '22px' }}>🇧🇪</span>
             <div>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#166534' }}>Belgium</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#166534' }}>{t.belgium}</div>
               <div style={{ fontSize: '12px', color: '#4b7c60' }}>+32 472 35 88 05</div>
             </div>
             <svg style={{ marginLeft: 'auto', color: '#25D366' }} width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -73,7 +77,7 @@ export default function WhatsAppFloat() {
           >
             <span style={{ fontSize: '22px' }}>🇬🇷</span>
             <div>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: '#166534' }}>Greece</div>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#166534' }}>{t.greece}</div>
               <div style={{ fontSize: '12px', color: '#4b7c60' }}>+30 697 458 1706</div>
             </div>
             <svg style={{ marginLeft: 'auto', color: '#25D366' }} width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -86,7 +90,7 @@ export default function WhatsAppFloat() {
       {/* Main floating button */}
       <button
         onClick={() => setOpen(o => !o)}
-        aria-label="Contact us on WhatsApp"
+        aria-label={t.whatsappContact}
         style={{
           width: '60px',
           height: '60px',

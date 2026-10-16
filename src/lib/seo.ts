@@ -16,6 +16,14 @@ export const OG_LOCALE: Record<Locale, string> = {
   hr: 'hr_HR',
 };
 
+export const OG_IMAGE_ALT: Record<Locale, string> = {
+  en: 'Helicro private airport transfers in Brussels',
+  nl: 'Helicro privé luchthavenvervoer in Brussel',
+  fr: 'Helicro, navette aéroport privée à Bruxelles',
+  el: 'Helicro, ιδιωτικές μεταφορές αεροδρομίου στις Βρυξέλλες',
+  hr: 'Helicro, privatni transferi do zračne luke u Bruxellesu',
+};
+
 export const LOCALE_NAMES: Record<Locale, string> = {
   en: 'English',
   nl: 'Nederlands',
@@ -84,12 +92,16 @@ export function pageMetadata(input: PageMetaInput): Metadata {
   const canonical = input.alternates[input.lang];
   const url = canonical ? absoluteUrl(canonical) : SITE_URL;
   const image = absoluteUrl(input.image ?? DEFAULT_OG_IMAGE);
+  const alternateLocale = (Object.keys(input.alternates) as Locale[])
+    .filter((l) => l !== input.lang && input.alternates[l])
+    .map((l) => OG_LOCALE[l]);
   const og: NonNullable<Metadata['openGraph']> = {
     title: input.title,
     description: input.description,
     url,
     siteName: SITE_NAME,
     locale: OG_LOCALE[input.lang],
+    alternateLocale,
     type: input.type ?? 'website',
     images: [{ url: image, width: 1200, height: 630, alt: input.title }],
   };
@@ -157,8 +169,9 @@ export function localeLayoutMetadata(lang: Locale): Metadata {
       url: absoluteUrl(localizePath('/', lang)),
       siteName: SITE_NAME,
       locale: OG_LOCALE[lang],
+      alternateLocale: LOCALES.filter((l) => l !== lang).map((l) => OG_LOCALE[l]),
       type: 'website',
-      images: [{ url: absoluteUrl(DEFAULT_OG_IMAGE), width: 1200, height: 630, alt: 'Helicro Brussels Airport Transfers' }],
+      images: [{ url: absoluteUrl(DEFAULT_OG_IMAGE), width: 1200, height: 630, alt: OG_IMAGE_ALT[lang] }],
     },
     twitter: {
       card: 'summary_large_image',

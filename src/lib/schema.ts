@@ -1,6 +1,8 @@
 import { AIRPORTS, DESTINATIONS, FIXED_PRICES, PRICED_ROUTES, SHARED_SHUTTLE, SPA_F1, type AirportCode } from '@/config/seoFacts';
-import { PRICED_ROUTE_URLS, PRICE_LIST_URLS, SHARED_SHUTTLE_URLS } from '@/config/pricedRoutePages';
+import { PRICED_ROUTE_URLS, SHARED_SHUTTLE_URLS, type PricedLang } from '@/config/pricedRoutePages';
+import { priceListHref } from '@/config/translations';
 import { AVERAGE_RATING, GOOGLE_MAPS_URL, REVIEW_COUNT, googleReviews } from '@/config/googleReviews';
+import type { Locale } from '@/lib/seo';
 
 export const SITE_URL = 'https://helicro.be';
 export const BUSINESS_PHONE = '+32472358805';
@@ -23,8 +25,37 @@ function aggregateRating() {
   };
 }
 
+const BUSINESS_COPY: Record<Locale, { description: string; jobTitle: string; region: string }> = {
+  en: {
+    description: 'Private airport transfers and chauffeur service in Brussels, with fixed prices and Ford minivans for up to 8 passengers.',
+    jobTitle: 'Founder and chauffeur',
+    region: 'Walloon Brabant',
+  },
+  nl: {
+    description: 'Privé luchthavenvervoer en chauffeursdienst in Brussel, met vaste prijzen en Ford minivans tot 8 passagiers.',
+    jobTitle: 'Oprichter en chauffeur',
+    region: 'Waals-Brabant',
+  },
+  fr: {
+    description: 'Navette aéroport privée et service de chauffeur à Bruxelles, prix fixes et minivans Ford jusqu’à 8 passagers.',
+    jobTitle: 'Fondateur et chauffeur',
+    region: 'Brabant wallon',
+  },
+  el: {
+    description: 'Ιδιωτικές μεταφορές αεροδρομίου και υπηρεσία σοφέρ στις Βρυξέλλες, με σταθερές τιμές και Ford minivan έως 8 επιβάτες.',
+    jobTitle: 'Ιδρυτής και σοφέρ',
+    region: 'Βαλλονική Βραβάντη',
+  },
+  hr: {
+    description: 'Privatni transferi do zračne luke i usluga vozača u Bruxellesu, fiksne cijene i Ford kombiji do 8 putnika.',
+    jobTitle: 'Osnivač i vozač',
+    region: 'Valonski Brabant',
+  },
+};
+
 /** Site-wide entity graph: Organization, WebSite, LocalBusiness/TaxiService and the founder. */
-export function siteGraph() {
+export function siteGraph(lang: Locale = 'en') {
+  const copy = BUSINESS_COPY[lang];
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -50,7 +81,7 @@ export function siteGraph() {
         '@type': 'Person',
         '@id': FOUNDER_ID,
         name: 'Gerasimos',
-        jobTitle: 'Founder and chauffeur',
+        jobTitle: copy.jobTitle,
         worksFor: { '@id': ORG_ID },
         knowsLanguage: ['en', 'fr', 'el'],
         image: `${SITE_URL}/images/gerasimos-portrait.jpg`,
@@ -68,6 +99,8 @@ export function siteGraph() {
         '@id': BUSINESS_ID,
         name: 'Helicro',
         legalName: 'Helicro SRL',
+        description: copy.description,
+        inLanguage: lang,
         url: SITE_URL,
         telephone: BUSINESS_PHONE,
         email: BUSINESS_EMAIL,
@@ -82,7 +115,7 @@ export function siteGraph() {
           '@type': 'PostalAddress',
           addressLocality: "Braine-l'Alleud",
           postalCode: '1420',
-          addressRegion: 'Walloon Brabant',
+          addressRegion: copy.region,
           addressCountry: 'BE',
         },
         geo: { '@type': 'GeoCoordinates', latitude: 50.6836, longitude: 4.3676 },
@@ -122,8 +155,8 @@ export function siteGraph() {
 }
 
 /** Kept for backwards compatibility; prefer siteGraph(). */
-export function localBusinessSchema() {
-  return siteGraph();
+export function localBusinessSchema(lang: Locale = 'en') {
+  return siteGraph(lang);
 }
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
@@ -249,9 +282,23 @@ export function reviewsSchema() {
   };
 }
 
+const CATALOG_COPY: Record<Locale, { name: string; serviceType: string; catalog: string; fromWord: string; vehicle: string; sharedDay: string; sharedNight: string; spa: string; tour: string; brussels: string; charleroi: string; zaventem: string }> = {
+  en: { name: 'Helicro fixed-price private transfers', serviceType: 'Airport transfer and long-distance chauffeur service', catalog: 'Helicro price list 2026', fromWord: 'from', vehicle: 'per vehicle', sharedDay: 'Shared shuttle Brussels to Charleroi Airport, per person, day', sharedNight: 'Shared shuttle Brussels to Charleroi Airport, per person, night', spa: 'Spa-Francorchamps race weekend, chauffeur and 8-seat minivan, per day', tour: 'Private full-day sightseeing tour, up to 8 passengers', brussels: 'Brussels', charleroi: 'Charleroi Airport', zaventem: 'Brussels Airport (Zaventem)' },
+  nl: { name: 'Helicro privévervoer met vaste prijzen', serviceType: 'Luchthavenvervoer en chauffeur over lange afstand', catalog: 'Prijslijst Helicro 2026', fromWord: 'vanaf', vehicle: 'per voertuig', sharedDay: 'Gedeelde shuttle Brussel naar Charleroi Airport, per persoon, dag', sharedNight: 'Gedeelde shuttle Brussel naar Charleroi Airport, per persoon, nacht', spa: 'Raceweekend Spa-Francorchamps, chauffeur en minivan 8 plaatsen, per dag', tour: 'Privé dagtocht, tot 8 passagiers', brussels: 'Brussel', charleroi: 'Charleroi Airport', zaventem: 'Brussels Airport (Zaventem)' },
+  fr: { name: 'Transferts privés Helicro à prix fixe', serviceType: 'Navette aéroport et chauffeur longue distance', catalog: 'Tarifs Helicro 2026', fromWord: 'dès', vehicle: 'par véhicule', sharedDay: 'Navette partagée Bruxelles vers Charleroi, par personne, jour', sharedNight: 'Navette partagée Bruxelles vers Charleroi, par personne, nuit', spa: 'Week-end de course Spa-Francorchamps, chauffeur et minivan 8 places, par jour', tour: 'Excursion privée d’une journée, jusqu’à 8 passagers', brussels: 'Bruxelles', charleroi: 'Aéroport de Charleroi', zaventem: 'Aéroport de Bruxelles (Zaventem)' },
+  el: { name: 'Ιδιωτικές μεταφορές Helicro με σταθερή τιμή', serviceType: 'Μεταφορά αεροδρομίου και σοφέρ μεγάλων αποστάσεων', catalog: 'Τιμοκατάλογος Helicro 2026', fromWord: 'από', vehicle: 'ανά όχημα', sharedDay: 'Κοινόχρηστο λεωφορείο Βρυξέλλες προς Charleroi, ανά άτομο, ημέρα', sharedNight: 'Κοινόχρηστο λεωφορείο Βρυξέλλες προς Charleroi, ανά άτομο, νύχτα', spa: 'Σαββατοκύριακο αγώνων Spa-Francorchamps, σοφέρ και minivan 8 θέσεων, ανά ημέρα', tour: 'Ιδιωτική ολοήμερη περιήγηση, έως 8 επιβάτες', brussels: 'Βρυξέλλες', charleroi: 'Αεροδρόμιο Charleroi', zaventem: 'Αεροδρόμιο Βρυξελλών (Zaventem)' },
+  hr: { name: 'Privatni transferi Helicro po fiksnoj cijeni', serviceType: 'Transfer do zračne luke i vozač na duljim relacijama', catalog: 'Cjenik Helicro 2026', fromWord: 'od', vehicle: 'po vozilu', sharedDay: 'Dijeljeni shuttle Bruxelles–Charleroi, po osobi, dan', sharedNight: 'Dijeljeni shuttle Bruxelles–Charleroi, po osobi, noć', spa: 'Vikend utrka Spa-Francorchamps, vozač i kombi s 8 sjedala, po danu', tour: 'Privatni cjelodnevni razgled, do 8 putnika', brussels: 'Bruxelles', charleroi: 'Zračna luka Charleroi', zaventem: 'Zračna luka Bruxelles (Zaventem)' },
+};
+
+function isPricedLang(lang: Locale): lang is PricedLang {
+  return lang === 'en' || lang === 'nl' || lang === 'fr';
+}
+
 /** Every published fixed price as an OfferCatalog, for the pricing and price-list pages. */
-export function priceCatalogSchema(lang: 'en' | 'nl' | 'fr' | 'el' | 'hr') {
-  const pageUrl = lang === 'en' || lang === 'nl' || lang === 'fr' ? PRICE_LIST_URLS[lang] : '/pricing';
+export function priceCatalogSchema(lang: Locale) {
+  const pageUrl = priceListHref(lang);
+  const copy = CATALOG_COPY[lang];
+  const localPath = (path: string) => (lang === 'en' ? path : `/${lang}${path}`);
   const offer = (name: string, price: number, url?: string) => ({
     '@type': 'Offer',
     name,
@@ -261,28 +308,30 @@ export function priceCatalogSchema(lang: 'en' | 'nl' | 'fr' | 'el' | 'hr') {
     url: abs(url ?? pageUrl),
     priceSpecification: { '@type': 'PriceSpecification', price, priceCurrency: 'EUR', valueAddedTaxIncluded: true },
   });
+  const routeUrl = (key: string) => (isPricedLang(lang) ? PRICED_ROUTE_URLS[key]?.[lang] : undefined);
   const offers = [
-    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`Brussels to Brussels Airport (Zaventem), from ${t.price}€, ${t.pax} passengers, starting price not a fixed fare`, t.price, '/en/route/brussels-zaventem')),
-    ...FIXED_PRICES.brusselsToCRL.map((t) => offer(`Brussels to Charleroi Airport, ${t.pax} passenger(s), per vehicle`, t.price, '/en/route/brussels-charleroi')),
-    offer('Shared shuttle Brussels to Charleroi Airport, per person, day', SHARED_SHUTTLE.perPassengerDay, SHARED_SHUTTLE_URLS.en),
-    offer('Shared shuttle Brussels to Charleroi Airport, per person, night', SHARED_SHUTTLE.perPassengerNight, SHARED_SHUTTLE_URLS.en),
+    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`${copy.brussels} – ${copy.zaventem}, ${copy.fromWord} ${t.price}€, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl('brussels-zaventem'))),
+    ...FIXED_PRICES.brusselsToCRL.map((t) => offer(`${copy.brussels} – ${copy.charleroi}, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl('brussels-charleroi'))),
+    offer(copy.sharedDay, SHARED_SHUTTLE.perPassengerDay, isPricedLang(lang) ? SHARED_SHUTTLE_URLS[lang] : pageUrl),
+    offer(copy.sharedNight, SHARED_SHUTTLE.perPassengerNight, isPricedLang(lang) ? SHARED_SHUTTLE_URLS[lang] : pageUrl),
     ...PRICED_ROUTES.flatMap((r) =>
-      r.tiers.map((t) => offer(`${r.from === 'crl' ? 'Charleroi Airport' : 'Brussels'} to ${DESTINATIONS[r.to].name.en}, ${t.pax} passengers, per vehicle`, t.price, PRICED_ROUTE_URLS[r.key]?.en))
+      r.tiers.map((t) => offer(`${r.from === 'crl' ? copy.charleroi : copy.brussels} – ${DESTINATIONS[r.to].name[lang]}, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl(r.key)))
     ),
-    offer('Spa-Francorchamps race weekend, chauffeur and 8-seat minivan, per day', SPA_F1.perDay, '/services/event-transfers/formula-1-spa-francorchamps'),
-    offer('Private full-day sightseeing tour, up to 8 passengers', FIXED_PRICES.dayTourFrom, '/services/sightseeing'),
+    offer(copy.spa, SPA_F1.perDay, localPath('/services/event-transfers/formula-1-spa-francorchamps')),
+    offer(copy.tour, FIXED_PRICES.dayTourFrom, localPath('/services/sightseeing')),
   ];
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Helicro fixed-price private transfers',
-    serviceType: 'Airport transfer and long-distance chauffeur service',
+    name: copy.name,
+    serviceType: copy.serviceType,
+    inLanguage: lang,
     provider: { '@id': BUSINESS_ID },
     areaServed: [{ '@type': 'Country', name: 'Belgium' }, { '@type': 'Country', name: 'France' }, { '@type': 'Country', name: 'Netherlands' }, { '@type': 'Country', name: 'Germany' }, { '@type': 'Country', name: 'Luxembourg' }],
     url: abs(pageUrl),
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Helicro price list 2026',
+      name: copy.catalog,
       itemListElement: offers,
     },
   };

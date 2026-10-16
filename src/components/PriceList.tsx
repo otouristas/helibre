@@ -4,15 +4,16 @@ import JsonLd from '@/components/JsonLd';
 import GoogleReviews from '@/components/GoogleReviews';
 import { DESTINATIONS, FIXED_PRICES, PRICED_ROUTES, SHARED_SHUTTLE, SPA_F1, type DestinationCountry } from '@/config/seoFacts';
 import { BOOKING_POLICIES } from '@/config/bookingPolicies';
-import { PRICED_ROUTE_URLS, PRICE_LIST_URLS, SHARED_SHUTTLE_URLS, type PricedLang } from '@/config/pricedRoutePages';
+import { PRICED_ROUTE_URLS, SHARED_SHUTTLE_URLS, type PricedLang } from '@/config/pricedRoutePages';
+import { PRICE_LIST_PATHS, translations } from '@/config/translations';
 import { breadcrumbSchema, faqSchema, priceCatalogSchema } from '@/lib/schema';
-import { LOCALE_NAMES } from '@/lib/seo';
+import { LOCALE_NAMES, type Locale } from '@/lib/seo';
 import styles from './SeoLanding.module.css';
 
 const WA = 'https://wa.me/32472358805';
 const BOOK = 'https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM';
 
-const T: Record<PricedLang, Record<string, string>> = {
+const T: Record<Locale, Record<string, string>> = {
   en: {
     home: 'Home',
     pricing: 'Pricing',
@@ -142,9 +143,95 @@ const T: Record<PricedLang, Record<string, string>> = {
     other: 'Cette page dans d’autres langues',
     seeRoute: 'page du trajet',
   },
+  el: {
+    home: 'Αρχική',
+    pricing: 'Τιμές',
+    h1: 'Τιμοκατάλογος Helicro 2026: κάθε σταθερή τιμή ανά minivan',
+    lead: 'Όλες οι τιμές της Helicro είναι σταθερές ανά όχημα (έως 8 επιβάτες), με ΦΠΑ, ίδιες μέρα και νύχτα, και επιβεβαιώνονται γραπτώς πριν ταξιδέψετε. Η διαδρομή Βρυξέλλες–Zaventem είναι η εξαίρεση: τα ποσά είναι τιμές εκκίνησης (από), όχι σταθερό ναύλο. Οι αποσκευές, τα παιδικά καθίσματα και η παρακολούθηση πτήσης περιλαμβάνονται. Η δωρεάν αναμονή στο αεροδρόμιο είναι 60 λεπτά μετά την προσγείωση για πτήσεις Σένγκεν και 80 λεπτά για πτήσεις εκτός Σένγκεν.',
+    zaventem: 'Βρυξέλλες προς αεροδρόμιο Βρυξελλών (Zaventem)',
+    zaventemFromNotice: 'ΑΠΟ — οι τιμές Βρυξέλλες–Zaventem είναι τιμές εκκίνησης, όχι σταθερός ναύλος.',
+    fromWord: 'από',
+    priceFrom: 'Από (όχι σταθερός ναύλος)',
+    zaventemNote: 'Οποιαδήποτε διεύθυνση στις Βρυξέλλες προς τη ζώνη Drop-off μπροστά από τις αναχωρήσεις. Αποβίβαση στο P1 +5€. Το ποσό αυξάνεται με τους επιβάτες και την ακριβή διεύθυνση. Η πόλη και το αεροδρόμιο απέχουν 14 χλμ, 20 έως 35 λεπτά εκτός αιχμής.',
+    charleroi: 'Βρυξέλλες προς αεροδρόμιο Charleroi, ιδιωτική μεταφορά',
+    charleroiNote: 'Οποιαδήποτε διεύθυνση στις Βρυξέλλες προς το Kiss & Ride μπροστά από τον τερματικό σταθμό Charleroi, από πόρτα σε πόρτα, 60 χλμ σε 55 έως 70 λεπτά. Η ίδια τιμή ισχύει και στην αντίθετη κατεύθυνση.',
+    shared: 'Βρυξέλλες προς αεροδρόμιο Charleroi, κοινόχρηστο λεωφορείο',
+    sharedNote: `Θέση σε minivan, παραλαβή στην πόρτα σας, έως ${SHARED_SHUTTLE.maxPassengers} επιβάτες ανά όχημα. Ημέρα 06:00 έως 22:00, νύχτα 22:00 έως 06:00.`,
+    belgium: 'Βέλγιο: άλλοι προορισμοί',
+    france: 'Γαλλία',
+    netherlands: 'Ολλανδία',
+    germany: 'Γερμανία',
+    luxembourg: 'Λουξεμβούργο',
+    routeNote: 'Από τις Βρυξέλλες (οποιαδήποτε διεύθυνση) ή το αεροδρόμιο Βρυξελλών, ανά όχημα, και προς τις δύο κατευθύνσεις. Οι γραμμές από το αεροδρόμιο Charleroi ξεκινούν από τον τερματικό σταθμό.',
+    events: 'Εκδηλώσεις',
+    passengers: 'Επιβάτες',
+    price: 'Σταθερή τιμή',
+    route: 'Διαδρομή',
+    p13: '1–3 επιβάτες',
+    p48: '4–8 επιβάτες',
+    perPerson: 'Ανά άτομο',
+    day: 'Ημέρα',
+    night: 'Νύχτα',
+    tomorrowland: 'Βρυξέλλες προς Tomorrowland (Boom)',
+    spa: 'Σαββατοκύριακο αγώνων Spa-Francorchamps (F1, WEC, 24 Ώρες): σοφέρ και minivan 8 θέσεων',
+    spaPrice: `${SPA_F1.perDay}€ την ημέρα, με επιστροφή, συνήθως για ${SPA_F1.typicalDays} ημέρες`,
+    dayTour: 'Ιδιωτική ολοήμερη περιήγηση (Μπρυζ, Γάνδη, Durbuy, Waterloo), έως 8 επιβάτες',
+    dayTourPrice: `από ${FIXED_PRICES.dayTourFrom}€ ανά όχημα`,
+    extras: 'Επιπλέον χρεώσεις και όροι',
+    faq: 'Συχνές ερωτήσεις',
+    cta: 'Κλείστε τη μεταφορά σας σε σταθερή τιμή',
+    ctaText: 'Στείλτε ημερομηνία, διεύθυνση παραλαβής, προορισμό, αριθμό πτήσης και επιβάτες στο WhatsApp ή μέσω της φόρμας. Λαμβάνετε τη σταθερή τιμή γραπτώς μέσα σε λίγα λεπτά.',
+    wa: 'Προσφορά μέσω WhatsApp',
+    book: 'Online κράτηση',
+    other: 'Αυτή η σελίδα σε άλλες γλώσσες',
+    seeRoute: 'σελίδα διαδρομής',
+  },
+  hr: {
+    home: 'Početna',
+    pricing: 'Cijene',
+    h1: 'Cjenik Helicro 2026: svaka fiksna cijena po kombiju',
+    lead: 'Sve cijene Helicra su fiksne po vozilu (do 8 putnika), s PDV-om, iste danju i noću, i potvrđuju se pismeno prije putovanja. Bruxelles–Zaventem je iznimka: ti iznosi su početne cijene (od), a ne fiksna vozarina. Prtljaga, dječje sjedalice i praćenje leta su uključeni. Besplatno čekanje u zračnoj luci je 60 minuta nakon slijetanja za Schengen letove i 80 minuta za letove izvan Schengena.',
+    zaventem: 'Bruxelles do zračne luke Bruxelles (Zaventem)',
+    zaventemFromNotice: 'OD — cijene Bruxelles–Zaventem su početne cijene, ne fiksna vozarina.',
+    fromWord: 'od',
+    priceFrom: 'Od (nije fiksna vozarina)',
+    zaventemNote: 'Bilo koja adresa u Bruxellesu do Drop-off zone ispred odlazaka. Iskrcaj na P1 +5€. Iznos raste s brojem putnika i točnom adresom. Grad i zračna luka su udaljeni 14 km, 20 do 35 minuta izvan špice.',
+    charleroi: 'Bruxelles do zračne luke Charleroi, privatni transfer',
+    charleroiNote: 'Bilo koja adresa u Bruxellesu do Kiss & Ride zone ispred terminala Charleroi, od vrata do vrata, 60 km u 55 do 70 minuta. Ista cijena vrijedi i u suprotnom smjeru.',
+    shared: 'Bruxelles do zračne luke Charleroi, dijeljeni shuttle',
+    sharedNote: `Sjedalo u kombiju, preuzimanje na vašoj adresi, najviše ${SHARED_SHUTTLE.maxPassengers} putnika po vozilu. Dan 06:00 do 22:00, noć 22:00 do 06:00.`,
+    belgium: 'Belgija: ostala odredišta',
+    france: 'Francuska',
+    netherlands: 'Nizozemska',
+    germany: 'Njemačka',
+    luxembourg: 'Luksemburg',
+    routeNote: 'Iz Bruxellesa (bilo koja adresa) ili zračne luke Bruxelles, po vozilu, u oba smjera. Redovi iz zračne luke Charleroi kreću od terminala.',
+    events: 'Događaji',
+    passengers: 'Putnici',
+    price: 'Fiksna cijena',
+    route: 'Ruta',
+    p13: '1–3 putnika',
+    p48: '4–8 putnika',
+    perPerson: 'Po osobi',
+    day: 'Dan',
+    night: 'Noć',
+    tomorrowland: 'Bruxelles do Tomorrowlanda (Boom)',
+    spa: 'Vikend utrka Spa-Francorchamps (F1, WEC, 24 sata): vozač i kombi s 8 sjedala',
+    spaPrice: `${SPA_F1.perDay}€ po danu, povrat uključen, obično ${SPA_F1.typicalDays} dana`,
+    dayTour: 'Privatni cjelodnevni razgled (Bruges, Ghent, Durbuy, Waterloo), do 8 putnika',
+    dayTourPrice: `od ${FIXED_PRICES.dayTourFrom}€ po vozilu`,
+    extras: 'Dodaci i uvjeti',
+    faq: 'Česta pitanja',
+    cta: 'Rezervirajte transfer po fiksnoj cijeni',
+    ctaText: 'Pošaljite datum, adresu preuzimanja, odredište, broj leta i broj putnika putem WhatsAppa ili obrasca. Fiksnu cijenu dobivate pismeno u nekoliko minuta.',
+    wa: 'Ponuda putem WhatsAppa',
+    book: 'Rezervirajte online',
+    other: 'Ova stranica na drugim jezicima',
+    seeRoute: 'stranica rute',
+  },
 };
 
-const EXTRAS: Record<PricedLang, string[]> = {
+const EXTRAS: Record<Locale, string[]> = {
   en: [
       `P1 drop-off at Brussels Airport: +${FIXED_PRICES.bruP1Surcharge}€`,
       BOOKING_POLICIES.en.airportWaitingShort,
@@ -175,9 +262,29 @@ const EXTRAS: Record<PricedLang, string[]> = {
       'Paiement par carte, virement, facture ou espèces ; facture TVA de Helicro SRL sur demande',
       'Tout autre point de départ ou destination en Belgique et dans les pays voisins : devis fixe écrit en quelques minutes',
   ],
+  el: [
+      `Αποβίβαση στο P1 στο αεροδρόμιο Βρυξελλών: +${FIXED_PRICES.bruP1Surcharge}€`,
+      BOOKING_POLICIES.el.airportWaitingShort,
+      `Επιπλέον στάση στη διαδρομή: ${FIXED_PRICES.extraStop}€ ανά στάση`,
+      'Χωρίς νυχτερινή προσαύξηση στις ιδιωτικές μεταφορές',
+      `Δωρεάν ακύρωση ή αλλαγή έως ${FIXED_PRICES.cancellationHours} ώρες πριν την παραλαβή για τις συνηθισμένες μεταφορές`,
+      BOOKING_POLICIES.el.multiDayShort,
+      'Πληρωμή με κάρτα, έμβασμα, τιμολόγιο ή μετρητά· τιμολόγιο ΦΠΑ από τη Helicro SRL κατόπιν αιτήματος',
+      'Οποιαδήποτε άλλη αφετηρία ή προορισμός στο Βέλγιο και τις γειτονικές χώρες: σταθερή γραπτή τιμή μέσα σε λίγα λεπτά',
+  ],
+  hr: [
+      `Iskrcaj na P1 u zračnoj luci Bruxelles: +${FIXED_PRICES.bruP1Surcharge}€`,
+      BOOKING_POLICIES.hr.airportWaitingShort,
+      `Dodatno zaustavljanje na ruti: ${FIXED_PRICES.extraStop}€ po zaustavljanju`,
+      'Nema noćne doplati na privatnim transferima',
+      `Besplatno otkazivanje ili izmjena do ${FIXED_PRICES.cancellationHours} sati prije preuzimanja za standardne transfere`,
+      BOOKING_POLICIES.hr.multiDayShort,
+      'Plaćanje karticom, bankovnim transferom, računom ili gotovinom; PDV račun Helicro SRL na zahtjev',
+      'Bilo koje drugo polazište ili odredište u Belgiji i susjednim zemljama: fiksna pismena cijena u nekoliko minuta',
+  ],
 };
 
-const FAQS: Record<PricedLang, { question: string; answer: string }[]> = {
+const FAQS: Record<Locale, { question: string; answer: string }[]> = {
   en: [
     { question: 'Are Helicro prices per person or per vehicle?', answer: 'Per vehicle, except the shared shuttle to Charleroi Airport which is per person. A private minivan price covers everyone on board, up to 8 passengers, with luggage and child seats.' },
     { question: 'Do prices from Brussels also apply from Brussels Airport?', answer: 'Yes. Every route listed from Brussels can start or end at Brussels Airport (Zaventem) for the same fixed price.' },
@@ -198,6 +305,20 @@ const FAQS: Record<PricedLang, { question: string; answer: string }[]> = {
     { question: 'Y a-t-il un supplément de nuit ?', answer: `Non. Les navettes privées coûtent le même prix 24 h/24. Seule la navette partagée a un tarif de nuit de ${SHARED_SHUTTLE.perPassengerNight}€ par personne entre 22h et 6h.` },
     { question: 'Et si ma ville n’est pas dans la liste ?', answer: 'Envoyez votre adresse de départ et votre destination sur WhatsApp et vous recevez un prix fixe par minivan en quelques minutes. Helicro roule partout en Belgique et vers la France, les Pays-Bas, l’Allemagne et le Luxembourg.' },
     { question: 'Les péages sont-ils compris vers la France, les Pays-Bas, l’Allemagne ou le Luxembourg ?', answer: 'Oui. Les prix transfrontaliers comprennent les péages, le carburant et le retour du chauffeur ; rien à ajouter à destination.' },
+  ],
+  el: [
+    { question: 'Οι τιμές της Helicro είναι ανά άτομο ή ανά όχημα;', answer: 'Ανά όχημα, εκτός από το κοινόχρηστο λεωφορείο προς το αεροδρόμιο Charleroi που είναι ανά άτομο. Η τιμή του ιδιωτικού minivan καλύπτει όλους τους επιβάτες, έως 8, με αποσκευές και παιδικά καθίσματα.' },
+    { question: 'Οι τιμές από τις Βρυξέλλες ισχύουν και από το αεροδρόμιο Βρυξελλών;', answer: 'Ναι. Κάθε διαδρομή από τις Βρυξέλλες μπορεί να ξεκινά ή να τελειώνει στο αεροδρόμιο Βρυξελλών (Zaventem) στην ίδια σταθερή τιμή.' },
+    { question: 'Υπάρχει νυχτερινή προσαύξηση;', answer: `Όχι. Οι ιδιωτικές μεταφορές κοστίζουν το ίδιο 24 ώρες το 24ωρο. Μόνο το κοινόχρηστο λεωφορείο έχει νυχτερινή τιμή ${SHARED_SHUTTLE.perPassengerNight}€ ανά άτομο μεταξύ 22:00 και 06:00.` },
+    { question: 'Τι γίνεται αν η πόλη μου δεν είναι στη λίστα;', answer: 'Στείλτε τη διεύθυνση παραλαβής και τον προορισμό στο WhatsApp και λαμβάνετε σταθερή τιμή ανά minivan μέσα σε λίγα λεπτά. Η Helicro οδηγεί παντού στο Βέλγιο και προς Γαλλία, Ολλανδία, Γερμανία και Λουξεμβούργο.' },
+    { question: 'Περιλαμβάνονται τα διόδια προς Γαλλία, Ολλανδία, Γερμανία ή Λουξεμβούργο;', answer: 'Ναι. Οι διασυνοριακές τιμές περιλαμβάνουν διόδια, καύσιμα και την επιστροφή του οδηγού. Στον προορισμό δεν προστίθεται τίποτα.' },
+  ],
+  hr: [
+    { question: 'Jesu li cijene Helicra po osobi ili po vozilu?', answer: 'Po vozilu, osim dijeljenog shuttlea do zračne luke Charleroi koji je po osobi. Cijena privatnog kombija pokriva sve putnike, do 8, s prtljagom i dječjim sjedalicama.' },
+    { question: 'Vrijede li cijene iz Bruxellesa i iz zračne luke Bruxelles?', answer: 'Da. Svaka ruta iz Bruxellesa može početi ili završiti u zračnoj luci Bruxelles (Zaventem) po istoj fiksnoj cijeni.' },
+    { question: 'Postoji li noćna doplata?', answer: `Ne. Privatni transferi koštaju isto 24 sata dnevno. Samo dijeljeni shuttle ima noćnu cijenu od ${SHARED_SHUTTLE.perPassengerNight}€ po osobi između 22:00 i 06:00.` },
+    { question: 'Što ako mog grada nema na popisu?', answer: 'Pošaljite adresu preuzimanja i odredište putem WhatsAppa i u nekoliko minuta dobivate fiksnu cijenu po kombiju. Helicro vozi po cijeloj Belgiji te u Francusku, Nizozemsku, Njemačku i Luksemburg.' },
+    { question: 'Jesu li cestarine uključene na putovanjima u Francusku, Nizozemsku, Njemačku ili Luksemburg?', answer: 'Da. Prekogranične cijene uključuju cestarine, gorivo i povratak vozača. Na odredištu se ništa ne dodaje.' },
   ],
 };
 
@@ -230,18 +351,31 @@ function Table({ headers, rows, caption }: { headers: string[]; rows: React.Reac
 const SHARED_DAY = [25, 50, 75, 90, 110, 120, 130];
 const SHARED_NIGHT = [30, 60, 80, 100, 115, 125, 135];
 
-export default function PriceList({ lang }: { lang: PricedLang }) {
+const ORIGIN: Record<Locale, { brussels: string; crl: string }> = {
+  en: { brussels: 'Brussels', crl: 'Charleroi Airport' },
+  nl: { brussels: 'Brussel', crl: 'Charleroi Airport' },
+  fr: { brussels: 'Bruxelles', crl: 'Aéroport de Charleroi' },
+  el: { brussels: 'Βρυξέλλες', crl: 'Αεροδρόμιο Charleroi' },
+  hr: { brussels: 'Bruxelles', crl: 'Zračna luka Charleroi' },
+};
+
+function isPricedLang(lang: Locale): lang is PricedLang {
+  return lang === 'en' || lang === 'nl' || lang === 'fr';
+}
+
+export default function PriceList({ lang }: { lang: Locale }) {
   const t = T[lang];
-  const url = PRICE_LIST_URLS[lang];
+  const url = PRICE_LIST_PATHS[lang];
   const home = lang === 'en' ? '/' : `/${lang}`;
   const pricing = lang === 'en' ? '/pricing' : `/${lang}/pricing`;
   const F = FIXED_PRICES;
+  const pricedLang = isPricedLang(lang) ? lang : null;
 
   const routeRows = (from: 'brussels' | 'crl', country: DestinationCountry, exclude: string[] = []) =>
     PRICED_ROUTES.filter((r) => r.from === from && DESTINATIONS[r.to].country === country && !exclude.includes(r.to)).map((r) => {
       const d = DESTINATIONS[r.to];
-      const href = PRICED_ROUTE_URLS[r.key]?.[lang];
-      const label = `${from === 'crl' ? (lang === 'fr' ? 'Aéroport de Charleroi' : 'Charleroi Airport') : lang === 'en' ? 'Brussels' : lang === 'nl' ? 'Brussel' : 'Bruxelles'} – ${d.name[lang]}`;
+      const href = pricedLang ? PRICED_ROUTE_URLS[r.key]?.[pricedLang] : undefined;
+      const label = `${ORIGIN[lang][from]} – ${d.name[lang]}`;
       return [href ? <Link key={r.key} href={href}>{label}</Link> : label, `${r.tiers[0].price}€`, `${r.tiers[1].price}€`];
     });
 
@@ -255,13 +389,14 @@ export default function PriceList({ lang }: { lang: PricedLang }) {
     ]),
   ];
 
-  const otherLangs = (Object.keys(PRICE_LIST_URLS) as PricedLang[]).filter((l) => l !== lang);
+  const otherLangs = (Object.keys(PRICE_LIST_PATHS) as Locale[]).filter((l) => l !== lang);
+  const shuttleHref = pricedLang ? SHARED_SHUTTLE_URLS[pricedLang] : undefined;
 
   return (
     <div className="section">
       <div className="container">
         <JsonLd data={schema} />
-        <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+        <nav className={styles.breadcrumbs} aria-label={translations[lang].breadcrumb}>
           <Link href={home}>{t.home}</Link>
           <span>/</span>
           <Link href={pricing}>{t.pricing}</Link>
@@ -284,7 +419,7 @@ export default function PriceList({ lang }: { lang: PricedLang }) {
 
             <h2 className={styles.h2}>{t.shared}</h2>
             <p>
-              {t.sharedNote} <Link href={SHARED_SHUTTLE_URLS[lang]}>{t.seeRoute}</Link>
+              {t.sharedNote}{shuttleHref ? <> <Link href={shuttleHref}>{t.seeRoute}</Link></> : null}
             </p>
             <Table headers={[t.passengers, t.day, t.night]} rows={SHARED_DAY.map((p, i) => [`${i + 1}`, `${p}€`, `${SHARED_NIGHT[i]}€`])} />
 
@@ -353,7 +488,7 @@ export default function PriceList({ lang }: { lang: PricedLang }) {
             <p className={styles.langs}>
               {t.other}:{' '}
               {otherLangs.map((l) => (
-                <Link href={PRICE_LIST_URLS[l]} key={l} hrefLang={l}>
+                <Link href={PRICE_LIST_PATHS[l]} key={l} hrefLang={l}>
                   {LOCALE_NAMES[l]}
                 </Link>
               ))}

@@ -15,6 +15,20 @@ export const translations = {
     contact: 'Contact',
     bookAirport: 'Book Airport Transfer',
     bookOther: 'Book Other Services',
+    selectLanguage: 'Select language',
+    menu: 'Menu',
+    openMenu: 'Open navigation menu',
+    closeMenu: 'Close menu',
+    logoAlt: 'Helicro logo',
+    breadcrumb: 'Breadcrumb',
+    whatsappChat: 'Chat on WhatsApp',
+    whatsappContact: 'Contact us on WhatsApp',
+    belgium: 'Belgium',
+    greece: 'Greece',
+    whatsappBelgium: 'WhatsApp (Belgium)',
+    whatsappGreece: 'WhatsApp (Greece)',
+    regionLine: 'Walloon Brabant, Belgium',
+    vatId: 'VAT ID',
     
     // Services drop list
     sightseeing: 'Private Sightseeing',
@@ -69,9 +83,23 @@ export const translations = {
     contact: 'Contact',
     bookAirport: 'Boek luchthaven',
     bookOther: 'Andere diensten',
+    selectLanguage: 'Taal kiezen',
+    menu: 'Menu',
+    openMenu: 'Navigatiemenu openen',
+    closeMenu: 'Menu sluiten',
+    logoAlt: 'Helicro-logo',
+    breadcrumb: 'Broodkruimelpad',
+    whatsappChat: 'Chat via WhatsApp',
+    whatsappContact: 'Contact via WhatsApp',
+    belgium: 'België',
+    greece: 'Griekenland',
+    whatsappBelgium: 'WhatsApp (België)',
+    whatsappGreece: 'WhatsApp (Griekenland)',
+    regionLine: 'Waals-Brabant, België',
+    vatId: 'BTW-nummer',
     
     // Services drop list
-    sightseeing: 'Privé Sightseeing',
+    sightseeing: 'Privé rondritten',
     airportTransfers: 'Luchthavenvervoer',
     corporateShuttle: 'Zakelijk Vervoer',
     parcelDelivery: 'Pakketbezorging',
@@ -123,6 +151,20 @@ export const translations = {
     contact: 'Contact',
     bookAirport: 'Réserver aéroport',
     bookOther: 'Autres services',
+    selectLanguage: 'Choisir la langue',
+    menu: 'Menu',
+    openMenu: 'Ouvrir le menu',
+    closeMenu: 'Fermer le menu',
+    logoAlt: 'Logo Helicro',
+    breadcrumb: 'Fil d’Ariane',
+    whatsappChat: 'Discuter sur WhatsApp',
+    whatsappContact: 'Nous contacter sur WhatsApp',
+    belgium: 'Belgique',
+    greece: 'Grèce',
+    whatsappBelgium: 'WhatsApp (Belgique)',
+    whatsappGreece: 'WhatsApp (Grèce)',
+    regionLine: 'Brabant wallon, Belgique',
+    vatId: 'N° TVA',
     
     // Services drop list
     sightseeing: 'Excursions Privées',
@@ -173,10 +215,24 @@ export const translations = {
     reviews: 'ΚΡΙΤΙΚΕΣ',
     services: 'ΥΠΗΡΕΣΙΕΣ',
     fleet: 'ΣΤΟΛΟΣ',
-    faq: 'FAQ',
+    faq: 'ΕΡΩΤΗΣΕΙΣ',
     contact: 'ΕΠΙΚΟΙΝΩΝΙΑ',
     bookAirport: 'Κράτηση αεροδρομίου',
     bookOther: 'Κράτηση άλλων υπηρεσιών',
+    selectLanguage: 'Επιλογή γλώσσας',
+    menu: 'Μενού',
+    openMenu: 'Άνοιγμα μενού',
+    closeMenu: 'Κλείσιμο μενού',
+    logoAlt: 'Λογότυπο Helicro',
+    breadcrumb: 'Διαδρομή πλοήγησης',
+    whatsappChat: 'Συνομιλία στο WhatsApp',
+    whatsappContact: 'Επικοινωνία μέσω WhatsApp',
+    belgium: 'Βέλγιο',
+    greece: 'Ελλάδα',
+    whatsappBelgium: 'WhatsApp (Βέλγιο)',
+    whatsappGreece: 'WhatsApp (Ελλάδα)',
+    regionLine: 'Βαλλονική Βραβάντη, Βέλγιο',
+    vatId: 'ΑΦΜ',
     
     // Services drop list
     sightseeing: 'ΙΔΙΩΤΙΚΕΣ ΠΕΡΙΗΓΗΣΕΙΣ',
@@ -231,6 +287,20 @@ export const translations = {
     contact: 'Kontakt',
     bookAirport: 'Rezerviraj aerodrom',
     bookOther: 'Ostale usluge',
+    selectLanguage: 'Odaberite jezik',
+    menu: 'Izbornik',
+    openMenu: 'Otvori izbornik',
+    closeMenu: 'Zatvori izbornik',
+    logoAlt: 'Logotip Helicro',
+    breadcrumb: 'Putanja',
+    whatsappChat: 'Razgovor na WhatsAppu',
+    whatsappContact: 'Kontakt putem WhatsAppa',
+    belgium: 'Belgija',
+    greece: 'Grčka',
+    whatsappBelgium: 'WhatsApp (Belgija)',
+    whatsappGreece: 'WhatsApp (Grčka)',
+    regionLine: 'Valonski Brabant, Belgija',
+    vatId: 'PDV',
     
     // Services drop list
     sightseeing: 'Privatni razgledi',
@@ -273,15 +343,21 @@ export const translations = {
   }
 };
 
-/** Full published price list. Greek and Croatian use the English list. */
+/** Published price list path for every locale. Dutch and French keep their existing slugs. */
+export const PRICE_LIST_PATHS: Record<Locale, string> = {
+  en: '/price-list',
+  nl: '/nl/prijslijst',
+  fr: '/fr/tarifs',
+  el: '/el/price-list',
+  hr: '/hr/price-list',
+};
+
 export function priceListHref(lang: Locale): string {
-  if (lang === 'nl') return '/nl/prijslijst';
-  if (lang === 'fr') return '/fr/tarifs';
-  return '/price-list';
+  return PRICE_LIST_PATHS[lang];
 }
 
 export function isPriceListPath(pathname: string): boolean {
-  return pathname === '/price-list' || pathname.startsWith('/nl/prijslijst') || pathname.startsWith('/fr/tarifs');
+  return Object.values(PRICE_LIST_PATHS).some((path) => pathname === path);
 }
 
 /** Airport and city-to-city booking form. */

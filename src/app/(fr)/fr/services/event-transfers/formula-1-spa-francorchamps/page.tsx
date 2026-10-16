@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
   lang: 'fr',
   title: 'Transferts F1 Spa-Francorchamps & Motorsport | Chauffeur Privé | Helicro',
   description: PAGE_DESCRIPTION,
-  alternates: sharedPathAlternates('/services/event-transfers/formula-1-spa-francorchamps', ['en', 'nl', 'fr']),
+  alternates: sharedPathAlternates('/services/event-transfers/formula-1-spa-francorchamps'),
   image: '/images/event-service.jpg',
 });
 

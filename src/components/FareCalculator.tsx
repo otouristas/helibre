@@ -27,6 +27,9 @@ export default function FareCalculator() {
       private: 'Private Transfer',
       shared: 'Shared Shuttle',
       route: 'Route',
+      routeCrl: 'Brussels ↔ Charleroi Airport (CRL)',
+      routeBru: 'Brussels ↔ Brussels Airport (BRU)',
+      routeOther: 'Other Cities (Custom Route)',
       timeOfDay: 'Time of Day',
       day: 'Day (06:00 - 22:00)',
       night: 'Night (22:00 - 06:00)',
@@ -46,6 +49,9 @@ export default function FareCalculator() {
       private: 'Privé Transfer',
       shared: 'Gedeelde Shuttle',
       route: 'Route',
+      routeCrl: 'Brussel ↔ Luchthaven Charleroi (CRL)',
+      routeBru: 'Brussel ↔ Luchthaven Brussel (BRU)',
+      routeOther: 'Andere steden (aangepaste route)',
       timeOfDay: 'Tijdstip',
       day: 'Overdag (06:00 - 22:00)',
       night: 'Nacht (22:00 - 06:00)',
@@ -65,6 +71,9 @@ export default function FareCalculator() {
       private: 'Transfert Privé',
       shared: 'Navette Partagée',
       route: 'Trajet',
+      routeCrl: 'Bruxelles ↔ Aéroport Charleroi (CRL)',
+      routeBru: 'Bruxelles ↔ Aéroport Bruxelles (BRU)',
+      routeOther: 'Autres Villes (Sur Mesure)',
       timeOfDay: 'Période de la Journée',
       day: 'Jour (06:00 - 22:00)',
       night: 'Nuit (22:00 - 06:00)',
@@ -82,8 +91,11 @@ export default function FareCalculator() {
     el: {
       title: 'Υπολογισμός Κόστους',
       private: 'Ιδιωτική Μεταφορά',
-      shared: 'Κοινόχρηστο Shuttle',
+      shared: 'Κοινόχρηστη μεταφορά',
       route: 'Διαδρομή',
+      routeCrl: 'Βρυξέλλες ↔ Αεροδρόμιο Charleroi (CRL)',
+      routeBru: 'Βρυξέλλες ↔ Αεροδρόμιο Βρυξελλών (BRU)',
+      routeOther: 'Άλλες πόλεις (προσαρμοσμένη διαδρομή)',
       timeOfDay: 'Ωρα της Ημέρας',
       day: 'Ημέρα (06:00 - 22:00)',
       night: 'Νύχτα (22:00 - 06:00)',
@@ -95,14 +107,17 @@ export default function FareCalculator() {
       quoteRequired: 'Απαιτείται Προσφορά',
       otherNote: 'Οι τιμές για διαδρομές εκτός πόλης ή εξατομικευμένες είναι προσαρμοσμένες. Κάντε κλικ παρακάτω για προσφορά.',
       crlNote: '*Εκτιμώμενη τιμή. Οι τιμές ενδέχεται να διαφέρουν κατά +/- 10€ ανάλογα με την τοποθεσία παραλαβής, τις αποσκευές και την ώρα.',
-      bruSharedNote: 'Τα κοινόχρηστα shuttles εκτελούνται μόνο για τη διαδρομή Βρυξέλλες <-> Αεροδρόμιο Charleroi. Επιλέξτε Ιδιωτική Μεταφορά.',
+      bruSharedNote: 'Οι κοινόχρηστες μεταφορές εκτελούνται μόνο για τη διαδρομή Βρυξέλλες <-> Αεροδρόμιο Charleroi. Επιλέξτε Ιδιωτική Μεταφορά.',
       sharedNote: 'Οι κοινόχρηστες μεταφορές περιλαμβάνουν την παραλαβή και άλλων επιβατών. Οι χρόνοι αναμονής ελαχιστοποιούνται.'
     },
     hr: {
       title: 'Procijenite svoju cijenu',
       private: 'Privatni transfer',
-      shared: 'Zajednički shuttle',
+      shared: 'Zajednički prijevoz',
       route: 'Ruta',
+      routeCrl: 'Bruxelles ↔ Zračna luka Charleroi (CRL)',
+      routeBru: 'Bruxelles ↔ Zračna luka Bruxelles (BRU)',
+      routeOther: 'Drugi gradovi (ruta po mjeri)',
       timeOfDay: 'Doba dana',
       day: 'Dan (06:00 - 22:00)',
       night: 'Noć (22:00 - 06:00)',
@@ -114,7 +129,7 @@ export default function FareCalculator() {
       quoteRequired: 'Potrebna ponuda',
       otherNote: 'Cijene za međugradske i druge prilagođene rute izrađuju se po mjeri. Kliknite ispod kako biste zatražili izravnu ponudu.',
       crlNote: '*Procijenjena cijena. Cijene mogu varirati +/- 10 € ovisno o lokaciji preuzimanja, količini prtljage i vremenu preuzimanja.',
-      bruSharedNote: 'Zajednički shuttle dostupan je samo za rutu Brisel <-> Zračna luka Charleroi. Odaberite Privatni transfer.',
+      bruSharedNote: 'Zajednički prijevoz dostupan je samo za rutu Bruxelles <-> Zračna luka Charleroi. Odaberite Privatni transfer.',
       sharedNote: 'Zajednički prijevoz uključuje preuzimanje drugih putnika. Vrijeme čekanja je svedeno na minimum.'
     }
   }[lang];
@@ -218,11 +233,11 @@ export default function FareCalculator() {
           value={route}
           onChange={(e) => setRoute(e.target.value as RouteType)}
         >
-          <option value="crl">{lang === 'fr' ? 'Bruxelles ↔ Aéroport Charleroi (CRL)' : (lang === 'nl' ? 'Brussel ↔ Luchthaven Charleroi (CRL)' : 'Brussels ↔ Charleroi Airport (CRL)')}</option>
+          <option value="crl">{ui.routeCrl}</option>
           {type === 'private' && (
-            <option value="bru">{lang === 'fr' ? 'Bruxelles ↔ Aéroport Bruxelles (BRU)' : (lang === 'nl' ? 'Brussel ↔ Luchthaven Brussel (BRU)' : 'Brussels ↔ Brussels Airport (BRU)')}</option>
+            <option value="bru">{ui.routeBru}</option>
           )}
-          <option value="other">{lang === 'fr' ? 'Autres Villes (Sur Mesure)' : (lang === 'nl' ? 'Andere Steden (Aangepaste Route)' : 'Other Cities (Custom Route)')}</option>
+          <option value="other">{ui.routeOther}</option>
         </select>
       </div>
 

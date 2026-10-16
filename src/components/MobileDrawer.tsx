@@ -57,8 +57,8 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       {/* Slide-out Drawer */}
       <aside className={`${styles.drawer} ${isOpen ? styles.drawerOpen : ''}`}>
         <div className={styles.header}>
-          <img src="/images/logo-2.png" alt="Helicro Logo" className={styles.logo} />
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close menu">
+          <img src="/images/logo-2.png" alt={t.logoAlt} className={styles.logo} />
+          <button className={styles.closeBtn} onClick={onClose} aria-label={t.closeMenu}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -67,7 +67,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </div>
 
         {/* Language Grid */}
-        <div className={styles.sectionTitle}>Select Language</div>
+        <div className={styles.sectionTitle}>{t.selectLanguage}</div>
         <div className={styles.langGrid}>
           <Link href="/" className={isLangActive('en')} onClick={onClose}>EN</Link>
           <Link href="/nl" className={isLangActive('nl')} onClick={onClose}>NL</Link>

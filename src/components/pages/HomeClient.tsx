@@ -335,7 +335,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       question: {
         en: 'What is your cancellation and booking change policy?',
         nl: 'Wat is jullie annulerings- en wijzigingsbeleid?',
-        fr: 'Quelle is votre politique d’annulation et de modification ?',
+        fr: 'Quelle est votre politique d’annulation et de modification ?',
         el: 'Ποια είναι η πολιτική ακύρωσης και αλλαγής κράτησης;',
         hr: 'Kakva su vaša pravila o otkazivanju i izmjenama rezervacija?'
       }[lang],
