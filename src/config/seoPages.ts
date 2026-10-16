@@ -452,7 +452,7 @@ export const seoPages: SEOPage[] = [
     "url": "/en/day-trip/bruges",
     "h1": "Private Bruges day trip from Brussels",
     "keyword": "bruges day trip from brussels",
-    "title": "Private Bruges Day Trip From Brussels | Driver From 380€ | Helicro",
+    "title": "Private Bruges Day Trip From Brussels | Driver From 400€ | Helicro",
     "description": "Tailored Bruges day trip with private driver. Canals, lace, chocolate, gothic gems and lunch stops at your own pace.",
     "priority": "HIGH"
   },
@@ -461,7 +461,7 @@ export const seoPages: SEOPage[] = [
     "url": "/en/day-trip/ghent",
     "h1": "Private Ghent day trip from Brussels",
     "keyword": "ghent day trip from brussels",
-    "title": "Private Ghent Day Trip From Brussels | Driver From 380€ | Helicro",
+    "title": "Private Ghent Day Trip From Brussels | Driver From 400€ | Helicro",
     "description": "Private day tour to Ghent from Brussels: cathedral, castle, historic quarter and street art with an English-speaking driver.",
     "priority": "HIGH"
   },

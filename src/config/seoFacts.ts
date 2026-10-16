@@ -293,7 +293,7 @@ export const FIXED_PRICES = {
   /** Hourly equivalent of waitingPer30Min. Kept so older copy can still resolve. */
   waitingPerHour: 30,
   extraStop: 10,
-  dayTourFrom: 380,
+  dayTourFrom: 400,
   cancellationHours: 24,
   /** Deposit for multi-day exclusive vehicle-and-driver bookings, percent of the agreed price. */
   multiDayDepositPercent: 20,
