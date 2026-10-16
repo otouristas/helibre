@@ -180,6 +180,7 @@
   line-height: 1.65;
   color: var(--text-secondary);
   margin: 0;
+  white-space: pre-line;
 }
 
 .clamp {
