@@ -27,10 +27,10 @@ export const seoPages: SEOPage[] = [
   {
     "type": "Airport hub",
     "url": "/en/airport-transfer/brussels-zaventem",
-    "h1": "Brussels Airport (Zaventem) taxi and private transfer",
-    "keyword": "taxi brussels airport",
-    "title": "Taxi Brussels Airport (Zaventem) | Private Transfer From 35€ | Helicro",
-    "description": "Private taxi and minivan transfer to Brussels Airport (BRU) from any Belgian address. Fixed price from 35€, meet and greet in arrivals, live flight tracking, child seats, 24/7.",
+    "h1": "Private Brussels Airport Transfers, Available 24/7",
+    "keyword": "brussels airport transfers",
+    "title": "Brussels Airport Transfers (BRU) | Taxi & Chauffeur 24/7 | Helicro",
+    "description": "Book a private Brussels Airport transfer from 35€. Chauffeur, flight monitoring and door-to-door service across Belgium, 24/7. Not a helicopter.",
     "priority": "HIGH"
   },
   {

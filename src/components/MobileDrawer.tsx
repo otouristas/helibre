@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { BRUSSELS_AIRPORT_NAV } from '@/config/hubLinks';
 import { AIRPORT_BOOKING_URL, getLangFromPath, isPriceListPath, OTHER_SERVICES_BOOKING_URL, priceListHref, translations } from '@/config/translations';
 import styles from './MobileDrawer.module.css';
 
@@ -16,6 +17,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
   const lang = getLangFromPath(pathname);
   const t = translations[lang];
+  const brusselsAirportNav = BRUSSELS_AIRPORT_NAV[lang];
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -117,6 +119,11 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             <Link href={localizePath('/services/airport')} className={isServiceActive('/services/airport')} onClick={onClose}>
               {t.airportTransfers}
             </Link>
+            {brusselsAirportNav && (
+              <Link href={brusselsAirportNav.href} className={isServiceActive(brusselsAirportNav.href)} onClick={onClose}>
+                {brusselsAirportNav.label}
+              </Link>
+            )}
             <Link href={localizePath('/services/corporate')} className={isServiceActive('/services/corporate')} onClick={onClose}>
               {t.corporateShuttle}
             </Link>

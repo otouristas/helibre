@@ -102,7 +102,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
   if (lang === 'en') {
     lead =
       code === 'BRU'
-        ? `Helicro drives you from any address in Belgium to ${name} in a private Ford minivan. From Brussels city the price starts from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8. That is a starting price, not a fixed fare. Meet and greet in arrivals, live flight tracking and free child seats are included.`
+        ? `Private Brussels Airport transfers with Helicro, the pre-booked alternative to a metered Brussels Airport taxi, start from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8, per vehicle, between any Brussels address and ${name}. That is a starting price, not a fixed fare. Meet and greet in arrivals, live flight monitoring, free child seats and 24/7 pickup are included.`
         : code === 'CRL'
           ? `Helicro drives you between any Belgian address and ${name} (CRL) in a private Ford minivan for a fixed price: ${priceCRL[0].price}€ for 1 passenger, ${priceCRL[1].price}€ for 2, ${priceCRL[3].price}€ for 4 and ${priceCRL[7].price}€ for a full 8-seater from Brussels. Your driver tracks Ryanair and Wizz Air delays and waits inside the terminal.`
           : `Helicro provides private cross-border transfers from Brussels and the whole of Belgium to ${name}, about ${fromBrussels.km} km and ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes from Brussels, for a fixed ${priceLIL.tiers[0].price}€ for 1 to 3 passengers and ${priceLIL.tiers[1].price}€ for 4 to 8, per vehicle, tolls included. An English-speaking driver and no change of vehicle at the French border.`;
@@ -110,7 +110,8 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
       code === 'BRU'
         ? [
             `Brussels Airport at Zaventem is Belgium’s main hub with well over 20 million passengers a year, and the road from the city centre is only ${fromBrussels.km} km, yet a late train, a full parking lot or a metered taxi can turn it into the most stressful part of a trip. A pre-booked Helicro transfer removes that uncertainty: you know the driver, the vehicle and the price before you leave home.`,
-            'Every ride is handled by Gerasimos or one of his licensed Helicro drivers, with more than 30 years of accident-free driving in Belgium. The same fixed rate applies at 4:30 in the morning for the first Ryanair departure as at midnight after a delayed long-haul arrival.',
+            'Every ride is handled by Gerasimos or one of his licensed Helicro drivers, with more than 30 years of accident-free driving in Belgium. The same rate applies at 4:30 in the morning for the first departure as at midnight after a delayed long-haul arrival.',
+            'Helicro is a licensed chauffeur and private minivan company, not a helicopter service. Brussels Airport transfers run in a Ford Transit Custom or Tourneo Custom for up to 8 passengers and 8 large suitcases. Fixed routes from the airport include Brussels, Leuven, Antwerp, Ghent, Bruges, Charleroi and Lille.',
           ]
         : code === 'CRL'
           ? [
@@ -184,7 +185,8 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             { question: 'How much is a taxi from Brussels to Zaventem airport?', answer: `A Helicro private transfer from Brussels to Brussels Airport starts from ${priceBRU[0].price}€ for 1–2 passengers, from ${priceBRU[1].price}€ for 3–4 and from ${priceBRU[2].price}€ for 5–8. That is a starting price, not a fixed fare. A metered street taxi typically costs 45 to 60€ for one to four people and more at night.` },
             { question: 'How long does the transfer from Brussels to Brussels Airport take?', answer: `The distance is about ${fromBrussels.km} km. Outside peak hours it takes ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes; between 7:00 and 9:30 or 16:00 and 19:00 on weekdays plan for up to 50 minutes on the E40 and the Brussels ring.` },
             { question: 'Where does the driver wait at Brussels Airport?', answer: a.meetingPoint.en },
-            { question: 'Can you pick me up for a 6:00 flight?', answer: 'Yes. Helicro operates 24 hours a day at the same fixed price. For a 6:00 departure from Brussels city we usually collect you between 3:45 and 4:15 depending on your address.' },
+            { question: 'Can you pick me up for a 6:00 flight?', answer: 'Yes. Helicro operates 24 hours a day at the same rate. For a 6:00 departure from Brussels city we usually collect you between 3:45 and 4:15 depending on your address.' },
+            { question: 'Is a Helicro Brussels Airport transfer a helicopter flight?', answer: 'No. Helicro is a licensed chauffeur and private minivan service. The transfer is a door-to-door road journey, with the driver waiting in the arrivals hall with a name sign.' },
           ]
         : code === 'CRL'
           ? [
@@ -407,7 +409,10 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
     relatedGroups.push({ title: ui.routes, links: EN_ROUTES[code] });
     relatedGroups.push({
       title: ui.hubs,
-      links: (['BRU', 'CRL', 'LIL'] as AirportCode[]).filter((c) => c !== code).map((c) => ({ href: AIRPORTS[c].hub.en!, label: `${AIRPORTS[c].name.en} transfers` })),
+      links: (['BRU', 'CRL', 'LIL'] as AirportCode[]).filter((c) => c !== code).map((c) => ({
+        href: AIRPORTS[c].hub.en!,
+        label: c === 'BRU' ? 'Brussels Airport transfers' : `${AIRPORTS[c].name.en} transfers`,
+      })),
     });
     relatedGroups.push({
       title: ui.services,

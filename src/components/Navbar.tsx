@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { BRUSSELS_AIRPORT_NAV } from '@/config/hubLinks';
 import { AIRPORT_BOOKING_URL, getLangFromPath, isPriceListPath, OTHER_SERVICES_BOOKING_URL, priceListHref, translations } from '@/config/translations';
 import styles from './Navbar.module.css';
 
@@ -16,6 +17,7 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
 
   const lang = getLangFromPath(pathname);
   const t = translations[lang];
+  const brusselsAirportNav = BRUSSELS_AIRPORT_NAV[lang];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,6 +140,11 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
               <div className={styles.dropdown}>
                 <Link href={localizePath('/services/sightseeing')} className={styles.dropdownItem}>{t.sightseeing}</Link>
                 <Link href={localizePath('/services/airport')} className={styles.dropdownItem}>{t.airportTransfers}</Link>
+                {brusselsAirportNav && (
+                  <Link href={brusselsAirportNav.href} className={`${styles.dropdownItem} ${pathname === brusselsAirportNav.href ? styles.dropdownItemActive : ''}`}>
+                    {brusselsAirportNav.label}
+                  </Link>
+                )}
                 <Link href={localizePath('/services/corporate')} className={styles.dropdownItem}>{t.corporateShuttle}</Link>
                 <Link href={localizePath('/services/parcel')} className={styles.dropdownItem}>{t.parcelDelivery}</Link>
                 <Link href={localizePath('/services/event-transfers')} className={styles.dropdownItem}>{t.eventTransfers}</Link>
