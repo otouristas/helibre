@@ -468,7 +468,7 @@ const T2 = (a: number, b: number): PriceTier[] => [
 
 /** Fixed prices per vehicle, VAT included, from Brussels (city or Brussels Airport) and from Charleroi Airport. */
 export const PRICED_ROUTES: PricedRoute[] = [
-  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 85) },
+  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 90) },
   { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(100, 120) },
   { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(130, 150) },
   { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(75, 100) },
