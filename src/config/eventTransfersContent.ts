@@ -72,7 +72,8 @@ export const eventTransfersHub: Record<EventLang, EventTransferContent> = {
     ctaText: 'Tell us your event date, group size, and pickup location for an instant flat-rate quote.',
     relatedTitle: 'Also explore',
     related: [
-      { href: '/services/airport', label: 'Airport Transfers' },
+      { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
+      { href: '/en/airport-transfer/brussels-charleroi', label: 'Charleroi Airport transfers' },
       { href: '/services/corporate', label: 'Corporate Shuttle' },
       { href: '/services/events', label: 'Weddings & Private Parties' },
       { href: '/fleet', label: 'Our Fleet' },
@@ -312,7 +313,7 @@ export const tomorrowlandContent: Record<EventLang, EventTransferContent> = {
         href: '/services/event-transfers/formula-1-spa-francorchamps',
         label: 'Spa-Francorchamps F1 Transfers',
       },
-      { href: '/services/airport', label: 'Airport Transfers' },
+      { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
       { href: '/en/blog/tomorrowland-2026-vip-group-transport', label: 'Tomorrowland Transport Guide' },
     ],
     defaultEvent: 'tomorrowland',
@@ -548,6 +549,7 @@ export const spaMotorsportContent: Record<EventLang, EventTransferContent> = {
     related: [
       { href: '/services/event-transfers', label: 'All Event Transfers' },
       { href: '/services/event-transfers/tomorrowland', label: 'Tomorrowland Transfers' },
+      { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
       { href: '/services/corporate', label: 'Corporate Shuttle' },
       { href: '/en/blog/spa-francorchamps-f1-transfer-guide', label: 'F1 Spa Travel Guide' },
     ],

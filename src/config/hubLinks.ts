@@ -11,7 +11,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
     {
       title: 'Airport transfers',
       links: [
-        { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport (Zaventem) taxi & transfer' },
+        { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
         { href: '/en/airport-transfer/brussels-charleroi', label: 'Charleroi Airport taxi & transfer' },
         { href: '/en/airport-transfer/lille', label: 'Lille Airport transfer' },
         { href: '/en/route/brussels-zaventem', label: 'Brussels to Zaventem from 35€' },
@@ -164,6 +164,13 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       ],
     },
   ],
+};
+
+/** Services-menu link to the dedicated Brussels Airport hub. Greek and Croatian have no separate hub page. */
+export const BRUSSELS_AIRPORT_NAV: Partial<Record<Locale, { href: string; label: string }>> = {
+  en: { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
+  nl: { href: '/nl/luchthavenvervoer/zaventem', label: 'Luchthavenvervoer Zaventem' },
+  fr: { href: '/fr/navette/aeroport-bruxelles', label: 'Navette aéroport Bruxelles' },
 };
 
 export const HUB_SECTION_TITLE: Record<Locale, { title: string; subtitle: string }> = {

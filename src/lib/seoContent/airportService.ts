@@ -54,7 +54,7 @@ const COPY: Record<Locale, Copy> = {
       {
         title: 'Airport transfer pages',
         links: [
-          { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport (Zaventem) transfers' },
+          { href: '/en/airport-transfer/brussels-zaventem', label: 'Brussels Airport transfers' },
           { href: '/en/airport-transfer/brussels-charleroi', label: 'Charleroi Airport transfers' },
           { href: '/en/airport-transfer/lille', label: 'Lille Airport transfers' },
           { href: '/en/route/brussels-zaventem', label: 'Brussels to Zaventem route' },

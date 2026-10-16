@@ -40,7 +40,7 @@
 - Event transfers hub: https://helicro.be/services/event-transfers
 
 ## Airport transfer landing pages
-- Brussels Airport (Zaventem) taxi and transfer: https://helicro.be/en/airport-transfer/brussels-zaventem
+- Brussels Airport transfers (BRU, private chauffeur, not a helicopter): https://helicro.be/en/airport-transfer/brussels-zaventem
 - Charleroi Airport taxi and transfer: https://helicro.be/en/airport-transfer/brussels-charleroi
 - Lille Airport transfer: https://helicro.be/en/airport-transfer/lille
 - Luchthavenvervoer Zaventem (NL): https://helicro.be/nl/luchthavenvervoer/zaventem
