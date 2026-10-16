@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import ServiceTemplate from '@/components/ServiceTemplate';
 import ServiceRequest from '@/components/ServiceRequest';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 import GoogleReviews from '@/components/GoogleReviews';
 
 export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
@@ -19,7 +20,7 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       title: 'Corporate Shuttle Services',
       p1: 'Professional service for professional people. Allow us to coordinate your large group airport arrivals at a reasonable cost.',
       p2: 'We will handle important details like vehicle size, creating passenger pick up groups, and providing dedicated greeters to escort your guests.',
-      p3: 'Our expert dispatch team tracks flights in real-time to ensure that we pull up right on schedule, no matter if your arrival is early or delayed.'
+      p3: 'Our dispatch team tracks flights in real time so the pickup follows the actual landing time, whether the flight is early or late.'
     },
     nl: {
       metaTitle: 'Zakelijk Vervoer Brussel | Executive Chauffeurs & Minivans',
@@ -27,7 +28,7 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       title: 'Zakelijk Vervoer & Shuttles',
       p1: 'Professionele service voor professionals. Laat ons uw zakelijke groepsvervoer vanaf de luchthaven coördineren tegen vaste, scherpe tarieven.',
       p2: 'Wij regelen alle details zoals de benodigde wagencapaciteit, groepsindeling en eventueel terminalbegeleiding voor uw gasten.',
-      p3: 'Onze dispatching controleert vluchttijden live om ervoor te zorgen dat uw chauffeur stipt op tijd klaarstaat, bij vroege aankomst of vertraging.'
+      p3: 'Onze dispatching volgt vluchten live, zodat de ophaling de werkelijke landing volgt, bij vroege aankomst of vertraging.'
     },
     fr: {
       metaTitle: 'Navette d\'Entreprise Bruxelles | Chauffeur Affaires Minivan',
@@ -35,7 +36,7 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       title: 'Services de Navettes d\'Entreprise',
       p1: 'Un service professionnel pour les professionnels. Permettez-nous de coordonner les arrivées de vos groupes à l\'aéroport au meilleur coût.',
       p2: 'Nous gérons tous les détails logistiques : taille des véhicules Ford, répartition des passagers et accueil personnalisé pour guider vos invités.',
-      p3: 'Notre équipe logistique suit l\'état des vols en direct pour garantir que nos minivans soient sur place à la minute près.'
+      p3: 'Notre équipe suit les vols en direct afin que la prise en charge suive l’heure réelle d’atterrissage, que le vol soit en avance ou en retard.'
     },
         hr: {
       metaTitle: 'Korporativni prijevoz Bruxelles | Poslovni vozači i kombiji',
@@ -43,7 +44,7 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       title: 'Usluge korporativnog prijevoza',
       p1: 'Profesionalna usluga za profesionalne ljude. Prepustite nam koordinaciju dolazaka vaših velikih grupa u zračnu luku po razumnoj cijeni.',
       p2: 'Pobrinut ćemo se za važne detalje poput veličine vozila, grupiranja putnika za preuzimanje i osiguravanja posvećenih pratitelja koji će dočekati vaše goste.',
-      p3: 'Naš iskusni dispečerski tim prati letove u stvarnom vremenu kako bi osigurao da stignemo točno na vrijeme, bez obzira na to stiže li vaš let ranije ili kasni.'
+      p3: 'Naš dispečerski tim prati letove u stvarnom vremenu, tako da preuzimanje prati stvarno vrijeme slijetanja, bilo da let stigne ranije ili kasni.'
     },
     el: {
       metaTitle: 'Εταιρικές Μετακινήσεις Βρυξέλλες | Υπηρεσίες VIP Σοφέρ',
@@ -51,7 +52,7 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
       title: 'Εταιρικές Υπηρεσίες Shuttle',
       p1: 'Επαγγελματική εξυπηρέτηση για επαγγελματίες. Επιτρέψτε μας να συντονίσουμε τις αφίξεις των συνεργατών σας στο αεροδρόμιο με λογικό κόστος.',
       p2: 'Αναλαμβάνουμε όλες τις λεπτομέρειες, όπως το μέγεθος των οχημάτων, τη δημιουργία ομάδων παραλαβής και την παροχή συνοδών υποδοχής.',
-      p3: 'Η έμπειρη ομάδα μας παρακολουθεί τις πτήσεις σε πραγματικό χρόνο για να εξασφαλίσει ότι ο οδηγός θα είναι εκεί ακριβώς στην ώρα του.'
+      p3: 'Η ομάδα μας παρακολουθεί τις πτήσεις σε πραγματικό χρόνο, ώστε η παραλαβή να ακολουθεί την πραγματική ώρα προσγείωσης.'
     }
   }[lang];
 
@@ -73,6 +74,12 @@ export default function CorporateClient({ lang }: { lang: 'en' | 'nl' | 'fr' | '
           </p>
           <p className="mb-6">
             {ui.p3}
+          </p>
+          <p className="mb-6">
+            {BOOKING_POLICIES[lang].flightDelay}
+          </p>
+          <p className="mb-6">
+            {BOOKING_POLICIES[lang].multiDayShort}
           </p>
         </div>
 

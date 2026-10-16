@@ -97,7 +97,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Pickup at ${to.replace(/\s*\(.*\)$/, '')} on the way back` : `Return transfer from ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `On the return your driver tracks the flight, waits in the arrivals hall with a name sign and gives you ${F.waitingFreeMinutes} minutes free after landing; after that waiting is ${F.waitingPerHour}€ per hour. The fixed price is identical in both directions.`
+          ? `On the return your driver tracks the flight and waits in the arrivals hall with a name sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after the actual landing time for Schengen flights and ${F.waitingFreeMinutesNonSchengen} minutes for flights from outside Schengen; after that, waiting is ${F.waitingPer30Min}€ per additional 30 minutes, by agreement and subject to the driver’s availability. The fixed price is identical in both directions.`
           : `For the way back the driver collects you at the agreed address or station at the agreed time, tracks train or event schedules where relevant, and the fixed price is identical in both directions.`,
       ],
     };
@@ -150,7 +150,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Ophaling in ${to.replace(/\s*\(.*\)$/, '')} op de terugweg` : `Terugrit vanuit ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `Op de terugweg volgt uw chauffeur de vlucht, wacht in de aankomsthal met een naambordje en geeft u ${F.waitingFreeMinutes} minuten gratis na de landing; daarna kost wachten ${F.waitingPerHour}€ per uur. De vaste prijs is in beide richtingen dezelfde.`
+          ? `Op de terugweg volgt uw chauffeur de vlucht en wacht in de aankomsthal met een naambordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${F.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen; daarna kost wachten ${F.waitingPer30Min}€ per extra 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. De vaste prijs is in beide richtingen dezelfde.`
           : `Voor de terugweg haalt de chauffeur u op het afgesproken adres of station op het afgesproken uur op; de vaste prijs is in beide richtingen dezelfde.`,
       ],
     };
@@ -203,7 +203,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Prise en charge à ${to.replace(/\s*\(.*\)$/, '')} au retour` : `Trajet retour depuis ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `Au retour, votre chauffeur suit le vol, vous attend dans le hall des arrivées avec une pancarte à votre nom et vous accorde ${F.waitingFreeMinutes} minutes gratuites après l’atterrissage ; ensuite l’attente est facturée ${F.waitingPerHour}€ par heure. Le prix fixe est identique dans les deux sens.`
+          ? `Au retour, votre chauffeur suit le vol et vous attend dans le hall des arrivées avec une pancarte à votre nom. L’attente gratuite est de ${F.waitingFreeMinutes} minutes après l’atterrissage réel pour les vols Schengen et de ${F.waitingFreeMinutesNonSchengen} minutes pour les vols en provenance de l’extérieur de Schengen ; ensuite l’attente est facturée ${F.waitingPer30Min}€ par tranche supplémentaire de 30 minutes, après accord et selon la disponibilité du chauffeur. Le prix fixe est identique dans les deux sens.`
           : `Pour le retour, le chauffeur vous reprend à l’adresse ou à la gare convenue à l’heure convenue ; le prix fixe est identique dans les deux sens.`,
       ],
     };
@@ -327,7 +327,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'How the shared shuttle works', steps: [
         { title: '1. Book with your flight number', text: 'Send your address, flight number and number of passengers on WhatsApp or the form. We reply with the price per person and the pickup window.' },
         { title: '2. Pickup at your door', text: 'The evening before you receive a 15-minute pickup window. The driver rings the bell, loads the luggage and collects the other passengers on the way.' },
-        { title: '3. Terminal drop-off', text: `The van stops at the Kiss & Ride in front of the Charleroi terminal at least 2 hours before the earliest departure on board. On arrivals, the driver waits inside the terminal with a Helicro sign and gives every flight ${F.waitingFreeMinutes} minutes free.` },
+        { title: '3. Terminal drop-off', text: `The van stops at the Kiss & Ride in front of the Charleroi terminal at least 2 hours before the earliest departure on board. On arrivals, the driver waits inside the terminal with a Helicro sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after landing for Schengen flights and ${F.waitingFreeMinutesNonSchengen} minutes for flights from outside Schengen.` },
       ] },
       { h2: 'Shared shuttle, Flibco bus or private transfer?', bullets: [
         'Flibco: about 17 to 20€ per person, only from Brussels-Midi, no pickup, one bag limit, leaves without you.',
@@ -354,7 +354,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'Zo werkt de gedeelde shuttle', steps: [
         { title: '1. Boek met uw vluchtnummer', text: 'Stuur uw adres, vluchtnummer en aantal passagiers via WhatsApp of het formulier. U krijgt de prijs per persoon en het ophaalvenster.' },
         { title: '2. Ophaling aan huis', text: 'De avond voordien ontvangt u een ophaalvenster van 15 minuten. De chauffeur belt aan, laadt de bagage in en haalt onderweg de andere passagiers op.' },
-        { title: '3. Afzetten aan de terminal', text: `De wagen stopt aan de Kiss & Ride voor de terminal van Charleroi, minstens 2 uur voor de vroegste vlucht aan boord. Bij aankomst wacht de chauffeur in de terminal met een Helicro-bordje en krijgt elke vlucht ${F.waitingFreeMinutes} minuten gratis.` },
+        { title: '3. Afzetten aan de terminal', text: `De wagen stopt aan de Kiss & Ride voor de terminal van Charleroi, minstens 2 uur voor de vroegste vlucht aan boord. Bij aankomst wacht de chauffeur in de terminal met een Helicro-bordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten voor Schengenvluchten en ${F.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen.` },
       ] },
       { h2: 'Gedeelde shuttle, Flibco-bus of privétransfer?', bullets: [
         'Flibco: ongeveer 17 tot 20€ per persoon, enkel vanaf Brussel-Zuid, geen ophaling, één koffer, vertrekt zonder u.',
@@ -381,7 +381,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'Comment fonctionne la navette partagée', steps: [
         { title: '1. Réservez avec votre numéro de vol', text: 'Envoyez votre adresse, votre numéro de vol et le nombre de passagers sur WhatsApp ou via le formulaire. Nous répondons avec le prix par personne et le créneau de prise en charge.' },
         { title: '2. Prise en charge à votre porte', text: 'La veille au soir, vous recevez un créneau de 15 minutes. Le chauffeur sonne, charge les bagages et prend les autres passagers en route.' },
-        { title: '3. Dépose au terminal', text: `Le van s’arrête au Kiss & Ride devant le terminal de Charleroi au moins 2 heures avant le départ le plus tôt à bord. À l’arrivée, le chauffeur attend dans le terminal avec une pancarte Helicro et chaque vol bénéficie de ${F.waitingFreeMinutes} minutes gratuites.` },
+        { title: '3. Dépose au terminal', text: `Le van s’arrête au Kiss & Ride devant le terminal de Charleroi au moins 2 heures avant le départ le plus tôt à bord. À l’arrivée, le chauffeur attend dans le terminal avec une pancarte Helicro. L’attente gratuite est de ${F.waitingFreeMinutes} minutes pour les vols Schengen et de ${F.waitingFreeMinutesNonSchengen} minutes pour les vols hors Schengen.` },
       ] },
       { h2: 'Navette partagée, bus Flibco ou transfert privé ?', bullets: [
         'Flibco : environ 17 à 20€ par personne, uniquement depuis Bruxelles-Midi, sans prise en charge, un bagage, part sans vous.',

@@ -129,7 +129,7 @@ export function buildCommune(page: SEOPage, placeKey: string): SeoLandingContent
   };
 
   const specificFaqs = [
-    { question: `Combien coûte un taxi de ${commune} à l’aéroport de Charleroi ?`, answer: `Le prix est fixe par véhicule et dépend de votre adresse exacte à ${commune} ; il vous est confirmé par écrit avant la réservation. Il couvre jusqu’à 8 passagers, les bagages, les sièges enfants et l’attente gratuite de ${F.waitingFreeMinutes} minutes à l’arrivée, sans supplément de nuit.` },
+    { question: `Combien coûte un taxi de ${commune} à l’aéroport de Charleroi ?`, answer: `Le prix est fixe par véhicule et dépend de votre adresse exacte à ${commune} ; il vous est confirmé par écrit avant la réservation. Il couvre jusqu’à 8 passagers, les bagages, les sièges enfants et l’attente gratuite à l’arrivée (${F.waitingFreeMinutes} minutes pour un vol Schengen, ${F.waitingFreeMinutesNonSchengen} minutes hors Schengen), sans supplément de nuit.` },
     { question: `Combien de temps pour aller de ${commune} à Zaventem ?`, answer: `Environ ${bru.km} km et ${bru.minMin} à ${bru.maxMin} minutes hors heures de pointe via le ring de Bruxelles. En semaine entre 7h et 9h30, votre chauffeur prévoit une marge supplémentaire pour vous déposer au moins 2 heures avant le vol.` },
     { question: `Proposez-vous un taxi à ${commune} la nuit et le week-end ?`, answer: 'Oui, 24 h/24 et 7 j/7, au même prix fixe. Réservez la veille pour les départs avant 6h afin de garantir la disponibilité du véhicule.' },
   ];

@@ -284,11 +284,21 @@ export const FIXED_PRICES = {
     { pax: '8', price: 160 },
   ],
   bruP1Surcharge: 5,
+  /** Complimentary airport wait from actual landing, Schengen flights. */
   waitingFreeMinutes: 60,
+  /** Complimentary airport wait from actual landing, flights from outside Schengen. */
+  waitingFreeMinutesNonSchengen: 80,
+  /** Extra waiting after the complimentary period, per additional 30 minutes. */
+  waitingPer30Min: 15,
+  /** Hourly equivalent of waitingPer30Min. Kept so older copy can still resolve. */
   waitingPerHour: 30,
   extraStop: 10,
   dayTourFrom: 380,
   cancellationHours: 24,
+  /** Deposit for multi-day exclusive vehicle-and-driver bookings, percent of the agreed price. */
+  multiDayDepositPercent: 20,
+  /** Full deposit refund if a multi-day booking is cancelled this many hours before the service. */
+  multiDayCancelHours: 48,
 };
 
 /** Destinations with a published fixed price (source: Helicro price list, September 2026). */

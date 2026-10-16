@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath, Locale } from '@/config/translations';
 import styles from './AIAssistant.module.css';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 
 interface Message {
   id: string;
@@ -242,6 +243,17 @@ export default function AIAssistant() {
     ];
 
     if (
+      query.includes('waiting') || query.includes('delay') || query.includes('schengen') ||
+      query.includes('wachtt') || query.includes('vertraging') || query.includes('attente') ||
+      query.includes('retard') || query.includes('αναμον') || query.includes('καθυστ') ||
+      query.includes('cekan') || query.includes('čekan') || query.includes('kasnjen')
+    ) {
+      const policy = BOOKING_POLICIES[lang];
+      const text = `**${policy.airportWaitingTitle}**\n${policy.airportWaiting.join('\n\n')}`;
+      return { id, sender: 'bot', text, cta: defaultCtas };
+    }
+
+    if (
       query.includes('rate') || query.includes('price') || query.includes('fare') || query.includes('cost') ||
       query.includes('tarief') || query.includes('tarif') || query.includes('harga') ||
       query.includes('τιμη') || query.includes('τιμες') || query.includes('κοστος') ||
@@ -329,7 +341,7 @@ export default function AIAssistant() {
       query.includes('excursion') || query.includes('εκδρομη') || query.includes('εκδρομες') || query.includes('μπρυζ') || query.includes('γανδη')
     ) {
       const texts = {
-        en: "We arrange premium private day trips from Brussels starting from 380€, with a dedicated minivan and driver at your disposal for the whole day:\n• **Bruges Tour:** Medieval belfry, Lake of Love, canals.\n• **Ghent Tour:** Gravensteen castle, St. Bavo Cathedral.\n• **Durbuy Tour:** The smallest city in the world nestled in Ardennes.\n\nYou can set your own pace and route stops as you travel.",
+        en: `We arrange premium private day trips from Brussels starting from 380€, with a dedicated minivan and driver at your disposal for the whole day:\n• **Bruges Tour:** Medieval belfry, Lake of Love, canals.\n• **Ghent Tour:** Gravensteen castle, St. Bavo Cathedral.\n• **Durbuy Tour:** The smallest city in the world nestled in Ardennes.\n\nYou can set your own pace and route stops as you travel.\n\n${BOOKING_POLICIES.en.multiDayShort}`,
         nl: "Wij organiseren luxe privédagtochten vanuit Brussel vanaf 380€, waarbij de minivan en chauffeur de hele dag tot uw beschikking staan:\n• **Brugge Tour:** Middeleeuws belfort, Minnewater, grachten.\n• **Gent Tour:** Gravensteen kasteel, Sint-Baafskathedraal.\n• **Durbuy Tour:** Het kleinste stadje ter wereld in de Ardennen.\n\nU kunt uw eigen tempo bepalen en tussenstops in overleg plannen.",
         fr: "Nous organisons des excursions privées d'une journée au départ de Bruxelles à partir de 380€, avec véhicule et chauffeur à votre entière disposition :\n• **Circuit Bruges :** Beffroi médiéval, lac d'Amour, canaux.\n• **Circuit Gand :** Château des Comtes, Cathédrale Saint-Bavon.\n• **Circuit Durbuy :** La plus petite ville du monde dans les Ardennes.\n\nVous êtes libre de définir vos escales et votre rythme de visite.",
         el: "Διοργανώνουμε ιδιωτικές ημερήσιες εκδρομές από τις Βρυξέλλες από 380€, με το minivan και τον οδηγό στη διάθεσή σας για όλη τη μέρα:\n• **Εκδρομή στη Μπρυζ:** Μεσαιωνικό καμπαναριό, Λίμνη της Αγάπης, κανάλια.\n• **Εκδρομή στη Γάνδη:** Κάστρο Gravensteen, Καθεδρικός Ναός Αγίου Βονιφατίου.\n• **Εκδρομή στο Ντυρμπουί:** Η μικρότερη πόλη του κόσμου στις Αρδέννες.\n\nΜπορείτε να ορίσετε τον δικό σας ρυθμό και τις στάσεις σας.",
@@ -341,15 +353,17 @@ export default function AIAssistant() {
 
     if (
       query.includes('cancel') || query.includes('refund') || query.includes('change') || query.includes('policy') ||
+      query.includes('deposit') || query.includes('voorschot') || query.includes('acompte') ||
       query.includes('pay') || query.includes('card') || query.includes('cash') || query.includes('invoice') ||
-      query.includes('ακυρωση') || query.includes('πληρωμη') || query.includes('καρτα') || query.includes('μετρητα')
+      query.includes('ακυρωση') || query.includes('πληρωμη') || query.includes('καρτα') || query.includes('μετρητα') ||
+      query.includes('προκαταβολ') || query.includes('polog')
     ) {
       const texts = {
-        en: "• **Cancellation Policy:** 100% free cancellation or booking changes up to 24 hours prior to the transfer.\n• **Payment Methods:** We accept secure online credit/debit card payments, bank transfers, corporate invoices, or cash directly to the driver at the end of the trip.",
-        nl: "• **Annuleringsvoorwaarden:** 100% gratis annuleren of wijzigen tot 24 uur voor aanvang.\n• **Betaalwijzen:** Wij accepteren beveiligde online kaartbetalingen, bankoverschrijvingen, facturen of contant geld rechtstreeks aan de chauffeur bij aankomst.",
-        fr: "• **Conditions d'annulation :** Modifications et annulations 100% gratuites jusqu'à 24 heures avant la prise en charge.\n• **Moyens de paiement :** Paiement en ligne sécurisé par carte, virement bancaire, facturation d'entreprise ou espèces directement au chauffeur.",
-        el: "• **Πολιτική Ακύρωσης:** 100% δωρεάν ακύρωση ή αλλαγές έως και 24 ώρες πριν την παραλαβή.\n• **Τρόποι Πληρωμής:** Δεχόμαστε online πληρωμές με κάρτα, τραπεζικά εμβάσματα, εταιρικά τιμολόγια ή μετρητά απευθείας στον οδηγό στο τέλος της διαδρομής.",
-        hr: "• **Politika otkazivanja:** 100% besplatno otkazivanje ili promjene do 24 sata prije transfera.\n• **Načini plaćanja:** Prihvaćamo sigurna online plaćanja karticom, bankovne transfere, korporativne račune ili gotovinu izravno vozaču na kraju vožnje."
+        en: `• **Cancellation:** ${BOOKING_POLICIES.en.standardCancel}\n• **Payment Methods:** We accept secure online credit/debit card payments, bank transfers, corporate invoices, or cash directly to the driver at the end of the trip.`,
+        nl: `• **Annuleringsvoorwaarden:** ${BOOKING_POLICIES.nl.standardCancel}\n• **Betaalwijzen:** Wij accepteren beveiligde online kaartbetalingen, bankoverschrijvingen, facturen of contant geld rechtstreeks aan de chauffeur bij aankomst.`,
+        fr: `• **Conditions d'annulation :** ${BOOKING_POLICIES.fr.standardCancel}\n• **Moyens de paiement :** Paiement en ligne sécurisé par carte, virement bancaire, facturation d'entreprise ou espèces directement au chauffeur.`,
+        el: `• **Πολιτική Ακύρωσης:** ${BOOKING_POLICIES.el.standardCancel}\n• **Τρόποι Πληρωμής:** Δεχόμαστε online πληρωμές με κάρτα, τραπεζικά εμβάσματα, εταιρικά τιμολόγια ή μετρητά απευθείας στον οδηγό στο τέλος της διαδρομής.`,
+        hr: `• **Politika otkazivanja:** ${BOOKING_POLICIES.hr.standardCancel}\n• **Načini plaćanja:** Prihvaćamo sigurna online plaćanja karticom, bankovne transfere, korporativne račune ili gotovinu izravno vozaču na kraju vožnje.`
       }[lang];
 
       return { id, sender: 'bot', text: texts, cta: defaultCtas };

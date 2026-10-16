@@ -1,5 +1,6 @@
 import type { Locale } from '@/lib/seo';
 import { FIXED_PRICES } from '@/config/seoFacts';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 import type { SeoFaq, SeoSection, SeoStep, SeoTable } from './types';
 
 export interface SharedUi {
@@ -182,7 +183,7 @@ export const INCLUDED: Record<Locale, string[]> = {
   en: [
     'Door-to-door pickup at any address, hotel or terminal, 24 hours a day, 7 days a week',
     'Ford Transit Custom or Tourneo Custom minivan for up to 8 passengers and 8 large suitcases',
-    'Live flight tracking and 60 minutes of free waiting time after landing',
+    BOOKING_POLICIES.en.includedWaiting,
     'Meet and greet in the arrivals hall with a name sign',
     'Free infant seats, child seats and booster cushions on request',
     'Driver fluent in English, French and Greek',
@@ -192,7 +193,7 @@ export const INCLUDED: Record<Locale, string[]> = {
   nl: [
     'Ophaling aan huis, hotel of terminal, 24 uur per dag, 7 dagen per week',
     'Ford Transit Custom of Tourneo Custom minivan voor maximaal 8 passagiers en 8 grote koffers',
-    'Live vluchtopvolging en 60 minuten gratis wachttijd na de landing',
+    BOOKING_POLICIES.nl.includedWaiting,
     'Ontvangst in de aankomsthal met naambordje',
     'Gratis babyzitjes, kinderzitjes en verhogers op aanvraag',
     'Chauffeur die vlot Engels, Frans en Grieks spreekt',
@@ -202,7 +203,7 @@ export const INCLUDED: Record<Locale, string[]> = {
   fr: [
     'Prise en charge à domicile, à l’hôtel ou au terminal, 24 h/24 et 7 j/7',
     'Minivan Ford Transit Custom ou Tourneo Custom pour 8 passagers et 8 grandes valises',
-    'Suivi de vol en direct et 60 minutes d’attente gratuite après l’atterrissage',
+    BOOKING_POLICIES.fr.includedWaiting,
     'Accueil dans le hall des arrivées avec une pancarte à votre nom',
     'Sièges bébé, sièges enfants et rehausseurs gratuits sur demande',
     'Chauffeur parlant couramment français, anglais et grec',
@@ -212,7 +213,7 @@ export const INCLUDED: Record<Locale, string[]> = {
   el: [
     'Παραλαβή από οποιαδήποτε διεύθυνση, ξενοδοχείο ή τερματικό, 24 ώρες το 24ωρο, 7 ημέρες την εβδομάδα',
     'Ford Transit Custom ή Tourneo Custom minivan για έως 8 επιβάτες και 8 μεγάλες βαλίτσες',
-    'Ζωντανή παρακολούθηση πτήσης και 60 λεπτά δωρεάν αναμονή μετά την προσγείωση',
+    BOOKING_POLICIES.el.includedWaiting,
     'Υποδοχή στην αίθουσα αφίξεων με πινακίδα ονόματος',
     'Δωρεάν βρεφικά και παιδικά καθίσματα και booster κατόπιν αιτήματος',
     'Οδηγός που μιλά άπταιστα Ελληνικά, Αγγλικά και Γαλλικά',
@@ -222,7 +223,7 @@ export const INCLUDED: Record<Locale, string[]> = {
   hr: [
     'Preuzimanje na bilo kojoj adresi, hotelu ili terminalu, 24 sata dnevno, 7 dana u tjednu',
     'Ford Transit Custom ili Tourneo Custom kombi za do 8 putnika i 8 velikih kovčega',
-    'Praćenje leta uživo i 60 minuta besplatnog čekanja nakon slijetanja',
+    BOOKING_POLICIES.hr.includedWaiting,
     'Doček u dvorani za dolaske s natpisom vašeg imena',
     'Besplatne sjedalice za bebe, dječje sjedalice i booster jastuci na zahtjev',
     'Vozač koji tečno govori engleski, francuski i grčki',
@@ -293,51 +294,51 @@ const F = FIXED_PRICES;
 
 export const GENERIC_FAQS: Record<Locale, Record<string, SeoFaq>> = {
   en: {
-    cancel: { question: 'Can I cancel or change my booking for free?', answer: `Yes. Cancellations and changes are free up to ${F.cancellationHours} hours before the scheduled pickup. Inside ${F.cancellationHours} hours, call or WhatsApp +32 472 35 88 05 and we will do our best to rebook you.` },
-    delay: { question: 'What happens if my flight is delayed?', answer: `We track every arriving flight live and adjust the pickup time automatically. The first ${F.waitingFreeMinutes} minutes after landing are free; after that, waiting is billed at ${F.waitingPerHour}€ per hour.` },
+    cancel: { question: 'Can I cancel or change my booking for free?', answer: `Yes, for a standard transfer. Cancellations and changes are free up to ${F.cancellationHours} hours before the scheduled pickup. Inside ${F.cancellationHours} hours, call or WhatsApp +32 472 35 88 05 and we will do our best to rebook you. ${BOOKING_POLICIES.en.multiDayShort}` },
+    delay: { question: 'What happens if my flight is delayed?', answer: BOOKING_POLICIES.en.flightDelay },
     seats: { question: 'Do you provide child seats?', answer: 'Yes. Infant seats, child seats and booster cushions are free of charge. Tell us the number and ages of the children when you book so the vehicle is prepared.' },
     pay: { question: 'How can I pay?', answer: 'By debit or credit card, bank transfer, monthly invoice for corporate clients, or cash to the driver. A VAT invoice from Helicro SRL (BE 0804.095.653) is available on request.' },
-    night: { question: 'Is there a surcharge for early morning or night transfers?', answer: 'No. Helicro private transfers have one fixed price 24 hours a day. The only extras are an optional P1 drop-off at Brussels Airport (+5€) and additional stops (10€ per stop).' },
+    night: { question: 'Is there a surcharge for early morning or night transfers?', answer: 'No. Helicro private transfers have one fixed price 24 hours a day. Other extras are an optional P1 drop-off at Brussels Airport (+5€), additional stops (10€ per stop), and airport waiting beyond the complimentary period.' },
     luggage: { question: 'How much luggage fits in the minivan?', answer: 'The Ford Transit Custom and Tourneo Custom carry 8 passengers with 8 large suitcases plus hand luggage. For skis, bikes, prams or festival gear, mention it when booking.' },
     book: { question: 'How far in advance should I book?', answer: 'Most transfers can be confirmed the same day, but early morning airport pickups, festival weekends and 8-passenger groups should be booked a few days ahead. Same-day requests are answered on WhatsApp within minutes.' },
     lang: { question: 'Which languages does the driver speak?', answer: 'Gerasimos speaks English, French and Greek fluently, and the website and quotes are also available in Dutch and Croatian.' },
   },
   nl: {
-    cancel: { question: 'Kan ik gratis annuleren of wijzigen?', answer: `Ja. Annuleren en wijzigen is gratis tot ${F.cancellationHours} uur voor de geplande ophaling. Binnen ${F.cancellationHours} uur belt of WhatsAppt u +32 472 35 88 05 en zoeken we samen een oplossing.` },
-    delay: { question: 'Wat als mijn vlucht vertraging heeft?', answer: `We volgen elke aankomende vlucht live op en passen de ophaaltijd automatisch aan. De eerste ${F.waitingFreeMinutes} minuten na de landing zijn gratis; daarna rekenen we ${F.waitingPerHour}€ per uur wachttijd.` },
+    cancel: { question: 'Kan ik gratis annuleren of wijzigen?', answer: `Ja, voor een standaardrit. Annuleren en wijzigen is gratis tot ${F.cancellationHours} uur voor de geplande ophaling. Binnen ${F.cancellationHours} uur belt of WhatsAppt u +32 472 35 88 05 en zoeken we samen een oplossing. ${BOOKING_POLICIES.nl.multiDayShort}` },
+    delay: { question: 'Wat als mijn vlucht vertraging heeft?', answer: BOOKING_POLICIES.nl.flightDelay },
     seats: { question: 'Voorzien jullie kinderzitjes?', answer: 'Ja. Babyzitjes, kinderzitjes en verhogers zijn gratis. Geef bij het boeken het aantal en de leeftijd van de kinderen door, dan staat het voertuig klaar.' },
     pay: { question: 'Hoe kan ik betalen?', answer: 'Met bankkaart of kredietkaart, overschrijving, maandelijkse factuur voor bedrijven of cash aan de chauffeur. Een btw-factuur van Helicro SRL (BE 0804.095.653) is beschikbaar op aanvraag.' },
-    night: { question: 'Is er een toeslag voor vroege of nachtelijke ritten?', answer: 'Nee. Privévervoer van Helicro heeft één vaste prijs, 24 uur per dag. De enige extra’s zijn een optionele P1-drop-off op Brussels Airport (+5€) en extra stops (10€ per stop).' },
+    night: { question: 'Is er een toeslag voor vroege of nachtelijke ritten?', answer: 'Nee. Privévervoer van Helicro heeft één vaste prijs, 24 uur per dag. Andere extra’s zijn een optionele P1-drop-off op Brussels Airport (+5€), extra stops (10€ per stop) en wachttijd op de luchthaven boven de gratis periode.' },
     luggage: { question: 'Hoeveel bagage past er in de minivan?', answer: 'De Ford Transit Custom en Tourneo Custom vervoeren 8 passagiers met 8 grote koffers plus handbagage. Voor ski’s, fietsen, buggy’s of festivalmateriaal vermeldt u dit best bij de boeking.' },
     book: { question: 'Hoe lang op voorhand moet ik boeken?', answer: 'De meeste ritten bevestigen we dezelfde dag, maar vroege luchthavenritten, festivalweekends en groepen van 8 boekt u best enkele dagen vooraf. Aanvragen voor dezelfde dag beantwoorden we via WhatsApp binnen enkele minuten.' },
     lang: { question: 'Welke talen spreekt de chauffeur?', answer: 'Gerasimos spreekt vlot Engels, Frans en Grieks. Offertes en de website zijn ook in het Nederlands beschikbaar.' },
   },
   fr: {
-    cancel: { question: 'Puis-je annuler ou modifier ma réservation gratuitement ?', answer: `Oui. Annulation et modification sont gratuites jusqu’à ${F.cancellationHours} h avant la prise en charge prévue. En deçà, appelez ou écrivez sur WhatsApp au +32 472 35 88 05 et nous trouverons une solution.` },
-    delay: { question: 'Que se passe-t-il si mon vol a du retard ?', answer: `Nous suivons chaque vol à l’arrivée en direct et adaptons l’heure de prise en charge automatiquement. Les ${F.waitingFreeMinutes} premières minutes après l’atterrissage sont gratuites ; ensuite l’attente est facturée ${F.waitingPerHour}€ par heure.` },
+    cancel: { question: 'Puis-je annuler ou modifier ma réservation gratuitement ?', answer: `Oui, pour un transfert ordinaire. Annulation et modification sont gratuites jusqu’à ${F.cancellationHours} h avant la prise en charge prévue. En deçà, appelez ou écrivez sur WhatsApp au +32 472 35 88 05 et nous trouverons une solution. ${BOOKING_POLICIES.fr.multiDayShort}` },
+    delay: { question: 'Que se passe-t-il si mon vol a du retard ?', answer: BOOKING_POLICIES.fr.flightDelay },
     seats: { question: 'Fournissez-vous des sièges enfants ?', answer: 'Oui. Sièges bébé, sièges enfants et rehausseurs sont gratuits. Indiquez le nombre et l’âge des enfants lors de la réservation pour que le véhicule soit préparé.' },
     pay: { question: 'Comment puis-je payer ?', answer: 'Par carte de débit ou de crédit, virement, facture mensuelle pour les entreprises ou en espèces au chauffeur. Une facture TVA de Helicro SRL (BE 0804.095.653) est disponible sur demande.' },
-    night: { question: 'Y a-t-il un supplément tôt le matin ou la nuit ?', answer: 'Non. Les navettes privées Helicro ont un seul prix fixe, 24 h/24. Les seuls extras sont la dépose optionnelle au P1 de Brussels Airport (+5€) et les arrêts supplémentaires (10€ par arrêt).' },
+    night: { question: 'Y a-t-il un supplément tôt le matin ou la nuit ?', answer: 'Non. Les navettes privées Helicro ont un seul prix fixe, 24 h/24. Les autres extras sont la dépose optionnelle au P1 de Brussels Airport (+5€), les arrêts supplémentaires (10€ par arrêt) et l’attente à l’aéroport au-delà du délai gratuit.' },
     luggage: { question: 'Combien de bagages entrent dans le minivan ?', answer: 'Les Ford Transit Custom et Tourneo Custom transportent 8 passagers avec 8 grandes valises et les bagages à main. Pour des skis, vélos, poussettes ou du matériel de festival, précisez-le à la réservation.' },
     book: { question: 'Combien de temps à l’avance faut-il réserver ?', answer: 'La plupart des trajets sont confirmés le jour même, mais les départs très matinaux, les week-ends de festival et les groupes de 8 se réservent quelques jours avant. Les demandes du jour reçoivent une réponse sur WhatsApp en quelques minutes.' },
     lang: { question: 'Quelles langues parle le chauffeur ?', answer: 'Gerasimos parle couramment français, anglais et grec. Le site et les devis existent aussi en néerlandais.' },
   },
   el: {
-    cancel: { question: 'Μπορώ να ακυρώσω ή να αλλάξω την κράτηση δωρεάν;', answer: `Ναι. Ακυρώσεις και αλλαγές είναι δωρεάν έως ${F.cancellationHours} ώρες πριν την προγραμματισμένη παραλαβή. Εντός ${F.cancellationHours} ωρών καλέστε ή στείλτε WhatsApp στο +32 472 35 88 05 και θα βρούμε λύση.` },
-    delay: { question: 'Τι γίνεται αν καθυστερήσει η πτήση μου;', answer: `Παρακολουθούμε ζωντανά κάθε πτήση άφιξης και προσαρμόζουμε αυτόματα την ώρα παραλαβής. Τα πρώτα ${F.waitingFreeMinutes} λεπτά μετά την προσγείωση είναι δωρεάν· μετά η αναμονή χρεώνεται ${F.waitingPerHour}€ την ώρα.` },
+    cancel: { question: 'Μπορώ να ακυρώσω ή να αλλάξω την κράτηση δωρεάν;', answer: `Ναι, για μια συνηθισμένη μεταφορά. Ακυρώσεις και αλλαγές είναι δωρεάν έως ${F.cancellationHours} ώρες πριν την προγραμματισμένη παραλαβή. Εντός ${F.cancellationHours} ωρών καλέστε ή στείλτε WhatsApp στο +32 472 35 88 05 και θα βρούμε λύση. ${BOOKING_POLICIES.el.multiDayShort}` },
+    delay: { question: 'Τι γίνεται αν καθυστερήσει η πτήση μου;', answer: BOOKING_POLICIES.el.flightDelay },
     seats: { question: 'Παρέχετε παιδικά καθίσματα;', answer: 'Ναι. Βρεφικά καθίσματα, παιδικά καθίσματα και booster είναι δωρεάν. Πείτε μας τον αριθμό και τις ηλικίες των παιδιών κατά την κράτηση.' },
     pay: { question: 'Πώς μπορώ να πληρώσω;', answer: 'Με χρεωστική ή πιστωτική κάρτα, τραπεζική μεταφορά, μηνιαίο τιμολόγιο για εταιρείες ή μετρητά στον οδηγό. Τιμολόγιο με ΦΠΑ από την Helicro SRL (BE 0804.095.653) κατόπιν αιτήματος.' },
-    night: { question: 'Υπάρχει επιπλέον χρέωση για πρωινές ή νυχτερινές διαδρομές;', answer: 'Όχι. Οι ιδιωτικές μεταφορές της Helicro έχουν μία σταθερή τιμή 24 ώρες το 24ωρο. Τα μόνα έξτρα είναι η προαιρετική αποβίβαση στο P1 του Brussels Airport (+5€) και οι επιπλέον στάσεις (10€ ανά στάση).' },
+    night: { question: 'Υπάρχει επιπλέον χρέωση για πρωινές ή νυχτερινές διαδρομές;', answer: 'Όχι. Οι ιδιωτικές μεταφορές της Helicro έχουν μία σταθερή τιμή 24 ώρες το 24ωρο. Άλλα έξτρα είναι η προαιρετική αποβίβαση στο P1 του Brussels Airport (+5€), οι επιπλέον στάσεις (10€ ανά στάση) και η αναμονή στο αεροδρόμιο πέρα από τον δωρεάν χρόνο.' },
     luggage: { question: 'Πόσες αποσκευές χωράει το minivan;', answer: 'Τα Ford Transit Custom και Tourneo Custom μεταφέρουν 8 επιβάτες με 8 μεγάλες βαλίτσες και χειραποσκευές. Για σκι, ποδήλατα, καρότσια ή εξοπλισμό φεστιβάλ ενημερώστε μας στην κράτηση.' },
     book: { question: 'Πόσο νωρίς πρέπει να κάνω κράτηση;', answer: 'Οι περισσότερες διαδρομές επιβεβαιώνονται την ίδια μέρα, αλλά για πρωινές παραλαβές αεροδρομίου, φεστιβάλ και ομάδες 8 ατόμων κάντε κράτηση μερικές ημέρες νωρίτερα. Αιτήματα ίδιας ημέρας απαντώνται στο WhatsApp μέσα σε λίγα λεπτά.' },
     lang: { question: 'Ποιες γλώσσες μιλά ο οδηγός;', answer: 'Ο Γεράσιμος μιλά άπταιστα Ελληνικά, Αγγλικά και Γαλλικά. Είναι Έλληνας που ζει δεκαετίες στο Βέλγιο, άρα η επικοινωνία γίνεται στα Ελληνικά από την πρώτη στιγμή.' },
   },
   hr: {
-    cancel: { question: 'Mogu li besplatno otkazati ili promijeniti rezervaciju?', answer: `Da. Otkazivanje i izmjene besplatni su do ${F.cancellationHours} sata prije planiranog preuzimanja. Unutar ${F.cancellationHours} sata nazovite ili pošaljite WhatsApp na +32 472 35 88 05 i pronaći ćemo rješenje.` },
-    delay: { question: 'Što ako moj let kasni?', answer: `Svaki dolazni let pratimo uživo i automatski prilagođavamo vrijeme preuzimanja. Prvih ${F.waitingFreeMinutes} minuta nakon slijetanja je besplatno; nakon toga čekanje se naplaćuje ${F.waitingPerHour}€ po satu.` },
+    cancel: { question: 'Mogu li besplatno otkazati ili promijeniti rezervaciju?', answer: `Da, za standardni transfer. Otkazivanje i izmjene besplatni su do ${F.cancellationHours} sata prije planiranog preuzimanja. Unutar ${F.cancellationHours} sata nazovite ili pošaljite WhatsApp na +32 472 35 88 05 i pronaći ćemo rješenje. ${BOOKING_POLICIES.hr.multiDayShort}` },
+    delay: { question: 'Što ako moj let kasni?', answer: BOOKING_POLICIES.hr.flightDelay },
     seats: { question: 'Imate li dječje sjedalice?', answer: 'Da. Sjedalice za bebe, dječje sjedalice i booster jastuci su besplatni. Navedite broj i dob djece pri rezervaciji kako bi vozilo bilo pripremljeno.' },
     pay: { question: 'Kako mogu platiti?', answer: 'Debitnom ili kreditnom karticom, bankovnim prijenosom, mjesečnim računom za tvrtke ili gotovinom vozaču. Račun s PDV-om tvrtke Helicro SRL (BE 0804.095.653) dostupan je na zahtjev.' },
-    night: { question: 'Postoji li doplata za rane jutarnje ili noćne vožnje?', answer: 'Ne. Helicro privatni transferi imaju jednu fiksnu cijenu 24 sata dnevno. Jedini dodaci su opcionalni iskrcaj na P1 u zračnoj luci Bruxelles (+5€) i dodatna stajanja (10€ po stajanju).' },
+    night: { question: 'Postoji li doplata za rane jutarnje ili noćne vožnje?', answer: 'Ne. Helicro privatni transferi imaju jednu fiksnu cijenu 24 sata dnevno. Ostali dodaci su opcionalni iskrcaj na P1 u zračnoj luci Bruxelles (+5€), dodatna stajanja (10€ po stajanju) i čekanje u zračnoj luci iznad besplatnog razdoblja.' },
     luggage: { question: 'Koliko prtljage stane u kombi?', answer: 'Ford Transit Custom i Tourneo Custom prevoze 8 putnika s 8 velikih kovčega i ručnom prtljagom. Za skije, bicikle, kolica ili festivalsku opremu javite nam pri rezervaciji.' },
     book: { question: 'Koliko unaprijed trebam rezervirati?', answer: 'Većina vožnji potvrđuje se isti dan, ali rane jutarnje vožnje do zračne luke, festivalske vikende i grupe od 8 osoba rezervirajte nekoliko dana ranije. Na upite za isti dan odgovaramo putem WhatsAppa u nekoliko minuta.' },
     lang: { question: 'Koje jezike govori vozač?', answer: 'Gerasimos tečno govori engleski, francuski i grčki. Web stranica i ponude dostupne su i na hrvatskom jeziku.' },

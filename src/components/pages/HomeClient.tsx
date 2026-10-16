@@ -7,6 +7,7 @@ import GoogleReviews from '@/components/GoogleReviews';
 import HubLinks from '@/components/HubLinks';
 import FareCalculator from '@/components/FareCalculator';
 import styles from './home.module.css';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 
 interface FAQItem {
   question: string;
@@ -329,36 +330,11 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
         hr: 'Kakva su vaša pravila o otkazivanju i izmjenama rezervacija?'
       }[lang],
       answer: {
-        en: (
-          <span>
-            Changes and cancellations are 100% free of charge up to 24 hours prior to your scheduled pickup time. 
-            For last-minute emergency adjustments within 24 hours, please call us directly.
-          </span>
-        ),
-        nl: (
-          <span>
-            Wijzigingen en annuleringen zijn 100% gratis tot 24 uur voor uw geplande ophaaltijd. 
-            Voor last-minute noodwijzigingen binnen 24 uur kunt u ons rechtstreeks bellen.
-          </span>
-        ),
-        fr: (
-          <span>
-            Les modifications et annulations sont 100% gratuites jusqu’à 24 heures avant l’heure de prise en charge prévue. 
-            Pour les ajustements d’urgence de dernière minute dans les 24 heures, veuillez nous appeler directement.
-          </span>
-        ),
-        el: (
-          <span>
-            Οι αλλαγές και οι ακυρώσεις είναι 100% δωρεάν έως και 24 ώρες πριν από την προγραμματισμένη ώρα παραλαβής. 
-            Για έκτακτες αλλαγές της τελευταίας στιγμής εντός 24 ωρών, καλέστε μας απευθείας.
-          </span>
-        ),
-        hr: (
-          <span>
-            Izmjene i otkazivanja su 100% besplatni do 24 sata prije zakazanog vremena preuzimanja. 
-            Za hitne izmjene u zadnji tren unutar 24 sata, molimo nazovite nas izravno.
-          </span>
-        )
+        en: <span>{BOOKING_POLICIES.en.standardCancel}</span>,
+        nl: <span>{BOOKING_POLICIES.nl.standardCancel}</span>,
+        fr: <span>{BOOKING_POLICIES.fr.standardCancel}</span>,
+        el: <span>{BOOKING_POLICIES.el.standardCancel}</span>,
+        hr: <span>{BOOKING_POLICIES.hr.standardCancel}</span>,
       }[lang],
     },
     {
@@ -370,36 +346,11 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
         hr: 'Što se događa ako moj dolazni let kasni?'
       }[lang],
       answer: {
-        en: (
-          <span>
-            We track your flight in real time using flight numbers. If your flight is delayed or arriving early, 
-            your driver will automatically adjust the pickup time. There are no waiting time surcharges for delayed flights.
-          </span>
-        ),
-        nl: (
-          <span>
-            We volgen uw vlucht in realtime met behulp van vluchtnummers. Als uw vlucht vertraagd is of vroeg aankomt, 
-            past uw chauffeur automatisch de ophaaltijd aan. Er zijn geen toeslagen voor wachttijd bij vertraagde vluchten.
-          </span>
-        ),
-        fr: (
-          <span>
-            Nous suivons votre vol en temps réel à l’aide des numéros de vol. Si votre vol est retardé ou avance, 
-            votre chauffeur adaptera automatiquement l’heure de prise en charge. Il n’y a pas de supplément d’attente pour les vols retardés.
-          </span>
-        ),
-        el: (
-          <span>
-            Παρακολουθούμε την πτήση σας σε πραγματικό χρόνο χρησιμοποιώντας τον αριθμό πτήσης. Εάν η πτήση σας καθυστερήσει ή φτάσει νωρίτερα, 
-            ο οδηγός σας θα προσαρμόσει αυτόματα την ώρα παραλαβής. Δεν υπάρχουν χρεώσεις αναμονής για καθυστερημένες πτήσεις.
-          </span>
-        ),
-        hr: (
-          <span>
-            Pratimo vaš let u stvarnom vremenu pomoću broja leta. Ako vaš let kasni ili stigne ranije, 
-            vaš će vozač automatski prilagoditi vrijeme preuzimanja. Nema nadoplata za čekanje kod kašnjenja leta.
-          </span>
-        )
+        en: <span>{BOOKING_POLICIES.en.flightDelay}</span>,
+        nl: <span>{BOOKING_POLICIES.nl.flightDelay}</span>,
+        fr: <span>{BOOKING_POLICIES.fr.flightDelay}</span>,
+        el: <span>{BOOKING_POLICIES.el.flightDelay}</span>,
+        hr: <span>{BOOKING_POLICIES.hr.flightDelay}</span>,
       }[lang],
     },
     {
@@ -975,7 +926,7 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
                 </button>
                 <div 
                   className={`${styles.faqContent} ${openFaqIndex === index ? styles.faqContentOpen : ''}`}
-                  style={{ maxHeight: openFaqIndex === index ? '300px' : '0' }}
+                  style={{ maxHeight: openFaqIndex === index ? '900px' : '0' }}
                 >
                   <div style={{ padding: '16px 20px', borderTop: '1px solid #f1f5f9' }}>
                     {faq.answer}

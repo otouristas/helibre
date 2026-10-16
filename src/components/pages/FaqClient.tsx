@@ -6,6 +6,7 @@ import { getLangFromPath } from '@/config/translations';
 import styles from './faq.module.css';
 import JsonLd from '@/components/JsonLd';
 import { faqSchema } from '@/lib/schema';
+import { BOOKING_POLICIES, multiDayAnswer } from '@/config/bookingPolicies';
 
 interface FAQCategory {
   title: string;
@@ -70,11 +71,19 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
           },
           {
             q: 'What is your cancellation and refund policy?',
-            a: 'Cancellations and booking changes are completely free of charge up to 24 hours before your scheduled pickup. Within 24 hours, please call our emergency dispatch line directly.'
+            a: BOOKING_POLICIES.en.standardCancel
+          },
+          {
+            q: 'What is the deposit policy for multi-day bookings?',
+            a: multiDayAnswer('en')
+          },
+          {
+            q: 'How long will the driver wait at the airport?',
+            a: BOOKING_POLICIES.en.flightDelay
           },
           {
             q: 'What happens if my flight is delayed or cancelled?',
-            a: 'We monitor arriving flights in real-time. If your flight is delayed, your pickup time is adjusted automatically. If the flight is cancelled, please notify us as soon as possible.'
+            a: 'We monitor arriving flights in real time and move the pickup to the actual landing time. Complimentary waiting is included as described above. If the flight is cancelled, contact us as soon as possible so we can cancel or move the transfer.'
           }
         ]
       },
@@ -123,11 +132,19 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
           },
           {
             q: 'Wat zijn de annuleringsvoorwaarden?',
-            a: 'Annuleringen en wijzigingen zijn 100% gratis tot 24 uur voor de geplande rit. Binnen 24 uur vragen we u direct contact op te nemen via onze noodlijn.'
+            a: BOOKING_POLICIES.nl.standardCancel
+          },
+          {
+            q: 'Wat is het voorschotbeleid voor meerdaagse boekingen?',
+            a: multiDayAnswer('nl')
+          },
+          {
+            q: 'Hoe lang wacht de chauffeur op de luchthaven?',
+            a: BOOKING_POLICIES.nl.flightDelay
           },
           {
             q: 'Wat gebeurt er als mijn vlucht vertraagd of geannuleerd is?',
-            a: 'Wij monitoren vluchten live. Als uw vlucht vertraging heeft, passen we de ophaaltijd automatisch aan. Als de vlucht geannuleerd is, laat het ons dan zo snel mogelijk weten.'
+            a: 'Wij volgen vluchten live en schuiven de ophaling op naar de werkelijke landing. De gratis wachttijd staat hierboven. Als de vlucht zelf geannuleerd is, laat het ons dan zo snel mogelijk weten zodat we de rit kunnen annuleren of verplaatsen.'
           }
         ]
       },
@@ -175,12 +192,20 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
             a: 'Vous pouvez faire votre demande facilement via notre formulaire en ligne, par WhatsApp, par SMS ou par e-mail. Vous recevrez une confirmation de tarif fixe rapidement.'
           },
           {
-            q: 'Quelle est votre politique d&apos;annulation ?',
-            a: 'Les annulations et modifications sont gratuites jusqu&apos;à 24 heures avant l&apos;heure de prise en charge prévue. Moins de 24 heures avant, contactez notre ligne d&apos;urgence directement.'
+            q: 'Quelle est votre politique d’annulation ?',
+            a: BOOKING_POLICIES.fr.standardCancel
+          },
+          {
+            q: 'Quel est l’acompte pour une réservation de plusieurs jours ?',
+            a: multiDayAnswer('fr')
+          },
+          {
+            q: 'Combien de temps le chauffeur attend-il à l’aéroport ?',
+            a: BOOKING_POLICIES.fr.flightDelay
           },
           {
             q: 'Que se passe-t-il si mon vol est en retard ou annulé ?',
-            a: 'Nous suivons l&apos;état des vols en direct. En cas de retard, l&apos;heure d&apos;arrivée du chauffeur est réajustée gratuitement. En cas d&apos;annulation, merci de nous prévenir au plus vite.'
+            a: 'Nous suivons les vols en direct et déplaçons la prise en charge à l’heure réelle d’atterrissage. L’attente gratuite est décrite ci-dessus. Si le vol lui-même est annulé, prévenez-nous dès que possible afin d’annuler ou de déplacer le transfert.'
           }
         ]
       },
@@ -229,11 +254,19 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
           },
           {
             q: 'Ποια είναι η πολιτική ακύρωσης;',
-            a: 'Οι ακυρώσεις και οι αλλαγές είναι εντελώς δωρεάν έως και 24 ώρες πριν από το προγραμματισμένο ραντεβού. Για αλλαγές της τελευταίας στιγμής, καλέστε μας απευθείας στο τηλέφωνο.'
+            a: BOOKING_POLICIES.el.standardCancel
+          },
+          {
+            q: 'Ποια είναι η προκαταβολή για πολυήμερες κρατήσεις;',
+            a: multiDayAnswer('el')
+          },
+          {
+            q: 'Πόση ώρα περιμένει ο οδηγός στο αεροδρόμιο;',
+            a: BOOKING_POLICIES.el.flightDelay
           },
           {
             q: 'Τι συμβαίνει σε περίπτωση καθυστέρησης της πτήσης μου;',
-            a: 'Παρακολουθούμε τις πτήσεις σε πραγματικό χρόνο. Αν η πτήση σας καθυστερήσει, η ώρα παραλαβής προσαρμόζεται αυτόματα χωρίς καμία επιπλέον χρέωση.'
+            a: 'Παρακολουθούμε τις πτήσεις σε πραγματικό χρόνο και μεταφέρουμε την παραλαβή στην πραγματική ώρα προσγείωσης. Η δωρεάν αναμονή περιγράφεται παραπάνω. Αν ακυρωθεί η ίδια η πτήση, ενημερώστε μας το συντομότερο ώστε να ακυρώσουμε ή να μετακινήσουμε τη μεταφορά.'
           }
         ]
       },
@@ -282,11 +315,19 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
             },
             {
               q: 'Kakva je vaša politika otkazivanja i povrata novca?',
-              a: 'Otkazivanja i promjene rezervacija potpuno su besplatni do 24 sata prije zakazanog preuzimanja. Unutar 24 sata molimo da izravno nazovete našu hitnu dispečersku liniju.'
+              a: BOOKING_POLICIES.hr.standardCancel
+            },
+            {
+              q: 'Kakav je polog za višednevne rezervacije?',
+              a: multiDayAnswer('hr')
+            },
+            {
+              q: 'Koliko dugo vozač čeka u zračnoj luci?',
+              a: BOOKING_POLICIES.hr.flightDelay
             },
             {
               q: 'Što se događa ako moj let kasni ili bude otkazan?',
-              a: 'Pratimo dolazne letove u stvarnom vremenu. Ako vaš let kasni, vrijeme preuzimanja se automatski prilagođava. Ako je let otkazan, obavijestite nas što je prije moguće.'
+              a: 'Pratimo dolazne letove u stvarnom vremenu i pomičemo preuzimanje na stvarno vrijeme slijetanja. Besplatno čekanje opisano je iznad. Ako je sam let otkazan, javite nam što prije kako bismo otkazali ili premjestili transfer.'
             }
           ]
         },
@@ -375,7 +416,7 @@ export default function FaqClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 
                       </button>
                       <div 
                         className={`${styles.content} ${isOpen ? styles.contentOpen : ''}`}
-                        style={{ maxHeight: isOpen ? '250px' : '0' }}
+                        style={{ maxHeight: isOpen ? '1200px' : '0' }}
                       >
                         {item.a}
                       </div>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import GoogleReviews from '@/components/GoogleReviews';
 import { DESTINATIONS, FIXED_PRICES, PRICED_ROUTES, SHARED_SHUTTLE, SPA_F1, type DestinationCountry } from '@/config/seoFacts';
+import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 import { PRICED_ROUTE_URLS, PRICE_LIST_URLS, SHARED_SHUTTLE_URLS, type PricedLang } from '@/config/pricedRoutePages';
 import { breadcrumbSchema, faqSchema, priceCatalogSchema } from '@/lib/schema';
 import { LOCALE_NAMES } from '@/lib/seo';
@@ -16,7 +17,7 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Home',
     pricing: 'Pricing',
     h1: 'Helicro price list 2026: every fixed price per minivan',
-    lead: 'All Helicro prices are fixed per vehicle (up to 8 passengers), VAT included, the same by day and by night, and confirmed in writing before you travel. Luggage, child seats, flight tracking and 60 minutes of free waiting after landing are always included. Prices from Brussels also apply from Brussels Airport (Zaventem).',
+    lead: 'All Helicro prices are fixed per vehicle (up to 8 passengers), VAT included, the same by day and by night, and confirmed in writing before you travel. Luggage, child seats and flight tracking are included. Complimentary airport waiting is 60 minutes after landing for Schengen flights and 80 minutes for flights from outside Schengen. Prices from Brussels also apply from Brussels Airport (Zaventem).',
     zaventem: 'Brussels to Brussels Airport (Zaventem)',
     zaventemNote: 'Any Brussels address to the Drop-off Area in front of departures. P1 drop-off +5€. Brussels city and the airport are 14 km apart, 20 to 35 minutes outside peak hours.',
     charleroi: 'Brussels to Charleroi Airport, private transfer',
@@ -56,7 +57,7 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Home',
     pricing: 'Prijzen',
     h1: 'Prijslijst Helicro 2026: alle vaste prijzen per minivan',
-    lead: 'Alle prijzen van Helicro zijn vast per voertuig (tot 8 passagiers), inclusief btw, dezelfde overdag en ’s nachts, en worden schriftelijk bevestigd voor u vertrekt. Bagage, kinderzitjes, vluchtopvolging en 60 minuten gratis wachttijd na de landing zijn altijd inbegrepen. Prijzen vanuit Brussel gelden ook vanaf Brussels Airport (Zaventem).',
+    lead: 'Alle prijzen van Helicro zijn vast per voertuig (tot 8 passagiers), inclusief btw, dezelfde overdag en ’s nachts, en worden schriftelijk bevestigd voor u vertrekt. Bagage, kinderzitjes en vluchtopvolging zijn inbegrepen. Gratis wachttijd op de luchthaven is 60 minuten na de landing voor Schengenvluchten en 80 minuten voor vluchten van buiten Schengen. Prijzen vanuit Brussel gelden ook vanaf Brussels Airport (Zaventem).',
     zaventem: 'Brussel naar Brussels Airport (Zaventem)',
     zaventemNote: 'Elk Brussels adres naar de Drop-off zone voor de vertrekhal. P1 drop-off +5€. Brussel en de luchthaven liggen 14 km uit elkaar, 20 tot 35 minuten buiten de spits.',
     charleroi: 'Brussel naar Charleroi Airport, privétransfer',
@@ -96,7 +97,7 @@ const T: Record<PricedLang, Record<string, string>> = {
     home: 'Accueil',
     pricing: 'Tarifs',
     h1: 'Tarifs Helicro 2026 : tous les prix fixes par minivan',
-    lead: 'Tous les prix Helicro sont fixes par véhicule (jusqu’à 8 passagers), TVA comprise, identiques de jour comme de nuit, et confirmés par écrit avant le départ. Bagages, sièges enfants, suivi de vol et 60 minutes d’attente gratuite après l’atterrissage sont toujours inclus. Les prix depuis Bruxelles s’appliquent aussi depuis Brussels Airport (Zaventem).',
+    lead: 'Tous les prix Helicro sont fixes par véhicule (jusqu’à 8 passagers), TVA comprise, identiques de jour comme de nuit, et confirmés par écrit avant le départ. Bagages, sièges enfants et suivi de vol sont inclus. L’attente gratuite à l’aéroport est de 60 minutes après l’atterrissage pour les vols Schengen et de 80 minutes pour les vols en provenance de l’extérieur de Schengen. Les prix depuis Bruxelles s’appliquent aussi depuis Brussels Airport (Zaventem).',
     zaventem: 'Bruxelles vers Brussels Airport (Zaventem)',
     zaventemNote: 'Toute adresse bruxelloise vers la zone Drop-off devant les départs. Dépose P1 +5€. Bruxelles et l’aéroport sont à 14 km, soit 20 à 35 minutes hors heures de pointe.',
     charleroi: 'Bruxelles vers l’aéroport de Charleroi, navette privée',
@@ -137,28 +138,31 @@ const T: Record<PricedLang, Record<string, string>> = {
 const EXTRAS: Record<PricedLang, string[]> = {
   en: [
       `P1 drop-off at Brussels Airport: +${FIXED_PRICES.bruP1Surcharge}€`,
-      `Waiting after landing: first ${FIXED_PRICES.waitingFreeMinutes} minutes free, then ${FIXED_PRICES.waitingPerHour}€ per hour`,
+      BOOKING_POLICIES.en.airportWaitingShort,
       `Extra stop on the route: ${FIXED_PRICES.extraStop}€ per stop`,
       'No night surcharge on private transfers',
-      `Free cancellation or changes up to ${FIXED_PRICES.cancellationHours} hours before pickup`,
+      `Free cancellation or changes up to ${FIXED_PRICES.cancellationHours} hours before pickup for standard transfers`,
+      BOOKING_POLICIES.en.multiDayShort,
       'Payment by card, bank transfer, invoice or cash; VAT invoice from Helicro SRL on request',
       'Any other origin or destination in Belgium and neighbouring countries: fixed written quote within minutes',
   ],
   nl: [
       `P1 drop-off op Brussels Airport: +${FIXED_PRICES.bruP1Surcharge}€`,
-      `Wachttijd na de landing: eerste ${FIXED_PRICES.waitingFreeMinutes} minuten gratis, daarna ${FIXED_PRICES.waitingPerHour}€ per uur`,
+      BOOKING_POLICIES.nl.airportWaitingShort,
       `Extra stop onderweg: ${FIXED_PRICES.extraStop}€ per stop`,
       'Geen nachttoeslag op privétransfers',
-      `Gratis annuleren of wijzigen tot ${FIXED_PRICES.cancellationHours} uur voor de rit`,
+      `Gratis annuleren of wijzigen tot ${FIXED_PRICES.cancellationHours} uur voor de rit bij standaardtransfers`,
+      BOOKING_POLICIES.nl.multiDayShort,
       'Betaling per kaart, overschrijving, factuur of cash; btw-factuur van Helicro SRL op aanvraag',
       'Elk ander vertrekpunt of elke andere bestemming in België en de buurlanden: vaste schriftelijke prijs binnen enkele minuten',
   ],
   fr: [
       `Dépose P1 à Brussels Airport : +${FIXED_PRICES.bruP1Surcharge}€`,
-      `Attente après l’atterrissage : ${FIXED_PRICES.waitingFreeMinutes} premières minutes gratuites, puis ${FIXED_PRICES.waitingPerHour}€ par heure`,
+      BOOKING_POLICIES.fr.airportWaitingShort,
       `Arrêt supplémentaire en route : ${FIXED_PRICES.extraStop}€ par arrêt`,
       'Pas de supplément de nuit sur les navettes privées',
-      `Annulation ou modification gratuite jusqu’à ${FIXED_PRICES.cancellationHours} h avant la prise en charge`,
+      `Annulation ou modification gratuite jusqu’à ${FIXED_PRICES.cancellationHours} h avant la prise en charge pour les transferts ordinaires`,
+      BOOKING_POLICIES.fr.multiDayShort,
       'Paiement par carte, virement, facture ou espèces ; facture TVA de Helicro SRL sur demande',
       'Tout autre point de départ ou destination en Belgique et dans les pays voisins : devis fixe écrit en quelques minutes',
   ],
