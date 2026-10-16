@@ -69,27 +69,27 @@ export const metaTranslations: Record<string, Record<Locale, PageMeta>> = {
     en: {
       title: 'Airport Transfer Prices Brussels | Fixed Rates Zaventem & Charleroi | Helicro',
       description:
-        'Transparent fixed prices: Brussels to Zaventem from 35€, Brussels to Charleroi from 65€. No hidden fees, free child seats, and 60 or 80 minutes of complimentary airport waiting.',
+        'Transparent fixed prices: Brussels to Zaventem from 35€, Brussels to Charleroi from 70€. No hidden fees, free child seats, and 60 or 80 minutes of complimentary airport waiting.',
     },
     nl: {
       title: 'Prijzen luchthavenvervoer | Vaste tarieven Zaventem & Charleroi | Helicro',
       description:
-        'Wat kost een taxi naar Zaventem? Vaste prijzen: Brussel–Zaventem vanaf 35€, Brussel–Charleroi vanaf 65€. Geen verborgen kosten, gratis kinderzitjes en wachttijd.',
+        'Wat kost een taxi naar Zaventem? Vaste prijzen: Brussel–Zaventem vanaf 35€, Brussel–Charleroi vanaf 70€. Geen verborgen kosten, gratis kinderzitjes en wachttijd.',
     },
     fr: {
       title: 'Prix navette aéroport Bruxelles | Tarifs fixes Zaventem & Charleroi | Helicro',
       description:
-        'Combien coûte un taxi vers Zaventem ? Prix fixes : Bruxelles–Zaventem dès 35€, Bruxelles–Charleroi dès 65€. Sans frais cachés, sièges enfants et attente gratuits.',
+        'Combien coûte un taxi vers Zaventem ? Prix fixes : Bruxelles–Zaventem dès 35€, Bruxelles–Charleroi dès 70€. Sans frais cachés, sièges enfants et attente gratuits.',
     },
     el: {
       title: 'Τιμές μεταφορών αεροδρομίου Βρυξέλλες | Σταθερές τιμές | Helicro',
       description:
-        'Διαφανείς σταθερές τιμές: Βρυξέλλες–Zaventem από 35€, Βρυξέλλες–Charleroi από 65€. Χωρίς κρυφές χρεώσεις, δωρεάν παιδικά καθίσματα και 60 λεπτά αναμονή μετά την προσγείωση.',
+        'Διαφανείς σταθερές τιμές: Βρυξέλλες–Zaventem από 35€, Βρυξέλλες–Charleroi από 70€. Χωρίς κρυφές χρεώσεις, δωρεάν παιδικά καθίσματα και 60 λεπτά αναμονή μετά την προσγείωση.',
     },
     hr: {
       title: 'Cijene prijevoza do zračne luke | Fiksne cijene Zaventem i Charleroi | Helicro',
       description:
-        'Transparentne fiksne cijene: Bruxelles–Zaventem od 35€, Bruxelles–Charleroi od 65€. Bez skrivenih naknada, besplatne dječje sjedalice i 60 minuta čekanja nakon slijetanja.',
+        'Transparentne fiksne cijene: Bruxelles–Zaventem od 35€, Bruxelles–Charleroi od 70€. Bez skrivenih naknada, besplatne dječje sjedalice i 60 minuta čekanja nakon slijetanja.',
     },
   },
   reviews: {

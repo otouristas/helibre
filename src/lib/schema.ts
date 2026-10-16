@@ -112,7 +112,7 @@ export function siteGraph() {
           { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 1–2 passengers', price: 35, priceCurrency: 'EUR' },
           { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 3–4 passengers', price: 45, priceCurrency: 'EUR' },
           { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 5–8 passengers', price: 55, priceCurrency: 'EUR' },
-          { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 1 passenger', price: 65, priceCurrency: 'EUR' },
+          { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 1 passenger', price: 70, priceCurrency: 'EUR' },
           { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 8 passengers', price: 160, priceCurrency: 'EUR' },
           { '@type': 'Offer', name: 'Private full-day sightseeing tour, up to 8 passengers', price: FIXED_PRICES.dayTourFrom, priceCurrency: 'EUR' },
         ],

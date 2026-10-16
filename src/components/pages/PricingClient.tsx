@@ -400,11 +400,11 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax1}</span>
-                  <strong style={{ color: 'var(--primary)' }}>65€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>70€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax2}</span>
-                  <strong style={{ color: 'var(--primary)' }}>75€</strong>
+                  <strong style={{ color: 'var(--primary)' }}>80€</strong>
                 </li>
                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
                   <span>{ui.pax3}</span>

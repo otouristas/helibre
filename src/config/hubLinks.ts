@@ -15,7 +15,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
         { href: '/en/airport-transfer/brussels-charleroi', label: 'Charleroi Airport taxi & transfer' },
         { href: '/en/airport-transfer/lille', label: 'Lille Airport transfer' },
         { href: '/en/route/brussels-zaventem', label: 'Brussels to Zaventem from 35€' },
-        { href: '/en/route/brussels-charleroi', label: 'Brussels to Charleroi from 65€' },
+        { href: '/en/route/brussels-charleroi', label: 'Brussels to Charleroi from 70€' },
         { href: '/en/route/brussels-charleroi-shared-shuttle', label: 'Shared shuttle to Charleroi from 25€ pp' },
         { href: '/price-list', label: 'Full price list 2026' },
       ],
@@ -70,7 +70,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       title: 'Luchthavenvervoer',
       links: [
         { href: '/nl/luchthavenvervoer/zaventem', label: 'Luchthavenvervoer Zaventem vanaf 35€' },
-        { href: '/nl/luchthavenvervoer/charleroi', label: 'Luchthavenvervoer Charleroi vanaf 65€' },
+        { href: '/nl/luchthavenvervoer/charleroi', label: 'Luchthavenvervoer Charleroi vanaf 70€' },
         { href: '/nl/luchthavenvervoer/gent', label: 'Luchthavenvervoer Gent' },
         { href: '/nl/luchthavenvervoer/antwerpen', label: 'Luchthavenvervoer Antwerpen' },
         { href: '/nl/luchthavenvervoer/leuven', label: 'Luchthavenvervoer Leuven' },
@@ -105,7 +105,7 @@ export const HUB_LINKS: Record<Locale, HubLinkGroup[]> = {
       title: 'Navettes aéroport',
       links: [
         { href: '/fr/navette/aeroport-bruxelles', label: 'Navette aéroport Bruxelles dès 35€' },
-        { href: '/fr/navette/aeroport-charleroi', label: 'Taxi aéroport Charleroi dès 65€' },
+        { href: '/fr/navette/aeroport-charleroi', label: 'Taxi aéroport Charleroi dès 70€' },
         { href: '/fr/navette/charleroi-bruxelles', label: 'Navette Bruxelles – Charleroi' },
         { href: '/fr/local/braine-l-alleud', label: 'Taxi Braine-l’Alleud' },
         { href: '/fr/local/waterloo', label: 'Taxi Waterloo' },

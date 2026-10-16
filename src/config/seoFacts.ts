@@ -274,8 +274,8 @@ export const FIXED_PRICES = {
     { pax: '5–8', price: 55 },
   ],
   brusselsToCRL: [
-    { pax: '1', price: 65 },
-    { pax: '2', price: 75 },
+    { pax: '1', price: 70 },
+    { pax: '2', price: 80 },
     { pax: '3', price: 90 },
     { pax: '4', price: 110 },
     { pax: '5', price: 120 },
