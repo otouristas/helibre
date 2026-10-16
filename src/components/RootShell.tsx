@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import HeaderLayout from '@/components/HeaderLayout';
@@ -7,6 +8,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import JsonLd from '@/components/JsonLd';
 import { localBusinessSchema } from '@/lib/schema';
 import type { Locale } from '@/lib/seo';
+
+const GA_MEASUREMENT_ID = 'G-TDF6RCNBJX';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext', 'greek'],
@@ -24,6 +27,18 @@ export default function RootShell({ lang, children }: { lang: Locale; children: 
   return (
     <html lang={lang} className={inter.variable}>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <JsonLd data={localBusinessSchema()} />
         <HeaderLayout />
         <main style={{ flexGrow: 1 }}>{children}</main>
