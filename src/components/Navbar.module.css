@@ -138,11 +138,11 @@
 
 .navItem {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  padding: 8px 14px;
+  letter-spacing: 0.4px;
+  padding: 8px 8px;
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
   cursor: pointer;
@@ -208,24 +208,29 @@
 .rightSection {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 /* Yellow Gold Booking CTA */
 .ctaBtn {
   background-color: var(--accent);
   color: #111827;
-  font-size: 13px;
+  font-size: 10.5px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 22px;
+  letter-spacing: 0.3px;
+  padding: 8px 10px;
   border-radius: var(--radius-full);
   transition: var(--transition);
   box-shadow: 0 4px 12px rgba(254, 232, 61, 0.2);
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  border: 1px solid var(--accent);
+  line-height: 1.2;
+  text-align: center;
 }
 
 .ctaBtn:hover {
@@ -234,6 +239,18 @@
   box-shadow: 0 6px 16px rgba(254, 232, 61, 0.4);
   text-decoration: none;
   color: #111827;
+}
+
+.ctaBtnSecondary {
+  background: transparent;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.ctaBtnSecondary:hover {
+  background: rgba(254, 232, 61, 0.16);
+  color: var(--accent);
+  box-shadow: none;
 }
 
 .ctaBtn svg {

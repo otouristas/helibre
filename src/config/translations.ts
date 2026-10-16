@@ -13,7 +13,8 @@ export const translations = {
     fleet: 'Fleet',
     faq: 'FAQ',
     contact: 'Contact',
-    bookOnline: 'Book Online',
+    bookAirport: 'Book Airport Transfer',
+    bookOther: 'Book Other Services',
     
     // Services drop list
     sightseeing: 'Private Sightseeing',
@@ -58,7 +59,7 @@ export const translations = {
     // Navbar
     home: 'Home',
     pricing: 'Tarieven',
-    ratesOverview: 'Rekenmachine & voorwaarden',
+    ratesOverview: 'Tarieven en rekenmachine',
     priceList: 'Volledige prijslijst',
     aboutUs: 'Over Ons',
     reviews: 'Recensies',
@@ -66,7 +67,8 @@ export const translations = {
     fleet: 'Wagenpark',
     faq: 'FAQ',
     contact: 'Contact',
-    bookOnline: 'Online Boeken',
+    bookAirport: 'Boek luchthaven',
+    bookOther: 'Andere diensten',
     
     // Services drop list
     sightseeing: 'Privé Sightseeing',
@@ -111,7 +113,7 @@ export const translations = {
     // Navbar
     home: 'Accueil',
     pricing: 'Tarifs',
-    ratesOverview: 'Calculateur et conditions',
+    ratesOverview: 'Tarifs et calculateur',
     priceList: 'Liste complète des tarifs',
     aboutUs: 'À Propos',
     reviews: 'Avis',
@@ -119,7 +121,8 @@ export const translations = {
     fleet: 'Flotte',
     faq: 'FAQ',
     contact: 'Contact',
-    bookOnline: 'Réserver en Ligne',
+    bookAirport: 'Réserver aéroport',
+    bookOther: 'Autres services',
     
     // Services drop list
     sightseeing: 'Excursions Privées',
@@ -164,7 +167,7 @@ export const translations = {
     // Navbar
     home: 'ΑΡΧΙΚΗ',
     pricing: 'ΤΙΜΕΣ',
-    ratesOverview: 'Υπολογιστής τιμών',
+    ratesOverview: 'Τιμές και υπολογιστής',
     priceList: 'Πλήρης τιμοκατάλογος',
     aboutUs: 'ΣΧΕΤΙΚΑ',
     reviews: 'ΚΡΙΤΙΚΕΣ',
@@ -172,7 +175,8 @@ export const translations = {
     fleet: 'ΣΤΟΛΟΣ',
     faq: 'FAQ',
     contact: 'ΕΠΙΚΟΙΝΩΝΙΑ',
-    bookOnline: 'ONLINE ΚΡΑΤΗΣΗ',
+    bookAirport: 'Κράτηση αεροδρομίου',
+    bookOther: 'Κράτηση άλλων υπηρεσιών',
     
     // Services drop list
     sightseeing: 'ΙΔΙΩΤΙΚΕΣ ΠΕΡΙΗΓΗΣΕΙΣ',
@@ -217,7 +221,7 @@ export const translations = {
     // Navbar
     home: 'Početna',
     pricing: 'Cijene',
-    ratesOverview: 'Kalkulator i uvjeti',
+    ratesOverview: 'Cijene i kalkulator',
     priceList: 'Cjeloviti cjenik',
     aboutUs: 'O nama',
     reviews: 'Recenzije',
@@ -225,7 +229,8 @@ export const translations = {
     fleet: 'Vozni park',
     faq: 'Česta pitanja',
     contact: 'Kontakt',
-    bookOnline: 'Rezerviraj online',
+    bookAirport: 'Rezerviraj aerodrom',
+    bookOther: 'Ostale usluge',
     
     // Services drop list
     sightseeing: 'Privatni razgledi',
@@ -278,6 +283,12 @@ export function priceListHref(lang: Locale): string {
 export function isPriceListPath(pathname: string): boolean {
   return pathname === '/price-list' || pathname.startsWith('/nl/prijslijst') || pathname.startsWith('/fr/tarifs');
 }
+
+/** Airport and city-to-city booking form. */
+export const AIRPORT_BOOKING_URL = 'https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM';
+
+/** Sightseeing, corporate, events, parcels and other non-airport services. */
+export const OTHER_SERVICES_BOOKING_URL = 'https://forms.clickup.com/9015129384/f/8cnfx98-215/HYNDJD9OSRESGIPWVM';
 
 export const getLangFromPath = (pathname: string): Locale => {
   if (pathname.startsWith('/nl')) return 'nl';

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, isPriceListPath, priceListHref, translations } from '@/config/translations';
+import { AIRPORT_BOOKING_URL, getLangFromPath, isPriceListPath, OTHER_SERVICES_BOOKING_URL, priceListHref, translations } from '@/config/translations';
 import styles from './Navbar.module.css';
 
 interface NavbarProps {
@@ -150,18 +150,22 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
             <Link href={localizePath('/contact')} className={isActive('/contact')}>{t.contact}</Link>
           </nav>
 
-          {/* Right section: Booking CTA button */}
           <div className={styles.rightSection}>
-            <a 
-              href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM"
+            <a
+              href={AIRPORT_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaBtn}
             >
-              <span>{t.bookOnline}</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
+              <span>{t.bookAirport}</span>
+            </a>
+            <a
+              href={OTHER_SERVICES_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}
+            >
+              <span>{t.bookOther}</span>
             </a>
           </div>
         </div>
