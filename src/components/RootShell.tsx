@@ -1,6 +1,5 @@
 import React from 'react';
 import Script from 'next/script';
-import { Inter } from 'next/font/google';
 import '@/app/globals.css';
 import HeaderLayout from '@/components/HeaderLayout';
 import Footer from '@/components/Footer';
@@ -11,13 +10,6 @@ import type { Locale } from '@/lib/seo';
 
 const GA_MEASUREMENT_ID = 'G-TDF6RCNBJX';
 
-const inter = Inter({
-  subsets: ['latin', 'latin-ext', 'greek'],
-  variable: '--font-body',
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-});
-
 /**
  * Shared document shell. Each locale route group has its own root layout that renders this
  * with the correct `lang`, so every page carries the right <html lang> for search engines,
@@ -25,7 +17,7 @@ const inter = Inter({
  */
 export default function RootShell({ lang, children }: { lang: Locale; children: React.ReactNode }) {
   return (
-    <html lang={lang} className={inter.variable}>
+    <html lang={lang}>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
