@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, translations } from '@/config/translations';
+import { getLangFromPath, isPriceListPath, priceListHref, translations } from '@/config/translations';
 import styles from './MobileDrawer.module.css';
 
 interface MobileDrawerProps {
@@ -82,9 +82,15 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
           <Link href={localizePath('/')} className={isActive('/')} onClick={onClose}>
             {t.home}
           </Link>
-          <Link href={localizePath('/pricing')} className={isActive('/pricing')} onClick={onClose}>
-            {t.pricing}
-          </Link>
+          <div className={styles.sectionTitle} style={{ marginTop: '12px' }}>{t.pricing}</div>
+          <div className={styles.servicesList}>
+            <Link href={localizePath('/pricing')} className={isServiceActive('/pricing')} onClick={onClose}>
+              {t.ratesOverview}
+            </Link>
+            <Link href={priceListHref(lang)} className={isPriceListPath(pathname) ? `${styles.serviceLink} ${styles.serviceActive}` : styles.serviceLink} onClick={onClose}>
+              {t.priceList}
+            </Link>
+          </div>
           <Link href={localizePath('/about-us')} className={isActive('/about-us')} onClick={onClose}>
             {t.aboutUs}
           </Link>

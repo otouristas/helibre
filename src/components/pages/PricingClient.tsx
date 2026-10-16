@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath } from '@/config/translations';
+import { getLangFromPath, priceListHref, translations } from '@/config/translations';
 import FareCalculator from '@/components/FareCalculator';
 import BookingPolicyPanels from '@/components/BookingPolicyPanels';
 import { BOOKING_POLICIES } from '@/config/bookingPolicies';
@@ -327,8 +328,13 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
         <h1 className="text-center text-4xl font-extrabold mb-4" style={{ color: 'var(--primary-dark)' }}>
           {ui.title}
         </h1>
-        <p className="text-center text-slate-500 max-w-2xl mx-auto mb-12">
+        <p className="text-center text-slate-500 max-w-2xl mx-auto mb-4">
           {ui.subtitle}
+        </p>
+        <p className="text-center mb-12">
+          <Link href={priceListHref(lang)} style={{ fontWeight: 700, color: 'var(--primary)' }}>
+            {translations[lang].priceList} →
+          </Link>
         </p>
 
         {/* 1. Instant Quote Calculator */}

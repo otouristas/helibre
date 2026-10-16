@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, translations } from '@/config/translations';
+import { getLangFromPath, isPriceListPath, priceListHref, translations } from '@/config/translations';
 import styles from './Navbar.module.css';
 
 interface NavbarProps {
@@ -112,7 +112,18 @@ export default function Navbar({ onOpenMobileMenu }: NavbarProps) {
           {/* Desktop Navigation Links */}
           <nav className={styles.navLinks}>
             <Link href={localizePath('/')} className={isActive('/')}>{t.home}</Link>
-            <Link href={localizePath('/pricing')} className={isActive('/pricing')}>{t.pricing}</Link>
+            <div className={styles.dropdownContainer}>
+              <span className={`${styles.navItem} ${pathname.includes('/pricing') || isPriceListPath(pathname) ? styles.active : ''} flex items-center`}>
+                {t.pricing}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '4px' }}>
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+              <div className={`${styles.dropdown} ${styles.dropdownWide}`}>
+                <Link href={localizePath('/pricing')} className={`${styles.dropdownItem} ${pathname.includes('/pricing') ? styles.dropdownItemActive : ''}`}>{t.ratesOverview}</Link>
+                <Link href={priceListHref(lang)} className={`${styles.dropdownItem} ${isPriceListPath(pathname) ? styles.dropdownItemActive : ''}`}>{t.priceList}</Link>
+              </div>
+            </div>
             <Link href={localizePath('/about-us')} className={isActive('/about-us')}>{t.aboutUs}</Link>
             <Link href={localizePath('/reviews')} className={isActive('/reviews')}>{t.reviews}</Link>
             

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { getLangFromPath, translations } from '@/config/translations';
+import { getLangFromPath, priceListHref, translations } from '@/config/translations';
 import { HUB_LINKS } from '@/config/hubLinks';
 import styles from './Footer.module.css';
 
@@ -43,6 +43,7 @@ export default function Footer() {
           <ul className={styles.list}>
             <li><Link href={localizePath('/')} className={styles.link}>{t.home}</Link></li>
             <li><Link href={localizePath('/pricing')} className={styles.link}>{t.pricing}</Link></li>
+            <li><Link href={priceListHref(lang)} className={styles.link}>{t.priceList}</Link></li>
             <li><Link href={localizePath('/about-us')} className={styles.link}>{t.aboutUs}</Link></li>
             <li><Link href={localizePath('/reviews')} className={styles.link}>{t.reviews}</Link></li>
             <li><Link href={localizePath('/fleet')} className={styles.link}>{t.fleet}</Link></li>

@@ -191,10 +191,18 @@
   transition: var(--transition-fast);
 }
 
+.dropdownWide {
+  width: 290px;
+}
+
 .dropdownItem:hover {
   background: var(--accent);
   color: #111827;
   text-decoration: none;
+}
+
+.dropdownItemActive {
+  color: var(--accent);
 }
 
 .rightSection {

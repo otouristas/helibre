@@ -5,6 +5,8 @@ export const translations = {
     // Navbar
     home: 'Home',
     pricing: 'Pricing',
+    ratesOverview: 'Rates & calculator',
+    priceList: 'Full price list',
     aboutUs: 'About Us',
     reviews: 'Reviews',
     services: 'Services',
@@ -56,6 +58,8 @@ export const translations = {
     // Navbar
     home: 'Home',
     pricing: 'Tarieven',
+    ratesOverview: 'Rekenmachine & voorwaarden',
+    priceList: 'Volledige prijslijst',
     aboutUs: 'Over Ons',
     reviews: 'Recensies',
     services: 'Diensten',
@@ -107,6 +111,8 @@ export const translations = {
     // Navbar
     home: 'Accueil',
     pricing: 'Tarifs',
+    ratesOverview: 'Calculateur et conditions',
+    priceList: 'Liste complète des tarifs',
     aboutUs: 'À Propos',
     reviews: 'Avis',
     services: 'Services',
@@ -158,6 +164,8 @@ export const translations = {
     // Navbar
     home: 'ΑΡΧΙΚΗ',
     pricing: 'ΤΙΜΕΣ',
+    ratesOverview: 'Υπολογιστής τιμών',
+    priceList: 'Πλήρης τιμοκατάλογος',
     aboutUs: 'ΣΧΕΤΙΚΑ',
     reviews: 'ΚΡΙΤΙΚΕΣ',
     services: 'ΥΠΗΡΕΣΙΕΣ',
@@ -209,6 +217,8 @@ export const translations = {
     // Navbar
     home: 'Početna',
     pricing: 'Cijene',
+    ratesOverview: 'Kalkulator i uvjeti',
+    priceList: 'Cjeloviti cjenik',
     aboutUs: 'O nama',
     reviews: 'Recenzije',
     services: 'Usluge',
@@ -257,6 +267,17 @@ export const translations = {
     reqSuccess: 'Hvala vam! Vaš zahtjev je poslan. Uskoro ćemo potvrditi vašu cijenu.'
   }
 };
+
+/** Full published price list. Greek and Croatian use the English list. */
+export function priceListHref(lang: Locale): string {
+  if (lang === 'nl') return '/nl/prijslijst';
+  if (lang === 'fr') return '/fr/tarifs';
+  return '/price-list';
+}
+
+export function isPriceListPath(pathname: string): boolean {
+  return pathname === '/price-list' || pathname.startsWith('/nl/prijslijst') || pathname.startsWith('/fr/tarifs');
+}
 
 export const getLangFromPath = (pathname: string): Locale => {
   if (pathname.startsWith('/nl')) return 'nl';
