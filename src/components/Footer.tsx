@@ -143,10 +143,12 @@ export default function Footer() {
           <span>{t.photosByPexels}</span>
         </a>
         <a href="https://anotherseoguru.com" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
-          {t.designedBy} <span className={styles.creditBrand}>AnotherSEOGuru</span>
+          {t.designedBy}{' '}
+          <img src="/images/brand/credits/anotherseoguru.svg" alt="AnotherSEOGuru" width={106} height={24} loading="lazy" className={styles.creditAsg} />
         </a>
         <a href="https://touristas.ai" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
-          {t.poweredBy} <span className={styles.creditBrand}>Touristas AI</span>
+          {t.poweredBy}{' '}
+          <img src="/images/brand/credits/touristas-ai-white.png" alt="Touristas AI" width={92} height={19} loading="lazy" className={styles.creditTouristas} />
         </a>
       </div>
     </footer>
