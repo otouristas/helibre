@@ -148,7 +148,7 @@ export default function Footer() {
         </a>
         <a href="https://touristas.ai" target="_blank" rel="noopener noreferrer" className={styles.creditLink}>
           {t.poweredBy}{' '}
-          <img src="/images/brand/credits/touristas-ai-white.png" alt="Touristas AI" width={92} height={19} loading="lazy" className={styles.creditTouristas} />
+          <img src="/images/brand/credits/touristas-ai-white.png" alt="Touristas AI" width={123} height={19} loading="lazy" className={styles.creditTouristas} />
         </a>
       </div>
     </footer>
