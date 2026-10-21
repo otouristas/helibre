@@ -1,4 +1,10 @@
+Last-Updated: 2026-10-21
+Canonical: https://helicro.be/llms.txt
+Long-form: https://helicro.be/llms-full.txt
+Sitemap: https://helicro.be/sitemap.xml
+
 # Helicro Transport
+Source: https://helicro.be
 
 > Helicro Transport (Helicro SRL, VAT BE 0804.095.653) is a licensed private chauffeur and minivan transfer service based in Braine-l'Alleud, Belgium. It drives passengers between any Belgian address and Brussels Airport (Zaventem), Brussels South Charleroi Airport and Lille Airport at fixed prices agreed in advance, and also runs private day trips, corporate and embassy transport, festival and event transfers and same-day parcel delivery. Owner-driver Gerasimos has more than 30 years of accident-free driving and speaks English, French and Greek. Google rating 5.0 from 40 reviews.
 
