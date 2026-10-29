@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cloudflare": "CLOUDFLARE_STATIC_EXPORT=1 next build",
+    "preview:cloudflare": "wrangler dev",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy",
     "start": "next start",
     "lint": "eslint"
   },
@@ -19,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.155.0"
   }
 }
