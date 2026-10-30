@@ -287,7 +287,7 @@ export const FIXED_PRICES = {
   /** Complimentary airport wait from actual landing, Schengen flights. */
   waitingFreeMinutes: 60,
   /** Complimentary airport wait from actual landing, flights from outside Schengen. */
-  waitingFreeMinutesNonSchengen: 80,
+  waitingFreeMinutesNonSchengen: 70,
   /** Extra waiting after the complimentary period, per additional 30 minutes. */
   waitingPer30Min: 15,
   /** Hourly equivalent of waitingPer30Min. Kept so older copy can still resolve. */

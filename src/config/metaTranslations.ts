@@ -69,7 +69,7 @@ export const metaTranslations: Record<string, Record<Locale, PageMeta>> = {
     en: {
       title: 'Airport Transfer Prices Brussels | Fixed Rates Zaventem & Charleroi | Helicro',
       description:
-        'Transparent fixed prices: Brussels to Zaventem from 35€, Brussels to Charleroi from 70€. No hidden fees, free child seats, and 60 or 80 minutes of complimentary airport waiting.',
+        'Transparent fixed prices: Brussels to Zaventem from 35€, Brussels to Charleroi from 70€. No hidden fees, free child seats, and 60 or 70 minutes of complimentary airport waiting.',
     },
     nl: {
       title: 'Prijzen luchthavenvervoer | Vaste tarieven Zaventem & Charleroi | Helicro',
