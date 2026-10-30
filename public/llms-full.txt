@@ -28,7 +28,7 @@ Last updated: 2026-09-23. Canonical site: https://helicro.be. Languages: English
 - Meeting point at Brussels Airport: the driver waits in the arrivals hall in front of the café holding a sign with the passenger's name. Departures are dropped at the Drop-off Area; P1 drop-off is available for +5€.
 - Meeting point at Charleroi Airport: the driver waits at the official Kiss & Ride zone or inside the terminal holding a Helicro sign. Ryanair and Wizz Air delays are tracked live.
 - Meeting point at Lille Airport: the arrivals area of the single terminal, with a name sign. Lille-Europe and Lille-Flandres stations are also served.
-- Flight tracking is automatic; the first 60 minutes after landing are free, then waiting is billed at 30€ per hour.
+- Flight tracking is automatic; the first 60 minutes after landing are free for Schengen flights and the first 70 minutes for flights from outside Schengen, then waiting is billed at 30€ per hour.
 
 ### Private sightseeing and day trips
 - Destinations: Bruges (100 km from Brussels, 70–85 min), Ghent (60 km, 45–60 min), Durbuy and the Ardennes (115 km, 85–100 min), Waterloo battlefield (20 km, 25–35 min), Dinant, Antwerp, Leuven, Mechelen.
@@ -83,7 +83,7 @@ Last updated: 2026-09-23. Canonical site: https://helicro.be. Languages: English
 ### Other prices
 - Private full-day sightseeing tour: from 380€ per vehicle.
 - Extra stop on the route: 10€ per stop.
-- Waiting after landing: first 60 minutes free, then 30€ per hour.
+- Waiting after landing: first 60 minutes free for Schengen flights, 70 minutes for flights from outside Schengen, then 30€ per hour.
 - Every other origin (Antwerp, Ghent, Bruges, Leuven, Liège, Namur, Mons, Hasselt, Walloon Brabant communes, Lille) is quoted as a fixed amount per minivan in writing within minutes; the price is shared by everyone on board, not charged per person.
 
 ## 5. Distances and typical driving times outside peak hours
@@ -112,7 +112,7 @@ Q: Where does the driver wait at Brussels Airport?
 A: In the arrivals hall in front of the café, holding a sign with your name. At Charleroi, at the Kiss & Ride zone or inside the terminal with a Helicro sign.
 
 Q: What happens if my flight is delayed?
-A: The flight is tracked live and the pickup time moves automatically. The first 60 minutes after landing are free.
+A: The flight is tracked live and the pickup time moves automatically. The first 60 minutes after landing are free for Schengen flights and 70 minutes for flights from outside Schengen.
 
 Q: Do you provide child seats?
 A: Yes, infant seats, child seats and booster cushions are free; state the number and ages of the children when booking.
