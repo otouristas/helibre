@@ -4,8 +4,11 @@ import { getSeoLanding, seoLandingUrls } from '@/lib/seoContent';
 import { PRICE_LIST_PATHS } from '@/config/translations';
 import { absoluteUrl, sharedPathAlternates, type AlternateMap, type Locale } from '@/lib/seo';
 
+// The sitemap only depends on versioned site content, so export it at build time.
+export const dynamic = 'force-static';
+
 /** Date of the last site-wide content revision. Bump when content changes materially. */
-const CONTENT_UPDATED = new Date('2026-10-30T00:00:00Z');
+const CONTENT_UPDATED = new Date('2026-11-01T00:00:00Z');
 
 type Entry = MetadataRoute.Sitemap[number];
 

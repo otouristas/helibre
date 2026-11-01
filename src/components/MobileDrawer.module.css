@@ -507,16 +507,6 @@
   }
 }
 
-/* Tablets: cap the drawer so rows stay readable, still flush to the left edge */
-@media (min-width: 640px) {
-  .drawer {
-    width: 440px;
-    right: auto;
-    border-right: 1px solid var(--hair);
-    box-shadow: var(--shadow-xl);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .drawer,
   .drawerOpen,

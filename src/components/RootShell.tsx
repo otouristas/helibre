@@ -19,7 +19,6 @@ const MENU_FACTS: MenuFacts = {
   reviewCount: REVIEW_COUNT,
   airportFrom: Math.min(...FIXED_PRICES.brusselsToBRU.map((p) => p.price)),
   waitSchengen: FIXED_PRICES.waitingFreeMinutes,
-  waitNonSchengen: FIXED_PRICES.waitingFreeMinutesNonSchengen,
 };
 
 /**

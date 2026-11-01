@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
+const cloudflareExport = process.env.CLOUDFLARE_STATIC_EXPORT === '1';
+
 const nextConfig: NextConfig = {
+  // Keep the existing Next.js workflow; Workers serves the exported HTML/assets.
+  ...(cloudflareExport ? { output: 'export' as const } : {}),
   images: {
+    unoptimized: cloudflareExport,
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,7 +17,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
+  redirects: cloudflareExport ? undefined : async () => {
     return [
       {
         source: '/en/festival/tomorrowland',

@@ -28,11 +28,11 @@ Last updated: 2026-09-23. Canonical site: https://helicro.be. Languages: English
 - Meeting point at Brussels Airport: the driver waits in the arrivals hall in front of the café holding a sign with the passenger's name. Departures are dropped at the Drop-off Area; P1 drop-off is available for +5€.
 - Meeting point at Charleroi Airport: the driver waits at the official Kiss & Ride zone or inside the terminal holding a Helicro sign. Ryanair and Wizz Air delays are tracked live.
 - Meeting point at Lille Airport: the arrivals area of the single terminal, with a name sign. Lille-Europe and Lille-Flandres stations are also served.
-- Flight tracking is automatic; the first 60 minutes after landing are free for Schengen flights and the first 70 minutes for flights from outside Schengen, then waiting is billed at 30€ per hour.
+- Flight tracking is automatic; all arriving flights receive 60 minutes of complimentary waiting from actual landing, then 15€ per additional 30 minutes by prior agreement and subject to driver availability; extra waiting is not guaranteed.
 
 ### Private sightseeing and day trips
 - Destinations: Bruges (100 km from Brussels, 70–85 min), Ghent (60 km, 45–60 min), Durbuy and the Ardennes (115 km, 85–100 min), Waterloo battlefield (20 km, 25–35 min), Dinant, Antwerp, Leuven, Mechelen.
-- Format: private minivan and driver at the group's disposal for the day, flexible departure time and stops; the driver waits with the vehicle. Full-day tours from 380€ per vehicle for up to 8 passengers; entrance tickets and meals are not included. Tours can start or end at the airport.
+- Format: private minivan and driver at the group's disposal for the day, flexible departure time and stops; the driver waits with the vehicle. Full-day tours from 400€ per vehicle for up to 8 passengers; entrance tickets and meals are not included. Tours can start or end at the airport.
 
 ### Corporate, embassy and diplomatic transport
 - Executive airport transfers, hourly hire from 3 hours, conference and summit shuttles, roadshows to Antwerp, Luxembourg, Lille or Amsterdam, recurring staff and embassy runs with an annual rate card.
@@ -52,39 +52,30 @@ Last updated: 2026-09-23. Canonical site: https://helicro.be. Languages: English
 - Zeebrugge cruise terminal to Brussels Airport (115 km, 80–95 min), Brussels city or Bruges (15 km); Antwerp cruise terminal to Brussels Airport (45 km). Port-day tours to Bruges and Ghent with a guaranteed return before all-aboard.
 
 ## 4. Fixed prices (EUR, per vehicle, VAT included, luggage and child seats included, no night surcharge)
-### Brussels city (any address) to Brussels Airport (Zaventem), Drop-off Area
-- 1–2 passengers: 35€
-- 3–4 passengers: 45€
-- 5–8 passengers: 55€
-- P1 drop-off: +5€
-### Brussels city (any address) to Brussels South Charleroi Airport, door to door
-- 1 passenger: 65€
-- 2 passengers: 75€
-- 3 passengers: 90€
-- 4 passengers: 110€
-- 5 passengers: 120€
-- 6 passengers: 130€
-- 7 passengers: 140€
-- 8 passengers: 160€
-### Shared shuttle Brussels city to Charleroi Airport (per group booked together, pickup at your door, max 7 passengers)
+### Brussels city to/from Brussels Airport (Zaventem), Drop-off Area
+- 1–3 passengers: 35–45€ per vehicle.
+- 4–8 passengers: 45–60€ per vehicle.
+- These are published ranges; the exact fare is confirmed at booking. P1 drop-off: +5€.
+### Brussels city to/from Charleroi Airport, private transfer
+- 1 passenger: 70€; 2: 80€; 3: 90€; 4: 110€; 5: 120€; 6: 140€; 7: 160€; 8: 180€ per vehicle.
+### Shared shuttle Brussels city to/from Charleroi Airport (per group booked together, max 7 passengers)
 - Day (06:00–22:00): 1 passenger 25€, 2 passengers 50€, 3 passengers 75€, 4 passengers 90€, 5 passengers 110€, 6 passengers 120€, 7 passengers 130€.
 - Night (22:00–06:00): 1 passenger 30€, 2 passengers 60€, 3 passengers 80€, 4 passengers 100€, 5 passengers 115€, 6 passengers 125€, 7 passengers 135€.
-### Other fixed prices from Brussels city or Brussels Airport, per vehicle, same price in both directions (1–3 passengers / 4–8 passengers)
-- Belgium: Antwerp 75€ / 85€ (45 km); Ghent 100€ / 120€ (60 km); Bruges 130€ / 150€ (100 km); Tomorrowland in Boom 75€ / 100€ (35 km).
-- France: Lille-Lesquin Airport 150€ / 170€ (110 km); Paris Charles de Gaulle Airport 380€ / 420€ (300 km); Paris Orly Airport 460€ / 500€ (320 km).
-- Netherlands: Eindhoven (city or airport) 190€ / 210€ (125 km); Amsterdam (city or Schiphol) 250€ / 290€ (205 km); Maastricht (city or airport) 150€ / 170€ (115 km).
-- Germany: Düsseldorf (city or airport) 250€ / 280€ (220 km); Cologne (city or Cologne Bonn Airport) 250€ / 280€ (225 km); Frankfurt (city or airport) 380€ / 420€ (400 km).
-- Luxembourg (city or Findel Airport): 260€ / 300€ (220 km).
-- Cross-border prices include motorway tolls, fuel and the driver's return. EU citizens need only an ID card.
-### From Charleroi Airport, per vehicle (1–3 / 4–8 passengers)
-- Antwerp 135€ / 180€ (100 km); Ghent 150€ / 180€ (105 km); Bruges 180€ / 210€ (145 km).
-### Events
-- Spa-Francorchamps race weekends (F1, WEC, 24 Hours): 580€ per day for a chauffeur and 8-seat minivan, return trips included, usually 3 days.
-### Other prices
-- Private full-day sightseeing tour: from 380€ per vehicle.
-- Extra stop on the route: 10€ per stop.
-- Waiting after landing: first 60 minutes free for Schengen flights, 70 minutes for flights from outside Schengen, then 30€ per hour.
-- Every other origin (Antwerp, Ghent, Bruges, Leuven, Liège, Namur, Mons, Hasselt, Walloon Brabant communes, Lille) is quoted as a fixed amount per minivan in writing within minutes; the price is shared by everyone on board, not charged per person.
+### Other fixed prices from Brussels city or Brussels Airport, per vehicle, both directions (1–3 / 4–8 passengers)
+- Belgium: Antwerp 80€/90€; Ghent 110€/130€; Bruges 145€/165€; Tomorrowland in Boom 80€/100€.
+- France: Lille-Lesquin Airport 160€/180€; Paris Charles de Gaulle Airport 400€/420€; Paris Orly Airport 460€/500€.
+- Netherlands: Eindhoven 200€/220€; Amsterdam or Schiphol 300€/330€; Maastricht 160€/180€.
+- Germany: Düsseldorf 290€/300€; Cologne 270€/290€; Frankfurt 420€/440€.
+- Luxembourg: 290€/320€.
+### From Charleroi Airport (1–3 / 4–8 passengers, per vehicle)
+- Antwerp 160€/180€; Ghent 170€/190€; Bruges 200€/220€.
+### Other prices and booking policies
+- Spa-Francorchamps Formula 1: 580€ per day for an 8-passenger minivan, return trips included, usually booked for 3 days.
+- Private full-day sightseeing tours: from 400€ per vehicle, up to 8 passengers.
+- All arriving flights, whether within or outside Schengen: 60 minutes complimentary waiting from actual landing. Additional waiting costs 15€ per additional 30 minutes, subject to driver availability and prior agreement directly with the driver. The driver may leave after the complimentary period to attend other bookings; extra waiting is not guaranteed.
+- Multi-day bookings involving exclusive use of a vehicle and driver require a 20% deposit of the total agreed price. Cancellation by email to helicrotransport@gmail.com at least 48 hours before service: full deposit refund. Less than 48 hours: deposit non-refundable. Changes remain subject to availability; remaining balance and payment arrangements are confirmed at booking.
+- Standard transfers retain free changes/cancellations up to 24 hours before pickup.
+- Extra stops: 10€ per stop; no night surcharge on private transfers.
 
 ## 5. Distances and typical driving times outside peak hours
 - Brussels centre to Brussels Airport: 14 km, 20–35 min (up to 50 min in weekday rush hour).
@@ -96,23 +87,23 @@ Last updated: 2026-09-23. Canonical site: https://helicro.be. Languages: English
 
 ## 6. Booking and policies
 - How to book: send date, pickup address, destination, flight number and number of passengers by WhatsApp (+32 472 35 88 05) or the online form; a written fixed price follows within minutes; the driver's name and phone number are confirmed before the ride.
-- Cancellation: free cancellation or changes up to 24 hours before pickup. Strike-related flight cancellations are handled free of charge even inside 24 hours.
+- Standard transfers: free cancellation or changes up to 24 hours before pickup. Multi-day exclusive bookings follow the 20% deposit and 48-hour refund terms above. Strike-related flight cancellations are handled free of charge even inside 24 hours.
 - Payment: debit or credit card, bank transfer (SEPA), monthly invoice for corporate clients, or cash to the driver. VAT invoices from Helicro SRL on request.
 - Punctuality: the driver arrives 10 minutes before the agreed pickup time and checks live traffic before departure.
 - Comparison with alternatives: for a solo traveller with hand luggage the train (about 10€ to Brussels Airport) or the Flibco shuttle (about 17–20€ to Charleroi) is cheaper; for two or more people, families with child seats, early departures or late arrivals, the fixed price per vehicle is usually equal to or cheaper than tickets plus a taxi at each end and removes every connection.
 
 ## 7. Frequently asked questions
 Q: How much is a taxi from Brussels to Zaventem airport?
-A: A Helicro private transfer from any Brussels address to Brussels Airport costs 35€ for 1–2 passengers, 45€ for 3–4 and 55€ for 5–8, per vehicle. A metered taxi typically costs 45–60€ and more at night.
+A: A Helicro private transfer from any Brussels address to Brussels Airport costs 35–45€ for 1–3 passengers and 45–60€ for 4–8, per vehicle. A metered taxi typically costs 45–60€ and more at night.
 
 Q: How much is a taxi from Brussels to Charleroi Airport?
-A: 65€ for 1 passenger, 75€ for 2, 90€ for 3, 110€ for 4 and up to 160€ for 8, per vehicle, door to door, day or night.
+A: 70€ for 1 passenger, 80€ for 2, 90€ for 3, 110€ for 4 and up to 180€ for 8, per vehicle, door to door, day or night.
 
 Q: Where does the driver wait at Brussels Airport?
 A: In the arrivals hall in front of the café, holding a sign with your name. At Charleroi, at the Kiss & Ride zone or inside the terminal with a Helicro sign.
 
 Q: What happens if my flight is delayed?
-A: The flight is tracked live and the pickup time moves automatically. The first 60 minutes after landing are free for Schengen flights and 70 minutes for flights from outside Schengen.
+A: The flight is tracked live and the pickup time moves automatically. All arriving flights receive 60 minutes of complimentary waiting from actual landing. Additional waiting is 15€ per additional 30 minutes, by prior agreement with the driver and subject to availability; it is not guaranteed.
 
 Q: Do you provide child seats?
 A: Yes, infant seats, child seats and booster cushions are free; state the number and ages of the children when booking.
@@ -124,7 +115,7 @@ Q: Which languages does the driver speak?
 A: English, French and Greek. Dutch and Croatian are available for quotes, confirmations and the website.
 
 Q: Can I cancel for free?
-A: Yes, up to 24 hours before pickup.
+A: Standard transfers: free cancellation up to 24 hours before pickup. Multi-day exclusive bookings: the 20% deposit is fully refunded for email cancellation at least 48 hours before service, and is non-refundable later.
 
 Q: Do you drive from cities other than Brussels?
 A: Yes: Antwerp, Ghent, Bruges, Leuven, Mechelen, Liège, Namur, Charleroi, Mons, Hasselt, Ostend, Waterloo, Wavre, Nivelles, Braine-l'Alleud and any other Belgian address, plus Lille and Luxembourg.

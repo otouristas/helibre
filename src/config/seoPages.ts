@@ -147,7 +147,7 @@ export const seoPages: SEOPage[] = [
     "h1": "Brussels to Zaventem airport transfer",
     "keyword": "brussels to zaventem",
     "title": "Brussels to Zaventem Airport Transfer | Fixed Price From 35€ | Helicro",
-    "description": "Private transfer from any Brussels address to Brussels Airport (Zaventem): 35€ for 1–2, 45€ for 3–4, 55€ for 5–8 passengers per vehicle. 20–35 minutes, child seats, 24/7.",
+    "description": "Private transfer from any Brussels address to Brussels Airport (Zaventem): 35–45€ for 1–3, 45–60€ for 4–8 passengers per vehicle. 20–35 minutes, child seats, 24/7.",
     "priority": "HIGH"
   },
   {
@@ -156,7 +156,7 @@ export const seoPages: SEOPage[] = [
     "h1": "Brussels to Charleroi airport transfer",
     "keyword": "brussels to charleroi airport",
     "title": "Brussels to Charleroi Airport Transfer | Fixed Price From 70€ | Helicro",
-    "description": "Private door-to-door transfer from any Brussels address to Brussels South Charleroi (CRL): from 70€ for 1 passenger to 160€ for 8, per vehicle. 55–70 minutes, 24/7.",
+    "description": "Private door-to-door transfer from any Brussels address to Brussels South Charleroi (CRL): from 70€ for 1 passenger to 180€ for 8, per vehicle. 55–70 minutes, 24/7.",
     "priority": "HIGH"
   },
   {

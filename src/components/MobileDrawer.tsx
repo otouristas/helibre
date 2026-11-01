@@ -119,7 +119,7 @@ export default function MobileDrawer({ isOpen, onClose, facts }: MobileDrawerPro
   const indicators = [
     { value: `★ ${rating}`, label: m.reviewsLabel(facts.reviewCount), href: localizePath('/reviews') },
     { value: m.badgeFrom(facts.airportFrom), label: m.fixedFromLabel, href: priceListHref(lang) },
-    { value: m.freeWaitValue(facts.waitSchengen, facts.waitNonSchengen), label: m.freeWaitLabel, href: localizePath('/pricing') },
+    { value: m.freeWaitValue(facts.waitSchengen), label: m.freeWaitLabel, href: localizePath('/pricing') },
     { value: '0€', label: m.childSeatsLabel, href: localizePath('/fleet') },
   ];
 

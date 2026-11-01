@@ -266,12 +266,11 @@ export const PLACES: Record<string, PlaceFact> = {
   ),
 };
 
-/** Published fixed prices (EUR, per vehicle, not per person). */
+/** Published private transfer prices (EUR, per vehicle, not per person). Zaventem uses ranges. */
 export const FIXED_PRICES = {
   brusselsToBRU: [
-    { pax: '1–2', price: 35 },
-    { pax: '3–4', price: 45 },
-    { pax: '5–8', price: 55 },
+    { pax: '1–3', price: 35, maxPrice: 45 },
+    { pax: '4–8', price: 45, maxPrice: 60 },
   ],
   brusselsToCRL: [
     { pax: '1', price: 70 },
@@ -279,15 +278,13 @@ export const FIXED_PRICES = {
     { pax: '3', price: 90 },
     { pax: '4', price: 110 },
     { pax: '5', price: 120 },
-    { pax: '6', price: 130 },
-    { pax: '7', price: 140 },
-    { pax: '8', price: 160 },
+    { pax: '6', price: 140 },
+    { pax: '7', price: 160 },
+    { pax: '8', price: 180 },
   ],
   bruP1Surcharge: 5,
-  /** Complimentary airport wait from actual landing, Schengen flights. */
+  /** Complimentary airport wait from actual landing for all arriving flights. */
   waitingFreeMinutes: 60,
-  /** Complimentary airport wait from actual landing, flights from outside Schengen. */
-  waitingFreeMinutesNonSchengen: 70,
   /** Extra waiting after the complimentary period, per additional 30 minutes. */
   waitingPer30Min: 15,
   /** Hourly equivalent of waitingPer30Min. Kept so older copy can still resolve. */
@@ -301,7 +298,7 @@ export const FIXED_PRICES = {
   multiDayCancelHours: 48,
 };
 
-/** Destinations with a published fixed price (source: Helicro price list, September 2026). */
+/** Destinations with a published fixed price (source: Helicro price list, November 2026). */
 export type DestinationCountry = 'BE' | 'FR' | 'NL' | 'DE' | 'LU';
 
 export interface DestinationFact {
@@ -468,23 +465,23 @@ const T2 = (a: number, b: number): PriceTier[] => [
 
 /** Fixed prices per vehicle, VAT included, from Brussels (city or Brussels Airport) and from Charleroi Airport. */
 export const PRICED_ROUTES: PricedRoute[] = [
-  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(75, 90) },
-  { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(100, 120) },
-  { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(130, 150) },
-  { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(75, 100) },
-  { key: 'crl-antwerp', from: 'crl', to: 'antwerp', tiers: T2(135, 180) },
-  { key: 'crl-ghent', from: 'crl', to: 'ghent', tiers: T2(150, 180) },
-  { key: 'crl-bruges', from: 'crl', to: 'bruges', tiers: T2(180, 210) },
-  { key: 'brussels-lille-airport', from: 'brussels', to: 'lille-airport', tiers: T2(150, 170) },
-  { key: 'brussels-paris-cdg', from: 'brussels', to: 'paris-cdg', tiers: T2(380, 420) },
+  { key: 'brussels-antwerp', from: 'brussels', to: 'antwerp', tiers: T2(80, 90) },
+  { key: 'brussels-ghent', from: 'brussels', to: 'ghent', tiers: T2(110, 130) },
+  { key: 'brussels-bruges', from: 'brussels', to: 'bruges', tiers: T2(145, 165) },
+  { key: 'brussels-tomorrowland', from: 'brussels', to: 'tomorrowland', tiers: T2(80, 100) },
+  { key: 'crl-antwerp', from: 'crl', to: 'antwerp', tiers: T2(160, 180) },
+  { key: 'crl-ghent', from: 'crl', to: 'ghent', tiers: T2(170, 190) },
+  { key: 'crl-bruges', from: 'crl', to: 'bruges', tiers: T2(200, 220) },
+  { key: 'brussels-lille-airport', from: 'brussels', to: 'lille-airport', tiers: T2(160, 180) },
+  { key: 'brussels-paris-cdg', from: 'brussels', to: 'paris-cdg', tiers: T2(400, 420) },
   { key: 'brussels-paris-orly', from: 'brussels', to: 'paris-orly', tiers: T2(460, 500) },
-  { key: 'brussels-eindhoven', from: 'brussels', to: 'eindhoven', tiers: T2(190, 210) },
-  { key: 'brussels-amsterdam', from: 'brussels', to: 'amsterdam', tiers: T2(280, 320) },
-  { key: 'brussels-maastricht', from: 'brussels', to: 'maastricht', tiers: T2(150, 170) },
-  { key: 'brussels-dusseldorf', from: 'brussels', to: 'dusseldorf', tiers: T2(250, 280) },
-  { key: 'brussels-cologne', from: 'brussels', to: 'cologne', tiers: T2(250, 280) },
-  { key: 'brussels-frankfurt', from: 'brussels', to: 'frankfurt', tiers: T2(380, 420) },
-  { key: 'brussels-luxembourg', from: 'brussels', to: 'luxembourg', tiers: T2(260, 300) },
+  { key: 'brussels-eindhoven', from: 'brussels', to: 'eindhoven', tiers: T2(200, 220) },
+  { key: 'brussels-amsterdam', from: 'brussels', to: 'amsterdam', tiers: T2(300, 330) },
+  { key: 'brussels-maastricht', from: 'brussels', to: 'maastricht', tiers: T2(160, 180) },
+  { key: 'brussels-dusseldorf', from: 'brussels', to: 'dusseldorf', tiers: T2(290, 300) },
+  { key: 'brussels-cologne', from: 'brussels', to: 'cologne', tiers: T2(270, 290) },
+  { key: 'brussels-frankfurt', from: 'brussels', to: 'frankfurt', tiers: T2(420, 440) },
+  { key: 'brussels-luxembourg', from: 'brussels', to: 'luxembourg', tiers: T2(290, 320) },
 ];
 
 export function pricedRoute(from: 'brussels' | 'crl', to: string): PricedRoute | undefined {

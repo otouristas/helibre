@@ -51,7 +51,7 @@ export function buildFestival(page: SEOPage, key: string): SeoLandingContent {
   const pricing: SeoSection = {
     h2: `Fixed prices for ${f.name} transfers`,
     paragraphs: [
-      `Festival transfers are quoted as a fixed amount per minivan for up to 8 passengers, confirmed in writing. For reference, the standard Brussels city to Brussels Airport rate is ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[2].price}€ and Brussels to Charleroi ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ per vehicle; festival runs from the same origins are priced on the same basis with no night or event surcharge. ${ui.perVehicle}`,
+      `Festival transfers are quoted as a fixed amount per minivan for up to 8 passengers, confirmed in writing. For reference, the standard Brussels city to Brussels Airport rate is ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[1].maxPrice}€ and Brussels to Charleroi ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ per vehicle; festival runs from the same origins are priced on the same basis with no night or event surcharge. ${ui.perVehicle}`,
     ],
   };
 

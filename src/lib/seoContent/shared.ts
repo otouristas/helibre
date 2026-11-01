@@ -364,7 +364,6 @@ export function comparisonSection(lang: Locale, intro?: string): SeoSection {
 export function brusselsPriceTable(lang: Locale, airport: 'BRU' | 'CRL'): SeoTable {
   const ui = UI[lang];
   const rows = airport === 'BRU' ? FIXED_PRICES.brusselsToBRU : FIXED_PRICES.brusselsToCRL;
-  const fromWord: Record<Locale, string> = { en: 'from', nl: 'vanaf', fr: 'dès', el: 'από', hr: 'od' };
   const fromHeader: Record<Locale, string> = {
     en: 'From (not a fixed fare)',
     nl: 'Vanaf (geen vast tarief)',
@@ -382,7 +381,7 @@ export function brusselsPriceTable(lang: Locale, airport: 'BRU' | 'CRL'): SeoTab
   return {
     caption: captions[lang],
     headers: [ui.passengers, airport === 'BRU' ? fromHeader[lang] : ui.price],
-    rows: rows.map((r) => [r.pax, airport === 'BRU' ? `${fromWord[lang]} ${r.price}€*` : `${r.price}€`]),
+    rows: rows.map((r) => [r.pax, airport === 'BRU' ? `${r.price}–${'maxPrice' in r ? r.maxPrice : r.price}€*` : `${r.price}€`]),
   };
 }
 

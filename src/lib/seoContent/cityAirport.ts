@@ -47,7 +47,7 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
     : {
         h2: `Wat kost luchthavenvervoer vanuit ${city}?`,
         paragraphs: [
-          `De prijs vanuit ${city} is een vast bedrag per voertuig dat afhangt van uw exacte adres en de luchthaven; u krijgt hem binnen enkele minuten via WhatsApp. Ter referentie: vanuit Brussel-centrum betaalt u ${FIXED_PRICES.brusselsToBRU[0].price}€ tot ${FIXED_PRICES.brusselsToBRU[2].price}€ naar Zaventem en ${FIXED_PRICES.brusselsToCRL[0].price}€ tot ${FIXED_PRICES.brusselsToCRL[7].price}€ naar Charleroi, afhankelijk van het aantal passagiers. ${ui.perVehicle}`,
+          `De prijs vanuit ${city} is een vast bedrag per voertuig dat afhangt van uw exacte adres en de luchthaven; u krijgt hem binnen enkele minuten via WhatsApp. Ter referentie: vanuit Brussel-centrum betaalt u ${FIXED_PRICES.brusselsToBRU[0].price}€ tot ${FIXED_PRICES.brusselsToBRU[1].maxPrice}€ naar Zaventem en ${FIXED_PRICES.brusselsToCRL[0].price}€ tot ${FIXED_PRICES.brusselsToCRL[7].price}€ naar Charleroi, afhankelijk van het aantal passagiers. ${ui.perVehicle}`,
         ],
         table: {
           caption: `Afstand en gemiddelde rijtijd vanuit ${city} buiten de spits.`,
@@ -73,7 +73,7 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
     bullets: [
       `Ophaling aan huis in ${city} en omliggende gemeenten, ook om 3u ’s nachts`,
       'Geen overstap, geen zware koffers op het perron, geen parkeerkosten',
-      `Chauffeur wacht bij vertraging: ${FIXED_PRICES.waitingFreeMinutes} minuten gratis voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen`,
+      `Chauffeur wacht bij vertraging: ${FIXED_PRICES.waitingFreeMinutes} minuten gratis voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen`,
       'Retourrit samen boeken voor een vaste totaalprijs',
     ],
   };
@@ -81,7 +81,7 @@ export function buildCityAirportNl(page: SEOPage, placeKey: string): SeoLandingC
   const specificFaqs = [
     { question: `Hoe lang duurt de rit van ${city} naar Zaventem?`, answer: `Ongeveer ${bru.km} km en ${bru.minMin} tot ${bru.maxMin} minuten buiten de spits. Op weekdagen tussen 7u en 9u30 rekent uw chauffeur een extra marge in, zodat u minstens 2 uur voor vertrek op de luchthaven bent.` },
     { question: `Rijden jullie ook van ${city} naar Charleroi Airport?`, answer: `Ja. Charleroi ligt op ${crl.km} km van ${city}, ongeveer ${crl.minMin} tot ${crl.maxMin} minuten.${crlPrice ? ` De vaste prijs is ${crlPrice.tiers[0].price}€ voor 1 tot 3 en ${crlPrice.tiers[1].price}€ voor 4 tot 8 passagiers per minivan.` : ''} Omdat er geen rechtstreekse trein is, is een privé minivan vanuit ${city} de eenvoudigste optie voor Ryanair- en Wizz Air-vluchten.` },
-    { question: `Wat als mijn vlucht laat landt en ik terug naar ${city} moet?`, answer: `We volgen uw vlucht live op. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen; daarna ${FIXED_PRICES.waitingPer30Min}€ per extra 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. ’s Nachts geldt dezelfde vaste prijs als overdag.` },
+    { question: `Wat als mijn vlucht laat landt en ik terug naar ${city} moet?`, answer: `We volgen uw vlucht live op. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen; daarna ${FIXED_PRICES.waitingPer30Min}€ per extra 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. ’s Nachts geldt dezelfde vaste prijs als overdag.` },
   ];
 
   return {
