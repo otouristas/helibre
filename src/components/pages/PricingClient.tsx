@@ -1,27 +1,27 @@
 'use client';
 
+import { FIXED_PRICES } from '@/config/seoFacts';
+
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { getLangFromPath, priceListHref, translations } from '@/config/translations';
+import { priceListHref, translations } from '@/config/translations';
 import FareCalculator from '@/components/FareCalculator';
 import BookingPolicyPanels from '@/components/BookingPolicyPanels';
 import { BOOKING_POLICIES } from '@/config/bookingPolicies';
 
 export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' | 'hr' }) {
-  const pathname = usePathname();
-  
 
   // Localization Dictionary for Pricing Page
   const ui = {
     en: {
+      passengersLabel: 'passengers',
       title: 'Helicro Transport pricing for airport transfers and private rides',
       subtitle: 'Completely transparent flat rates with no hidden fees. All prices include toll taxes, airport greeting, and child booster seats.',
       h2Calc: '1. Calculate Your Price Instantly',
       h2Rates: '2. Fixed Airport Transfer Flat Rates (Brussels Origins)',
       minivanFares: 'Private Minivan • Flat Fares',
       zaventemTitle: 'Brussels to Zaventem (BRU)',
-      zaventemFromNotice: 'FROM — these are starting prices, not a fixed fare.',
+      zaventemFromNotice: 'Published price range; the exact fare is confirmed at booking.',
       charleroiTitle: 'Brussels to Charleroi (CRL)',
       pax1: '1 Passenger',
       pax2: '2 Passengers',
@@ -79,13 +79,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       zaventemFootnote: '* Prices are from the Drop-off Area. If you wish a drop-off at P1 Point, there is an extra charge of 5€.'
     },
     nl: {
+      passengersLabel: 'passagiers',
       title: 'Tarieven van Helicro Transport voor luchthavenvervoer en privé ritten',
       subtitle: 'Volledig transparante vaste tarieven zonder verborgen kosten. Alle prijzen inclusief tolwegen, terminal ontmoeting en kinderzitjes.',
       h2Calc: '1. Bereken Uw Ritprijs Direct',
       h2Rates: '2. Vaste Tarieven Luchthavenvervoer (Vanuit Brussel)',
       minivanFares: 'Privé Minivan • Vaste Tarieven',
       zaventemTitle: 'Brussel naar Zaventem (BRU)',
-      zaventemFromNotice: 'VANAF — dit zijn startprijzen, geen vast tarief.',
+      zaventemFromNotice: 'Gepubliceerde prijsklasse; de exacte prijs wordt bij boeking bevestigd.',
       charleroiTitle: 'Brussel naar Charleroi (CRL)',
       pax1: '1 Passagier',
       pax2: '2 Passagiers',
@@ -143,13 +144,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       zaventemFootnote: '* Prijzen gelden vanaf de Drop-off Area. Indien u afgezet wenst te worden bij P1, geldt een toeslag van 5€.'
     },
     fr: {
+      passengersLabel: 'passagers',
       title: 'Tarifs de Helicro Transport pour navettes aéroport et trajets privés',
       subtitle: 'Des tarifs forfaitaires transparents, sans frais cachés. Péages, accueil en terminal et sièges enfants inclus.',
       h2Calc: '1. Calculez Votre Prix Instantanément',
       h2Rates: '2. Tarifs Forfaitaires Aéroport (Départs de Bruxelles)',
       minivanFares: 'Minivan Privé • Tarifs Fixes',
       zaventemTitle: 'Bruxelles vers Zaventem (BRU)',
-      zaventemFromNotice: 'DÈS — ce sont des prix de départ, pas un tarif fixe.',
+      zaventemFromNotice: 'Fourchette publiée ; le prix exact est confirmé à la réservation.',
       charleroiTitle: 'Bruxelles vers Charleroi (CRL)',
       pax1: '1 Passager',
       pax2: '2 Passagers',
@@ -204,13 +206,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       zaventemFootnote: '* Les tarifs s\'entendent depuis la dépose-minute (Drop off Area). Si vous souhaitez une dépose au parking P1, un supplément de 5€ s\'applique.'
     },
         hr: {
+      passengersLabel: 'putnika',
       title: 'Transparentne fiksne cijene privatnih transfera',
       subtitle: 'Potpuno jasne cijene bez iznenađenja. Uključena je cestarina, parking u zračnoj luci i dječje sjedalice.',
       h2Calc: '1. IZRAČUNAJTE SVOJU CIJENU ODMAH',
       h2Rates: '2. FIKSNE CIJENE ZA ZRAČNE LUKE (IZ BRISELA)',
       minivanFares: 'Privatni minivan • Fiksne cijene',
       zaventemTitle: 'Brisel ↔ Zračna luka Zaventem (BRU)',
-      zaventemFromNotice: 'OD — početne cijene, ne fiksna cijena.',
+      zaventemFromNotice: 'Objavljeni raspon cijena; točna cijena potvrđuje se pri rezervaciji.',
       charleroiTitle: 'Brisel ↔ Zračna luka Charleroi (CRL)',
       pax1: '1 Putnik',
       pax2: '2 Putnika',
@@ -261,13 +264,14 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       zaventemFootnote: '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.'
     },
     el: {
+      passengersLabel: 'επιβάτες',
       title: 'Τιμολογιακή πολιτική της Helicro Transport για ιδιωτικές μετακινήσεις',
       subtitle: 'Απόλυτα διαφανείς σταθερές τιμές χωρίς κρυφές χρεώσεις. Περιλαμβάνονται διόδια, υποδοχή στο αεροδρόμιο και παιδικά καθίσματα.',
       h2Calc: '1. ΥΠΟΛΟΓΙΣΤΕ ΤΗΝ ΤΙΜΗ ΣΑΣ ΑΜΕΣΑ',
       h2Rates: '2. ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ ΜΕΤΑΦΟΡΑΣ ΑΕΡΟΔΡΟΜΙΟΥ (ΑΠΟ ΒΡΥΞΕΛΛΕΣ)',
       minivanFares: 'ΙΔΙΩΤΙΚΟ MINIVAN • ΣΤΑΘΕΡΕΣ ΤΙΜΕΣ',
       zaventemTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ ZAVENTEM (BRU)',
-      zaventemFromNotice: 'ΑΠΟ — τιμές εκκίνησης, όχι σταθερή τιμή.',
+      zaventemFromNotice: 'Δημοσιευμένο εύρος τιμών· η ακριβής τιμή επιβεβαιώνεται στην κράτηση.',
       charleroiTitle: 'ΒΡΥΞΕΛΛΕΣ ΠΡΟΣ CHARLEROI (CRL)',
       pax1: '1 ΕΠΙΒΑΤΗΣ',
       pax2: '2 ΕΠΙΒΑΤΕΣ',
@@ -358,7 +362,7 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
           <div 
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
               gap: '30px' 
             }}
           >
@@ -371,18 +375,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                 {ui.zaventemFromNotice}
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax12}</span>
-                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 35€*</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax34}</span>
-                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 45€*</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax58}</span>
-                  <strong style={{ color: 'var(--primary)' }}><span style={{ letterSpacing: '0.06em' }}>{ui.from}</span> 55€*</strong>
-                </li>
+                {FIXED_PRICES.brusselsToBRU.map((tier) => (
+                  <li key={tier.pax} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                    <span>{tier.pax} {ui.passengersLabel}</span>
+                    <strong style={{ color: 'var(--primary)' }}>{tier.price}–{tier.maxPrice}€*</strong>
+                  </li>
+                ))}
               </ul>
               <p style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '12px', lineHeight: '1.4' }}>
                 {ui.zaventemFootnote}
@@ -398,38 +396,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
                 {ui.minivanFares}
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', padding: 0 }}>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax1}</span>
-                  <strong style={{ color: 'var(--primary)' }}>70€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax2}</span>
-                  <strong style={{ color: 'var(--primary)' }}>80€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax3}</span>
-                  <strong style={{ color: 'var(--primary)' }}>90€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax4}</span>
-                  <strong style={{ color: 'var(--primary)' }}>110€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax5}</span>
-                  <strong style={{ color: 'var(--primary)' }}>120€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax6}</span>
-                  <strong style={{ color: 'var(--primary)' }}>130€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax7}</span>
-                  <strong style={{ color: 'var(--primary)' }}>140€</strong>
-                </li>
-                <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
-                  <span>{ui.pax8}</span>
-                  <strong style={{ color: 'var(--primary)' }}>160€</strong>
-                </li>
+                {FIXED_PRICES.brusselsToCRL.map((tier) => (
+                  <li key={tier.pax} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '10px', borderBottom: '1px solid #f1f5f9' }}>
+                    <span>{tier.pax} {ui.passengersLabel}</span>
+                    <strong style={{ color: 'var(--primary)' }}>{tier.price}€</strong>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

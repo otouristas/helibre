@@ -242,7 +242,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Services for Greek travellers in Belgium',
         bullets: [
-          `Airport transfers from Brussels Airport and Charleroi at the fixed Brussels rates: ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[2].price}€ for Zaventem, ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ for Charleroi`,
+          `Airport transfers from Brussels Airport and Charleroi at the fixed Brussels rates: ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[1].maxPrice}€ for Zaventem, ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ for Charleroi`,
           'Rides to hospitals, universities, the Permanent Representation and the European Parliament with a driver who can translate at reception',
           'Day trips to Bruges, Ghent, Waterloo and the Ardennes with commentary in Greek',
           'Transfers for Greek weddings, baptisms and community events across Belgium',
@@ -280,7 +280,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
   },
   '/el/greek-driver-brussels': {
     lang: 'el',
-    lead: `Η Helicro ανήκει στον Γεράσιμο, Έλληνα επαγγελματία οδηγό που ζει δεκαετίες στο Βέλγιο. Έλληνες ταξιδιώτες, οικογένειες, φοιτητές και ομογενείς έχουν Έλληνα οδηγό στις Βρυξέλλες για μεταφορές αεροδρομίου, εκδρομές και επαγγελματικές διαδρομές με σταθερή τιμή ανά minivan: ${F.brusselsToBRU[0].price}€ έως ${F.brusselsToBRU[2].price}€ για Zaventem και ${F.brusselsToCRL[0].price}€ έως ${F.brusselsToCRL[7].price}€ για Charleroi από τις Βρυξέλλες.`,
+    lead: `Η Helicro ανήκει στον Γεράσιμο, Έλληνα επαγγελματία οδηγό που ζει δεκαετίες στο Βέλγιο. Έλληνες ταξιδιώτες, οικογένειες, φοιτητές και ομογενείς έχουν Έλληνα οδηγό στις Βρυξέλλες για μεταφορές αεροδρομίου, εκδρομές και επαγγελματικές διαδρομές με σταθερή τιμή ανά minivan: ${F.brusselsToBRU[0].price}€ έως ${F.brusselsToBRU[1].maxPrice}€ για Zaventem και ${F.brusselsToCRL[0].price}€ έως ${F.brusselsToCRL[7].price}€ για Charleroi από τις Βρυξέλλες.`,
     intro: [
       'Περίπου 25.000 Έλληνες ζουν στο Βέλγιο, οι περισσότεροι στις Βρυξέλλες, και χιλιάδες ακόμη έρχονται κάθε χρόνο για τα ευρωπαϊκά όργανα, το Erasmus, ιατρικά ραντεβού και οικογενειακές επισκέψεις. Το να σας υποδέχονται στα Ελληνικά στο Zaventem ή στο Charleroi, με την παραλαβή, τις τιμές και τις αποδείξεις εξηγημένες στη γλώσσα σας, αφαιρεί το τελευταίο άγχος του ταξιδιού.',
       'Ο Γεράσιμος μιλά επίσης Αγγλικά και Γαλλικά, οπότε μικτές παρέες και Βέλγοι συγγενείς εξυπηρετούνται στο ίδιο όχημα. Γνωρίζει τις διευθύνσεις της ελληνικής κοινότητας: τον Καθεδρικό των Παμμεγίστων Ταξιαρχών, το ελληνικό σχολείο, τη Μόνιμη Αντιπροσωπεία και τις ταβέρνες της Ixelles.',
@@ -289,7 +289,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Υπηρεσίες για Έλληνες ταξιδιώτες στο Βέλγιο',
         bullets: [
-          `Μεταφορές αεροδρομίου από Zaventem και Charleroi με τις σταθερές τιμές Βρυξελλών: ${F.brusselsToBRU[0].price}€ έως ${F.brusselsToBRU[2].price}€ για Zaventem, ${F.brusselsToCRL[0].price}€ έως ${F.brusselsToCRL[7].price}€ για Charleroi, ανά όχημα`,
+          `Μεταφορές αεροδρομίου από Zaventem και Charleroi με τις σταθερές τιμές Βρυξελλών: ${F.brusselsToBRU[0].price}€ έως ${F.brusselsToBRU[1].maxPrice}€ για Zaventem, ${F.brusselsToCRL[0].price}€ έως ${F.brusselsToCRL[7].price}€ για Charleroi, ανά όχημα`,
           'Διαδρομές σε νοσοκομεία, πανεπιστήμια, τη Μόνιμη Αντιπροσωπεία και το Ευρωπαϊκό Κοινοβούλιο με οδηγό που μεταφράζει στην υποδοχή',
           'Ημερήσιες εκδρομές σε Μπριζ, Γάνδη, Βατερλό και Αρδέννες με σχόλια στα Ελληνικά',
           'Μεταφορές για ελληνικούς γάμους, βαπτίσεις και εκδηλώσεις της κοινότητας σε όλο το Βέλγιο',
@@ -303,14 +303,14 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Σημείο συνάντησης στα αεροδρόμια',
         bullets: [
-          `Zaventem: ο οδηγός σας περιμένει στην αίθουσα αφίξεων, μπροστά από το καφέ, με πινακίδα με το όνομά σας· ${F.waitingFreeMinutes} λεπτά δωρεάν αναμονή για πτήσεις Σένγκεν και ${F.waitingFreeMinutesNonSchengen} λεπτά για πτήσεις εκτός Σένγκεν`,
+          `Zaventem: ο οδηγός σας περιμένει στην αίθουσα αφίξεων, μπροστά από το καφέ, με πινακίδα με το όνομά σας· ${F.waitingFreeMinutes} λεπτά δωρεάν αναμονή για πτήσεις Σένγκεν και ${F.waitingFreeMinutes} λεπτά για πτήσεις εκτός Σένγκεν`,
           'Charleroi: ο οδηγός σας περιμένει στη ζώνη Kiss & Ride ή μέσα στον τερματικό με πινακίδα Helicro· παρακολουθούμε ζωντανά τις καθυστερήσεις των Aegean, Ryanair και Wizz Air',
         ],
       },
     ],
     faqs: [
       { question: 'Μιλάει πραγματικά Ελληνικά ο οδηγός;', answer: 'Ναι. Ο Γεράσιμος είναι Έλληνας, γεννημένος και μεγαλωμένος στην Ελλάδα, και ζει δεκαετίες στο Βέλγιο. Τα Ελληνικά είναι η μητρική του γλώσσα· μιλά επίσης άπταιστα Αγγλικά και Γαλλικά.' },
-      { question: 'Πόσο κοστίζει η μεταφορά από το αεροδρόμιο στις Βρυξέλλες;', answer: `Από το Zaventem προς οποιαδήποτε διεύθυνση στις Βρυξέλλες: ${F.brusselsToBRU[0].price}€ για 1–2 άτομα, ${F.brusselsToBRU[1].price}€ για 3–4 και ${F.brusselsToBRU[2].price}€ για 5–8. Από το Charleroi: ${F.brusselsToCRL[0].price}€ για 1 άτομο έως ${F.brusselsToCRL[7].price}€ για 8. Οι τιμές είναι ανά όχημα, με αποσκευές και παιδικά καθίσματα.` },
+      { question: 'Πόσο κοστίζει η μεταφορά από το αεροδρόμιο στις Βρυξέλλες;', answer: `Από το Zaventem προς οποιαδήποτε διεύθυνση στις Βρυξέλλες: ${F.brusselsToBRU[0].price}–${F.brusselsToBRU[0].maxPrice}€ για 1–3 άτομα και ${F.brusselsToBRU[1].price}–${F.brusselsToBRU[1].maxPrice}€ για 4–8. Από το Charleroi: ${F.brusselsToCRL[0].price}€ για 1 άτομο έως ${F.brusselsToCRL[7].price}€ για 8. Οι τιμές είναι ανά όχημα, με αποσκευές και παιδικά καθίσματα.` },
       { question: 'Μπορώ να πληρώσω με ελληνική κάρτα ή τραπεζική μεταφορά;', answer: 'Ναι. Δεκτές όλες οι κάρτες της ΕΕ και μεταφορές SEPA από ελληνικούς λογαριασμούς. Μετρητά στον οδηγό επίσης δυνατά.' },
       { question: 'Υπάρχει ελληνικό τηλέφωνο;', answer: 'Ναι, +30 697 458 1706 για WhatsApp και κλήσεις, μαζί με το βελγικό +32 472 35 88 05.' },
     ],
@@ -336,7 +336,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
   },
   '/hr/croatian-driver-brussels': {
     lang: 'hr',
-    lead: `Helicro nudi privatni prijevoz u Bruxellesu za putnike iz Hrvatske: transferi iz zračnih luka Zaventem i Charleroi, izleti i poslovne vožnje u Ford kombiju za 8 osoba po fiksnoj cijeni. Od Bruxellesa do Zaventema ${F.brusselsToBRU[0].price}€ do ${F.brusselsToBRU[2].price}€, do Charleroia ${F.brusselsToCRL[0].price}€ do ${F.brusselsToCRL[7].price}€ po vozilu. Vozač govori engleski, francuski i grčki; rezervacija i ponuda na hrvatskom.`,
+    lead: `Helicro nudi privatni prijevoz u Bruxellesu za putnike iz Hrvatske: transferi iz zračnih luka Zaventem i Charleroi, izleti i poslovne vožnje u Ford kombiju za 8 osoba po fiksnoj cijeni. Od Bruxellesa do Zaventema ${F.brusselsToBRU[0].price}€ do ${F.brusselsToBRU[1].maxPrice}€, do Charleroia ${F.brusselsToCRL[0].price}€ do ${F.brusselsToCRL[7].price}€ po vozilu. Vozač govori engleski, francuski i grčki; rezervacija i ponuda na hrvatskom.`,
     intro: [
       'Hrvati u Bruxellesu rade u EU institucijama, Stalnom predstavništvu, NATO-u i međunarodnim tvrtkama, a obitelji i prijatelji dolaze u posjet Croatia Airlinesom i Ryanairom preko Zaventema i Charleroia. Helicro je izbor mnogih hrvatskih putnika jer je cijena poznata unaprijed, vozač čeka i kad let kasni, a rezervacija se rješava jednom WhatsApp porukom.',
       'Vlasnik i vozač Gerasimos ima više od 30 godina vožnje bez nezgode u Belgiji i vojnu disciplinu koju putnici iz Hrvatske redovito spominju u recenzijama. Komunikacija tijekom vožnje je na engleskom; web stranica, ponude i potvrde dostupne su na hrvatskom.',
@@ -345,7 +345,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Usluge za putnike iz Hrvatske',
         bullets: [
-          `Transferi iz zračnih luka Zaventem i Charleroi po fiksnim cijenama: ${F.brusselsToBRU[0].price}€ do ${F.brusselsToBRU[2].price}€ za Zaventem, ${F.brusselsToCRL[0].price}€ do ${F.brusselsToCRL[7].price}€ za Charleroi, po vozilu`,
+          `Transferi iz zračnih luka Zaventem i Charleroi po fiksnim cijenama: ${F.brusselsToBRU[0].price}€ do ${F.brusselsToBRU[1].maxPrice}€ za Zaventem, ${F.brusselsToCRL[0].price}€ do ${F.brusselsToCRL[7].price}€ za Charleroi, po vozilu`,
           'Vožnje do Europskog parlamenta, Vijeća, Stalnog predstavništva i NATO-a za službena putovanja',
           'Jednodnevni izleti u Bruges, Gent, Waterloo i Ardene s vozačem',
           'Prijevoz gostiju za vjenčanja, krštenja i proslave hrvatske zajednice u Belgiji',
@@ -355,7 +355,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Mjesto sastanka u zračnim lukama',
         bullets: [
-          `Zaventem: vozač vas čeka u dvorani za dolaske, ispred kafića, s natpisom vašeg imena; ${F.waitingFreeMinutes} minuta besplatnog čekanja za letove unutar Schengena i ${F.waitingFreeMinutesNonSchengen} minuta za letove izvan Schengena`,
+          `Zaventem: vozač vas čeka u dvorani za dolaske, ispred kafića, s natpisom vašeg imena; ${F.waitingFreeMinutes} minuta besplatnog čekanja za letove unutar Schengena i ${F.waitingFreeMinutes} minuta za letove izvan Schengena`,
           'Charleroi: vozač vas čeka na Kiss & Ride zoni ili unutar terminala s natpisom Helicro; kašnjenja Ryanaira pratimo uživo',
         ],
       },
@@ -366,7 +366,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
     ],
     faqs: [
       { question: 'Govori li vozač hrvatski?', answer: 'Ne. Gerasimos govori engleski, francuski i grčki. Web stranica, ponude i potvrde rezervacije dostupne su na hrvatskom, a mnogi hrvatski putnici koriste Helicro godinama i ostavljaju recenzije na hrvatskom.' },
-      { question: 'Koliko košta transfer iz zračne luke do Bruxellesa?', answer: `Iz Zaventema do bilo koje adrese u Bruxellesu: ${F.brusselsToBRU[0].price}€ za 1–2 osobe, ${F.brusselsToBRU[1].price}€ za 3–4 i ${F.brusselsToBRU[2].price}€ za 5–8. Iz Charleroia: ${F.brusselsToCRL[0].price}€ za 1 osobu do ${F.brusselsToCRL[7].price}€ za 8. Cijene su po vozilu, s prtljagom i dječjim sjedalicama.` },
+      { question: 'Koliko košta transfer iz zračne luke do Bruxellesa?', answer: `Iz Zaventema do bilo koje adrese u Bruxellesu: ${F.brusselsToBRU[0].price}–${F.brusselsToBRU[0].maxPrice}€ za 1–3 osobe i ${F.brusselsToBRU[1].price}–${F.brusselsToBRU[1].maxPrice}€ za 4–8. Iz Charleroia: ${F.brusselsToCRL[0].price}€ za 1 osobu do ${F.brusselsToCRL[7].price}€ za 8. Cijene su po vozilu, s prtljagom i dječjim sjedalicama.` },
       { question: 'Mogu li platiti hrvatskom karticom?', answer: 'Da. Prihvaćaju se sve EU kartice i SEPA prijenosi s hrvatskih računa. Moguće je i plaćanje gotovinom vozaču.' },
     ],
     genericFaqKeys: ['cancel', 'seats', 'delay'],

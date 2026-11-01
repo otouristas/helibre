@@ -97,7 +97,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Pickup at ${to.replace(/\s*\(.*\)$/, '')} on the way back` : `Return transfer from ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `On the return your driver tracks the flight and waits in the arrivals hall with a name sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after the actual landing time for Schengen flights and ${F.waitingFreeMinutesNonSchengen} minutes for flights from outside Schengen; after that, waiting is ${F.waitingPer30Min}€ per additional 30 minutes, by agreement and subject to the driver’s availability. The fixed price is identical in both directions.`
+          ? `On the return your driver tracks the flight and waits in the arrivals hall with a name sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after the actual landing time for Schengen flights and ${F.waitingFreeMinutes} minutes for flights from outside Schengen; after that, waiting is ${F.waitingPer30Min}€ per additional 30 minutes, by agreement and subject to the driver’s availability. The fixed price is identical in both directions.`
           : `For the way back the driver collects you at the agreed address or station at the agreed time, tracks train or event schedules where relevant, and the fixed price is identical in both directions.`,
       ],
     };
@@ -150,7 +150,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Ophaling in ${to.replace(/\s*\(.*\)$/, '')} op de terugweg` : `Terugrit vanuit ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `Op de terugweg volgt uw chauffeur de vlucht en wacht in de aankomsthal met een naambordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${F.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen; daarna kost wachten ${F.waitingPer30Min}€ per extra 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. De vaste prijs is in beide richtingen dezelfde.`
+          ? `Op de terugweg volgt uw chauffeur de vlucht en wacht in de aankomsthal met een naambordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${F.waitingFreeMinutes} minuten voor vluchten van buiten Schengen; daarna kost wachten ${F.waitingPer30Min}€ per extra 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. De vaste prijs is in beide richtingen dezelfde.`
           : `Voor de terugweg haalt de chauffeur u op het afgesproken adres of station op het afgesproken uur op; de vaste prijs is in beide richtingen dezelfde.`,
       ],
     };
@@ -203,7 +203,7 @@ export function buildPricedRoute(page: SEOPage, lang: PricedLang, route: PricedR
       h2: isAirport ? `Prise en charge à ${to.replace(/\s*\(.*\)$/, '')} au retour` : `Trajet retour depuis ${to.replace(/\s*\(.*\)$/, '')}`,
       paragraphs: [
         isAirport
-          ? `Au retour, votre chauffeur suit le vol et vous attend dans le hall des arrivées avec une pancarte à votre nom. L’attente gratuite est de ${F.waitingFreeMinutes} minutes après l’atterrissage réel pour les vols Schengen et de ${F.waitingFreeMinutesNonSchengen} minutes pour les vols en provenance de l’extérieur de Schengen ; ensuite l’attente est facturée ${F.waitingPer30Min}€ par tranche supplémentaire de 30 minutes, après accord et selon la disponibilité du chauffeur. Le prix fixe est identique dans les deux sens.`
+          ? `Au retour, votre chauffeur suit le vol et vous attend dans le hall des arrivées avec une pancarte à votre nom. L’attente gratuite est de ${F.waitingFreeMinutes} minutes après l’atterrissage réel pour les vols Schengen et de ${F.waitingFreeMinutes} minutes pour les vols en provenance de l’extérieur de Schengen ; ensuite l’attente est facturée ${F.waitingPer30Min}€ par tranche supplémentaire de 30 minutes, après accord et selon la disponibilité du chauffeur. Le prix fixe est identique dans les deux sens.`
           : `Pour le retour, le chauffeur vous reprend à l’adresse ou à la gare convenue à l’heure convenue ; le prix fixe est identique dans les deux sens.`,
       ],
     };
@@ -327,7 +327,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'How the shared shuttle works', steps: [
         { title: '1. Book with your flight number', text: 'Send your address, flight number and number of passengers on WhatsApp or the form. We reply with the price per person and the pickup window.' },
         { title: '2. Pickup at your door', text: 'The evening before you receive a 15-minute pickup window. The driver rings the bell, loads the luggage and collects the other passengers on the way.' },
-        { title: '3. Terminal drop-off', text: `The van stops at the Kiss & Ride in front of the Charleroi terminal at least 2 hours before the earliest departure on board. On arrivals, the driver waits inside the terminal with a Helicro sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after landing for Schengen flights and ${F.waitingFreeMinutesNonSchengen} minutes for flights from outside Schengen.` },
+        { title: '3. Terminal drop-off', text: `The van stops at the Kiss & Ride in front of the Charleroi terminal at least 2 hours before the earliest departure on board. On arrivals, the driver waits inside the terminal with a Helicro sign. Complimentary waiting is ${F.waitingFreeMinutes} minutes after landing for Schengen flights and ${F.waitingFreeMinutes} minutes for flights from outside Schengen.` },
       ] },
       { h2: 'Shared shuttle, Flibco bus or private transfer?', bullets: [
         'Flibco: about 17 to 20€ per person, only from Brussels-Midi, no pickup, one bag limit, leaves without you.',
@@ -341,7 +341,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { question: 'How much is the shared shuttle from Brussels to Charleroi Airport?', answer: `${S.perPassengerDay}€ per person between 06:00 and 22:00 and ${S.perPassengerNight}€ per person at night, pickup at your Brussels address included. Two people pay ${SHARED_DAY[1]}€, three pay ${SHARED_DAY[2]}€.` },
       { question: 'How many stops does the shared shuttle make?', answer: `At most two or three pickups in Brussels before joining the E19, and a maximum of ${S.maxPassengers} passengers per van. Your pickup window is confirmed the evening before.` },
       { question: 'Can I book a shared shuttle from Charleroi Airport to Brussels?', answer: 'Yes, in both directions. On arrival the driver waits inside the terminal with a Helicro sign and drops each passenger at their own address in Brussels.' },
-      { question: 'When is a private transfer better than the shared shuttle?', answer: `From 4 passengers the private minivan (110€ for 4, 160€ for 8) costs about the same per head and gives you your own van with no stops. It is also the right choice for very early flights or if you want to leave at an exact time.` },
+      { question: 'When is a private transfer better than the shared shuttle?', answer: `From 4 passengers the private minivan (110€ for 4, 180€ for 8) costs about the same per head and gives you your own van with no stops. It is also the right choice for very early flights or if you want to leave at an exact time.` },
     ];
   } else if (lang === 'nl') {
     lead = `De gedeelde shuttle van Helicro brengt u van elk adres in Brussel naar Charleroi Airport voor ${S.perPassengerDay}€ per persoon overdag en ${S.perPassengerNight}€ ’s nachts, van deur tot terminal, bagage inbegrepen en met vluchtopvolging. U deelt de minivan met enkele andere passagiers in hetzelfde tijdvenster; een privétransfer op dezelfde route start bij ${crl[0].price}€ per voertuig.`;
@@ -354,7 +354,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'Zo werkt de gedeelde shuttle', steps: [
         { title: '1. Boek met uw vluchtnummer', text: 'Stuur uw adres, vluchtnummer en aantal passagiers via WhatsApp of het formulier. U krijgt de prijs per persoon en het ophaalvenster.' },
         { title: '2. Ophaling aan huis', text: 'De avond voordien ontvangt u een ophaalvenster van 15 minuten. De chauffeur belt aan, laadt de bagage in en haalt onderweg de andere passagiers op.' },
-        { title: '3. Afzetten aan de terminal', text: `De wagen stopt aan de Kiss & Ride voor de terminal van Charleroi, minstens 2 uur voor de vroegste vlucht aan boord. Bij aankomst wacht de chauffeur in de terminal met een Helicro-bordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten voor Schengenvluchten en ${F.waitingFreeMinutesNonSchengen} minuten voor vluchten van buiten Schengen.` },
+        { title: '3. Afzetten aan de terminal', text: `De wagen stopt aan de Kiss & Ride voor de terminal van Charleroi, minstens 2 uur voor de vroegste vlucht aan boord. Bij aankomst wacht de chauffeur in de terminal met een Helicro-bordje. Gratis wachttijd is ${F.waitingFreeMinutes} minuten voor Schengenvluchten en ${F.waitingFreeMinutes} minuten voor vluchten van buiten Schengen.` },
       ] },
       { h2: 'Gedeelde shuttle, Flibco-bus of privétransfer?', bullets: [
         'Flibco: ongeveer 17 tot 20€ per persoon, enkel vanaf Brussel-Zuid, geen ophaling, één koffer, vertrekt zonder u.',
@@ -368,7 +368,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { question: 'Wat kost de gedeelde shuttle van Brussel naar Charleroi Airport?', answer: `${S.perPassengerDay}€ per persoon tussen 6u en 22u en ${S.perPassengerNight}€ per persoon ’s nachts, ophaling aan uw Brussels adres inbegrepen. Twee personen betalen ${SHARED_DAY[1]}€, drie personen ${SHARED_DAY[2]}€.` },
       { question: 'Hoeveel stops maakt de gedeelde shuttle?', answer: `Hoogstens twee of drie ophalingen in Brussel voor de E19, en maximaal ${S.maxPassengers} passagiers per wagen. Uw ophaalvenster wordt de avond voordien bevestigd.` },
       { question: 'Kan ik ook een gedeelde shuttle van Charleroi Airport naar Brussel boeken?', answer: 'Ja, in beide richtingen. Bij aankomst wacht de chauffeur in de terminal met een Helicro-bordje en zet elke passagier af op zijn eigen adres in Brussel.' },
-      { question: 'Wanneer is een privétransfer beter dan de gedeelde shuttle?', answer: 'Vanaf 4 passagiers kost de privé minivan (110€ voor 4, 160€ voor 8) ongeveer evenveel per hoofd en hebt u uw eigen wagen zonder stops. Ook voor heel vroege vluchten of een exact vertrekuur is privé de juiste keuze.' },
+      { question: 'Wanneer is een privétransfer beter dan de gedeelde shuttle?', answer: 'Vanaf 4 passagiers kost de privé minivan (110€ voor 4, 180€ voor 8) ongeveer evenveel per hoofd en hebt u uw eigen wagen zonder stops. Ook voor heel vroege vluchten of een exact vertrekuur is privé de juiste keuze.' },
     ];
   } else {
     lead = `La navette partagée Helicro vous emmène de toute adresse à Bruxelles jusqu’à l’aéroport de Charleroi pour ${S.perPassengerDay}€ par personne le jour et ${S.perPassengerNight}€ la nuit, de la porte au terminal, bagages compris et vol suivi. Vous partagez le minivan avec quelques passagers du même créneau ; une navette privée sur le même trajet démarre à ${crl[0].price}€ par véhicule.`;
@@ -381,7 +381,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { h2: 'Comment fonctionne la navette partagée', steps: [
         { title: '1. Réservez avec votre numéro de vol', text: 'Envoyez votre adresse, votre numéro de vol et le nombre de passagers sur WhatsApp ou via le formulaire. Nous répondons avec le prix par personne et le créneau de prise en charge.' },
         { title: '2. Prise en charge à votre porte', text: 'La veille au soir, vous recevez un créneau de 15 minutes. Le chauffeur sonne, charge les bagages et prend les autres passagers en route.' },
-        { title: '3. Dépose au terminal', text: `Le van s’arrête au Kiss & Ride devant le terminal de Charleroi au moins 2 heures avant le départ le plus tôt à bord. À l’arrivée, le chauffeur attend dans le terminal avec une pancarte Helicro. L’attente gratuite est de ${F.waitingFreeMinutes} minutes pour les vols Schengen et de ${F.waitingFreeMinutesNonSchengen} minutes pour les vols hors Schengen.` },
+        { title: '3. Dépose au terminal', text: `Le van s’arrête au Kiss & Ride devant le terminal de Charleroi au moins 2 heures avant le départ le plus tôt à bord. À l’arrivée, le chauffeur attend dans le terminal avec une pancarte Helicro. L’attente gratuite est de ${F.waitingFreeMinutes} minutes pour les vols Schengen et de ${F.waitingFreeMinutes} minutes pour les vols hors Schengen.` },
       ] },
       { h2: 'Navette partagée, bus Flibco ou transfert privé ?', bullets: [
         'Flibco : environ 17 à 20€ par personne, uniquement depuis Bruxelles-Midi, sans prise en charge, un bagage, part sans vous.',
@@ -395,7 +395,7 @@ export function buildSharedShuttle(page: SEOPage, lang: PricedLang): SeoLandingC
       { question: 'Combien coûte la navette partagée de Bruxelles à l’aéroport de Charleroi ?', answer: `${S.perPassengerDay}€ par personne entre 6h et 22h et ${S.perPassengerNight}€ par personne la nuit, prise en charge à votre adresse bruxelloise comprise. Deux personnes paient ${SHARED_DAY[1]}€, trois personnes ${SHARED_DAY[2]}€.` },
       { question: 'Combien d’arrêts fait la navette partagée ?', answer: `Au plus deux ou trois prises en charge à Bruxelles avant l’E19, et ${S.maxPassengers} passagers maximum par van. Votre créneau est confirmé la veille au soir.` },
       { question: 'Puis-je réserver une navette partagée de l’aéroport de Charleroi vers Bruxelles ?', answer: 'Oui, dans les deux sens. À l’arrivée, le chauffeur attend dans le terminal avec une pancarte Helicro et dépose chaque passager à sa propre adresse à Bruxelles.' },
-      { question: 'Quand un transfert privé vaut-il mieux que la navette partagée ?', answer: 'À partir de 4 passagers, le minivan privé (110€ pour 4, 160€ pour 8) revient à peu près au même par personne et vous donne votre propre van sans arrêt. C’est aussi le bon choix pour les vols très matinaux ou un départ à heure fixe.' },
+      { question: 'Quand un transfert privé vaut-il mieux que la navette partagée ?', answer: 'À partir de 4 passagers, le minivan privé (110€ pour 4, 180€ pour 8) revient à peu près au même par personne et vous donne votre propre van sans arrêt. C’est aussi le bon choix pour les vols très matinaux ou un départ à heure fixe.' },
     ];
   }
 

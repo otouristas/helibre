@@ -98,7 +98,7 @@ export function buildCity(page: SEOPage, placeKey: string): SeoLandingContent {
   const priceSection: SeoSection = {
     h2: `Fixed prices from ${city}`,
     paragraphs: [
-      `Every ride from ${city} is quoted as a single fixed amount per minivan, confirmed in writing before you book. As a reference, the published prices from Brussels city are ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[2].price}€ to Zaventem and ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ to Charleroi depending on group size; a full-day private tour starts at ${F.dayTourFrom}€. ${ui.perVehicle}`,
+      `Every ride from ${city} is quoted as a single fixed amount per minivan, confirmed in writing before you book. As a reference, the published prices from Brussels city are ${F.brusselsToBRU[0].price}€ to ${F.brusselsToBRU[1].maxPrice}€ to Zaventem and ${F.brusselsToCRL[0].price}€ to ${F.brusselsToCRL[7].price}€ to Charleroi depending on group size; a full-day private tour starts at ${F.dayTourFrom}€. ${ui.perVehicle}`,
     ],
     table: {
       caption: `Typical driving distances and times from ${city} outside peak hours.`,

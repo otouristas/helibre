@@ -10,7 +10,6 @@ export interface MenuFacts {
   reviewCount: number;
   airportFrom: number;
   waitSchengen: number;
-  waitNonSchengen: number;
 }
 
 export interface MobileMenuCopy {
@@ -19,7 +18,7 @@ export interface MobileMenuCopy {
   reviewsLabel: (count: number) => string;
   fixedFromLabel: string;
   freeWaitLabel: string;
-  freeWaitValue: (schengen: number, outside: number) => string;
+  freeWaitValue: (minutes: number) => string;
   childSeatsLabel: string;
   badgeFrom: (price: number) => string;
   badgePopular: string;
@@ -34,9 +33,9 @@ export const MOBILE_MENU_COPY: Record<Locale, MobileMenuCopy> = {
     available: 'Available 24/7',
     groupCompany: 'Helicro',
     reviewsLabel: (n) => `${n} Google reviews`,
-    fixedFromLabel: 'Airport transfers, fixed',
+    fixedFromLabel: 'Airport transfer prices',
     freeWaitLabel: 'Free airport waiting',
-    freeWaitValue: (a, b) => `${a}/${b} min`,
+    freeWaitValue: (a) => `${a} min`,
     childSeatsLabel: 'Child seats',
     badgeFrom: (p) => `From ${p}€`,
     badgePopular: 'Popular',
@@ -49,9 +48,9 @@ export const MOBILE_MENU_COPY: Record<Locale, MobileMenuCopy> = {
     available: '24/7 bereikbaar',
     groupCompany: 'Helicro',
     reviewsLabel: (n) => `${n} Google-reviews`,
-    fixedFromLabel: 'Luchthavenvervoer, vast',
+    fixedFromLabel: 'Prijzen luchthavenvervoer',
     freeWaitLabel: 'Gratis wachttijd luchthaven',
-    freeWaitValue: (a, b) => `${a}/${b} min`,
+    freeWaitValue: (a) => `${a} min`,
     childSeatsLabel: 'Kinderzitjes',
     badgeFrom: (p) => `Vanaf ${p}€`,
     badgePopular: 'Populair',
@@ -64,9 +63,9 @@ export const MOBILE_MENU_COPY: Record<Locale, MobileMenuCopy> = {
     available: 'Disponible 24h/24',
     groupCompany: 'Helicro',
     reviewsLabel: (n) => `${n} avis Google`,
-    fixedFromLabel: 'Navettes aéroport, prix fixe',
+    fixedFromLabel: 'Tarifs aéroport',
     freeWaitLabel: 'Attente offerte à l’aéroport',
-    freeWaitValue: (a, b) => `${a}/${b} min`,
+    freeWaitValue: (a) => `${a} min`,
     childSeatsLabel: 'Sièges enfants',
     badgeFrom: (p) => `Dès ${p}€`,
     badgePopular: 'Populaire',
@@ -81,7 +80,7 @@ export const MOBILE_MENU_COPY: Record<Locale, MobileMenuCopy> = {
     reviewsLabel: (n) => `${n} κριτικές Google`,
     fixedFromLabel: 'Αεροδρόμιο, σταθερή τιμή',
     freeWaitLabel: 'Δωρεάν αναμονή στο αεροδρόμιο',
-    freeWaitValue: (a, b) => `${a}/${b} λεπτά`,
+    freeWaitValue: (a) => `${a} λεπτά`,
     childSeatsLabel: 'Παιδικά καθίσματα',
     badgeFrom: (p) => `Από ${p}€`,
     badgePopular: 'Δημοφιλές',
@@ -96,7 +95,7 @@ export const MOBILE_MENU_COPY: Record<Locale, MobileMenuCopy> = {
     reviewsLabel: (n) => `${n} Google recenzija`,
     fixedFromLabel: 'Aerodromski transferi, fiksno',
     freeWaitLabel: 'Besplatno čekanje na aerodromu',
-    freeWaitValue: (a, b) => `${a}/${b} min`,
+    freeWaitValue: (a) => `${a} min`,
     childSeatsLabel: 'Dječje sjedalice',
     badgeFrom: (p) => `Od ${p}€`,
     badgePopular: 'Popularno',

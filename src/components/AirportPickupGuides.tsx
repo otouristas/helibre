@@ -15,7 +15,7 @@ const T: Record<Locale, { title: string; intro: string; crl: string; bru: string
 export default function AirportPickupGuides({ lang }: { lang: Locale }) {
   const t = T[lang];
   return (
-    <section style={{ marginTop: '36px' }}>
+    <section id="airport-pickup-guides" style={{ marginTop: '36px' }}>
       <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '10px' }}>{t.title}</h2>
       <p style={{ marginBottom: '18px' }}>{t.intro}</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', marginBottom: '12px' }}>
@@ -25,10 +25,13 @@ export default function AirportPickupGuides({ lang }: { lang: Locale }) {
             <YouTubePlayer videoId="P_lmGccjkjU" />
           </div>
         </div>
-        <div>
+        <div id="zaventem-pickup">
           <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '10px', color: 'var(--primary-dark)' }}>{t.bru}</h3>
           <div style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
-            <YouTubePlayer videoId="9-6260p40fc" />
+            <video controls playsInline preload="none" aria-label={t.bru} style={{ width: '100%', maxHeight: '520px', display: 'block', background: '#000' }}>
+              <source src="/videos/zaventem-airport-pickup.mp4" type="video/mp4" />
+              <a href="/videos/zaventem-airport-pickup.mp4">{t.bru}</a>
+            </video>
           </div>
         </div>
       </div>

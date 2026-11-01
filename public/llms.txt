@@ -10,15 +10,15 @@ Source: https://helicro.be
 
 ## Key facts
 - Vehicles: Ford Transit Custom and Ford Tourneo Custom minivans, up to 8 passengers and 8 large suitcases, air-conditioned, free child and booster seats.
-- Fixed prices from Brussels city to Brussels Airport (Zaventem): 35€ for 1–2 passengers, 45€ for 3–4, 55€ for 5–8, per vehicle (Drop-off Area; P1 drop-off +5€).
-- Fixed prices from Brussels city to Charleroi Airport: 65€ (1 passenger), 75€ (2), 90€ (3), 110€ (4), 120€ (5), 130€ (6), 140€ (7), 160€ (8), per vehicle, door to door.
+- Published price ranges from Brussels city to Brussels Airport (Zaventem): 35–45€ for 1–3 passengers, 45–60€ for 4–8, per vehicle (Drop-off Area; P1 drop-off +5€). The exact fare is confirmed at booking.
+- Fixed prices from Brussels city to Charleroi Airport: 70€ (1 passenger), 80€ (2), 90€ (3), 110€ (4), 120€ (5), 140€ (6), 160€ (7), 180€ (8), per vehicle, door to door.
 - Shared shuttle Brussels to Charleroi Airport: 25€ per person by day (06:00–22:00), 30€ at night, pickup at your door, maximum 7 passengers per van.
-- Other fixed prices per vehicle (1–3 passengers / 4–8 passengers), from Brussels city or Brussels Airport, same price both ways: Antwerp 75€/85€, Ghent 100€/120€, Bruges 130€/150€, Tomorrowland (Boom) 75€/100€, Lille Airport 150€/170€, Paris CDG 380€/420€, Paris Orly 460€/500€, Eindhoven 190€/210€, Amsterdam or Schiphol 250€/290€, Maastricht 150€/170€, Düsseldorf 250€/280€, Cologne 250€/280€, Frankfurt 380€/420€, Luxembourg 260€/300€.
-- From Charleroi Airport: Antwerp 135€/180€, Ghent 150€/180€, Bruges 180€/210€ (1–3 / 4–8 passengers, per vehicle).
+- Other fixed prices per vehicle (1–3 passengers / 4–8 passengers), from Brussels city or Brussels Airport, same price both ways: Antwerp 80€/90€, Ghent 110€/130€, Bruges 145€/165€, Tomorrowland (Boom) 80€/100€, Lille Airport 160€/180€, Paris CDG 400€/420€, Paris Orly 460€/500€, Eindhoven 200€/220€, Amsterdam or Schiphol 300€/330€, Maastricht 160€/180€, Düsseldorf 290€/300€, Cologne 270€/290€, Frankfurt 420€/440€, Luxembourg 290€/320€.
+- From Charleroi Airport: Antwerp 160€/180€, Ghent 170€/190€, Bruges 200€/220€ (1–3 / 4–8 passengers, per vehicle).
 - Spa-Francorchamps race weekends: 580€ per day for a chauffeur and 8-seat minivan, return trips included.
-- Private full-day sightseeing tour: from 380€ per vehicle.
-- Live flight tracking, free waiting after landing of 60 minutes for Schengen flights and 70 minutes for flights from outside Schengen (then 30€/hour), meet and greet in arrivals with a name sign, no night surcharge, extra stops 10€.
-- Free cancellation or changes up to 24 hours before pickup. Payment by card, bank transfer, invoice or cash.
+- Private full-day sightseeing tour: from 400€ per vehicle.
+- Live flight tracking. All arriving flights, within or outside Schengen: 60 minutes of complimentary waiting from actual landing. Additional waiting costs 15€ per additional 30 minutes, requires prior agreement directly with the driver and is subject to availability; the driver may leave after the free period, so extra waiting is not guaranteed. No night surcharge on private transfers; extra stops 10€.
+- Standard transfers: free cancellation or changes up to 24 hours before pickup. Multi-day exclusive vehicle-and-driver bookings require a 20% deposit; cancel by email to helicrotransport@gmail.com at least 48 hours before service for a full deposit refund, otherwise the deposit is non-refundable. Remaining balance and payment arrangements are confirmed at booking. Payment by card, bank transfer, invoice or cash.
 - Available 24/7. Phone/WhatsApp +32 472 35 88 05 (Belgium) and +30 697 458 1706 (Greece). Email helicrotransport@gmail.com.
 - Distances from Brussels: Zaventem 14 km (20–35 min), Charleroi Airport 60 km (55–70 min), Lille Airport 110 km (80–95 min).
 

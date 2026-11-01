@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { FIXED_PRICES } from '@/config/seoFacts';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { getLangFromPath } from '@/config/translations';
 import styles from './FareCalculator.module.css';
@@ -17,8 +18,6 @@ export default function FareCalculator() {
   const [route, setRoute] = useState<RouteType>('crl');
   const [passengers, setPassengers] = useState<number>(2);
   const [time, setTime] = useState<TimeType>('day');
-  const [price, setPrice] = useState<number | string>(0);
-  const [note, setNote] = useState<string>('');
 
   // Dictionary for inline calculator labels
   const ui = {
@@ -134,66 +133,29 @@ export default function FareCalculator() {
     }
   }[lang];
 
-  useEffect(() => {
-    if (type === 'shared' && passengers > 7) {
-      setPassengers(7);
-    }
-  }, [type, passengers]);
-
-  useEffect(() => {
-    if (route === 'other') {
-      setPrice(ui.quoteRequired);
-      setNote(ui.otherNote);
-      return;
-    }
-
+  const { price, note } = (() => {
+    if (route === 'other') return { price: ui.quoteRequired, note: ui.otherNote };
     if (type === 'private') {
       if (route === 'crl') {
-        const crlPrices: Record<number, number> = { 1: 70, 2: 80, 3: 90, 4: 110, 5: 120, 6: 130, 7: 140, 8: 160 };
-        setPrice(crlPrices[passengers] ?? 160);
-        setNote(ui.crlNote);
-      } else {
-        const fromWord = lang === 'fr' ? 'DÈS' : lang === 'nl' ? 'VANAF' : lang === 'el' ? 'ΑΠΟ' : lang === 'hr' ? 'OD' : 'FROM';
-        if (passengers === 1) {
-          setPrice(`${fromWord} 35€*`);
-        } else if (passengers === 2) {
-          setPrice(`${fromWord} 40€*`);
-        } else if (passengers <= 4) {
-          setPrice(`${fromWord} 45€*`);
-        } else {
-          setPrice(`${fromWord} 55€*`);
-        }
-        setNote(lang === 'fr' 
-          ? 'Prix de départ, pas un tarif fixe. Dépose-minute. Supplément de 5€ pour le P1.' 
-          : (lang === 'nl' 
-              ? 'Startprijs, geen vast tarief. Drop-off zone. Toeslag van 5€ voor P1.' 
-              : (lang === 'el'
-                  ? 'Τιμή εκκίνησης, όχι σταθερή τιμή. Ζώνη Drop-off. Επιπλέον 5€ για το P1.'
-                  : (lang === 'hr'
-                      ? 'Početna cijena, ne fiksna. Drop-off zona. Dodatnih 5€ za P1.'
-                      : 'Starting price, not a fixed fare. Drop-off Area. Extra 5€ for P1.'
-                    )
-                )
-            )
-        );
+        const tier = FIXED_PRICES.brusselsToCRL.find((tier) => Number(tier.pax) === passengers)!;
+        return { price: tier.price, note: ui.crlNote };
       }
-    } else {
-      if (route === 'bru') {
-        setPrice('N/A');
-        setNote(ui.bruSharedNote);
-        return;
-      }
-
-      if (time === 'day') {
-        const dayPrices: Record<number, number> = { 1: 25, 2: 50, 3: 75, 4: 90, 5: 110, 6: 120, 7: 130 };
-        setPrice(dayPrices[passengers] || 130);
-      } else {
-        const nightPrices: Record<number, number> = { 1: 30, 2: 60, 3: 80, 4: 100, 5: 115, 6: 125, 7: 135 };
-        setPrice(nightPrices[passengers] || 135);
-      }
-      setNote(ui.sharedNote);
+      const tier = FIXED_PRICES.brusselsToBRU[passengers <= 3 ? 0 : 1];
+      const rangeNote = {
+        en: 'Published price range; exact fare confirmed at booking. Drop-off Area. Extra 5€ for P1.',
+        nl: 'Gepubliceerde prijsklasse; exacte prijs bevestigd bij boeking. Drop-off zone. Toeslag 5€ voor P1.',
+        fr: 'Fourchette publiée ; prix exact confirmé à la réservation. Dépose-minute. Supplément de 5€ pour le P1.',
+        el: 'Δημοσιευμένο εύρος τιμών· η ακριβής τιμή επιβεβαιώνεται στην κράτηση. Ζώνη Drop-off. Επιπλέον 5€ για P1.',
+        hr: 'Objavljeni raspon cijena; točna cijena potvrđuje se pri rezervaciji. Drop-off zona. Dodatnih 5€ za P1.',
+      }[lang];
+      return { price: `${tier.price}–${tier.maxPrice}€*`, note: rangeNote };
     }
-  }, [type, route, passengers, time, ui.quoteRequired, ui.otherNote, ui.crlNote, ui.bruSharedNote, ui.sharedNote]);
+    if (route === 'bru') return { price: 'N/A', note: ui.bruSharedNote };
+    // Shared group tariffs are intentionally unchanged, including the night rates.
+    const dayPrices: Record<number, number> = { 1: 25, 2: 50, 3: 75, 4: 90, 5: 110, 6: 120, 7: 130 };
+    const nightPrices: Record<number, number> = { 1: 30, 2: 60, 3: 80, 4: 100, 5: 115, 6: 125, 7: 135 };
+    return { price: (time === 'day' ? dayPrices : nightPrices)[passengers], note: ui.sharedNote };
+  })();
 
   const getFormUrl = () => {
     if (type === 'private' && route === 'crl') {
@@ -219,7 +181,7 @@ export default function FareCalculator() {
         </button>
         <button 
           className={`${styles.typeBtn} ${type === 'shared' ? styles.typeBtnActive : ''}`}
-          onClick={() => setType('shared')}
+          onClick={() => { setType('shared'); setPassengers((count) => Math.min(count, 7)); }}
         >
           {ui.shared}
         </button>

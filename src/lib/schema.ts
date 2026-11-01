@@ -142,11 +142,14 @@ export function siteGraph(lang: Locale = 'en') {
         sameAs: [GOOGLE_MAPS_URL],
         aggregateRating: aggregateRating(),
         makesOffer: [
-          { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 1–2 passengers', price: 35, priceCurrency: 'EUR' },
-          { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 3–4 passengers', price: 45, priceCurrency: 'EUR' },
-          { '@type': 'Offer', name: 'Brussels to Brussels Airport (Zaventem), 5–8 passengers', price: 55, priceCurrency: 'EUR' },
+          ...FIXED_PRICES.brusselsToBRU.map((tier) => ({
+            '@type': 'Offer',
+            name: `Brussels to Brussels Airport (Zaventem), ${tier.pax} passengers`,
+            priceCurrency: 'EUR',
+            priceSpecification: { '@type': 'PriceSpecification', minPrice: tier.price, maxPrice: tier.maxPrice, priceCurrency: 'EUR' },
+          })),
           { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 1 passenger', price: 70, priceCurrency: 'EUR' },
-          { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 8 passengers', price: 160, priceCurrency: 'EUR' },
+          { '@type': 'Offer', name: 'Brussels to Charleroi Airport, 8 passengers', price: FIXED_PRICES.brusselsToCRL[7].price, priceCurrency: 'EUR' },
           { '@type': 'Offer', name: 'Private full-day sightseeing tour, up to 8 passengers', price: FIXED_PRICES.dayTourFrom, priceCurrency: 'EUR' },
         ],
       },
@@ -190,14 +193,14 @@ export function serviceSchema(opts: {
   serviceType: string;
   url: string;
   areaServed: { type: 'City' | 'Country'; name: string }[];
-  offers?: { name: string; price: number }[];
+  offers?: { name: string; price: number; maxPrice?: number }[];
   lang?: string;
 }) {
   const offers = opts.offers?.length
     ? opts.offers.map((o) => ({
         '@type': 'Offer',
         name: o.name,
-        price: o.price,
+        ...(o.maxPrice ? { priceSpecification: { '@type': 'PriceSpecification', minPrice: o.price, maxPrice: o.maxPrice, priceCurrency: 'EUR' } } : { price: o.price }),
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         url: abs(opts.url),
@@ -310,7 +313,7 @@ export function priceCatalogSchema(lang: Locale) {
   });
   const routeUrl = (key: string) => (isPricedLang(lang) ? PRICED_ROUTE_URLS[key]?.[lang] : undefined);
   const offers = [
-    ...FIXED_PRICES.brusselsToBRU.map((t) => offer(`${copy.brussels} – ${copy.zaventem}, ${copy.fromWord} ${t.price}€, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl('brussels-zaventem'))),
+    ...FIXED_PRICES.brusselsToBRU.map((t) => ({ ...offer(`${copy.brussels} – ${copy.zaventem}, ${t.price}–${t.maxPrice}€, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl('brussels-zaventem')), price: undefined, priceSpecification: { '@type': 'PriceSpecification', minPrice: t.price, maxPrice: t.maxPrice, priceCurrency: 'EUR', valueAddedTaxIncluded: true } })),
     ...FIXED_PRICES.brusselsToCRL.map((t) => offer(`${copy.brussels} – ${copy.charleroi}, ${t.pax}, ${copy.vehicle}`, t.price, routeUrl('brussels-charleroi'))),
     offer(copy.sharedDay, SHARED_SHUTTLE.perPassengerDay, isPricedLang(lang) ? SHARED_SHUTTLE_URLS[lang] : pageUrl),
     offer(copy.sharedNight, SHARED_SHUTTLE.perPassengerNight, isPricedLang(lang) ? SHARED_SHUTTLE_URLS[lang] : pageUrl),
