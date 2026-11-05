@@ -71,11 +71,12 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: 'flibco-vs-private-transfer-charleroi',
     lang: 'en',
-    title: 'Flibco shuttle vs private transfer: Brussels to Charleroi Airport compared',
+    title: 'Flibco vs private transfer to Charleroi Airport: prices and time compared',
     excerpt:
-      'The shuttle bus is cheap for one person. For two or more, or with luggage and an early flight, the numbers change. Here is the full comparison for 2026.',
+      'Flibco from Brussels-Midi costs about 17–20€ per person. A door-to-door private transfer is 70€ for 1 passenger, 80€ for 2 or 110€ for 4, with luggage and child seats included.',
     date: 'September 14, 2026',
     datePublished: '2026-09-14',
+    dateModified: '2026-11-05',
     readTime: '6 min read',
     category: 'Charleroi Transfers',
     ctaHref: '/en/airport-transfer/brussels-charleroi',
