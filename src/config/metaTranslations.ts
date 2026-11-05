@@ -69,7 +69,7 @@ export const metaTranslations: Record<string, Record<Locale, PageMeta>> = {
     en: {
       title: 'Airport Transfer Prices Brussels | Fixed Rates Zaventem & Charleroi | Helicro',
       description:
-        'Transparent fixed prices: Brussels to Zaventem from 35€, Brussels to Charleroi from 70€. No hidden fees, free child seats, and 60 or 70 minutes of complimentary airport waiting.',
+        'Transparent published prices: Brussels to Zaventem from 35€ (confirmed at booking), Brussels to Charleroi from 70€. No hidden fees, free child seats, and 60 minutes of complimentary waiting from landing for all arriving flights.',
     },
     nl: {
       title: 'Prijzen luchthavenvervoer | Vaste tarieven Zaventem & Charleroi | Helicro',
@@ -229,9 +229,9 @@ export const metaTranslations: Record<string, Record<Locale, PageMeta>> = {
   },
   'services/airport': {
     en: {
-      title: 'Taxi Brussels Airport & Charleroi | Private Transfers, Fixed Price | Helicro',
+      title: 'Airport Transfers to Zaventem, Charleroi and Lille | Book a Fixed-Price Taxi | Helicro',
       description:
-        'Private taxi and minivan transfers to Brussels Airport (Zaventem), Charleroi and Lille. Fixed prices from 35€, free flight tracking, meet and greet, child seats, 24/7.',
+        'Private transfers to Zaventem, Charleroi and Lille from any Belgian address. From Brussels: Zaventem from 35€ (confirmed at booking) and Charleroi from 70€ per vehicle, with meet and greet, 60 minutes’ waiting and free child seats. Book on WhatsApp or the form.',
     },
     nl: {
       title: 'Luchthavenvervoer Zaventem & Charleroi | Taxi met vaste prijs | Helicro',

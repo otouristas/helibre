@@ -150,7 +150,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             bullets: [
               'Drop-off Area: standard, included in the fixed price, 10 minutes free stop',
               `P1 parking drop-off: closer to the doors, +${FIXED_PRICES.bruP1Surcharge}€, useful with wheelchairs or many bags`,
-              `Arrivals: driver waits in the hall in front of the café with a name sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for Schengen flights and ${FIXED_PRICES.waitingFreeMinutes} minutes for flights from outside Schengen`,
+              `Arrivals: driver waits in the hall in front of the café with a name sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for all arriving flights`,
               'Airport codes: IATA BRU, ICAO EBBR; postcode 1930 Zaventem',
             ],
           }
@@ -162,7 +162,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               ],
               bullets: [
                 'Drop-off: Kiss & Ride zone in front of the terminal, included in the fixed price',
-                `Arrivals: driver waits at Kiss & Ride or inside the hall with a Helicro sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for Schengen flights and ${FIXED_PRICES.waitingFreeMinutes} minutes for flights from outside Schengen`,
+                `Arrivals: driver waits at Kiss & Ride or inside the hall with a Helicro sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for all arriving flights`,
                 'Low-cost delays: your flight is tracked live, the pickup time moves with it at no charge within the free hour',
                 'Airport codes: IATA CRL, ICAO EBCI; postcode 6041 Gosselies',
               ],
@@ -174,7 +174,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               ],
               bullets: [
                 'Drop-off: directly in front of the terminal, included in the fixed price',
-                `Arrivals: driver waits in the arrivals area with a name sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for Schengen flights and ${FIXED_PRICES.waitingFreeMinutes} minutes for flights from outside Schengen`,
+                `Arrivals: driver waits in the arrivals area with a name sign. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after landing for all arriving flights`,
                 'Airport codes: IATA LIL, ICAO LFQQ; 59810 Lesquin, France',
                 'Also served: Lille-Europe (Eurostar, TGV) and Lille-Flandres stations',
               ],
@@ -192,7 +192,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
           ? [
               { question: 'How much is a taxi from Brussels to Charleroi Airport?', answer: `Helicro charges a fixed ${priceCRL[0].price}€ for 1 passenger, ${priceCRL[1].price}€ for 2, ${priceCRL[2].price}€ for 3, ${priceCRL[3].price}€ for 4 and up to ${priceCRL[7].price}€ for 8 passengers from any Brussels address, door to door. That is per vehicle, so a family of four pays ${priceCRL[3].price}€ in total rather than four bus tickets plus a taxi at each end.` },
               { question: 'How long is the drive from Brussels to Charleroi Airport?', answer: `About ${fromBrussels.km} km and ${fromBrussels.minMin} to ${fromBrussels.maxMin} minutes outside peak hours via the E19. In the weekday morning rush allow up to 80 minutes. The Flibco shuttle bus takes around 60 minutes to Brussels-Midi plus your onward journey.` },
-              { question: 'What happens if my Ryanair flight lands late at night?', answer: `Your driver tracks the flight live and adjusts the pickup time automatically. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after the actual landing time for Schengen flights and ${FIXED_PRICES.waitingFreeMinutes} minutes for flights from outside Schengen. After that, extra waiting is ${FIXED_PRICES.waitingPer30Min}€ per additional 30 minutes, by agreement and subject to the driver’s availability. There is no night surcharge on the transfer price, so a 23:55 arrival costs the same fare as a midday one.` },
+              { question: 'What happens if my Ryanair flight lands late at night?', answer: `Your driver tracks the flight live and adjusts the pickup time automatically. Complimentary waiting is ${FIXED_PRICES.waitingFreeMinutes} minutes after the actual landing time for all arriving flights. After that, extra waiting is ${FIXED_PRICES.waitingPer30Min}€ per additional 30 minutes, by agreement and subject to the driver’s availability. There is no night surcharge on the transfer price, so a 23:55 arrival costs the same fare as a midday one.` },
               { question: 'Where do I meet the driver at Charleroi Airport?', answer: a.meetingPoint.en },
             ]
           : [
@@ -246,7 +246,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             bullets: [
               'Drop-off zone: standaard, inbegrepen in de vaste prijs, 10 minuten gratis stoppen',
               `P1-parking drop-off: dichter bij de deuren, +${FIXED_PRICES.bruP1Surcharge}€, handig met rolstoel of veel bagage`,
-              `Aankomst: chauffeur wacht in de hal voor het café met naambordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen`,
+              `Aankomst: chauffeur wacht in de hal voor het café met naambordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor alle aankomende vluchten`,
               'Luchthavencodes: IATA BRU, ICAO EBBR; 1930 Zaventem',
             ],
           }
@@ -256,7 +256,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               paragraphs: ['Charleroi heeft één terminal, gebruikt door Ryanair, Wizz Air, TUI fly, Pegasus en Air Arabia. Check-in en bagageafgifte sluiten bij de meeste lowcostmaatschappijen 40 minuten voor vertrek; de veiligheidscontrole is het drukst tussen 5u en 7u30 en opnieuw in de vroege namiddag. Wees 2 uur op voorhand aanwezig.'],
               bullets: [
                 'Afzetten: Kiss & Ride zone voor de terminal, inbegrepen in de vaste prijs',
-                `Aankomst: chauffeur wacht aan Kiss & Ride of in de hal met een Helicro-bordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen`,
+                `Aankomst: chauffeur wacht aan Kiss & Ride of in de hal met een Helicro-bordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor alle aankomende vluchten`,
                 'Lowcostvertragingen: uw vlucht wordt live opgevolgd, de ophaaltijd schuift kosteloos mee binnen het gratis uur',
                 'Luchthavencodes: IATA CRL, ICAO EBCI; 6041 Gosselies',
               ],
@@ -266,7 +266,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               paragraphs: ['Lille-Lesquin heeft één terminal, zo’n 10 km ten zuidoosten van Rijsel, met vluchten van easyJet, Volotea, Transavia, Ryanair en Air France. Houd uw identiteitskaart bij de hand; er is geen systematische grenscontrole op de E42/A27, maar steekproeven komen voor.'],
               bullets: [
                 'Afzetten: recht voor de terminal, inbegrepen in de vaste prijs',
-                `Aankomst: chauffeur wacht in de aankomstzone met naambordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen`,
+                `Aankomst: chauffeur wacht in de aankomstzone met naambordje. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor alle aankomende vluchten`,
                 'Luchthavencodes: IATA LIL, ICAO LFQQ; 59810 Lesquin, Frankrijk',
                 'Ook bediend: stations Lille-Europe (Eurostar, TGV) en Lille-Flandres',
               ],
@@ -283,7 +283,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
           ? [
               { question: 'Wat kost een taxi van Brussel naar Charleroi Airport?', answer: `Helicro rekent een vaste ${priceCRL[0].price}€ voor 1 passagier, ${priceCRL[1].price}€ voor 2, ${priceCRL[2].price}€ voor 3, ${priceCRL[3].price}€ voor 4 en tot ${priceCRL[7].price}€ voor 8 passagiers vanuit elk Brussels adres, van deur tot deur. Dat is per voertuig: een gezin van vier betaalt dus ${priceCRL[3].price}€ in totaal in plaats van vier bustickets plus een taxi aan beide kanten.` },
               { question: 'Hoe lang rijdt u van Brussel naar Charleroi Airport?', answer: `Ongeveer ${fromBrussels.km} km en ${fromBrussels.minMin} tot ${fromBrussels.maxMin} minuten buiten de spits via de E19. In de ochtendspits op weekdagen rekent u op maximaal 80 minuten. De Flibco-shuttle doet er zo’n 60 minuten over tot Brussel-Zuid, plus uw verdere traject.` },
-              { question: 'Wat als mijn Ryanair-vlucht ’s nachts laat landt?', answer: `Uw chauffeur volgt de vlucht live en past de ophaaltijd automatisch aan. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor Schengenvluchten en ${FIXED_PRICES.waitingFreeMinutes} minuten voor vluchten van buiten Schengen. Daarna kost extra wachttijd ${FIXED_PRICES.waitingPer30Min}€ per 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. Er is geen nachttoeslag op de ritprijs: een aankomst om 23u55 kost evenveel als een middagrit.` },
+              { question: 'Wat als mijn Ryanair-vlucht ’s nachts laat landt?', answer: `Uw chauffeur volgt de vlucht live en past de ophaaltijd automatisch aan. Gratis wachttijd is ${FIXED_PRICES.waitingFreeMinutes} minuten na de werkelijke landing voor alle aankomende vluchten. Daarna kost extra wachttijd ${FIXED_PRICES.waitingPer30Min}€ per 30 minuten, in onderling akkoord en afhankelijk van de beschikbaarheid van de chauffeur. Er is geen nachttoeslag op de ritprijs: een aankomst om 23u55 kost evenveel als een middagrit.` },
               { question: 'Waar ontmoet ik de chauffeur op Charleroi Airport?', answer: a.meetingPoint.nl },
             ]
           : [
@@ -337,7 +337,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
             bullets: [
               'Zone Drop-off : standard, incluse dans le prix fixe, arrêt gratuit de 10 minutes',
               `Dépose parking P1 : plus près des portes, +${FIXED_PRICES.bruP1Surcharge}€, utile avec une chaise roulante ou beaucoup de bagages`,
-              `Arrivées : le chauffeur attend dans le hall devant le café avec une pancarte. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols Schengen et de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols hors Schengen`,
+              `Arrivées : le chauffeur attend dans le hall devant le café avec une pancarte. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes après l’atterrissage réel pour tous les vols à l’arrivée`,
               'Codes aéroport : IATA BRU, ICAO EBBR ; 1930 Zaventem',
             ],
           }
@@ -347,7 +347,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               paragraphs: ['Charleroi possède un seul terminal utilisé par Ryanair, Wizz Air, TUI fly, Pegasus et Air Arabia. L’enregistrement et le dépôt des bagages ferment 40 minutes avant le départ chez la plupart des low-cost ; la sécurité est la plus chargée de 5h à 7h30 et en début d’après-midi. Prévoyez d’être à l’aéroport 2 heures avant.'],
               bullets: [
                 'Dépose : zone Kiss & Ride devant le terminal, incluse dans le prix fixe',
-                `Arrivées : le chauffeur attend au Kiss & Ride ou dans le hall avec une pancarte Helicro. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols Schengen et de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols hors Schengen`,
+                `Arrivées : le chauffeur attend au Kiss & Ride ou dans le hall avec une pancarte Helicro. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes après l’atterrissage réel pour tous les vols à l’arrivée`,
                 'Retards low-cost : votre vol est suivi en direct, l’heure de prise en charge est décalée sans frais dans l’heure gratuite',
                 'Codes aéroport : IATA CRL, ICAO EBCI ; 6041 Gosselies',
               ],
@@ -357,7 +357,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
               paragraphs: ['Lille-Lesquin dispose d’un terminal unique à environ 10 km au sud-est de Lille, desservi par easyJet, Volotea, Transavia, Ryanair et Air France. Gardez votre carte d’identité à portée de main : il n’y a pas de contrôle systématique sur l’E42/A27, mais des contrôles ponctuels existent.'],
               bullets: [
                 'Dépose : directement devant le terminal, incluse dans le prix fixe',
-                `Arrivées : le chauffeur attend dans la zone des arrivées avec une pancarte. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols Schengen et de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols hors Schengen`,
+                `Arrivées : le chauffeur attend dans la zone des arrivées avec une pancarte. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes après l’atterrissage réel pour tous les vols à l’arrivée`,
                 'Codes aéroport : IATA LIL, ICAO LFQQ ; 59810 Lesquin, France',
                 'Également desservies : gares de Lille-Europe (Eurostar, TGV) et Lille-Flandres',
               ],
@@ -374,7 +374,7 @@ export function buildAirportHub(page: SEOPage, lang: HubLang, code: AirportCode)
           ? [
               { question: 'Combien coûte un taxi de Bruxelles à l’aéroport de Charleroi ?', answer: `Helicro applique un prix fixe de ${priceCRL[0].price}€ pour 1 passager, ${priceCRL[1].price}€ pour 2, ${priceCRL[2].price}€ pour 3, ${priceCRL[3].price}€ pour 4 et jusqu’à ${priceCRL[7].price}€ pour 8 passagers depuis toute adresse bruxelloise, porte à porte. C’est par véhicule : une famille de quatre paie ${priceCRL[3].price}€ au total plutôt que quatre billets de bus plus un taxi à chaque bout.` },
               { question: 'Combien de temps dure le trajet Bruxelles – aéroport de Charleroi ?', answer: `Environ ${fromBrussels.km} km et ${fromBrussels.minMin} à ${fromBrussels.maxMin} minutes hors heures de pointe par l’E19. Aux heures de pointe du matin en semaine, prévoyez jusqu’à 80 minutes. La navette Flibco met environ 60 minutes jusqu’à Bruxelles-Midi, plus votre trajet final.` },
-              { question: 'Que se passe-t-il si mon vol Ryanair atterrit tard le soir ?', answer: `Votre chauffeur suit le vol en direct et adapte l’heure de prise en charge automatiquement. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes après l’atterrissage réel pour les vols Schengen et de ${FIXED_PRICES.waitingFreeMinutes} minutes pour les vols hors Schengen. Ensuite, l’attente supplémentaire est de ${FIXED_PRICES.waitingPer30Min}€ par tranche de 30 minutes, après accord et selon la disponibilité du chauffeur. Il n’y a pas de supplément de nuit sur le prix du transfert : une arrivée à 23h55 coûte le même prix qu’en journée.` },
+              { question: 'Que se passe-t-il si mon vol Ryanair atterrit tard le soir ?', answer: `Votre chauffeur suit le vol en direct et adapte l’heure de prise en charge automatiquement. L’attente gratuite est de ${FIXED_PRICES.waitingFreeMinutes} minutes après l’atterrissage réel pour tous les vols à l’arrivée. Ensuite, l’attente supplémentaire est de ${FIXED_PRICES.waitingPer30Min}€ par tranche de 30 minutes, après accord et selon la disponibilité du chauffeur. Il n’y a pas de supplément de nuit sur le prix du transfert : une arrivée à 23h55 coûte le même prix qu’en journée.` },
               { question: 'Où retrouver le chauffeur à l’aéroport de Charleroi ?', answer: a.meetingPoint.fr },
             ]
           : [
