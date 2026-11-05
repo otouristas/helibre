@@ -303,7 +303,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Σημείο συνάντησης στα αεροδρόμια',
         bullets: [
-          `Zaventem: ο οδηγός σας περιμένει στην αίθουσα αφίξεων, μπροστά από το καφέ, με πινακίδα με το όνομά σας· ${F.waitingFreeMinutes} λεπτά δωρεάν αναμονή για πτήσεις Σένγκεν και ${F.waitingFreeMinutes} λεπτά για πτήσεις εκτός Σένγκεν`,
+          `Zaventem: ο οδηγός σας περιμένει στην αίθουσα αφίξεων, μπροστά από το καφέ, με πινακίδα με το όνομά σας· ${F.waitingFreeMinutes} λεπτά δωρεάν αναμονή μετά την πραγματική προσγείωση για όλες τις πτήσεις που φθάνουν`,
           'Charleroi: ο οδηγός σας περιμένει στη ζώνη Kiss & Ride ή μέσα στον τερματικό με πινακίδα Helicro· παρακολουθούμε ζωντανά τις καθυστερήσεις των Aegean, Ryanair και Wizz Air',
         ],
       },
@@ -355,7 +355,7 @@ const VERTICALS: Record<string, VerticalSpec> = {
       {
         h2: 'Mjesto sastanka u zračnim lukama',
         bullets: [
-          `Zaventem: vozač vas čeka u dvorani za dolaske, ispred kafića, s natpisom vašeg imena; ${F.waitingFreeMinutes} minuta besplatnog čekanja za letove unutar Schengena i ${F.waitingFreeMinutes} minuta za letove izvan Schengena`,
+          `Zaventem: vozač vas čeka u dvorani za dolaske, ispred kafića, s natpisom vašeg imena; ${F.waitingFreeMinutes} minuta besplatnog čekanja nakon stvarnog slijetanja za sve dolazne letove`,
           'Charleroi: vozač vas čeka na Kiss & Ride zoni ili unutar terminala s natpisom Helicro; kašnjenja Ryanaira pratimo uživo',
         ],
       },
