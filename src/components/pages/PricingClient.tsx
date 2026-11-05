@@ -76,7 +76,10 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
 
       btnQuote: 'Request Fixed Quote',
       btnWhatsapp: 'Chat on WhatsApp',
-      zaventemFootnote: '* Prices are from the Drop-off Area. If you wish a drop-off at P1 Point, there is an extra charge of 5€.'
+      zaventemFootnote: '* Prices are from the Drop-off Area. If you wish a drop-off at P1 Point, there is an extra charge of 5€.',
+      bookTitle: 'How to book',
+      bookIntro: 'Use the calculator or the airport fares below, then request a written quote through the form or WhatsApp. Standard transfers can be cancelled free of charge up to 24 hours before pickup. Published prices include tolls, airport greeting and child seats. Brussels to Zaventem is a price range confirmed at booking; Brussels to Charleroi is a fixed fare per vehicle. All arriving flights include 60 minutes of complimentary waiting from the actual landing time.',
+      updatedOn: 'Price and booking information updated 5 November 2026.',
     },
     nl: {
       passengersLabel: 'passagiers',
@@ -141,7 +144,10 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
 
       btnQuote: 'Vraag Vaste Offerte Aan',
       btnWhatsapp: 'Chat op WhatsApp',
-      zaventemFootnote: '* Prijzen gelden vanaf de Drop-off Area. Indien u afgezet wenst te worden bij P1, geldt een toeslag van 5€.'
+      zaventemFootnote: '* Prijzen gelden vanaf de Drop-off Area. Indien u afgezet wenst te worden bij P1, geldt een toeslag van 5€.',
+      bookTitle: 'Hoe boekt u',
+      bookIntro: 'Gebruik de calculator of de luchthaventarieven hieronder en vraag vervolgens een schriftelijke offerte via het formulier of WhatsApp. Standaardritten kunt u tot 24 uur voor de ophaling gratis annuleren. De gepubliceerde prijzen zijn inclusief tol, ontmoeting op de luchthaven en kinderzitjes. Brussel naar Zaventem is een prijsklasse die bij boeking wordt bevestigd; Brussel naar Charleroi is een vast tarief per voertuig. Alle aankomende vluchten krijgen 60 minuten gratis wachttijd vanaf de werkelijke landing.',
+      updatedOn: 'Prijs- en boekingsinformatie bijgewerkt op 5 november 2026.',
     },
     fr: {
       passengersLabel: 'passagers',
@@ -203,7 +209,12 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       a2: 'Non. Tous les rehausseurs et sièges de sécurité pour bébés sont mis à disposition gratuitement. Veuillez le préciser lors de la commande.',
       q3: 'Faut-il payer le péage ou le parking de l&apos;aéroport ?',
       a3: 'Non. Les frais de parking aéroport et les péages routiers (comme le tunnel Liefkenshoek) sont intégralement compris dans le tarif.',
-      zaventemFootnote: '* Les tarifs s\'entendent depuis la dépose-minute (Drop off Area). Si vous souhaitez une dépose au parking P1, un supplément de 5€ s\'applique.'
+      zaventemFootnote: '* Les tarifs s\'entendent depuis la dépose-minute (Drop off Area). Si vous souhaitez une dépose au parking P1, un supplément de 5€ s\'applique.',
+      btnQuote: 'Demander un devis fixe',
+      btnWhatsapp: 'Discuter sur WhatsApp',
+      bookTitle: 'Comment réserver',
+      bookIntro: 'Utilisez le calculateur ou les tarifs aéroport ci-dessous, puis demandez un devis écrit via le formulaire ou WhatsApp. Les transferts ordinaires peuvent être annulés gratuitement jusqu’à 24 h avant la prise en charge. Les prix publiés comprennent les péages, l’accueil à l’aéroport et les sièges enfants. Bruxelles–Zaventem est une fourchette confirmée à la réservation ; Bruxelles–Charleroi est un tarif fixe par véhicule. Tous les vols à l’arrivée bénéficient de 60 minutes d’attente gratuite à compter de l’atterrissage réel.',
+      updatedOn: 'Informations sur les tarifs et la réservation mises à jour le 5 novembre 2026.',
     },
         hr: {
       passengersLabel: 'putnika',
@@ -261,7 +272,10 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
       a3: 'Ne. Sve cestarine i naknade za parking u zračnoj luci uračunate su u cijenu vašeg transfera.',
       btnQuote: 'ZATRAŽITE FIKSNU CIJENU',
       btnWhatsapp: 'ČAT NA WHATSAPPU',
-      zaventemFootnote: '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.'
+      zaventemFootnote: '* Cijena za Drop-off zonu. Ako želite iskrcaj na P1 točki, naplaćuje se dodatna naknada od 5 €.',
+      bookTitle: 'Kako rezervirati',
+      bookIntro: 'Upotrijebite kalkulator ili cijenik zračnih luka u nastavku, zatim zatražite pisanu ponudu putem obrasca ili WhatsAppa. Standardni transferi mogu se besplatno otkazati do 24 sata prije preuzimanja. Objavljene cijene uključuju cestarine, doček u zračnoj luci i dječje sjedalice. Bruxelles–Zaventem je raspon cijena koji se potvrđuje pri rezervaciji; Bruxelles–Charleroi je fiksna cijena po vozilu. Svi dolazni letovi uključuju 60 minuta besplatnog čekanja od stvarnog slijetanja.',
+      updatedOn: 'Informacije o cijenama i rezervaciji ažurirane 5. studenoga 2026.',
     },
     el: {
       passengersLabel: 'επιβάτες',
@@ -326,7 +340,10 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
 
       btnQuote: 'ΑΙΤΗΣΗ ΓΙΑ ΣΤΑΘΕΡΗ ΤΙΜΗ',
       btnWhatsapp: 'ΣΥΝΟΜΙΛΙΑ ΣΤΟ WHATSAPP',
-      zaventemFootnote: '* Οι τιμές αφορούν τη ζώνη αποβίβασης (Drop off Area). Αν επιθυμείτε αποβίβαση στο P1, υπάρχει επιπλέον χρέωση 5€.'
+      zaventemFootnote: '* Οι τιμές αφορούν τη ζώνη αποβίβασης (Drop off Area). Αν επιθυμείτε αποβίβαση στο P1, υπάρχει επιπλέον χρέωση 5€.',
+      bookTitle: 'Πώς να κάνετε κράτηση',
+      bookIntro: 'Χρησιμοποιήστε τον υπολογιστή τιμής ή τις τιμές αεροδρομίου παρακάτω και ζητήστε γραπτή προσφορά μέσω της φόρμας ή του WhatsApp. Οι συνηθισμένες μεταφορές ακυρώνονται δωρεάν έως 24 ώρες πριν από την παραλαβή. Οι δημοσιευμένες τιμές περιλαμβάνουν διόδια, υποδοχή στο αεροδρόμιο και παιδικά καθίσματα. Η διαδρομή Βρυξέλλες–Zaventem είναι εύρος τιμών που επιβεβαιώνεται στην κράτηση· η διαδρομή Βρυξέλλες–Charleroi έχει σταθερή τιμή ανά όχημα. Όλες οι πτήσεις που φθάνουν περιλαμβάνουν 60 λεπτά δωρεάν αναμονής από την πραγματική προσγείωση.',
+      updatedOn: 'Οι πληροφορίες τιμών και κράτησης ενημερώθηκαν στις 5 Νοεμβρίου 2026.',
     }
   }[lang];
 
@@ -340,11 +357,34 @@ export default function PricingClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el
         <p className="text-center text-slate-500 max-w-2xl mx-auto mb-4">
           {ui.subtitle}
         </p>
-        <p className="text-center mb-12">
+        <p className="text-center mb-4" style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+          {ui.updatedOn}
+        </p>
+        <p className="text-center mb-8">
           <Link href={priceListHref(lang)} style={{ fontWeight: 700, color: 'var(--primary)' }}>
             {translations[lang].priceList} →
           </Link>
         </p>
+
+        <div style={{ background: '#f8fafc', border: '1px solid var(--card-border)', borderRadius: 'var(--radius-lg)', padding: '28px', marginBottom: '48px', boxShadow: 'var(--shadow)' }}>
+          <h2 className="text-2xl font-bold mb-3 text-center" style={{ color: 'var(--primary-dark)' }}>
+            {ui.bookTitle}
+          </h2>
+          <p className="text-center max-w-3xl mx-auto mb-6" style={{ fontSize: '15px', lineHeight: 1.65, color: 'var(--text-secondary)' }}>
+            {ui.bookIntro}
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '14px 32px' }}>
+              {ui.btnQuote}
+            </a>
+            <a href="https://wa.me/32472358805" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
+              🇧🇪 {ui.btnWhatsapp}
+            </a>
+            <a href="https://wa.me/306974581706" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 32px' }}>
+              🇬🇷 {translations[lang].whatsappGreece}
+            </a>
+          </div>
+        </div>
 
         {/* 1. Instant Quote Calculator */}
         <div style={{ marginBottom: '60px' }}>
