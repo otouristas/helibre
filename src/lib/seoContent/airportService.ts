@@ -33,6 +33,7 @@ const COPY: Record<Locale, Copy> = {
     intro: [
       'An airport taxi in Brussels normally means a meter that keeps running in traffic, a queue at the rank, or an app whose price doubles at 5:00. Helicro works the other way round: you send your address, flight number and group size, you receive one written price, and a driver with more than 30 years of accident-free experience is at your door 10 minutes early. That is the whole service, 24 hours a day, 7 days a week.',
       'The company is run by Gerasimos from Braine-l’Alleud, south of Brussels, and covers Brussels, Flanders and Wallonia as well as cross-border trips to Lille, Luxembourg, the Netherlands and Germany. He speaks English, French and Greek; quotes and confirmations are also available in Dutch and Croatian.',
+      'To book, send your travel date, pickup address, flight number and number of passengers on WhatsApp or through the online form. You receive a written price, and standard transfers can be cancelled free of charge up to 24 hours before pickup. At Brussels Airport the driver waits in the arrivals hall, in front of the café, with a name sign; drop-offs use the Drop-off Area (P1 on request, +5€). At Charleroi the driver meets you at the official Kiss & Ride zone or inside the terminal. Complimentary waiting is 60 minutes from the actual landing time for all arriving flights.',
     ],
     airportsH2: 'Which airports we serve',
     airportsIntro: 'Three airports cover almost every flight from Belgium. Distances and times below are from Brussels city centre outside peak hours; every other origin is quoted on request.',
@@ -304,7 +305,7 @@ export function buildAirportService(lang: Locale): SeoLandingContent {
     h1: c.h1,
     lead: c.lead,
     intro: c.intro,
-    sections: [airportsTable, bruPrices, crlPrices, meeting, howItWorksSection(lang), includedSection(lang), comparisonSection(lang), beyond],
+    sections: [airportsTable, meeting, howItWorksSection(lang), bruPrices, crlPrices, includedSection(lang), comparisonSection(lang), beyond],
     faqs: [...c.faqs, ...pickFaqs(lang, ['cancel', 'delay', 'seats', 'pay', 'night', 'luggage'])],
     breadcrumbs: [
       { name: ui.home, url: lang === 'en' ? '/' : `/${lang}` },
