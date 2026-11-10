@@ -8,6 +8,10 @@ import HubLinks from '@/components/HubLinks';
 import FareCalculator from '@/components/FareCalculator';
 import styles from './home.module.css';
 import { BOOKING_POLICIES } from '@/config/bookingPolicies';
+import { OTHER_SERVICES_BOOKING_URL } from '@/config/translations';
+
+/** Primary WhatsApp already used across the site (Belgium). */
+const WHATSAPP_BELGIUM = 'https://wa.me/32472358805';
 
 interface FAQItem {
   question: string;
@@ -72,7 +76,15 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       faqTitle: 'Frequently Asked Questions',
       btnBookOnline: 'Book Online',
       btnWhatsAppBe: '🇧🇪 WhatsApp Belgium',
-      btnWhatsAppGr: '🇬🇷 WhatsApp Greece'
+      btnWhatsAppGr: '🇬🇷 WhatsApp Greece',
+      quoteBefore: 'Wishing to ask for a quotation, just send us a ',
+      quoteLink: 'WhatsApp message',
+      quoteAfter: '.',
+      otherDestTitle: 'Other destinations',
+      otherDestText: 'Need a transfer to a destination that is not listed? Send the place, your flight details and how many passengers. We reply with a fixed price.',
+      otherDestWhatsApp: 'Request on WhatsApp',
+      otherDestForm: 'Booking form',
+      otherDestWaMessage: 'Hello Helicro, I would like a quote for a destination that is not listed. Destination, flight details and number of passengers:'
     },
     nl: {
       heroTitle: 'Premium Privé-transfers & Minivans',
@@ -124,7 +136,15 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       faqTitle: 'Veelgestelde Vragen',
       btnBookOnline: 'Online Boeken',
       btnWhatsAppBe: '🇧🇪 WhatsApp België',
-      btnWhatsAppGr: '🇬🇷 WhatsApp Griekenland'
+      btnWhatsAppGr: '🇬🇷 WhatsApp Griekenland',
+      quoteBefore: 'Wilt u een offerte aanvragen, stuur ons dan gewoon een ',
+      quoteLink: 'WhatsApp-bericht',
+      quoteAfter: '.',
+      otherDestTitle: 'Andere bestemmingen',
+      otherDestText: 'Een transfer naar een bestemming die niet in de lijst staat? Stuur de plaats, uw vluchtgegevens en het aantal passagiers. U ontvangt een vaste prijs.',
+      otherDestWhatsApp: 'Aanvraag via WhatsApp',
+      otherDestForm: 'Boekingsformulier',
+      otherDestWaMessage: 'Hallo Helicro, ik wil graag een offerte voor een bestemming die niet in de lijst staat. Bestemming, vluchtgegevens en aantal passagiers:'
     },
     fr: {
       heroTitle: 'Transferts Privés & Minivans Premium',
@@ -176,7 +196,15 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       faqTitle: 'Foire Aux Questions',
       btnBookOnline: 'Réserver en ligne',
       btnWhatsAppBe: '🇧🇪 WhatsApp Belgique',
-      btnWhatsAppGr: '🇬🇷 WhatsApp Grèce'
+      btnWhatsAppGr: '🇬🇷 WhatsApp Grèce',
+      quoteBefore: 'Pour demander un devis, envoyez-nous simplement un ',
+      quoteLink: 'message WhatsApp',
+      quoteAfter: '.',
+      otherDestTitle: 'Autres destinations',
+      otherDestText: 'Un transfert vers une destination qui n’est pas dans la liste ? Envoyez le lieu, les détails de votre vol et le nombre de passagers. Nous répondons avec un prix fixe.',
+      otherDestWhatsApp: 'Demande sur WhatsApp',
+      otherDestForm: 'Formulaire de réservation',
+      otherDestWaMessage: 'Bonjour Helicro, je souhaite un devis pour une destination qui n’est pas dans la liste. Destination, détails du vol et nombre de passagers :'
     },
     el: {
       heroTitle: 'Premium Ιδιωτικές Μεταφορές & Minivans',
@@ -228,7 +256,15 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       faqTitle: 'Συχνές Ερωτήσεις',
       btnBookOnline: 'Κράτηση Online',
       btnWhatsAppBe: '🇧🇪 WhatsApp Βέλγιο',
-      btnWhatsAppGr: '🇬🇷 WhatsApp Ελλάδα'
+      btnWhatsAppGr: '🇬🇷 WhatsApp Ελλάδα',
+      quoteBefore: 'Αν θέλετε να ζητήσετε προσφορά, στείλτε μας απλώς ένα ',
+      quoteLink: 'μήνυμα στο WhatsApp',
+      quoteAfter: '.',
+      otherDestTitle: 'Άλλοι προορισμοί',
+      otherDestText: 'Χρειάζεστε μεταφορά σε προορισμό που δεν αναφέρεται; Στείλτε τον τόπο, τα στοιχεία της πτήσης και τον αριθμό επιβατών. Απαντάμε με σταθερή τιμή.',
+      otherDestWhatsApp: 'Αίτημα στο WhatsApp',
+      otherDestForm: 'Φόρμα κράτησης',
+      otherDestWaMessage: 'Γεια σας Helicro, θα ήθελα προσφορά για προορισμό που δεν αναφέρεται. Προορισμός, στοιχεία πτήσης και αριθμός επιβατών:'
     },
     hr: {
       heroTitle: 'Premium privatni transferi i kombi vozila',
@@ -280,7 +316,15 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
       faqTitle: 'Često postavljana pitanja',
       btnBookOnline: 'Rezervirajte online',
       btnWhatsAppBe: '🇧🇪 WhatsApp Belgija',
-      btnWhatsAppGr: '🇬🇷 WhatsApp Grčka'
+      btnWhatsAppGr: '🇬🇷 WhatsApp Grčka',
+      quoteBefore: 'Želite li zatražiti ponudu, pošaljite nam jednostavno ',
+      quoteLink: 'poruku na WhatsApp',
+      quoteAfter: '.',
+      otherDestTitle: 'Druga odredišta',
+      otherDestText: 'Trebate transfer do odredišta koje nije na popisu? Pošaljite mjesto, podatke o letu i broj putnika. Odgovaramo fiksnom cijenom.',
+      otherDestWhatsApp: 'Upit na WhatsAppu',
+      otherDestForm: 'Obrazac za rezervaciju',
+      otherDestWaMessage: 'Pozdrav Helicro, želio bih ponudu za odredište koje nije na popisu. Odredište, podaci o letu i broj putnika:'
     }
   }[lang];
 
@@ -660,31 +704,47 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
           <p className={styles.heroSubtitle}>
             {ui.heroSubtitle}
           </p>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '8px' }}>
-            <a 
-              href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.heroBtn}
-            >
-              {ui.btnBookOnline}
-            </a>
-            <a 
-              href="https://wa.me/32472358805"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.heroBtnSecondary}
-            >
-              {ui.btnWhatsAppBe}
-            </a>
-            <a 
-              href="https://wa.me/306974581706"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.heroBtnSecondary}
-            >
-              {ui.btnWhatsAppGr}
-            </a>
+          <div className={styles.heroActions}>
+            <div className={styles.bookAlternative}>
+              <a 
+                href="https://forms.clickup.com/9015129384/f/8cnfx98-175/SKJIT18IKSAAZXY7UM"
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.heroBtn}
+              >
+                {ui.btnBookOnline}
+              </a>
+              <p className={styles.quoteAlternative}>
+                {ui.quoteBefore}
+                <a
+                  href={WHATSAPP_BELGIUM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.quoteAlternativeLink}
+                >
+                  {ui.quoteLink}
+                </a>
+                {ui.quoteAfter}
+              </p>
+            </div>
+            <div className={styles.heroSecondaryActions}>
+              <a 
+                href={WHATSAPP_BELGIUM}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.heroBtnSecondary}
+              >
+                {ui.btnWhatsAppBe}
+              </a>
+              <a 
+                href="https://wa.me/306974581706"
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.heroBtnSecondary}
+              >
+                {ui.btnWhatsAppGr}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -808,6 +868,31 @@ export default function HomeClient({ lang }: { lang: 'en' | 'nl' | 'fr' | 'el' |
               <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                 {ui.rate3Note}
               </p>
+            </div>
+          </div>
+
+          <div className={styles.otherDestinations}>
+            <div>
+              <h3 className={styles.otherDestTitle}>{ui.otherDestTitle}</h3>
+              <p className={styles.otherDestText}>{ui.otherDestText}</p>
+            </div>
+            <div className={styles.otherDestActions}>
+              <a
+                href={`${WHATSAPP_BELGIUM}?text=${encodeURIComponent(ui.otherDestWaMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                {ui.otherDestWhatsApp}
+              </a>
+              <a
+                href={OTHER_SERVICES_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                {ui.otherDestForm}
+              </a>
             </div>
           </div>
         </div>

@@ -61,6 +61,150 @@
   text-decoration: none;
 }
 
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 980px;
+}
+
+.bookAlternative {
+  display: flex;
+  align-items: center;
+  gap: 14px 20px;
+  width: 100%;
+}
+
+.bookAlternative .heroBtn {
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .bookAlternative .heroBtn {
+    align-self: center;
+  }
+}
+
+.quoteAlternative {
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 42rem;
+  color: #ffffff;
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 700;
+  line-height: 1.45;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.quoteAlternativeLink {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.quoteAlternativeLink:hover,
+.quoteAlternativeLink:focus-visible {
+  color: var(--accent);
+}
+
+.heroSecondaryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.otherDestinations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 28px;
+  margin-top: 24px;
+  padding: 24px 28px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  text-align: left;
+}
+
+.otherDestTitle {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.otherDestText {
+  margin: 0;
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.otherDestActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
+
+  .bookAlternative {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quoteAlternative {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .otherDestinations {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .otherDestActions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+
+  .otherDestActions a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    min-height: calc(100svh - 64px);
+  }
+
+  .heroContent {
+    padding-top: 28px;
+    padding-bottom: 96px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .heroBtn,
+  .heroBtnSecondary {
+    max-width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+}
+
 /* About Section */
 .aboutGrid {
   display: grid;
